@@ -280,6 +280,100 @@ def build_scenarios(current_points: int, played: int, remaining: int, threshold:
     return rows
 
 
+def build_match_plan(fixtures: list[dict[str, Any]], required_points_target: int) -> dict[str, Any]:
+    """Build tactical run-in plan from RUN_IN_FIXTURES-derived fixture list."""
+
+    checkpoints = {3, 5, 7, 10}
+    plan_matches: list[dict[str, Any]] = []
+    running_min = 0
+    running_target = 0
+    running_stretch = 0
+    checkpoint_rows: list[dict[str, Any]] = []
+
+    for idx, fixture in enumerate(fixtures, start=1):
+        pos = fixture["opponent_pos"]
+        is_away = fixture["home_away"] == "A"
+
+        if pos <= 3:
+            tier = "promotion_six_pointer"
+            min_result = "draw" if is_away else "win"
+            target_result = "win"
+            stretch_result = "win_by_2+"
+        elif pos >= 10:
+            tier = "must_win"
+            min_result = "draw" if is_away else "win"
+            target_result = "win"
+            stretch_result = "win_by_2+"
+        elif is_away:
+            tier = "acceptable_draw"
+            min_result = "draw"
+            target_result = "win"
+            stretch_result = "win_by_2+"
+        else:
+            tier = "upset_bonus"
+            min_result = "draw"
+            target_result = "win"
+            stretch_result = "win_by_2+"
+
+        minimum_points = 1 if min_result == "draw" else 3
+        target_points = 3 if target_result == "win" else minimum_points
+        stretch_points = 3 if stretch_result.startswith("win") else target_points
+
+        running_min += minimum_points
+        running_target += target_points
+        running_stretch += stretch_points
+
+        plan_matches.append(
+            {
+                "match_number": idx,
+                "date": fixture["date"],
+                "home_away": fixture["home_away"],
+                "opponent": fixture["opponent"],
+                "opponent_position": pos,
+                "tier": tier,
+                "minimum_acceptable_result": min_result,
+                "target_result": target_result,
+                "stretch_result": stretch_result,
+                "minimum_points": minimum_points,
+                "target_points": target_points,
+                "stretch_points": stretch_points,
+                "cumulative_minimum_points": running_min,
+                "cumulative_target_points": running_target,
+                "cumulative_stretch_points": running_stretch,
+            }
+        )
+
+        if idx in checkpoints:
+            remaining_games = len(fixtures) - idx
+            # "Red line" = falling below minimum checkpoint by one point.
+            red_line_points = max(0, running_min - 1)
+            revised_required = max(0, required_points_target - red_line_points)
+            checkpoint_rows.append(
+                {
+                    "after_match": idx,
+                    "cumulative_minimum_points": running_min,
+                    "cumulative_target_points": running_target,
+                    "cumulative_stretch_points": running_stretch,
+                    "remaining_games": remaining_games,
+                    "red_line": {
+                        "trigger": f"if points <= {red_line_points} after match {idx}",
+                        "revised_required_points_in_remaining_games": revised_required,
+                        "required_ppg_in_remaining_games": round(
+                            revised_required / remaining_games, 2
+                        )
+                        if remaining_games
+                        else 0.0,
+                    },
+                }
+            )
+
+    return {
+        "target_points_from_run_in": required_points_target,
+        "matches": plan_matches,
+        "checkpoints": checkpoint_rows,
+    }
+
+
 def monte_carlo_top2_prob(
     standings: list[TeamSnapshot],
     focus: TeamSnapshot,
@@ -392,6 +486,7 @@ def main() -> None:
     form = derive_recent_form(rotation_matches)
 
     mc = monte_carlo_top2_prob(standings, focus, remaining=remaining, iterations=4000)
+    match_plan = build_match_plan(fixtures, required_points["realistic"])
 
     analysis = {
         "context": {
@@ -452,6 +547,7 @@ def main() -> None:
         },
         "form_and_trends": form,
         "scenario_matrix": scenario_matrix,
+        "match_plan": match_plan,
         "simulation": mc,
         "conclusions": {
             "realistic_top2_total_points": threshold_realistic,
@@ -468,6 +564,9 @@ def main() -> None:
 
     json_path = REPORTS_DIR / "rotation_promotion_analysis.json"
     json_path.write_text(json.dumps(analysis, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    match_plan_path = REPORTS_DIR / "rotation_match_plan.json"
+    match_plan_path.write_text(json.dumps(match_plan, ensure_ascii=False, indent=2), encoding="utf-8")
 
     csv_path = REPORTS_DIR / "rotation_promotion_scenarios.csv"
     with csv_path.open("w", newline="", encoding="utf-8") as f:
@@ -546,13 +645,40 @@ def main() -> None:
             "3. **Most promotion-like profile**: **7–8 wins**, **max 1–2 losses**, and positive GD swing of **+11 to +16** in run-in.",
             "4. **Rank-1/title path**: still mathematically possible but near-miracle; requires both elite Rotation run and significant leader slowdown.",
             "5. **Strategic priority order**: win must-win games first, then maximize points in direct six-pointers, while tightening defense to protect GD gains.",
+            "",
+            "## Match plan (run-in tactical targets)",
+            "| # | Date | H/A | Opponent | Tier | Min | Target | Stretch | Cum target |",
+            "|---:|---|:---:|---|---|---|---|---|---:|",
         ]
     )
+    for row in match_plan["matches"]:
+        md_lines.append(
+            f"| {row['match_number']} | {row['date']} | {row['home_away']} | {row['opponent']} | "
+            f"{row['tier']} | {row['minimum_acceptable_result']} | {row['target_result']} | "
+            f"{row['stretch_result']} | {row['cumulative_target_points']} |"
+        )
+
+    md_lines.extend(
+        [
+            "",
+            "### Cumulative checkpoints and red-line triggers",
+            "| After match | Cum min pts | Cum target pts | Remaining games | Red-line trigger | Revised points needed | Revised PPG needed |",
+            "|---:|---:|---:|---:|---|---:|---:|",
+        ]
+    )
+    for cp in match_plan["checkpoints"]:
+        md_lines.append(
+            f"| {cp['after_match']} | {cp['cumulative_minimum_points']} | {cp['cumulative_target_points']} | "
+            f"{cp['remaining_games']} | {cp['red_line']['trigger']} | "
+            f"{cp['red_line']['revised_required_points_in_remaining_games']} | "
+            f"{cp['red_line']['required_ppg_in_remaining_games']:.2f} |"
+        )
 
     md_path = REPORTS_DIR / "rotation_promotion_analysis.md"
     md_path.write_text("\n".join(md_lines) + "\n", encoding="utf-8")
 
     print(f"Wrote {json_path}")
+    print(f"Wrote {match_plan_path}")
     print(f"Wrote {csv_path}")
     print(f"Wrote {md_path}")
 
