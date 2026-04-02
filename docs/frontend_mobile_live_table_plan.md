@@ -1,0 +1,904 @@
+# Frontend Plan: Remaining Games Editor + Realistic Prefill + Live Table (Mobile-First)
+
+- Goal: deliver a practical V1 that you can open directly on your mobile browser, edit matchday results, and instantly see the updated table.
+- Primary constraint: keep implementation simple, transparent, and reproducible with your existing scrape outputs.
+- Primary success condition: every remaining fixture is prefilled with realistic scores and editable per matchday.
+
+---
+
+## 1. Product Objectives
+
+- Provide one-screen visibility of all remaining fixtures grouped by matchday.
+- Allow instant manual editing of each fixture result with minimal taps.
+- Render a live league table that updates immediately after each edit.
+- Use realistic baseline score prefill grounded in team statistics and historical context.
+- Support scenario workflow: baseline, optimistic, conservative, and custom user scenarios.
+- Run as a lightweight PWA so the app is usable from mobile home screen.
+- Keep data pipeline deterministic so reruns produce reproducible baseline outcomes.
+
+## 2. Why This Architecture Is the Easiest
+
+- Use React + Vite + TypeScript to keep dev speed high and bundle small.
+- Use local JSON files for read-only source data and localStorage for user edits.
+- Avoid backend in V1; no auth, no database, no deployment complexity.
+- Use a deterministic rules-based predictor instead of heavy ML infra.
+- Add optional scripts for data refresh and prediction regeneration from existing scraper outputs.
+- Deploy static files to any CDN host and open from phone immediately.
+
+## 3. Existing Repository Inputs You Should Reuse
+
+- Use output/standings.json as baseline table state and team inventory.
+- Use output/matchdays.json for fixture list, matchday grouping, and played/unplayed status.
+- Use output/match_details/*.json for historical match-level context and form windows.
+- Use output/top_scorers.json as optional signal for attack power (not mandatory for V1).
+- Use reports artifacts only for reference, not as source of truth for fixtures.
+
+## 4. Additional Derived Data Needed
+
+- Derive team season rates: GF/game, GA/game, points/game, win/draw/loss rates.
+- Derive home and away split rates: home GF/GA and away GF/GA.
+- Derive rolling form metrics for last 3, last 5, and last 8 matches.
+- Derive head-to-head summaries for each pairing where historical records exist.
+- Derive league averages: goals per match, home win rate, draw rate, away win rate.
+- Derive team strength indices for attack and defense normalization.
+
+## 5. Pairings Refresh and Data Freshness Strategy
+
+- Before generating prefill, run matchday scraper to ensure remaining pairings are current.
+- Create a compare script that detects fixture additions, removals, date changes, and home/away swaps.
+- If fixture ID changed but teams unchanged, map old prediction history and regenerate with updated kickoff.
+- If teams changed, invalidate previous baseline and recompute all affected matchday projections.
+- Store metadata file with scrape timestamp, command used, git commit SHA, and source URLs.
+- Expose data freshness in UI header: “Data snapshot: YYYY-MM-DD HH:mm UTC”.
+
+## 6. Prefill Model: Practical and Explainable
+
+- Compute expected goals for each side using weighted season and form components.
+- Base formula should blend attack strength, opponent defense weakness, and home advantage.
+- Cap adjustment magnitude so short-term streaks do not overfit recent noise.
+- Convert expected goals to integer predictions with controlled rounding rules.
+- Use confidence buckets derived from variance between strength metrics and model disagreement.
+- Attach short rationale text so each prediction is understandable in UI.
+- Run league-level calibration checks so total projected goals remain realistic.
+
+## 7. Suggested Formula (V1)
+
+- attack_strength_team = team_gf_per_game / league_avg_gf_per_team_game
+- defense_weakness_opp = opp_ga_per_game / league_avg_ga_per_team_game
+- form_attack_boost = weighted_recent_gf / season_gf (capped between 0.90 and 1.10)
+- form_defense_boost = weighted_recent_ga / season_ga (capped between 0.90 and 1.10)
+- home_factor = 1.08 to 1.15 based on observed league home effect
+- expected_home_goals = league_home_goal_base * attack_strength_home * defense_weakness_away * form_attack_boost_home * form_defense_boost_away * home_factor
+- expected_away_goals = league_away_goal_base * attack_strength_away * defense_weakness_home * form_attack_boost_away * form_defense_boost_home / home_factor
+- apply clamp range 0.2 to 4.5 on expected goals to prevent extreme outputs
+- projected_goals = integerization(expected_goals, method=stochastic_round_or_bankers_round)
+- confidence = high if |expected_home-expected_away| > threshold and low variance history exists
+
+## 8. Calibration and Validation Plan
+
+- Backtest on historical rounds by pretending each played match was unknown.
+- Measure outcome accuracy (H/D/A), goals MAE, and team-level bias.
+- Check if projected league goals per game deviates by more than ±7%.
+- Check if projected draw frequency is plausible versus historical draw frequency.
+- Tune weights manually and record every change in a config changelog.
+- Freeze v1 coefficients once metrics are stable across multiple windows.
+
+## 9. Frontend Information Architecture
+
+- Page 1: Matchdays (default) with grouped fixtures and inline score controls.
+- Page 2: Live Table with sorting, highlight of promotion zone, and rank deltas.
+- Page 3: Scenarios for save/load/duplicate/delete/export/import.
+- Page 4: Data & Settings with snapshot metadata and reset actions.
+- Persistent bottom navigation optimized for thumb reach on mobile devices.
+
+## 10. UX Details for Mobile
+
+- Use large tap targets (at least 44px) for + and - goal controls.
+- Allow direct numeric keyboard input for fast score editing.
+- Collapse matchday cards by default except current/next matchday.
+- Show quick action chips: Reset Matchday, Apply Baseline, Randomize Slightly.
+- Use sticky mini-table strip showing your focus team rank and points delta.
+- Use color-safe indicators for rank movement (up/down/flat) with icons and labels.
+
+## 11. Core Data Contracts (App Payload)
+
+- teams.json: canonical team IDs, names, aliases, and static metadata.
+- fixtures.json: all season fixtures with status played/unplayed and official scores where known.
+- prefill_predictions.json: one object per unplayed fixture with model output and rationale.
+- baseline_table.json: table state computed from official played results only.
+- scenario_template.json: default overrides object structure for local scenario state.
+- data_version.json: generated_at, source_commit, scraper_run_id, and model_version.
+
+## 12. Live Table Engine Rules
+
+- Priority of score source: official result > user override > model prefill.
+- Recalculate every team row from zero on each change to avoid drift bugs.
+- Use verified league tie-break rule order in comparator implementation.
+- Support filtering: full table, promotion zone, relegation zone, focus team.
+- Compute and display delta columns relative to official baseline.
+
+## 13. Scenario System Requirements
+
+- Auto-create Baseline scenario on first load from model prefill.
+- Support multiple custom scenarios with user-defined names.
+- Persist scenarios in localStorage with schema versioning.
+- Allow full export/import as JSON file for sharing between devices.
+- Offer one-tap reset to baseline and one-tap clear of all custom scenarios.
+
+## 14. Detailed Execution Checklist (600+ line backbone)
+
+### 14.1 Data Audit
+- [Data Audit C1T1] Validate JSON schema and required fields for standings, matchdays, and match details; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C1T2] Compute missing-value report and field-level null percentages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C1T3] Normalize team names to canonical IDs across all datasets; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C1T4] Detect duplicate fixtures and inconsistent fixture identifiers; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C1T5] Verify played/unplayed status consistency against score presence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C1T6] Create one merged fixture table sorted by matchday and kickoff; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C1T7] Generate sanity report for teams count, rounds count, and fixtures count; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C1T8] Store data-quality summary artifact in output/app_data/qa_report.json; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C2T1] Validate JSON schema and required fields for standings, matchdays, and match details; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C2T2] Compute missing-value report and field-level null percentages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C2T3] Normalize team names to canonical IDs across all datasets; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C2T4] Detect duplicate fixtures and inconsistent fixture identifiers; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C2T5] Verify played/unplayed status consistency against score presence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C2T6] Create one merged fixture table sorted by matchday and kickoff; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C2T7] Generate sanity report for teams count, rounds count, and fixtures count; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C2T8] Store data-quality summary artifact in output/app_data/qa_report.json; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C3T1] Validate JSON schema and required fields for standings, matchdays, and match details; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C3T2] Compute missing-value report and field-level null percentages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C3T3] Normalize team names to canonical IDs across all datasets; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C3T4] Detect duplicate fixtures and inconsistent fixture identifiers; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C3T5] Verify played/unplayed status consistency against score presence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C3T6] Create one merged fixture table sorted by matchday and kickoff; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C3T7] Generate sanity report for teams count, rounds count, and fixtures count; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C3T8] Store data-quality summary artifact in output/app_data/qa_report.json; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C4T1] Validate JSON schema and required fields for standings, matchdays, and match details; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C4T2] Compute missing-value report and field-level null percentages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C4T3] Normalize team names to canonical IDs across all datasets; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C4T4] Detect duplicate fixtures and inconsistent fixture identifiers; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C4T5] Verify played/unplayed status consistency against score presence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C4T6] Create one merged fixture table sorted by matchday and kickoff; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C4T7] Generate sanity report for teams count, rounds count, and fixtures count; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C4T8] Store data-quality summary artifact in output/app_data/qa_report.json; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C5T1] Validate JSON schema and required fields for standings, matchdays, and match details; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C5T2] Compute missing-value report and field-level null percentages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C5T3] Normalize team names to canonical IDs across all datasets; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C5T4] Detect duplicate fixtures and inconsistent fixture identifiers; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C5T5] Verify played/unplayed status consistency against score presence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C5T6] Create one merged fixture table sorted by matchday and kickoff; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C5T7] Generate sanity report for teams count, rounds count, and fixtures count; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C5T8] Store data-quality summary artifact in output/app_data/qa_report.json; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C6T1] Validate JSON schema and required fields for standings, matchdays, and match details; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C6T2] Compute missing-value report and field-level null percentages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C6T3] Normalize team names to canonical IDs across all datasets; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C6T4] Detect duplicate fixtures and inconsistent fixture identifiers; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C6T5] Verify played/unplayed status consistency against score presence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C6T6] Create one merged fixture table sorted by matchday and kickoff; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C6T7] Generate sanity report for teams count, rounds count, and fixtures count; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C6T8] Store data-quality summary artifact in output/app_data/qa_report.json; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C7T1] Validate JSON schema and required fields for standings, matchdays, and match details; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C7T2] Compute missing-value report and field-level null percentages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C7T3] Normalize team names to canonical IDs across all datasets; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C7T4] Detect duplicate fixtures and inconsistent fixture identifiers; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C7T5] Verify played/unplayed status consistency against score presence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C7T6] Create one merged fixture table sorted by matchday and kickoff; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C7T7] Generate sanity report for teams count, rounds count, and fixtures count; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C7T8] Store data-quality summary artifact in output/app_data/qa_report.json; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C8T1] Validate JSON schema and required fields for standings, matchdays, and match details; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C8T2] Compute missing-value report and field-level null percentages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C8T3] Normalize team names to canonical IDs across all datasets; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C8T4] Detect duplicate fixtures and inconsistent fixture identifiers; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C8T5] Verify played/unplayed status consistency against score presence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C8T6] Create one merged fixture table sorted by matchday and kickoff; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C8T7] Generate sanity report for teams count, rounds count, and fixtures count; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Data Audit C8T8] Store data-quality summary artifact in output/app_data/qa_report.json; acceptance: document output artifact, command used, and validation screenshot/log reference.
+
+### 14.2 Feature Engineering
+- [Feature Engineering C1T1] Calculate season GF/G, GA/G, points/G, and win/draw/loss rates per team; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C1T2] Calculate home-only and away-only performance rates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C1T3] Calculate rolling form features for last 3, 5, and 8 matches; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C1T4] Compute head-to-head aggregates for each fixture pairing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C1T5] Build opponent strength index from points and goal metrics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C1T6] Build attack and defense normalized strength values; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C1T7] Cap outlier influence with winsorization rules; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C1T8] Write derived feature table for predictor consumption; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C2T1] Calculate season GF/G, GA/G, points/G, and win/draw/loss rates per team; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C2T2] Calculate home-only and away-only performance rates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C2T3] Calculate rolling form features for last 3, 5, and 8 matches; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C2T4] Compute head-to-head aggregates for each fixture pairing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C2T5] Build opponent strength index from points and goal metrics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C2T6] Build attack and defense normalized strength values; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C2T7] Cap outlier influence with winsorization rules; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C2T8] Write derived feature table for predictor consumption; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C3T1] Calculate season GF/G, GA/G, points/G, and win/draw/loss rates per team; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C3T2] Calculate home-only and away-only performance rates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C3T3] Calculate rolling form features for last 3, 5, and 8 matches; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C3T4] Compute head-to-head aggregates for each fixture pairing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C3T5] Build opponent strength index from points and goal metrics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C3T6] Build attack and defense normalized strength values; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C3T7] Cap outlier influence with winsorization rules; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C3T8] Write derived feature table for predictor consumption; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C4T1] Calculate season GF/G, GA/G, points/G, and win/draw/loss rates per team; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C4T2] Calculate home-only and away-only performance rates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C4T3] Calculate rolling form features for last 3, 5, and 8 matches; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C4T4] Compute head-to-head aggregates for each fixture pairing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C4T5] Build opponent strength index from points and goal metrics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C4T6] Build attack and defense normalized strength values; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C4T7] Cap outlier influence with winsorization rules; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C4T8] Write derived feature table for predictor consumption; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C5T1] Calculate season GF/G, GA/G, points/G, and win/draw/loss rates per team; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C5T2] Calculate home-only and away-only performance rates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C5T3] Calculate rolling form features for last 3, 5, and 8 matches; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C5T4] Compute head-to-head aggregates for each fixture pairing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C5T5] Build opponent strength index from points and goal metrics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C5T6] Build attack and defense normalized strength values; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C5T7] Cap outlier influence with winsorization rules; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C5T8] Write derived feature table for predictor consumption; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C6T1] Calculate season GF/G, GA/G, points/G, and win/draw/loss rates per team; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C6T2] Calculate home-only and away-only performance rates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C6T3] Calculate rolling form features for last 3, 5, and 8 matches; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C6T4] Compute head-to-head aggregates for each fixture pairing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C6T5] Build opponent strength index from points and goal metrics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C6T6] Build attack and defense normalized strength values; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C6T7] Cap outlier influence with winsorization rules; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C6T8] Write derived feature table for predictor consumption; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C7T1] Calculate season GF/G, GA/G, points/G, and win/draw/loss rates per team; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C7T2] Calculate home-only and away-only performance rates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C7T3] Calculate rolling form features for last 3, 5, and 8 matches; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C7T4] Compute head-to-head aggregates for each fixture pairing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C7T5] Build opponent strength index from points and goal metrics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C7T6] Build attack and defense normalized strength values; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C7T7] Cap outlier influence with winsorization rules; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C7T8] Write derived feature table for predictor consumption; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C8T1] Calculate season GF/G, GA/G, points/G, and win/draw/loss rates per team; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C8T2] Calculate home-only and away-only performance rates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C8T3] Calculate rolling form features for last 3, 5, and 8 matches; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C8T4] Compute head-to-head aggregates for each fixture pairing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C8T5] Build opponent strength index from points and goal metrics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C8T6] Build attack and defense normalized strength values; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C8T7] Cap outlier influence with winsorization rules; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Feature Engineering C8T8] Write derived feature table for predictor consumption; acceptance: document output artifact, command used, and validation screenshot/log reference.
+
+### 14.3 Prediction Engine
+- [Prediction Engine C1T1] Implement deterministic expected-goals function with configurable weights; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C1T2] Implement confidence scoring logic with transparent thresholds; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C1T3] Implement scoreline integerization strategy with controlled randomness option; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C1T4] Attach rationale generator that references top 2-3 contributing factors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C1T5] Add global calibration pass for league-wide realism constraints; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C1T6] Add per-team calibration pass to reduce systematic bias; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C1T7] Generate prefill_predictions.json and summary diagnostics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C1T8] Persist model version and coefficient snapshot for reproducibility; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C2T1] Implement deterministic expected-goals function with configurable weights; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C2T2] Implement confidence scoring logic with transparent thresholds; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C2T3] Implement scoreline integerization strategy with controlled randomness option; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C2T4] Attach rationale generator that references top 2-3 contributing factors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C2T5] Add global calibration pass for league-wide realism constraints; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C2T6] Add per-team calibration pass to reduce systematic bias; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C2T7] Generate prefill_predictions.json and summary diagnostics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C2T8] Persist model version and coefficient snapshot for reproducibility; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C3T1] Implement deterministic expected-goals function with configurable weights; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C3T2] Implement confidence scoring logic with transparent thresholds; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C3T3] Implement scoreline integerization strategy with controlled randomness option; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C3T4] Attach rationale generator that references top 2-3 contributing factors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C3T5] Add global calibration pass for league-wide realism constraints; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C3T6] Add per-team calibration pass to reduce systematic bias; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C3T7] Generate prefill_predictions.json and summary diagnostics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C3T8] Persist model version and coefficient snapshot for reproducibility; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C4T1] Implement deterministic expected-goals function with configurable weights; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C4T2] Implement confidence scoring logic with transparent thresholds; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C4T3] Implement scoreline integerization strategy with controlled randomness option; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C4T4] Attach rationale generator that references top 2-3 contributing factors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C4T5] Add global calibration pass for league-wide realism constraints; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C4T6] Add per-team calibration pass to reduce systematic bias; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C4T7] Generate prefill_predictions.json and summary diagnostics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C4T8] Persist model version and coefficient snapshot for reproducibility; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C5T1] Implement deterministic expected-goals function with configurable weights; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C5T2] Implement confidence scoring logic with transparent thresholds; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C5T3] Implement scoreline integerization strategy with controlled randomness option; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C5T4] Attach rationale generator that references top 2-3 contributing factors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C5T5] Add global calibration pass for league-wide realism constraints; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C5T6] Add per-team calibration pass to reduce systematic bias; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C5T7] Generate prefill_predictions.json and summary diagnostics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C5T8] Persist model version and coefficient snapshot for reproducibility; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C6T1] Implement deterministic expected-goals function with configurable weights; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C6T2] Implement confidence scoring logic with transparent thresholds; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C6T3] Implement scoreline integerization strategy with controlled randomness option; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C6T4] Attach rationale generator that references top 2-3 contributing factors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C6T5] Add global calibration pass for league-wide realism constraints; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C6T6] Add per-team calibration pass to reduce systematic bias; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C6T7] Generate prefill_predictions.json and summary diagnostics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C6T8] Persist model version and coefficient snapshot for reproducibility; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C7T1] Implement deterministic expected-goals function with configurable weights; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C7T2] Implement confidence scoring logic with transparent thresholds; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C7T3] Implement scoreline integerization strategy with controlled randomness option; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C7T4] Attach rationale generator that references top 2-3 contributing factors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C7T5] Add global calibration pass for league-wide realism constraints; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C7T6] Add per-team calibration pass to reduce systematic bias; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C7T7] Generate prefill_predictions.json and summary diagnostics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C7T8] Persist model version and coefficient snapshot for reproducibility; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C8T1] Implement deterministic expected-goals function with configurable weights; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C8T2] Implement confidence scoring logic with transparent thresholds; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C8T3] Implement scoreline integerization strategy with controlled randomness option; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C8T4] Attach rationale generator that references top 2-3 contributing factors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C8T5] Add global calibration pass for league-wide realism constraints; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C8T6] Add per-team calibration pass to reduce systematic bias; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C8T7] Generate prefill_predictions.json and summary diagnostics; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Prediction Engine C8T8] Persist model version and coefficient snapshot for reproducibility; acceptance: document output artifact, command used, and validation screenshot/log reference.
+
+### 14.4 Frontend Core
+- [Frontend Core C1T1] Create Vite React TypeScript app scaffold inside frontend/; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C1T2] Implement shared types for Team Fixture Prediction TableRow and Scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C1T3] Implement app store for fixtures predictions overrides and settings; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C1T4] Implement data loader from public/data payload files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C1T5] Implement fallback error screens for missing or malformed data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C1T6] Implement reusable numeric score input with mobile keyboard support; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C1T7] Implement match row card with quick increment decrement controls; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C1T8] Implement matchday accordion with edit counters and reset actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C2T1] Create Vite React TypeScript app scaffold inside frontend/; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C2T2] Implement shared types for Team Fixture Prediction TableRow and Scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C2T3] Implement app store for fixtures predictions overrides and settings; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C2T4] Implement data loader from public/data payload files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C2T5] Implement fallback error screens for missing or malformed data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C2T6] Implement reusable numeric score input with mobile keyboard support; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C2T7] Implement match row card with quick increment decrement controls; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C2T8] Implement matchday accordion with edit counters and reset actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C3T1] Create Vite React TypeScript app scaffold inside frontend/; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C3T2] Implement shared types for Team Fixture Prediction TableRow and Scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C3T3] Implement app store for fixtures predictions overrides and settings; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C3T4] Implement data loader from public/data payload files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C3T5] Implement fallback error screens for missing or malformed data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C3T6] Implement reusable numeric score input with mobile keyboard support; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C3T7] Implement match row card with quick increment decrement controls; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C3T8] Implement matchday accordion with edit counters and reset actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C4T1] Create Vite React TypeScript app scaffold inside frontend/; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C4T2] Implement shared types for Team Fixture Prediction TableRow and Scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C4T3] Implement app store for fixtures predictions overrides and settings; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C4T4] Implement data loader from public/data payload files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C4T5] Implement fallback error screens for missing or malformed data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C4T6] Implement reusable numeric score input with mobile keyboard support; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C4T7] Implement match row card with quick increment decrement controls; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C4T8] Implement matchday accordion with edit counters and reset actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C5T1] Create Vite React TypeScript app scaffold inside frontend/; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C5T2] Implement shared types for Team Fixture Prediction TableRow and Scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C5T3] Implement app store for fixtures predictions overrides and settings; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C5T4] Implement data loader from public/data payload files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C5T5] Implement fallback error screens for missing or malformed data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C5T6] Implement reusable numeric score input with mobile keyboard support; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C5T7] Implement match row card with quick increment decrement controls; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C5T8] Implement matchday accordion with edit counters and reset actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C6T1] Create Vite React TypeScript app scaffold inside frontend/; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C6T2] Implement shared types for Team Fixture Prediction TableRow and Scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C6T3] Implement app store for fixtures predictions overrides and settings; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C6T4] Implement data loader from public/data payload files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C6T5] Implement fallback error screens for missing or malformed data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C6T6] Implement reusable numeric score input with mobile keyboard support; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C6T7] Implement match row card with quick increment decrement controls; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C6T8] Implement matchday accordion with edit counters and reset actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C7T1] Create Vite React TypeScript app scaffold inside frontend/; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C7T2] Implement shared types for Team Fixture Prediction TableRow and Scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C7T3] Implement app store for fixtures predictions overrides and settings; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C7T4] Implement data loader from public/data payload files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C7T5] Implement fallback error screens for missing or malformed data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C7T6] Implement reusable numeric score input with mobile keyboard support; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C7T7] Implement match row card with quick increment decrement controls; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C7T8] Implement matchday accordion with edit counters and reset actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C8T1] Create Vite React TypeScript app scaffold inside frontend/; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C8T2] Implement shared types for Team Fixture Prediction TableRow and Scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C8T3] Implement app store for fixtures predictions overrides and settings; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C8T4] Implement data loader from public/data payload files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C8T5] Implement fallback error screens for missing or malformed data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C8T6] Implement reusable numeric score input with mobile keyboard support; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C8T7] Implement match row card with quick increment decrement controls; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Frontend Core C8T8] Implement matchday accordion with edit counters and reset actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+
+### 14.5 Live Table UI
+- [Live Table UI C1T1] Implement pure function to compute table from effective results; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C1T2] Implement sortable table with sticky headers and compact rows; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C1T3] Implement promotion/relegation zone highlighting styles; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C1T4] Implement baseline delta badges for rank and points; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C1T5] Implement focus-team pin mode for quick mobile checks; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C1T6] Implement tie-break explanation drawer in table header; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C1T7] Implement table export to CSV for scenario snapshot; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C1T8] Implement loading skeleton and empty state components; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C2T1] Implement pure function to compute table from effective results; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C2T2] Implement sortable table with sticky headers and compact rows; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C2T3] Implement promotion/relegation zone highlighting styles; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C2T4] Implement baseline delta badges for rank and points; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C2T5] Implement focus-team pin mode for quick mobile checks; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C2T6] Implement tie-break explanation drawer in table header; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C2T7] Implement table export to CSV for scenario snapshot; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C2T8] Implement loading skeleton and empty state components; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C3T1] Implement pure function to compute table from effective results; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C3T2] Implement sortable table with sticky headers and compact rows; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C3T3] Implement promotion/relegation zone highlighting styles; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C3T4] Implement baseline delta badges for rank and points; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C3T5] Implement focus-team pin mode for quick mobile checks; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C3T6] Implement tie-break explanation drawer in table header; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C3T7] Implement table export to CSV for scenario snapshot; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C3T8] Implement loading skeleton and empty state components; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C4T1] Implement pure function to compute table from effective results; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C4T2] Implement sortable table with sticky headers and compact rows; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C4T3] Implement promotion/relegation zone highlighting styles; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C4T4] Implement baseline delta badges for rank and points; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C4T5] Implement focus-team pin mode for quick mobile checks; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C4T6] Implement tie-break explanation drawer in table header; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C4T7] Implement table export to CSV for scenario snapshot; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C4T8] Implement loading skeleton and empty state components; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C5T1] Implement pure function to compute table from effective results; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C5T2] Implement sortable table with sticky headers and compact rows; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C5T3] Implement promotion/relegation zone highlighting styles; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C5T4] Implement baseline delta badges for rank and points; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C5T5] Implement focus-team pin mode for quick mobile checks; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C5T6] Implement tie-break explanation drawer in table header; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C5T7] Implement table export to CSV for scenario snapshot; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C5T8] Implement loading skeleton and empty state components; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C6T1] Implement pure function to compute table from effective results; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C6T2] Implement sortable table with sticky headers and compact rows; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C6T3] Implement promotion/relegation zone highlighting styles; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C6T4] Implement baseline delta badges for rank and points; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C6T5] Implement focus-team pin mode for quick mobile checks; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C6T6] Implement tie-break explanation drawer in table header; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C6T7] Implement table export to CSV for scenario snapshot; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C6T8] Implement loading skeleton and empty state components; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C7T1] Implement pure function to compute table from effective results; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C7T2] Implement sortable table with sticky headers and compact rows; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C7T3] Implement promotion/relegation zone highlighting styles; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C7T4] Implement baseline delta badges for rank and points; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C7T5] Implement focus-team pin mode for quick mobile checks; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C7T6] Implement tie-break explanation drawer in table header; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C7T7] Implement table export to CSV for scenario snapshot; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C7T8] Implement loading skeleton and empty state components; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C8T1] Implement pure function to compute table from effective results; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C8T2] Implement sortable table with sticky headers and compact rows; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C8T3] Implement promotion/relegation zone highlighting styles; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C8T4] Implement baseline delta badges for rank and points; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C8T5] Implement focus-team pin mode for quick mobile checks; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C8T6] Implement tie-break explanation drawer in table header; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C8T7] Implement table export to CSV for scenario snapshot; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Live Table UI C8T8] Implement loading skeleton and empty state components; acceptance: document output artifact, command used, and validation screenshot/log reference.
+
+### 14.6 Scenario UX
+- [Scenario UX C1T1] Implement scenario create rename duplicate delete actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C1T2] Implement scenario autosave and optimistic UI updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C1T3] Implement import/export JSON action sheet for mobile; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C1T4] Implement unsaved-changes guard when switching scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C1T5] Implement one-tap reset match reset matchday reset all; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C1T6] Implement compare view between two scenarios; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C1T7] Implement scenario metadata panel with timestamps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C1T8] Implement scenario validation on import with clear error messages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C2T1] Implement scenario create rename duplicate delete actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C2T2] Implement scenario autosave and optimistic UI updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C2T3] Implement import/export JSON action sheet for mobile; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C2T4] Implement unsaved-changes guard when switching scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C2T5] Implement one-tap reset match reset matchday reset all; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C2T6] Implement compare view between two scenarios; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C2T7] Implement scenario metadata panel with timestamps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C2T8] Implement scenario validation on import with clear error messages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C3T1] Implement scenario create rename duplicate delete actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C3T2] Implement scenario autosave and optimistic UI updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C3T3] Implement import/export JSON action sheet for mobile; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C3T4] Implement unsaved-changes guard when switching scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C3T5] Implement one-tap reset match reset matchday reset all; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C3T6] Implement compare view between two scenarios; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C3T7] Implement scenario metadata panel with timestamps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C3T8] Implement scenario validation on import with clear error messages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C4T1] Implement scenario create rename duplicate delete actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C4T2] Implement scenario autosave and optimistic UI updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C4T3] Implement import/export JSON action sheet for mobile; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C4T4] Implement unsaved-changes guard when switching scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C4T5] Implement one-tap reset match reset matchday reset all; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C4T6] Implement compare view between two scenarios; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C4T7] Implement scenario metadata panel with timestamps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C4T8] Implement scenario validation on import with clear error messages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C5T1] Implement scenario create rename duplicate delete actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C5T2] Implement scenario autosave and optimistic UI updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C5T3] Implement import/export JSON action sheet for mobile; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C5T4] Implement unsaved-changes guard when switching scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C5T5] Implement one-tap reset match reset matchday reset all; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C5T6] Implement compare view between two scenarios; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C5T7] Implement scenario metadata panel with timestamps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C5T8] Implement scenario validation on import with clear error messages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C6T1] Implement scenario create rename duplicate delete actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C6T2] Implement scenario autosave and optimistic UI updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C6T3] Implement import/export JSON action sheet for mobile; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C6T4] Implement unsaved-changes guard when switching scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C6T5] Implement one-tap reset match reset matchday reset all; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C6T6] Implement compare view between two scenarios; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C6T7] Implement scenario metadata panel with timestamps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C6T8] Implement scenario validation on import with clear error messages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C7T1] Implement scenario create rename duplicate delete actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C7T2] Implement scenario autosave and optimistic UI updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C7T3] Implement import/export JSON action sheet for mobile; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C7T4] Implement unsaved-changes guard when switching scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C7T5] Implement one-tap reset match reset matchday reset all; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C7T6] Implement compare view between two scenarios; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C7T7] Implement scenario metadata panel with timestamps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C7T8] Implement scenario validation on import with clear error messages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C8T1] Implement scenario create rename duplicate delete actions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C8T2] Implement scenario autosave and optimistic UI updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C8T3] Implement import/export JSON action sheet for mobile; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C8T4] Implement unsaved-changes guard when switching scenario; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C8T5] Implement one-tap reset match reset matchday reset all; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C8T6] Implement compare view between two scenarios; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C8T7] Implement scenario metadata panel with timestamps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Scenario UX C8T8] Implement scenario validation on import with clear error messages; acceptance: document output artifact, command used, and validation screenshot/log reference.
+
+### 14.7 Mobile & PWA
+- [Mobile & PWA C1T1] Set viewport and safe-area CSS for notched devices; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C1T2] Optimize tap targets spacing and font sizing for handheld use; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C1T3] Add service worker for static caching and offline shell; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C1T4] Add app manifest with icon set and standalone mode; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C1T5] Add pull-to-refresh safe behavior and reload prompt; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C1T6] Optimize initial bundle size and route-level code splitting; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C1T7] Test on Android Chrome and iOS Safari behaviors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C1T8] Document install-to-home-screen steps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C2T1] Set viewport and safe-area CSS for notched devices; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C2T2] Optimize tap targets spacing and font sizing for handheld use; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C2T3] Add service worker for static caching and offline shell; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C2T4] Add app manifest with icon set and standalone mode; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C2T5] Add pull-to-refresh safe behavior and reload prompt; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C2T6] Optimize initial bundle size and route-level code splitting; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C2T7] Test on Android Chrome and iOS Safari behaviors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C2T8] Document install-to-home-screen steps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C3T1] Set viewport and safe-area CSS for notched devices; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C3T2] Optimize tap targets spacing and font sizing for handheld use; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C3T3] Add service worker for static caching and offline shell; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C3T4] Add app manifest with icon set and standalone mode; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C3T5] Add pull-to-refresh safe behavior and reload prompt; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C3T6] Optimize initial bundle size and route-level code splitting; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C3T7] Test on Android Chrome and iOS Safari behaviors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C3T8] Document install-to-home-screen steps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C4T1] Set viewport and safe-area CSS for notched devices; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C4T2] Optimize tap targets spacing and font sizing for handheld use; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C4T3] Add service worker for static caching and offline shell; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C4T4] Add app manifest with icon set and standalone mode; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C4T5] Add pull-to-refresh safe behavior and reload prompt; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C4T6] Optimize initial bundle size and route-level code splitting; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C4T7] Test on Android Chrome and iOS Safari behaviors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C4T8] Document install-to-home-screen steps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C5T1] Set viewport and safe-area CSS for notched devices; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C5T2] Optimize tap targets spacing and font sizing for handheld use; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C5T3] Add service worker for static caching and offline shell; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C5T4] Add app manifest with icon set and standalone mode; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C5T5] Add pull-to-refresh safe behavior and reload prompt; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C5T6] Optimize initial bundle size and route-level code splitting; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C5T7] Test on Android Chrome and iOS Safari behaviors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C5T8] Document install-to-home-screen steps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C6T1] Set viewport and safe-area CSS for notched devices; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C6T2] Optimize tap targets spacing and font sizing for handheld use; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C6T3] Add service worker for static caching and offline shell; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C6T4] Add app manifest with icon set and standalone mode; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C6T5] Add pull-to-refresh safe behavior and reload prompt; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C6T6] Optimize initial bundle size and route-level code splitting; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C6T7] Test on Android Chrome and iOS Safari behaviors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C6T8] Document install-to-home-screen steps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C7T1] Set viewport and safe-area CSS for notched devices; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C7T2] Optimize tap targets spacing and font sizing for handheld use; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C7T3] Add service worker for static caching and offline shell; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C7T4] Add app manifest with icon set and standalone mode; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C7T5] Add pull-to-refresh safe behavior and reload prompt; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C7T6] Optimize initial bundle size and route-level code splitting; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C7T7] Test on Android Chrome and iOS Safari behaviors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C7T8] Document install-to-home-screen steps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C8T1] Set viewport and safe-area CSS for notched devices; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C8T2] Optimize tap targets spacing and font sizing for handheld use; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C8T3] Add service worker for static caching and offline shell; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C8T4] Add app manifest with icon set and standalone mode; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C8T5] Add pull-to-refresh safe behavior and reload prompt; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C8T6] Optimize initial bundle size and route-level code splitting; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C8T7] Test on Android Chrome and iOS Safari behaviors; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Mobile & PWA C8T8] Document install-to-home-screen steps; acceptance: document output artifact, command used, and validation screenshot/log reference.
+
+### 14.8 Testing & Quality
+- [Testing & Quality C1T1] Add unit tests for table calculation and tie-break logic; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C1T2] Add unit tests for prediction formula boundary conditions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C1T3] Add schema tests for all generated app data files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C1T4] Add integration tests for edit flow and live table updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C1T5] Add regression tests for scenario import and export cycle; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C1T6] Add lint and typecheck scripts in frontend package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C1T7] Add performance budget checks for mobile Lighthouse score; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C1T8] Add release checklist with smoke-test commands; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C2T1] Add unit tests for table calculation and tie-break logic; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C2T2] Add unit tests for prediction formula boundary conditions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C2T3] Add schema tests for all generated app data files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C2T4] Add integration tests for edit flow and live table updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C2T5] Add regression tests for scenario import and export cycle; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C2T6] Add lint and typecheck scripts in frontend package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C2T7] Add performance budget checks for mobile Lighthouse score; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C2T8] Add release checklist with smoke-test commands; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C3T1] Add unit tests for table calculation and tie-break logic; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C3T2] Add unit tests for prediction formula boundary conditions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C3T3] Add schema tests for all generated app data files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C3T4] Add integration tests for edit flow and live table updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C3T5] Add regression tests for scenario import and export cycle; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C3T6] Add lint and typecheck scripts in frontend package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C3T7] Add performance budget checks for mobile Lighthouse score; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C3T8] Add release checklist with smoke-test commands; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C4T1] Add unit tests for table calculation and tie-break logic; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C4T2] Add unit tests for prediction formula boundary conditions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C4T3] Add schema tests for all generated app data files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C4T4] Add integration tests for edit flow and live table updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C4T5] Add regression tests for scenario import and export cycle; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C4T6] Add lint and typecheck scripts in frontend package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C4T7] Add performance budget checks for mobile Lighthouse score; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C4T8] Add release checklist with smoke-test commands; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C5T1] Add unit tests for table calculation and tie-break logic; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C5T2] Add unit tests for prediction formula boundary conditions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C5T3] Add schema tests for all generated app data files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C5T4] Add integration tests for edit flow and live table updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C5T5] Add regression tests for scenario import and export cycle; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C5T6] Add lint and typecheck scripts in frontend package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C5T7] Add performance budget checks for mobile Lighthouse score; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C5T8] Add release checklist with smoke-test commands; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C6T1] Add unit tests for table calculation and tie-break logic; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C6T2] Add unit tests for prediction formula boundary conditions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C6T3] Add schema tests for all generated app data files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C6T4] Add integration tests for edit flow and live table updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C6T5] Add regression tests for scenario import and export cycle; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C6T6] Add lint and typecheck scripts in frontend package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C6T7] Add performance budget checks for mobile Lighthouse score; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C6T8] Add release checklist with smoke-test commands; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C7T1] Add unit tests for table calculation and tie-break logic; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C7T2] Add unit tests for prediction formula boundary conditions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C7T3] Add schema tests for all generated app data files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C7T4] Add integration tests for edit flow and live table updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C7T5] Add regression tests for scenario import and export cycle; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C7T6] Add lint and typecheck scripts in frontend package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C7T7] Add performance budget checks for mobile Lighthouse score; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C7T8] Add release checklist with smoke-test commands; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C8T1] Add unit tests for table calculation and tie-break logic; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C8T2] Add unit tests for prediction formula boundary conditions; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C8T3] Add schema tests for all generated app data files; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C8T4] Add integration tests for edit flow and live table updates; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C8T5] Add regression tests for scenario import and export cycle; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C8T6] Add lint and typecheck scripts in frontend package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C8T7] Add performance budget checks for mobile Lighthouse score; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Testing & Quality C8T8] Add release checklist with smoke-test commands; acceptance: document output artifact, command used, and validation screenshot/log reference.
+
+### 14.9 Release Ops
+- [Release Ops C1T1] Add script to build app dataset from output/ JSON sources; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C1T2] Add script to copy data payload into frontend/public/data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C1T3] Add script to build static frontend and verify artifact size; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C1T4] Add static hosting config for cache headers and SPA routing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C1T5] Add version banner in UI from data_version and app package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C1T6] Add changelog entry template for model coefficient changes; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C1T7] Add rollback instructions for dataset and app release; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C1T8] Add operations note for weekly data refresh cadence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C2T1] Add script to build app dataset from output/ JSON sources; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C2T2] Add script to copy data payload into frontend/public/data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C2T3] Add script to build static frontend and verify artifact size; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C2T4] Add static hosting config for cache headers and SPA routing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C2T5] Add version banner in UI from data_version and app package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C2T6] Add changelog entry template for model coefficient changes; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C2T7] Add rollback instructions for dataset and app release; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C2T8] Add operations note for weekly data refresh cadence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C3T1] Add script to build app dataset from output/ JSON sources; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C3T2] Add script to copy data payload into frontend/public/data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C3T3] Add script to build static frontend and verify artifact size; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C3T4] Add static hosting config for cache headers and SPA routing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C3T5] Add version banner in UI from data_version and app package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C3T6] Add changelog entry template for model coefficient changes; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C3T7] Add rollback instructions for dataset and app release; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C3T8] Add operations note for weekly data refresh cadence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C4T1] Add script to build app dataset from output/ JSON sources; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C4T2] Add script to copy data payload into frontend/public/data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C4T3] Add script to build static frontend and verify artifact size; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C4T4] Add static hosting config for cache headers and SPA routing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C4T5] Add version banner in UI from data_version and app package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C4T6] Add changelog entry template for model coefficient changes; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C4T7] Add rollback instructions for dataset and app release; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C4T8] Add operations note for weekly data refresh cadence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C5T1] Add script to build app dataset from output/ JSON sources; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C5T2] Add script to copy data payload into frontend/public/data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C5T3] Add script to build static frontend and verify artifact size; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C5T4] Add static hosting config for cache headers and SPA routing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C5T5] Add version banner in UI from data_version and app package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C5T6] Add changelog entry template for model coefficient changes; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C5T7] Add rollback instructions for dataset and app release; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C5T8] Add operations note for weekly data refresh cadence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C6T1] Add script to build app dataset from output/ JSON sources; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C6T2] Add script to copy data payload into frontend/public/data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C6T3] Add script to build static frontend and verify artifact size; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C6T4] Add static hosting config for cache headers and SPA routing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C6T5] Add version banner in UI from data_version and app package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C6T6] Add changelog entry template for model coefficient changes; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C6T7] Add rollback instructions for dataset and app release; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C6T8] Add operations note for weekly data refresh cadence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C7T1] Add script to build app dataset from output/ JSON sources; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C7T2] Add script to copy data payload into frontend/public/data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C7T3] Add script to build static frontend and verify artifact size; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C7T4] Add static hosting config for cache headers and SPA routing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C7T5] Add version banner in UI from data_version and app package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C7T6] Add changelog entry template for model coefficient changes; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C7T7] Add rollback instructions for dataset and app release; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C7T8] Add operations note for weekly data refresh cadence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C8T1] Add script to build app dataset from output/ JSON sources; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C8T2] Add script to copy data payload into frontend/public/data; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C8T3] Add script to build static frontend and verify artifact size; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C8T4] Add static hosting config for cache headers and SPA routing; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C8T5] Add version banner in UI from data_version and app package; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C8T6] Add changelog entry template for model coefficient changes; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C8T7] Add rollback instructions for dataset and app release; acceptance: document output artifact, command used, and validation screenshot/log reference.
+- [Release Ops C8T8] Add operations note for weekly data refresh cadence; acceptance: document output artifact, command used, and validation screenshot/log reference.
+
+## 15. Command-by-Command Execution Plan
+
+- Command step 001: run `python scraper.py --matchdays`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 002: run `python scraper.py --standings`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 003: run `python scraper.py --match-details --resume`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 004: run `python scripts/build_app_dataset.py --from output --to output/app_data`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 005: run `python scripts/build_prefill_predictions.py --data output/app_data --model v1`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 006: run `cd frontend && npm install`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 007: run `cd frontend && npm run dev`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 008: run `cd frontend && npm run typecheck`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 009: run `cd frontend && npm run test`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 010: run `cd frontend && npm run build`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 011: run `python scraper.py --matchdays`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 012: run `python scraper.py --standings`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 013: run `python scraper.py --match-details --resume`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 014: run `python scripts/build_app_dataset.py --from output --to output/app_data`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 015: run `python scripts/build_prefill_predictions.py --data output/app_data --model v1`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 016: run `cd frontend && npm install`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 017: run `cd frontend && npm run dev`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 018: run `cd frontend && npm run typecheck`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 019: run `cd frontend && npm run test`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 020: run `cd frontend && npm run build`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 021: run `python scraper.py --matchdays`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 022: run `python scraper.py --standings`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 023: run `python scraper.py --match-details --resume`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 024: run `python scripts/build_app_dataset.py --from output --to output/app_data`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 025: run `python scripts/build_prefill_predictions.py --data output/app_data --model v1`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 026: run `cd frontend && npm install`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 027: run `cd frontend && npm run dev`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 028: run `cd frontend && npm run typecheck`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 029: run `cd frontend && npm run test`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 030: run `cd frontend && npm run build`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 031: run `python scraper.py --matchdays`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 032: run `python scraper.py --standings`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 033: run `python scraper.py --match-details --resume`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 034: run `python scripts/build_app_dataset.py --from output --to output/app_data`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 035: run `python scripts/build_prefill_predictions.py --data output/app_data --model v1`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 036: run `cd frontend && npm install`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 037: run `cd frontend && npm run dev`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 038: run `cd frontend && npm run typecheck`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 039: run `cd frontend && npm run test`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 040: run `cd frontend && npm run build`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 041: run `python scraper.py --matchdays`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 042: run `python scraper.py --standings`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 043: run `python scraper.py --match-details --resume`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 044: run `python scripts/build_app_dataset.py --from output --to output/app_data`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 045: run `python scripts/build_prefill_predictions.py --data output/app_data --model v1`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 046: run `cd frontend && npm install`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 047: run `cd frontend && npm run dev`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 048: run `cd frontend && npm run typecheck`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 049: run `cd frontend && npm run test`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 050: run `cd frontend && npm run build`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 051: run `python scraper.py --matchdays`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 052: run `python scraper.py --standings`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 053: run `python scraper.py --match-details --resume`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 054: run `python scripts/build_app_dataset.py --from output --to output/app_data`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 055: run `python scripts/build_prefill_predictions.py --data output/app_data --model v1`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 056: run `cd frontend && npm install`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 057: run `cd frontend && npm run dev`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 058: run `cd frontend && npm run typecheck`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 059: run `cd frontend && npm run test`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 060: run `cd frontend && npm run build`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 061: run `python scraper.py --matchdays`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 062: run `python scraper.py --standings`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 063: run `python scraper.py --match-details --resume`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 064: run `python scripts/build_app_dataset.py --from output --to output/app_data`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 065: run `python scripts/build_prefill_predictions.py --data output/app_data --model v1`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 066: run `cd frontend && npm install`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 067: run `cd frontend && npm run dev`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 068: run `cd frontend && npm run typecheck`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 069: run `cd frontend && npm run test`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 070: run `cd frontend && npm run build`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 071: run `python scraper.py --matchdays`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 072: run `python scraper.py --standings`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 073: run `python scraper.py --match-details --resume`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 074: run `python scripts/build_app_dataset.py --from output --to output/app_data`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 075: run `python scripts/build_prefill_predictions.py --data output/app_data --model v1`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 076: run `cd frontend && npm install`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 077: run `cd frontend && npm run dev`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 078: run `cd frontend && npm run typecheck`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 079: run `cd frontend && npm run test`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 080: run `cd frontend && npm run build`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 081: run `python scraper.py --matchdays`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 082: run `python scraper.py --standings`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 083: run `python scraper.py --match-details --resume`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 084: run `python scripts/build_app_dataset.py --from output --to output/app_data`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 085: run `python scripts/build_prefill_predictions.py --data output/app_data --model v1`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 086: run `cd frontend && npm install`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 087: run `cd frontend && npm run dev`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 088: run `cd frontend && npm run typecheck`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 089: run `cd frontend && npm run test`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 090: run `cd frontend && npm run build`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 091: run `python scraper.py --matchdays`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 092: run `python scraper.py --standings`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 093: run `python scraper.py --match-details --resume`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 094: run `python scripts/build_app_dataset.py --from output --to output/app_data`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 095: run `python scripts/build_prefill_predictions.py --data output/app_data --model v1`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 096: run `cd frontend && npm install`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 097: run `cd frontend && npm run dev`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 098: run `cd frontend && npm run typecheck`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 099: run `cd frontend && npm run test`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 100: run `cd frontend && npm run build`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 101: run `python scraper.py --matchdays`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 102: run `python scraper.py --standings`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 103: run `python scraper.py --match-details --resume`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 104: run `python scripts/build_app_dataset.py --from output --to output/app_data`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 105: run `python scripts/build_prefill_predictions.py --data output/app_data --model v1`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 106: run `cd frontend && npm install`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 107: run `cd frontend && npm run dev`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 108: run `cd frontend && npm run typecheck`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 109: run `cd frontend && npm run test`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 110: run `cd frontend && npm run build`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 111: run `python scraper.py --matchdays`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 112: run `python scraper.py --standings`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 113: run `python scraper.py --match-details --resume`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 114: run `python scripts/build_app_dataset.py --from output --to output/app_data`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 115: run `python scripts/build_prefill_predictions.py --data output/app_data --model v1`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 116: run `cd frontend && npm install`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 117: run `cd frontend && npm run dev`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 118: run `cd frontend && npm run typecheck`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 119: run `cd frontend && npm run test`; verify expected artifacts/logs and record deviations in rollout notes.
+- Command step 120: run `cd frontend && npm run build`; verify expected artifacts/logs and record deviations in rollout notes.
+
+## 16. Risk Register (Concrete)
+
+- Risk: Data source obfuscation causes partial score availability for some matches.
+- Mitigation: add explicit validator, monitoring check, and user-facing disclaimer where relevant.
+- Risk: Team name mismatches break joins between standings and fixtures.
+- Mitigation: add explicit validator, monitoring check, and user-facing disclaimer where relevant.
+- Risk: Fixture rescheduling invalidates previously generated baseline predictions.
+- Mitigation: add explicit validator, monitoring check, and user-facing disclaimer where relevant.
+- Risk: League tie-break rules interpreted incorrectly can produce wrong rankings.
+- Mitigation: add explicit validator, monitoring check, and user-facing disclaimer where relevant.
+- Risk: Mobile Safari numeric input quirks can degrade edit usability.
+- Mitigation: add explicit validator, monitoring check, and user-facing disclaimer where relevant.
+- Risk: LocalStorage quota limits may affect many saved scenarios with history.
+- Mitigation: add explicit validator, monitoring check, and user-facing disclaimer where relevant.
+- Risk: Overly aggressive model calibration may produce unrealistic draw rates.
+- Mitigation: add explicit validator, monitoring check, and user-facing disclaimer where relevant.
+- Risk: Users may mistake baseline prefill as official prediction certainty.
+- Mitigation: add explicit validator, monitoring check, and user-facing disclaimer where relevant.
+
+## 17. Definition of Done (Strict)
+
+- All remaining fixtures render in matchday groups without missing teams.
+- All fixtures have editable result inputs and reset controls.
+- Live table updates correctly on each single-score change.
+- Baseline scenario loads with prefill results and rationale badges.
+- At least three named scenarios can be saved and restored on mobile.
+- Export/import roundtrip reproduces same table output deterministically.
+- Mobile Lighthouse performance and accessibility are acceptable for V1.
+- Data refresh script and prediction build script run end-to-end successfully.
+- Documentation includes commands, assumptions, and known limitations.
+
+## 18. Fastest Path Recommendation (If You Want Results Quickly)
+
+- Day 1: implement dataset builder and simple deterministic prefill without head-to-head.
+- Day 2: build Matchdays page + live table computation + local scenario save.
+- Day 3: add scenario manager, reset actions, and baseline deltas.
+- Day 4: mobile polish, PWA manifest, smoke tests, deploy static hosting.
+- Day 5: optional calibration improvements and head-to-head influence.
+
+## 19. Notes on Realism vs Complexity Tradeoff
+
+- Prefer transparent weighted formulas over black-box models for maintainability.
+- Keep coefficient count low in V1 so behavior remains intuitive.
+- Use calibration gates to enforce league-level realism constraints.
+- Allow manual edits to capture subjective knowledge that model cannot infer.
+- Expose confidence as qualitative guidance, not certainty.
+
+## 20. Final Implementation Starter Checklist
+
+- Starter 1: Create frontend scaffold and commit initial structure.
+- Starter 2: Create app data builder script with schema validation.
+- Starter 3: Create prediction generator script with configurable weights.
+- Starter 4: Wire prefill payload into Matchdays UI and editable controls.
+- Starter 5: Wire live table recalculation and tie-break comparator.
+- Starter 6: Add scenario persistence and import/export.
+- Starter 7: Add mobile and PWA polish.
+- Starter 8: Run test suite and publish first static build.
+
