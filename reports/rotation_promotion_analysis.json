@@ -3,7 +3,7 @@
     "league": "Herren Stadtklasse, Kreis Leipzig, Kreisliga A",
     "season": "2025/2026",
     "focus_team": "SG Rotation Leipzig II",
-    "analysis_generated_at": "2026-04-02T20:08:18+00:00",
+    "analysis_generated_at": "2026-04-02T20:40:04+00:00",
     "known_data_limitations": [
       "standings reflect MD16 (16 played), while match detail results currently contain fewer completed matches for some MDs",
       "fixture-level trend metrics are computed only from available played match_detail files"
@@ -240,13 +240,13 @@
     }
   },
   "form_and_trends": {
-    "known_played_matches": 14,
-    "points_last_5": 9,
-    "points_last_8": 12,
-    "avg_gf_last_5": 2.8,
-    "avg_ga_last_5": 0.8,
-    "clean_sheet_rate": 0.071,
-    "games_2plus_goals_rate": 0.357,
+    "known_played_matches": 16,
+    "points_last_5": 5,
+    "points_last_8": 11,
+    "avg_gf_last_5": 0.6,
+    "avg_ga_last_5": 0.6,
+    "clean_sheet_rate": 0.188,
+    "games_2plus_goals_rate": 0.312,
     "losses_after_conceding_first": 8
   },
   "scenario_matrix": [
@@ -532,17 +532,17 @@
   },
   "simulation": {
     "iterations": 4000,
-    "top2_probability": 0.073,
+    "top2_probability": 0.07,
     "position_probability": {
-      "2": 0.073,
-      "3": 0.199,
-      "4": 0.26,
-      "5": 0.196,
-      "6": 0.157,
-      "7": 0.081,
-      "8": 0.025,
-      "9": 0.007,
-      "10": 0.003
+      "2": 0.07,
+      "3": 0.207,
+      "4": 0.259,
+      "5": 0.203,
+      "6": 0.147,
+      "7": 0.076,
+      "8": 0.028,
+      "9": 0.008,
+      "10": 0.002
     }
   },
   "conclusions": {
