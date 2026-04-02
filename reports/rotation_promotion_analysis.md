@@ -61,9 +61,12 @@
 - Avg GF last 5: **2.8** | Avg GA last 5: **0.8**.
 - Clean-sheet rate: **7.1%** | 2+ goals scored rate: **35.7%**.
 
-## Simple projections
-- Monte Carlo lightweight model top-2 probability: **7.0%** (based on 4,000 sims, pace-calibrated).
-- Sensitivity takeaway: one extra win (vs draw/loss) materially shifts top-2 odds because rank-2 line is near Rotation's reachable range.
+## Fixture-level simulation (all teams, shared match outcomes)
+- Iterations: **12000** across **77** remaining fixtures.
+- Rotation top-2 probability: **12.9%**.
+- Finish distribution (Rotation): P1=0.1%, P2=12.9%, P3=22.6%, P4=19.3%, P5=15.9%, P6=13.1%, P7=9.3%, P8=4.7%, P9=1.9%, P10=0.3%, P11=0.0%, P12=0.0%
+- Model calibration: strength proxy = 70% PPG + 30% GD/game, with explicit home-advantage shift.
+- Direct-opponent sensitivity (forced outcomes in Rotation six-pointers): win all direct opponent matches: 51.4%, draw all direct opponent matches: 10.2%, lose all direct opponent matches: 1.5%
 
 ## Practical football conclusions
 1. **Realistic target**: finish around **51–53 points** (≈ 24–26 points from last 10).

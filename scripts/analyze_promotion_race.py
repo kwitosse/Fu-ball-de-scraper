@@ -10,6 +10,7 @@ import csv
 import json
 import math
 import random
+from collections import Counter
 from datetime import datetime, timezone
 from dataclasses import dataclass
 from pathlib import Path
@@ -280,44 +281,154 @@ def build_scenarios(current_points: int, played: int, remaining: int, threshold:
     return rows
 
 
-def monte_carlo_top2_prob(
-    standings: list[TeamSnapshot],
-    focus: TeamSnapshot,
-    remaining: int,
-    iterations: int = 5000,
-) -> dict[str, Any]:
-    rank_counts: dict[int, int] = {}
-    top2 = 0
-    for _ in range(iterations):
-        totals = {}
-        for t in standings:
-            w = t.wins / t.played
-            d = t.draws / t.played
-            pts = t.points
-            for _m in range(remaining):
-                r = random.random()
-                if r < w:
-                    pts += 3
-                elif r < w + d:
-                    pts += 1
-            totals[t.team] = pts
+def build_remaining_fixture_list(
+    matchdays: list[dict[str, Any]],
+    completed_match_ids: set[str],
+) -> list[dict[str, Any]]:
+    fixtures: list[dict[str, Any]] = []
+    for md in matchdays:
+        for m in md.get("matches", []):
+            match_id = m.get("match_id")
+            if match_id in completed_match_ids:
+                continue
+            fixtures.append(
+                {
+                    "match_id": match_id,
+                    "matchday": m.get("matchday") or md.get("matchday_number"),
+                    "date": m.get("date"),
+                    "home_team": m.get("home_team"),
+                    "away_team": m.get("away_team"),
+                }
+            )
+    return sorted(fixtures, key=lambda x: (x.get("matchday") or 999, x.get("match_id") or ""))
 
-        ranked = sorted(totals.items(), key=lambda x: x[1], reverse=True)
-        pos = [name for name, _ in ranked].index(focus.team) + 1
-        rank_counts[pos] = rank_counts.get(pos, 0) + 1
-        if pos <= 2:
-            top2 += 1
+
+def fixture_level_simulation(
+    standings: list[TeamSnapshot],
+    fixtures: list[dict[str, Any]],
+    focus_team: str,
+    iterations: int = 12000,
+    seed: int = 42,
+) -> dict[str, Any]:
+    rng = random.Random(seed)
+    base_points = {t.team: t.points for t in standings}
+    draw_rate = sum(t.draws for t in standings) / max(1, sum(t.played for t in standings))
+    draw_rate = max(0.18, min(0.34, draw_rate))
+
+    ppg_vals = [t.ppg for t in standings]
+    gdpg_vals = [t.goal_diff / max(1, t.played) for t in standings]
+    ppg_spread = max(0.15, (max(ppg_vals) - min(ppg_vals)) or 0.15)
+    gdpg_spread = max(0.25, (max(gdpg_vals) - min(gdpg_vals)) or 0.25)
+
+    team_strength: dict[str, float] = {}
+    for t in standings:
+        ppg_component = (t.ppg - mean(ppg_vals)) / ppg_spread
+        gdpg_component = ((t.goal_diff / max(1, t.played)) - mean(gdpg_vals)) / gdpg_spread
+        team_strength[t.team] = 0.7 * ppg_component + 0.3 * gdpg_component
+
+    home_advantage = 0.22
+
+    def probs(home_team: str, away_team: str) -> tuple[float, float, float]:
+        delta = team_strength.get(home_team, 0.0) - team_strength.get(away_team, 0.0) + home_advantage
+        p_draw = max(0.12, min(0.32, draw_rate - 0.06 * abs(delta)))
+        decisive = 1.0 - p_draw
+        home_share = 1.0 / (1.0 + math.exp(-2.2 * delta))
+        p_home = decisive * home_share
+        p_away = decisive - p_home
+        return p_home, p_draw, p_away
+
+    precomputed = {
+        f["match_id"]: probs(f["home_team"], f["away_team"])
+        for f in fixtures
+        if f.get("home_team") and f.get("away_team")
+    }
+
+    def run_sim(overrides: dict[str, str] | None = None) -> tuple[float, dict[str, float]]:
+        position_counts: Counter[int] = Counter()
+        top2_count = 0
+        for _ in range(iterations):
+            points = dict(base_points)
+            for f in fixtures:
+                mid = f.get("match_id")
+                home = f.get("home_team")
+                away = f.get("away_team")
+                if not mid or home not in points or away not in points:
+                    continue
+                forced = (overrides or {}).get(mid)
+                if forced is None:
+                    p_home, p_draw, p_away = precomputed[mid]
+                    r = rng.random()
+                    forced = "H" if r < p_home else ("D" if r < p_home + p_draw else "A")
+                if forced == "H":
+                    points[home] += 3
+                elif forced == "A":
+                    points[away] += 3
+                else:
+                    points[home] += 1
+                    points[away] += 1
+
+            ranked = sorted(
+                standings,
+                key=lambda t: (points[t.team], t.goal_diff, t.goals_for),
+                reverse=True,
+            )
+            pos = next(i for i, t in enumerate(ranked, start=1) if t.team == focus_team)
+            position_counts[pos] += 1
+            if pos <= 2:
+                top2_count += 1
+        return top2_count / iterations, {str(k): round(v / iterations, 3) for k, v in sorted(position_counts.items())}
+
+    base_top2, base_distribution = run_sim()
+
+    rival_names = {t.team for t in standings if t.position <= 4 and t.team != focus_team}
+    direct_fixture_ids = []
+    for f in fixtures:
+        home = f.get("home_team")
+        away = f.get("away_team")
+        if home == focus_team and away in rival_names:
+            direct_fixture_ids.append((f["match_id"], "H"))
+        elif away == focus_team and home in rival_names:
+            direct_fixture_ids.append((f["match_id"], "A"))
+
+    sensitivity: dict[str, Any] = {
+        "direct_opponent_fixture_count": len(direct_fixture_ids),
+        "direct_opponents": sorted(
+            {f.get("away_team") if f.get("home_team") == focus_team else f.get("home_team") for f in fixtures if f.get("match_id") in {m for m, _ in direct_fixture_ids}}
+        ),
+    }
+    if direct_fixture_ids:
+        win_overrides = {mid: venue for mid, venue in direct_fixture_ids}
+        draw_overrides = {mid: "D" for mid, _venue in direct_fixture_ids}
+        loss_overrides = {mid: ("A" if venue == "H" else "H") for mid, venue in direct_fixture_ids}
+        win_top2, _ = run_sim(win_overrides)
+        draw_top2, _ = run_sim(draw_overrides)
+        loss_top2, _ = run_sim(loss_overrides)
+        sensitivity["top2_probability_by_direct_opponent_outcome"] = {
+            "win_all_direct_opponent_matches": round(win_top2, 3),
+            "draw_all_direct_opponent_matches": round(draw_top2, 3),
+            "lose_all_direct_opponent_matches": round(loss_top2, 3),
+        }
+    else:
+        sensitivity["top2_probability_by_direct_opponent_outcome"] = {}
 
     return {
         "iterations": iterations,
-        "top2_probability": round(top2 / iterations, 3),
-        "position_probability": {str(k): round(v / iterations, 3) for k, v in sorted(rank_counts.items())},
+        "remaining_fixture_count": len(fixtures),
+        "model_calibration": {
+            "strength_proxy_weights": {"ppg": 0.7, "goal_diff_per_game": 0.3},
+            "home_advantage_strength_shift": home_advantage,
+            "league_draw_rate_used": round(draw_rate, 3),
+            "draw_rate_bounds": [0.12, 0.32],
+        },
+        "rotation_top2_probability": round(base_top2, 3),
+        "rotation_finish_distribution": base_distribution,
+        "sensitivity_to_direct_opponent_results": sensitivity,
     }
 
 
 def main() -> None:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    standings_raw, _matchdays, details = read_inputs()
+    standings_raw, matchdays, details = read_inputs()
 
     standings = [snapshot_from_row(r) for r in standings_raw]
     standings_by_team = {r.team: r for r in standings}
@@ -391,7 +502,18 @@ def main() -> None:
 
     form = derive_recent_form(rotation_matches)
 
-    mc = monte_carlo_top2_prob(standings, focus, remaining=remaining, iterations=4000)
+    completed_match_ids = {
+        d.get("match_id")
+        for d in details
+        if d.get("match_id") and d.get("home_score") is not None and d.get("away_score") is not None
+    }
+    all_remaining_fixtures = build_remaining_fixture_list(matchdays, completed_match_ids)
+    fixture_level = fixture_level_simulation(
+        standings=standings,
+        fixtures=all_remaining_fixtures,
+        focus_team=FOCUS_TEAM,
+        iterations=12000,
+    )
 
     analysis = {
         "context": {
@@ -452,7 +574,7 @@ def main() -> None:
         },
         "form_and_trends": form,
         "scenario_matrix": scenario_matrix,
-        "simulation": mc,
+        "simulation_fixture_level": fixture_level,
         "conclusions": {
             "realistic_top2_total_points": threshold_realistic,
             "minimum_acceptable_points_from_last_10": required_points["realistic"],
@@ -536,9 +658,25 @@ def main() -> None:
             f"- Avg GF last 5: **{form['avg_gf_last_5']}** | Avg GA last 5: **{form['avg_ga_last_5']}**.",
             f"- Clean-sheet rate: **{form['clean_sheet_rate']:.1%}** | 2+ goals scored rate: **{form['games_2plus_goals_rate']:.1%}**.",
             "",
-            "## Simple projections",
-            f"- Monte Carlo lightweight model top-2 probability: **{mc['top2_probability']:.1%}** (based on 4,000 sims, pace-calibrated).",
-            "- Sensitivity takeaway: one extra win (vs draw/loss) materially shifts top-2 odds because rank-2 line is near Rotation's reachable range.",
+            "## Fixture-level simulation (all teams, shared match outcomes)",
+            f"- Iterations: **{fixture_level['iterations']}** across **{fixture_level['remaining_fixture_count']}** remaining fixtures.",
+            f"- Rotation top-2 probability: **{fixture_level['rotation_top2_probability']:.1%}**.",
+            "- Finish distribution (Rotation): "
+            + ", ".join(f"P{pos}={prob:.1%}" for pos, prob in fixture_level["rotation_finish_distribution"].items()),
+            "- Model calibration: strength proxy = 70% PPG + 30% GD/game, with explicit home-advantage shift.",
+            "- Direct-opponent sensitivity (forced outcomes in Rotation six-pointers): "
+            + (
+                ", ".join(
+                    f"{k.replace('_', ' ')}: {v:.1%}"
+                    for k, v in fixture_level["sensitivity_to_direct_opponent_results"][
+                        "top2_probability_by_direct_opponent_outcome"
+                    ].items()
+                )
+                if fixture_level["sensitivity_to_direct_opponent_results"][
+                    "top2_probability_by_direct_opponent_outcome"
+                ]
+                else "no direct-opponent fixtures detected in remaining schedule."
+            ),
             "",
             "## Practical football conclusions",
             "1. **Realistic target**: finish around **51–53 points** (≈ 24–26 points from last 10).",

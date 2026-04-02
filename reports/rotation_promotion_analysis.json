@@ -3,7 +3,7 @@
     "league": "Herren Stadtklasse, Kreis Leipzig, Kreisliga A",
     "season": "2025/2026",
     "focus_team": "SG Rotation Leipzig II",
-    "analysis_generated_at": "2026-04-02T19:51:37+00:00",
+    "analysis_generated_at": "2026-04-02T20:10:29+00:00",
     "known_data_limitations": [
       "standings reflect MD16 (16 played), while match detail results currently contain fewer completed matches for some MDs",
       "fixture-level trend metrics are computed only from available played match_detail files"
@@ -305,19 +305,48 @@
       "min_avg_gd_per_game_to_reach_plus10": 1.1
     }
   ],
-  "simulation": {
-    "iterations": 4000,
-    "top2_probability": 0.07,
-    "position_probability": {
-      "2": 0.07,
-      "3": 0.212,
-      "4": 0.241,
-      "5": 0.215,
-      "6": 0.143,
-      "7": 0.079,
-      "8": 0.029,
-      "9": 0.008,
-      "10": 0.002
+  "simulation_fixture_level": {
+    "iterations": 12000,
+    "remaining_fixture_count": 77,
+    "model_calibration": {
+      "strength_proxy_weights": {
+        "ppg": 0.7,
+        "goal_diff_per_game": 0.3
+      },
+      "home_advantage_strength_shift": 0.22,
+      "league_draw_rate_used": 0.188,
+      "draw_rate_bounds": [
+        0.12,
+        0.32
+      ]
+    },
+    "rotation_top2_probability": 0.129,
+    "rotation_finish_distribution": {
+      "1": 0.001,
+      "2": 0.129,
+      "3": 0.226,
+      "4": 0.193,
+      "5": 0.159,
+      "6": 0.131,
+      "7": 0.093,
+      "8": 0.047,
+      "9": 0.019,
+      "10": 0.003,
+      "11": 0.0,
+      "12": 0.0
+    },
+    "sensitivity_to_direct_opponent_results": {
+      "direct_opponent_fixture_count": 3,
+      "direct_opponents": [
+        "SG Olympia 1896 Leipzig II",
+        "SV Lipsia 93 Eutritzsch II",
+        "SV Tapfer 06 Leipzig II"
+      ],
+      "top2_probability_by_direct_opponent_outcome": {
+        "win_all_direct_opponent_matches": 0.514,
+        "draw_all_direct_opponent_matches": 0.102,
+        "lose_all_direct_opponent_matches": 0.015
+      }
     }
   },
   "conclusions": {
