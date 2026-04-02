@@ -55,6 +55,20 @@
 - If direct rivals trade points among themselves, the practical top-2 line can move down by ~2-4 points.
 - That lowers your likely target from ~51 to roughly **49** points.
 
+## Direct Opponent Race Table
+| Rival | Pts | PPG | GD | Remaining schedule difficulty (avg opp PPG) | Hold pace proj. | Slight drop proj. | Strong finish proj. | Rotation required points to finish above rival |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| SV Lipsia 93 Eutritzsch II | 31 | 1.938 | +8 | 1.342 | 50.4 | 48.9 | 51.9 | 24 |
+| SG Olympia 1896 Leipzig II | 28 | 1.75 | +18 | 1.364 | 45.5 | 44.0 | 47.0 | 19 |
+| VfB Zwenkau 02 II | 26 | 1.625 | +5 | 1.334 | 42.2 | 40.8 | 43.8 | 16 |
+| SG LVB I | 25 | 1.562 | +9 | 1.312 | 40.6 | 39.1 | 42.1 | 14 |
+| FC Blau-Weiß Leipzig II | 24 | 1.5 | +3 | 1.404 | 39.0 | 37.5 | 40.5 | 13 |
+
+### Direct-opponent scenario rankings (Rotation + 5 rivals)
+- Hold pace: #1 SV Lipsia 93 Eutritzsch II (50.4), #2 SG Olympia 1896 Leipzig II (45.5), #3 SG Rotation Leipzig II (43.9), #4 VfB Zwenkau 02 II (42.2), #5 SG LVB I (40.6), #6 FC Blau-Weiß Leipzig II (39.0).
+- Slight drop: #1 SV Lipsia 93 Eutritzsch II (48.9), #2 SG Olympia 1896 Leipzig II (44.0), #3 SG Rotation Leipzig II (42.4), #4 VfB Zwenkau 02 II (40.8), #5 SG LVB I (39.1), #6 FC Blau-Weiß Leipzig II (37.5).
+- Strong finish: #1 SV Lipsia 93 Eutritzsch II (51.9), #2 SG Olympia 1896 Leipzig II (47.0), #3 SG Rotation Leipzig II (45.4), #4 VfB Zwenkau 02 II (43.8), #5 SG LVB I (42.1), #6 FC Blau-Weiß Leipzig II (40.5).
+
 ## Form and trend snapshot (from available played detail files)
 - Known played matches in detail files for Rotation: **14**.
 - Points last 5: **9** | points last 8: **12**.
@@ -62,7 +76,7 @@
 - Clean-sheet rate: **7.1%** | 2+ goals scored rate: **35.7%**.
 
 ## Simple projections
-- Monte Carlo lightweight model top-2 probability: **7.0%** (based on 4,000 sims, pace-calibrated).
+- Monte Carlo lightweight model top-2 probability: **6.5%** (based on 4,000 sims, pace-calibrated).
 - Sensitivity takeaway: one extra win (vs draw/loss) materially shifts top-2 odds because rank-2 line is near Rotation's reachable range.
 
 ## Practical football conclusions

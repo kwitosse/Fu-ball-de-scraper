@@ -20,6 +20,13 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_DIR = ROOT / "output"
 REPORTS_DIR = ROOT / "reports"
 FOCUS_TEAM = "SG Rotation Leipzig II"
+DIRECT_OPPONENTS = [
+    "SV Lipsia 93 Eutritzsch II",
+    "SG Olympia 1896 Leipzig II",
+    "VfB Zwenkau 02 II",
+    "SG LVB I",
+    "FC Blau-Weiß Leipzig II",
+]
 # User-provided run-in fixtures (MD17-MD26), used to ensure direct-rival framing
 # is always aligned with the planning context.
 RUN_IN_FIXTURES = [
@@ -280,6 +287,103 @@ def build_scenarios(current_points: int, played: int, remaining: int, threshold:
     return rows
 
 
+def remaining_opponents_by_team(
+    matchdays: list[dict[str, Any]],
+    target_teams: set[str],
+) -> dict[str, list[str]]:
+    remaining: dict[str, list[str]] = {team: [] for team in target_teams}
+    for md in matchdays:
+        for match in md.get("matches", []):
+            home = match.get("home_team")
+            away = match.get("away_team")
+            if not home or not away:
+                continue
+            is_played = match.get("home_score") is not None and match.get("away_score") is not None
+            if is_played:
+                continue
+            if home in remaining:
+                remaining[home].append(away)
+            if away in remaining:
+                remaining[away].append(home)
+    return remaining
+
+
+def build_direct_opponent_race(
+    standings_by_team: dict[str, TeamSnapshot],
+    matchdays: list[dict[str, Any]],
+    total_matches_per_team: int,
+) -> dict[str, Any]:
+    tracked_teams = [FOCUS_TEAM, *DIRECT_OPPONENTS]
+    remaining_by_team = remaining_opponents_by_team(matchdays, set(tracked_teams))
+
+    def project_points(team: TeamSnapshot, scenario: str) -> float:
+        if scenario == "hold_pace":
+            ppg = team.ppg
+        elif scenario == "slight_drop":
+            ppg = max(0.0, team.ppg - 0.15)
+        elif scenario == "strong_finish":
+            ppg = team.ppg + 0.15
+        else:
+            raise ValueError(f"Unsupported scenario: {scenario}")
+        return round(team.points + ppg * (total_matches_per_team - team.played), 1)
+
+    teams: list[dict[str, Any]] = []
+    for team_name in tracked_teams:
+        snap = standings_by_team.get(team_name)
+        if not snap:
+            continue
+        remaining_opponents = remaining_by_team.get(team_name, [])
+        opp_ppgs = [standings_by_team[opp].ppg for opp in remaining_opponents if opp in standings_by_team]
+        schedule_difficulty = round(mean(opp_ppgs), 3) if opp_ppgs else None
+        teams.append(
+            {
+                "team": team_name,
+                "position": snap.position,
+                "current_points": snap.points,
+                "ppg": round(snap.ppg, 3),
+                "goal_diff": snap.goal_diff,
+                "remaining_matches": total_matches_per_team - snap.played,
+                "remaining_schedule_difficulty_avg_opp_ppg": schedule_difficulty,
+                "projected_finish_points": {
+                    "hold_pace": project_points(snap, "hold_pace"),
+                    "slight_drop": project_points(snap, "slight_drop"),
+                    "strong_finish": project_points(snap, "strong_finish"),
+                },
+            }
+        )
+
+    rankings: dict[str, list[dict[str, Any]]] = {}
+    for scenario in ("hold_pace", "slight_drop", "strong_finish"):
+        ranked = sorted(
+            teams,
+            key=lambda row: (
+                row["projected_finish_points"][scenario],
+                row["goal_diff"],
+                row["current_points"],
+            ),
+            reverse=True,
+        )
+        rankings[scenario] = [
+            {"rank": idx + 1, "team": row["team"], "projected_points": row["projected_finish_points"][scenario]}
+            for idx, row in enumerate(ranked)
+        ]
+
+    rotation = standings_by_team[FOCUS_TEAM]
+    required_points = {}
+    for rival_name in DIRECT_OPPONENTS:
+        rival = standings_by_team.get(rival_name)
+        if not rival:
+            continue
+        rival_projection = project_points(rival, "hold_pace")
+        required_points[rival_name] = max(0, math.floor(rival_projection) + 1 - rotation.points)
+
+    return {
+        "teams": teams,
+        "rankings": rankings,
+        "rotation_required_points_to_finish_above": required_points,
+    }
+
+
 def monte_carlo_top2_prob(
     standings: list[TeamSnapshot],
     focus: TeamSnapshot,
@@ -317,7 +421,7 @@ def monte_carlo_top2_prob(
 
 def main() -> None:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    standings_raw, _matchdays, details = read_inputs()
+    standings_raw, matchdays, details = read_inputs()
 
     standings = [snapshot_from_row(r) for r in standings_raw]
     standings_by_team = {r.team: r for r in standings}
@@ -392,6 +496,7 @@ def main() -> None:
     form = derive_recent_form(rotation_matches)
 
     mc = monte_carlo_top2_prob(standings, focus, remaining=remaining, iterations=4000)
+    direct_opponent_race = build_direct_opponent_race(standings_by_team, matchdays, total_matches_per_team)
 
     analysis = {
         "context": {
@@ -453,6 +558,7 @@ def main() -> None:
         "form_and_trends": form,
         "scenario_matrix": scenario_matrix,
         "simulation": mc,
+        "direct_opponent_race": direct_opponent_race,
         "conclusions": {
             "realistic_top2_total_points": threshold_realistic,
             "minimum_acceptable_points_from_last_10": required_points["realistic"],
@@ -529,6 +635,44 @@ def main() -> None:
             "- Beating a direct rival is effectively a **6-point swing** in promotion race terms.",
             "- If direct rivals trade points among themselves, the practical top-2 line can move down by ~2-4 points.",
             f"- That lowers your likely target from ~{math.ceil(rank2_bands['hold_current_pace'])} to roughly **{math.ceil(rank2_bands['direct_duel_adjusted'])}** points.",
+            "",
+            "## Direct Opponent Race Table",
+            "| Rival | Pts | PPG | GD | Remaining schedule difficulty (avg opp PPG) | Hold pace proj. | Slight drop proj. | Strong finish proj. | Rotation required points to finish above rival |",
+            "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
+        ]
+    )
+    team_rows = {row["team"]: row for row in direct_opponent_race["teams"]}
+    for rival_name in DIRECT_OPPONENTS:
+        row = team_rows.get(rival_name)
+        if not row:
+            continue
+        md_lines.append(
+            f"| {rival_name} | {row['current_points']} | {row['ppg']} | {row['goal_diff']:+d} | "
+            f"{row['remaining_schedule_difficulty_avg_opp_ppg']} | {row['projected_finish_points']['hold_pace']} | "
+            f"{row['projected_finish_points']['slight_drop']} | {row['projected_finish_points']['strong_finish']} | "
+            f"{direct_opponent_race['rotation_required_points_to_finish_above'].get(rival_name, 0)} |"
+        )
+
+    hold_rankings = ", ".join(
+        f"#{item['rank']} {item['team']} ({item['projected_points']})"
+        for item in direct_opponent_race["rankings"]["hold_pace"]
+    )
+    slight_drop_rankings = ", ".join(
+        f"#{item['rank']} {item['team']} ({item['projected_points']})"
+        for item in direct_opponent_race["rankings"]["slight_drop"]
+    )
+    strong_finish_rankings = ", ".join(
+        f"#{item['rank']} {item['team']} ({item['projected_points']})"
+        for item in direct_opponent_race["rankings"]["strong_finish"]
+    )
+
+    md_lines.extend(
+        [
+            "",
+            "### Direct-opponent scenario rankings (Rotation + 5 rivals)",
+            f"- Hold pace: {hold_rankings}.",
+            f"- Slight drop: {slight_drop_rankings}.",
+            f"- Strong finish: {strong_finish_rankings}.",
             "",
             "## Form and trend snapshot (from available played detail files)",
             f"- Known played matches in detail files for Rotation: **{form['known_played_matches']}**.",

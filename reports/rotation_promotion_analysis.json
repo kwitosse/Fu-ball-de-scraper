@@ -3,7 +3,7 @@
     "league": "Herren Stadtklasse, Kreis Leipzig, Kreisliga A",
     "season": "2025/2026",
     "focus_team": "SG Rotation Leipzig II",
-    "analysis_generated_at": "2026-04-02T19:51:37+00:00",
+    "analysis_generated_at": "2026-04-02T20:09:38+00:00",
     "known_data_limitations": [
       "standings reflect MD16 (16 played), while match detail results currently contain fewer completed matches for some MDs",
       "fixture-level trend metrics are computed only from available played match_detail files"
@@ -307,17 +307,210 @@
   ],
   "simulation": {
     "iterations": 4000,
-    "top2_probability": 0.07,
+    "top2_probability": 0.065,
     "position_probability": {
-      "2": 0.07,
-      "3": 0.212,
-      "4": 0.241,
-      "5": 0.215,
-      "6": 0.143,
-      "7": 0.079,
+      "2": 0.065,
+      "3": 0.208,
+      "4": 0.247,
+      "5": 0.214,
+      "6": 0.137,
+      "7": 0.088,
       "8": 0.029,
-      "9": 0.008,
-      "10": 0.002
+      "9": 0.011,
+      "10": 0.001
+    }
+  },
+  "direct_opponent_race": {
+    "teams": [
+      {
+        "team": "SG Rotation Leipzig II",
+        "position": 4,
+        "current_points": 27,
+        "ppg": 1.688,
+        "goal_diff": -1,
+        "remaining_matches": 10,
+        "remaining_schedule_difficulty_avg_opp_ppg": 1.333,
+        "projected_finish_points": {
+          "hold_pace": 43.9,
+          "slight_drop": 42.4,
+          "strong_finish": 45.4
+        }
+      },
+      {
+        "team": "SV Lipsia 93 Eutritzsch II",
+        "position": 2,
+        "current_points": 31,
+        "ppg": 1.938,
+        "goal_diff": 8,
+        "remaining_matches": 10,
+        "remaining_schedule_difficulty_avg_opp_ppg": 1.342,
+        "projected_finish_points": {
+          "hold_pace": 50.4,
+          "slight_drop": 48.9,
+          "strong_finish": 51.9
+        }
+      },
+      {
+        "team": "SG Olympia 1896 Leipzig II",
+        "position": 3,
+        "current_points": 28,
+        "ppg": 1.75,
+        "goal_diff": 18,
+        "remaining_matches": 10,
+        "remaining_schedule_difficulty_avg_opp_ppg": 1.364,
+        "projected_finish_points": {
+          "hold_pace": 45.5,
+          "slight_drop": 44.0,
+          "strong_finish": 47.0
+        }
+      },
+      {
+        "team": "VfB Zwenkau 02 II",
+        "position": 5,
+        "current_points": 26,
+        "ppg": 1.625,
+        "goal_diff": 5,
+        "remaining_matches": 10,
+        "remaining_schedule_difficulty_avg_opp_ppg": 1.334,
+        "projected_finish_points": {
+          "hold_pace": 42.2,
+          "slight_drop": 40.8,
+          "strong_finish": 43.8
+        }
+      },
+      {
+        "team": "SG LVB I",
+        "position": 6,
+        "current_points": 25,
+        "ppg": 1.562,
+        "goal_diff": 9,
+        "remaining_matches": 10,
+        "remaining_schedule_difficulty_avg_opp_ppg": 1.312,
+        "projected_finish_points": {
+          "hold_pace": 40.6,
+          "slight_drop": 39.1,
+          "strong_finish": 42.1
+        }
+      },
+      {
+        "team": "FC Blau-Weiß Leipzig II",
+        "position": 7,
+        "current_points": 24,
+        "ppg": 1.5,
+        "goal_diff": 3,
+        "remaining_matches": 10,
+        "remaining_schedule_difficulty_avg_opp_ppg": 1.404,
+        "projected_finish_points": {
+          "hold_pace": 39.0,
+          "slight_drop": 37.5,
+          "strong_finish": 40.5
+        }
+      }
+    ],
+    "rankings": {
+      "hold_pace": [
+        {
+          "rank": 1,
+          "team": "SV Lipsia 93 Eutritzsch II",
+          "projected_points": 50.4
+        },
+        {
+          "rank": 2,
+          "team": "SG Olympia 1896 Leipzig II",
+          "projected_points": 45.5
+        },
+        {
+          "rank": 3,
+          "team": "SG Rotation Leipzig II",
+          "projected_points": 43.9
+        },
+        {
+          "rank": 4,
+          "team": "VfB Zwenkau 02 II",
+          "projected_points": 42.2
+        },
+        {
+          "rank": 5,
+          "team": "SG LVB I",
+          "projected_points": 40.6
+        },
+        {
+          "rank": 6,
+          "team": "FC Blau-Weiß Leipzig II",
+          "projected_points": 39.0
+        }
+      ],
+      "slight_drop": [
+        {
+          "rank": 1,
+          "team": "SV Lipsia 93 Eutritzsch II",
+          "projected_points": 48.9
+        },
+        {
+          "rank": 2,
+          "team": "SG Olympia 1896 Leipzig II",
+          "projected_points": 44.0
+        },
+        {
+          "rank": 3,
+          "team": "SG Rotation Leipzig II",
+          "projected_points": 42.4
+        },
+        {
+          "rank": 4,
+          "team": "VfB Zwenkau 02 II",
+          "projected_points": 40.8
+        },
+        {
+          "rank": 5,
+          "team": "SG LVB I",
+          "projected_points": 39.1
+        },
+        {
+          "rank": 6,
+          "team": "FC Blau-Weiß Leipzig II",
+          "projected_points": 37.5
+        }
+      ],
+      "strong_finish": [
+        {
+          "rank": 1,
+          "team": "SV Lipsia 93 Eutritzsch II",
+          "projected_points": 51.9
+        },
+        {
+          "rank": 2,
+          "team": "SG Olympia 1896 Leipzig II",
+          "projected_points": 47.0
+        },
+        {
+          "rank": 3,
+          "team": "SG Rotation Leipzig II",
+          "projected_points": 45.4
+        },
+        {
+          "rank": 4,
+          "team": "VfB Zwenkau 02 II",
+          "projected_points": 43.8
+        },
+        {
+          "rank": 5,
+          "team": "SG LVB I",
+          "projected_points": 42.1
+        },
+        {
+          "rank": 6,
+          "team": "FC Blau-Weiß Leipzig II",
+          "projected_points": 40.5
+        }
+      ]
+    },
+    "rotation_required_points_to_finish_above": {
+      "SV Lipsia 93 Eutritzsch II": 24,
+      "SG Olympia 1896 Leipzig II": 19,
+      "VfB Zwenkau 02 II": 16,
+      "SG LVB I": 14,
+      "FC Blau-Weiß Leipzig II": 13
     }
   },
   "conclusions": {
