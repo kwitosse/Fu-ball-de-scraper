@@ -33,17 +33,17 @@
 
 ## Remaining fixtures and difficulty
 - Remaining fixtures identified in data: **10**.
-- Average opponent PPG in run-in: **1.462**.
+- Average opponent PPG in run-in: **1.331**.
 - Buckets used: must-win / favorable but dangerous / six-pointer / difficult upset opportunity.
 
 ## Form and trend snapshot (from available played detail files)
-- Known played matches in detail files for Rotation: **14**.
-- Points last 5: **9** | points last 8: **12**.
-- Avg GF last 5: **2.8** | Avg GA last 5: **0.8**.
-- Clean-sheet rate: **7.1%** | 2+ goals scored rate: **35.7%**.
+- Known played matches in detail files for Rotation: **16**.
+- Points last 5: **5** | points last 8: **11**.
+- Avg GF last 5: **0.6** | Avg GA last 5: **0.6**.
+- Clean-sheet rate: **18.8%** | 2+ goals scored rate: **31.2%**.
 
 ## Simple projections
-- Monte Carlo lightweight model top-2 probability: **6.6%** (based on 4,000 sims, pace-calibrated).
+- Monte Carlo lightweight model top-2 probability: **6.5%** (based on 4,000 sims, pace-calibrated).
 - Sensitivity takeaway: one extra win (vs draw/loss) materially shifts top-2 odds because rank-2 line is near Rotation's reachable range.
 
 ## Practical football conclusions

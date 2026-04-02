@@ -31,6 +31,8 @@ from scrapers.base import BaseScraper
 logger = logging.getLogger(__name__)
 
 MINUTE_RE = re.compile(r"(\d{1,3})(?:\+\d+)?['\u2019\u0027]?")
+TITLE_SCORE_RE = re.compile(r"Ergebnis:\s*(\d+)\s*:\s*(\d+)", re.I)
+GENERIC_SCORE_RE = re.compile(r"\b(\d{1,2})\s*:\s*(\d{1,2})\b")
 
 
 def _extract_minute(el: Tag) -> Optional[int]:
@@ -95,8 +97,11 @@ class MatchDetailScraper:
         else:
             goals, cards, subs = [], [], []
 
-        # Derive score from goal events
+        # Derive score from goal events; if unavailable, use metadata fallback
         home_score, away_score = self._count_score(goals)
+        if home_score is None or away_score is None:
+            home_score = metadata.home_score
+            away_score = metadata.away_score
         metadata.home_score = home_score
         metadata.away_score = away_score
         metadata.goals = goals
@@ -157,12 +162,28 @@ class MatchDetailScraper:
         if att_m:
             attendance = int(att_m.group(1))
 
+        # Score fallback: title often contains "Ergebnis: X : Y" even when
+        # match-course goal rows are incomplete or hidden.
+        score_home: Optional[int] = None
+        score_away: Optional[int] = None
+        if soup.title and soup.title.string:
+            t = soup.title.string
+            m = TITLE_SCORE_RE.search(t)
+            if m:
+                score_home = int(m.group(1))
+                score_away = int(m.group(2))
+        if score_home is None or score_away is None:
+            m = GENERIC_SCORE_RE.search(full_text)
+            if m:
+                score_home = int(m.group(1))
+                score_away = int(m.group(2))
+
         return MatchDetail(
             match_id=match_id,
             home_team=home_team,
             away_team=away_team,
-            home_score=None,  # derived from goals after course parse
-            away_score=None,
+            home_score=score_home,
+            away_score=score_away,
             date=date_str,
             kickoff=kickoff,
             venue=venue,

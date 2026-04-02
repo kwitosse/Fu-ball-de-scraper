@@ -3,7 +3,7 @@
     "league": "Herren Stadtklasse, Kreis Leipzig, Kreisliga A",
     "season": "2025/2026",
     "focus_team": "SG Rotation Leipzig II",
-    "analysis_generated_at": "2026-04-02T19:26:40+00:00",
+    "analysis_generated_at": "2026-04-02T19:44:42+00:00",
     "known_data_limitations": [
       "standings reflect MD16 (16 played), while match detail results currently contain fewer completed matches for some MDs",
       "fixture-level trend metrics are computed only from available played match_detail files"
@@ -119,28 +119,8 @@
   },
   "remaining_fixtures": {
     "count": 10,
-    "average_opponent_ppg": 1.462,
+    "average_opponent_ppg": 1.331,
     "fixtures": [
-      {
-        "matchday": 14,
-        "home_away": "A",
-        "opponent": "SG LVB I",
-        "opponent_pos": 6,
-        "opponent_points": 25,
-        "opponent_ppg": 1.562,
-        "bucket": "difficult upset opportunity",
-        "first_leg_result": "L 1:3"
-      },
-      {
-        "matchday": 16,
-        "home_away": "H",
-        "opponent": "SV Lipsia 93 Eutritzsch II",
-        "opponent_pos": 2,
-        "opponent_points": 31,
-        "opponent_ppg": 1.938,
-        "bucket": "six-pointer / direct rival",
-        "first_leg_result": "D 2:2"
-      },
       {
         "matchday": 17,
         "home_away": "A",
@@ -220,17 +200,37 @@
         "opponent_ppg": 2.5,
         "bucket": "six-pointer / direct rival",
         "first_leg_result": "W 3:1"
+      },
+      {
+        "matchday": 25,
+        "home_away": "H",
+        "opponent": "SV Victoria 90 Leipzig I",
+        "opponent_pos": 14,
+        "opponent_points": 7,
+        "opponent_ppg": 0.438,
+        "bucket": "must-win",
+        "first_leg_result": "D 1:1"
+      },
+      {
+        "matchday": 26,
+        "home_away": "A",
+        "opponent": "SG Olympia 1896 Leipzig II",
+        "opponent_pos": 3,
+        "opponent_points": 28,
+        "opponent_ppg": 1.75,
+        "bucket": "six-pointer / direct rival",
+        "first_leg_result": "L 1:2"
       }
     ]
   },
   "form_and_trends": {
-    "known_played_matches": 14,
-    "points_last_5": 9,
-    "points_last_8": 12,
-    "avg_gf_last_5": 2.8,
-    "avg_ga_last_5": 0.8,
-    "clean_sheet_rate": 0.071,
-    "games_2plus_goals_rate": 0.357,
+    "known_played_matches": 16,
+    "points_last_5": 5,
+    "points_last_8": 11,
+    "avg_gf_last_5": 0.6,
+    "avg_ga_last_5": 0.6,
+    "clean_sheet_rate": 0.188,
+    "games_2plus_goals_rate": 0.312,
     "losses_after_conceding_first": 8
   },
   "scenario_matrix": [
@@ -285,17 +285,17 @@
   ],
   "simulation": {
     "iterations": 4000,
-    "top2_probability": 0.066,
+    "top2_probability": 0.065,
     "position_probability": {
-      "2": 0.066,
-      "3": 0.212,
-      "4": 0.248,
-      "5": 0.205,
-      "6": 0.143,
-      "7": 0.091,
-      "8": 0.026,
-      "9": 0.008,
-      "10": 0.002
+      "2": 0.065,
+      "3": 0.211,
+      "4": 0.242,
+      "5": 0.217,
+      "6": 0.152,
+      "7": 0.076,
+      "8": 0.025,
+      "9": 0.01,
+      "10": 0.001
     }
   },
   "conclusions": {
