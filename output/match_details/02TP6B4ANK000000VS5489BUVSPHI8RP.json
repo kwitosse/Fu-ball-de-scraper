@@ -1,0 +1,93 @@
+{
+  "match_id": "02TP6B4ANK000000VS5489BUVSPHI8RP",
+  "home_team": "SG LVB I",
+  "away_team": "SG Rotation Leipzig II",
+  "home_score": null,
+  "away_score": null,
+  "date": "14.03.2026",
+  "kickoff": "15:00",
+  "venue": "Rasenplatz, LVB Großfeld 1, Neue Linie 1, 04277 Leipzig",
+  "attendance": 45,
+  "matchday": 14,
+  "goals": [],
+  "cards": [
+    {
+      "minute": 19,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 45,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 54,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 28,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 58,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 58,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 68,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 71,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 76,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 76,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 82,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

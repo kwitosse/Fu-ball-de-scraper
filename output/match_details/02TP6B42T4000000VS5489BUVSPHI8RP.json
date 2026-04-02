@@ -1,0 +1,131 @@
+{
+  "match_id": "02TP6B42T4000000VS5489BUVSPHI8RP",
+  "home_team": "Roter Stern Leipzig 99 II",
+  "away_team": "SV Panitzsch/​Borsdorf II",
+  "home_score": 5,
+  "away_score": 2,
+  "date": "23.08.2025",
+  "kickoff": "15:00",
+  "venue": "Rasenplatz, Sportpark Dölitz, Bornaische Str. 179, 04279 Leipzig",
+  "attendance": 35,
+  "matchday": 3,
+  "goals": [
+    {
+      "minute": 4,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02K227PT54000000VUM1DNO9VSB6ADVN"
+    },
+    {
+      "minute": 8,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01LQ4HI0IC000000VS541L4FVTH0JFIJ"
+    },
+    {
+      "minute": 11,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00QBT0HVVO000000VV0AG819VSKRC3V1"
+    },
+    {
+      "minute": 48,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01B3LJFAA0000000VV0AG80NVUQACAMB"
+    },
+    {
+      "minute": 75,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01LQ4HI0IC000000VS541L4FVTH0JFIJ"
+    },
+    {
+      "minute": 82,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/011OUTVQR4000000VV0AG811VVCD89UM"
+    },
+    {
+      "minute": 89,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02LC4KTTSC000000VUM1DNP0VUBUBLKM"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 20,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 28,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 44,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 71,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 59,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 59,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 67,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 72,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 72,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 83,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

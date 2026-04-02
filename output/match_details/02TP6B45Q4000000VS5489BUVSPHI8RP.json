@@ -1,0 +1,127 @@
+{
+  "match_id": "02TP6B45Q4000000VS5489BUVSPHI8RP",
+  "home_team": "FC Blau-Weiß Leipzig II",
+  "away_team": "SV Fortuna Leipzig 02 I",
+  "home_score": 0,
+  "away_score": 2,
+  "date": "14.09.2025",
+  "kickoff": "15:30",
+  "venue": "Rasenplatz, Stadion der Freundschaft Feld 1, Kantatenweg 39, 04229 Leipzig",
+  "attendance": 25,
+  "matchday": 4,
+  "goals": [
+    {
+      "minute": 36,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LI75V7AK000000VV0AG83KVVLFRQ7R"
+    },
+    {
+      "minute": 68,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01M08E58M4000000VS541L4JVVV6GSH8"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 60,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 64,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 77,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 79,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow_red",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 45,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 63,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 76,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 84,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 84,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 84,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

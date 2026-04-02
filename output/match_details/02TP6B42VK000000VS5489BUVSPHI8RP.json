@@ -1,0 +1,89 @@
+{
+  "match_id": "02TP6B42VK000000VS5489BUVSPHI8RP",
+  "home_team": "FSV Großpösna I",
+  "away_team": "SV Victoria 90 Leipzig I",
+  "home_score": 1,
+  "away_score": 1,
+  "date": "24.08.2025",
+  "kickoff": "14:30",
+  "venue": "Rasenplatz, Großpösna Großfeld, Am Sportplatz 1, 04463 Großpösna",
+  "attendance": 74,
+  "matchday": 3,
+  "goals": [
+    {
+      "minute": 33,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS5EVPG000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 74,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/02TALH4QIC000000VS5489C2VSJNJVM9"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 36,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 75,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 78,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow_red",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 63,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 66,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 67,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 71,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 82,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

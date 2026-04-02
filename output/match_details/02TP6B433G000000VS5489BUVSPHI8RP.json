@@ -1,0 +1,150 @@
+{
+  "match_id": "02TP6B433G000000VS5489BUVSPHI8RP",
+  "home_team": "VfB Zwenkau 02 II",
+  "away_team": "Roter Stern Leipzig 99 II",
+  "home_score": 3,
+  "away_score": 5,
+  "date": "17.09.2025",
+  "kickoff": "18:30",
+  "venue": "Rasenplatz, Zwenkau Großfeld 2, Eythraer Weg 2, 04442 Zwenkau",
+  "attendance": 35,
+  "matchday": 4,
+  "goals": [
+    {
+      "minute": 1,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02IF71THQ4000000VUM1DNOHVURP64MN"
+    },
+    {
+      "minute": 12,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02IF71THQ4000000VUM1DNOHVURP64MN"
+    },
+    {
+      "minute": 42,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02IF71THQ4000000VUM1DNOHVURP64MN"
+    },
+    {
+      "minute": 45,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02IF71THQ4000000VUM1DNOHVURP64MN"
+    },
+    {
+      "minute": 65,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01B3LJFAA0000000VV0AG80NVUQACAMB"
+    },
+    {
+      "minute": 73,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4GHH8000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 79,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/0245I9K7O0000000VS541L4KVUCITE80"
+    },
+    {
+      "minute": 90,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/02U2TMDOFC000000VS5489C2VTPH7AII"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 29,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 54,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 56,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 63,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 63,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 73,
+      "player_out": "#15",
+      "player_in": "#2",
+      "team": "home"
+    },
+    {
+      "minute": 75,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 75,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 75,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 86,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

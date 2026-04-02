@@ -1,0 +1,108 @@
+{
+  "match_id": "02TP6B4AUC000000VS5489BUVSPHI8RP",
+  "home_team": "SV Tapfer 06 Leipzig II",
+  "away_team": "SV Panitzsch/​Borsdorf II",
+  "home_score": null,
+  "away_score": null,
+  "date": "15.03.2026",
+  "kickoff": "14:00",
+  "venue": "Rasenplatz, Tapfer Großfeld 1, Torgauer Str. 106, 04318 Leipzig",
+  "attendance": 30,
+  "matchday": 14,
+  "goals": [],
+  "cards": [
+    {
+      "minute": 28,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 41,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 54,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 84,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 84,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 85,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 62,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 63,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 67,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 67,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 77,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 90,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

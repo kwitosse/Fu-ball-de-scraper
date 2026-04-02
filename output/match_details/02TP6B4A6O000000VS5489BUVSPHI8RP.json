@@ -1,0 +1,121 @@
+{
+  "match_id": "02TP6B4A6O000000VS5489BUVSPHI8RP",
+  "home_team": "Roter Stern Leipzig 99 II",
+  "away_team": "SG Olympia 1896 Leipzig II",
+  "home_score": 0,
+  "away_score": 4,
+  "date": "21.03.2026",
+  "kickoff": "15:00",
+  "venue": "Rasenplatz, SpA Am Goethesteig GF Roter Stern, Goethesteig, 04279 Leipzig",
+  "attendance": 40,
+  "matchday": 15,
+  "goals": [
+    {
+      "minute": 34,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "own_goal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02BVG0E7N8000000VUM1DNO5VVIOUCKL"
+    },
+    {
+      "minute": 36,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": null
+    }
+  ],
+  "cards": [
+    {
+      "minute": 63,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 80,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 84,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 64,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 67,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 69,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 74,
+      "player_out": "#28",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 74,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 74,
+      "player_out": "#13",
+      "player_in": "#20",
+      "team": "away"
+    },
+    {
+      "minute": 83,
+      "player_out": "#15",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

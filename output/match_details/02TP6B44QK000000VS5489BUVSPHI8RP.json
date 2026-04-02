@@ -1,0 +1,85 @@
+{
+  "match_id": "02TP6B44QK000000VS5489BUVSPHI8RP",
+  "home_team": "SG LVB I",
+  "away_team": "Roter Stern Leipzig 99 II",
+  "home_score": 0,
+  "away_score": 2,
+  "date": "04.10.2025",
+  "kickoff": "15:20",
+  "venue": "Rasenplatz, LVB Großfeld 1, Neue Linie 1, 04277 Leipzig",
+  "attendance": 50,
+  "matchday": 7,
+  "goals": [
+    {
+      "minute": 15,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/013IHU6PHC000000VV0AG80NVUOKH4LB"
+    },
+    {
+      "minute": 90,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS3RTL8000000VV0AG85VVVPI7ST7"
+    }
+  ],
+  "cards": [],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "#15",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 53,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 62,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 77,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 77,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 86,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 89,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 89,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 89,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "match_id": "02TP6B460S000000VS5489BUVSPHI8RP",
+  "home_team": "SV Lipsia 93 Eutritzsch II",
+  "away_team": "SG Rotation Leipzig II",
+  "home_score": 2,
+  "away_score": 2,
+  "date": "31.08.2025",
+  "kickoff": "15:00",
+  "venue": "Rasenplatz, Eutritzsch Feld 1, Thaerstr. 5, 04129 Leipzig",
+  "attendance": 82,
+  "matchday": 2,
+  "goals": [
+    {
+      "minute": 13,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00KKUPSK68000000VV0AG83KVVNFQUUF"
+    },
+    {
+      "minute": 44,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "own_goal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00NM3K5B5O000000VV0AG83KVUEANCND"
+    },
+    {
+      "minute": 50,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00UIT4FUHO000000VV0AG811VTN498IG"
+    },
+    {
+      "minute": 58,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS6PB5C000000VV0AG85VVVPI7ST7"
+    }
+  ],
+  "cards": [],
+  "substitutions": [
+    {
+      "minute": 34,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 59,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 59,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 59,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 62,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 62,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 72,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 74,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

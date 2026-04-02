@@ -1,0 +1,145 @@
+{
+  "match_id": "02TP6B4554000000VS5489BUVSPHI8RP",
+  "home_team": "FSV Großpösna I",
+  "away_team": "SV Fortuna Leipzig 02 I",
+  "home_score": 3,
+  "away_score": 1,
+  "date": "28.09.2025",
+  "kickoff": "14:30",
+  "venue": "Rasenplatz, Großpösna Großfeld, Am Sportplatz 1, 04463 Großpösna",
+  "attendance": 35,
+  "matchday": 6,
+  "goals": [
+    {
+      "minute": 6,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/027T9TU6P4000000VS541L4FVVVUS9E2"
+    },
+    {
+      "minute": 35,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02RE3TJ0V4000000VUM1D53OVSURT9U0"
+    },
+    {
+      "minute": 71,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/027T9TU6P4000000VS541L4FVVVUS9E2"
+    },
+    {
+      "minute": 90,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/024NGQ5MD8000000VS541L4FVUNPNFRN"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 49,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 56,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 56,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 73,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 83,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 86,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow_red",
+      "player_profile_url": null
+    },
+    {
+      "minute": 87,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "home",
+      "card_type": "red",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 24,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 56,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 60,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 60,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 60,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

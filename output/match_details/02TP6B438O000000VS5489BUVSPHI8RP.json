@@ -1,0 +1,117 @@
+{
+  "match_id": "02TP6B438O000000VS5489BUVSPHI8RP",
+  "home_team": "SV Panitzsch/​Borsdorf II",
+  "away_team": "TSV Böhlitz-Ehrenberg 1990 I",
+  "home_score": 3,
+  "away_score": 3,
+  "date": "07.09.2025",
+  "kickoff": "14:00",
+  "venue": "Rasenplatz, Panitzsch Großfeld, Sommerfelder Str., 04451 Borsdorf",
+  "attendance": 35,
+  "matchday": 3,
+  "goals": [
+    {
+      "minute": 6,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/011OUTVQR4000000VV0AG811VVCD89UM"
+    },
+    {
+      "minute": 14,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS54O38000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 22,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02G3539A3S000000VUM1DNP3VTUL0AH2"
+    },
+    {
+      "minute": 42,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02J9KH93SS000000VUM1DNQ3VTMSNQRK"
+    },
+    {
+      "minute": 68,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/012J2U4CH0000000VV0AG811VSSLR9MV"
+    },
+    {
+      "minute": 90,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01LQ4HI0IC000000VS541L4FVTH0JFIJ"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 54,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 54,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 58,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 55,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 74,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 81,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 90,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 90,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

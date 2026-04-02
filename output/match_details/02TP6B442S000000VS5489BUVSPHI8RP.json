@@ -1,0 +1,142 @@
+{
+  "match_id": "02TP6B442S000000VS5489BUVSPHI8RP",
+  "home_team": "VfB Zwenkau 02 II",
+  "away_team": "FSV Großpösna I",
+  "home_score": 2,
+  "away_score": 5,
+  "date": "02.11.2025",
+  "kickoff": "14:00",
+  "venue": "Rasenplatz, Zwenkau Großfeld 2, Eythraer Weg 2, 04442 Zwenkau",
+  "attendance": 40,
+  "matchday": 10,
+  "goals": [
+    {
+      "minute": 36,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/024IUHJJD0000000VS541L4FVTME6FHM"
+    },
+    {
+      "minute": 46,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02IF71THQ4000000VUM1DNOHVURP64MN"
+    },
+    {
+      "minute": 73,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02IF71THQ4000000VUM1DNOHVURP64MN"
+    },
+    {
+      "minute": 75,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS441IS000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 76,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02IF71THQ4000000VUM1DNOHVURP64MN"
+    },
+    {
+      "minute": 82,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS54IES000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 84,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01PG80KBGK000000VV0AG811VS4PV8CU"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 56,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 81,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 85,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 5,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 56,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 66,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 73,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 74,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 75,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 76,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 76,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 81,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

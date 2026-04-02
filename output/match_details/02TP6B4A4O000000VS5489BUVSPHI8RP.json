@@ -1,0 +1,130 @@
+{
+  "match_id": "02TP6B4A4O000000VS5489BUVSPHI8RP",
+  "home_team": "TSV Böhlitz-Ehrenberg 1990 I",
+  "away_team": "SV Lipsia 93 Eutritzsch II",
+  "home_score": 3,
+  "away_score": 3,
+  "date": "22.03.2026",
+  "kickoff": "15:00",
+  "venue": "Rasenplatz, Böhlitz Leipziger Straße, Leipziger Str. 124, 04178 Leipzig",
+  "attendance": 87,
+  "matchday": 15,
+  "goals": [
+    {
+      "minute": 8,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02I6HHLQNC000000VUM1DNP8VVVJRPNG"
+    },
+    {
+      "minute": 30,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02CIAVT5S4000000VUM1DNPLVVNL8BJR"
+    },
+    {
+      "minute": 32,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/0212LONJSS000000VS541L4JVSD3QUBL"
+    },
+    {
+      "minute": 42,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00K6AURLL8000000VV0AG85VVS8G2T1F"
+    },
+    {
+      "minute": 71,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01GTLBEVQS000000VV0AG80NVVV7LT4V"
+    },
+    {
+      "minute": 78,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02J9KH93SS000000VUM1DNQ3VTMSNQRK"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 6,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 69,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 81,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 83,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 30,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 35,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 66,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 71,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 84,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "match_id": "02TP6B44GO000000VS5489BUVSPHI8RP",
+  "home_team": "SV Fortuna Leipzig 02 I",
+  "away_team": "Roter Stern Leipzig 99 II",
+  "home_score": 1,
+  "away_score": 1,
+  "date": "19.10.2025",
+  "kickoff": "15:15",
+  "venue": "Rasenplatz, Fortuna-Sportpark Großfeld 1, Riesaer Str. 101, 04328 Leipzig",
+  "attendance": 36,
+  "matchday": 8,
+  "goals": [
+    {
+      "minute": 65,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "own_goal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS5J94C000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 88,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/024NGQ5MD8000000VS541L4FVUNPNFRN"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 31,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 39,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 50,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 60,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 78,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 84,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow_red",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "#21",
+      "player_in": "#15",
+      "team": "home"
+    },
+    {
+      "minute": 46,
+      "player_out": "#20",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 50,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 64,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 67,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 67,
+      "player_out": "#13",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 79,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

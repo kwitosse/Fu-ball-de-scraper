@@ -1,0 +1,94 @@
+{
+  "match_id": "02TP6B43BC000000VS5489BUVSPHI8RP",
+  "home_team": "FSV Großpösna I",
+  "away_team": "SV Panitzsch/​Borsdorf II",
+  "home_score": 0,
+  "away_score": 3,
+  "date": "23.11.2025",
+  "kickoff": "14:00",
+  "venue": "Rasenplatz, Großpösna Großfeld, Am Sportplatz 1, 04463 Großpösna",
+  "attendance": null,
+  "matchday": 13,
+  "goals": [
+    {
+      "minute": 6,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/028LDTCDRC000000VS541L4GVSD8NUTM"
+    },
+    {
+      "minute": 66,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/0290J6RKD0000000VS541L4GVTTMK5F4"
+    },
+    {
+      "minute": 75,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/028LDTCDRC000000VS541L4GVSD8NUTM"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 28,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 24,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 66,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 66,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 71,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 78,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 84,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

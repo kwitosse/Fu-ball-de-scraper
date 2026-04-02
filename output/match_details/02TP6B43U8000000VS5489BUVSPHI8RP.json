@@ -1,0 +1,122 @@
+{
+  "match_id": "02TP6B43U8000000VS5489BUVSPHI8RP",
+  "home_team": "SG Leipzig-Bienitz I",
+  "away_team": "SV Tapfer 06 Leipzig II",
+  "home_score": 4,
+  "away_score": 1,
+  "date": "09.11.2025",
+  "kickoff": "14:20",
+  "venue": "Rasenplatz, Burghausen Großfeld, Richard-Leisebein-Str. 20, 04178 Leipzig",
+  "attendance": 59,
+  "matchday": 11,
+  "goals": [
+    {
+      "minute": 31,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS41894000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 44,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/02SFDBJ98C000000VS5489B8VVEDVP3N"
+    },
+    {
+      "minute": 57,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4THJ4000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 85,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/021VUMFMAG000000VS541L4FVVFOHSM0"
+    },
+    {
+      "minute": 88,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02J88PGUFC000000VUM1DNP2VU17BVGJ"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 27,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 56,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 71,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 55,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 62,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 66,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 72,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 79,
+      "player_out": "#44",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 82,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 82,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 86,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

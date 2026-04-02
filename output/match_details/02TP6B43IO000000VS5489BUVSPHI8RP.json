@@ -1,0 +1,103 @@
+{
+  "match_id": "02TP6B43IO000000VS5489BUVSPHI8RP",
+  "home_team": "TSV Böhlitz-Ehrenberg 1990 I",
+  "away_team": "VfB Zwenkau 02 II",
+  "home_score": 1,
+  "away_score": 1,
+  "date": "16.11.2025",
+  "kickoff": "14:00",
+  "venue": "Rasenplatz, Böhlitz Leipziger Straße, Leipziger Str. 124, 04178 Leipzig",
+  "attendance": 45,
+  "matchday": 12,
+  "goals": [
+    {
+      "minute": 34,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01598OHHFG000000VV0AG811VVEDO5CH"
+    },
+    {
+      "minute": 56,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00OS3CAUN0000000VV0AG83KVT283J6L"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 61,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 77,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 87,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 68,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 78,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 79,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 83,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 85,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "match_id": "02TP6B44T4000000VS5489BUVSPHI8RP",
+  "home_team": "SG Olympia 1896 Leipzig II",
+  "away_team": "SV Tapfer 06 Leipzig II",
+  "home_score": 4,
+  "away_score": 2,
+  "date": "04.10.2025",
+  "kickoff": "15:00",
+  "venue": "Kunstrasenplatz, SG Olympia KR-Großfeld Mühlwiese, Waldstr. 177, 04105 Leipzig",
+  "attendance": 30,
+  "matchday": 7,
+  "goals": [
+    {
+      "minute": 22,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00K6AV9308000000VV0AG85VVS8G2T1F"
+    },
+    {
+      "minute": 35,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/02SFDBJ98C000000VS5489B8VVEDVP3N"
+    },
+    {
+      "minute": 68,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4THJ4000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 84,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4THJ4000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 90,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4THJ4000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 90,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LN6HB6RS000000VV0AG85VVTNE19SS"
+    }
+  ],
+  "cards": [],
+  "substitutions": [
+    {
+      "minute": 8,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 66,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 69,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 69,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 75,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 87,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 87,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

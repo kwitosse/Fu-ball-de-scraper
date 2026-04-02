@@ -1,0 +1,110 @@
+{
+  "match_id": "02TP6B44FK000000VS5489BUVSPHI8RP",
+  "home_team": "SV Fortuna Leipzig 02 I",
+  "away_team": "SV Panitzsch/​Borsdorf II",
+  "home_score": null,
+  "away_score": null,
+  "date": "26.10.2025",
+  "kickoff": "14:00",
+  "venue": "Rasenplatz, Fortuna-Sportpark Großfeld 1, Riesaer Str. 101, 04328 Leipzig",
+  "attendance": 30,
+  "matchday": 9,
+  "goals": [],
+  "cards": [
+    {
+      "minute": 29,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 43,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 43,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 59,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 73,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow_red",
+      "player_profile_url": null
+    },
+    {
+      "minute": 74,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 78,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 88,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 60,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 60,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 60,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 60,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 78,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

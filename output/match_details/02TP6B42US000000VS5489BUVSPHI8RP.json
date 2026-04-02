@@ -1,0 +1,101 @@
+{
+  "match_id": "02TP6B42US000000VS5489BUVSPHI8RP",
+  "home_team": "TSV Böhlitz-Ehrenberg 1990 I",
+  "away_team": "SV Tapfer 06 Leipzig II",
+  "home_score": 1,
+  "away_score": 1,
+  "date": "24.08.2025",
+  "kickoff": "15:00",
+  "venue": "Rasenplatz, Böhlitz Leipziger Straße, Leipziger Str. 124, 04178 Leipzig",
+  "attendance": 73,
+  "matchday": 3,
+  "goals": [
+    {
+      "minute": 21,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4THJ4000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 45,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02FHGQ0I5K000000VUM1DNP5VU5PVP3B"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 42,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 69,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 80,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 65,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 67,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 75,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 82,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 82,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 90,
+      "player_out": "#19",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

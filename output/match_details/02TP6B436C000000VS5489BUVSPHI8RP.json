@@ -1,0 +1,134 @@
+{
+  "match_id": "02TP6B436C000000VS5489BUVSPHI8RP",
+  "home_team": "SG Olympia 1896 Leipzig II",
+  "away_team": "FC Blau-Weiß Leipzig II",
+  "home_score": 0,
+  "away_score": 7,
+  "date": "06.09.2025",
+  "kickoff": "15:00",
+  "venue": "Kunstrasenplatz, SG Olympia KR-Großfeld Mühlwiese, Waldstr. 177, 04105 Leipzig",
+  "attendance": 30,
+  "matchday": 3,
+  "goals": [
+    {
+      "minute": 10,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00K6AV9308000000VV0AG85VVS8G2T1F"
+    },
+    {
+      "minute": 45,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4T0US000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 53,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00K6AV9308000000VV0AG85VVS8G2T1F"
+    },
+    {
+      "minute": 55,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02QP2481A0000000VUM1D51MVTQ7P2BT"
+    },
+    {
+      "minute": 60,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02H8K0P9OK000000VUM1DNPGVTQRM3G5"
+    },
+    {
+      "minute": 80,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00K6AV9308000000VV0AG85VVS8G2T1F"
+    },
+    {
+      "minute": 85,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00M7EQ1FF8000000VV0AG83KVS3TDH74"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 69,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 13,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 36,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 46,
+      "player_out": "#3",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 64,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 64,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 64,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 66,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 66,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 66,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

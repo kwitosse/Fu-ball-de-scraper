@@ -1,0 +1,91 @@
+{
+  "match_id": "02TP6B4568000000VS5489BUVSPHI8RP",
+  "home_team": "SG Rotation Leipzig II",
+  "away_team": "SG Leipzig-Bienitz I",
+  "home_score": 0,
+  "away_score": 3,
+  "date": "28.09.2025",
+  "kickoff": "15:00",
+  "venue": "Rasenplatz, Rotation 1950 Großfeld 1, Delitzscher Str. 131, 04129 Leipzig",
+  "attendance": 15,
+  "matchday": 6,
+  "goals": [
+    {
+      "minute": 36,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS5G8GK000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 51,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01246TVEQO000000VV0AG80NVVAN2FAL"
+    },
+    {
+      "minute": 82,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00UIT4FUHO000000VV0AG811VTN498IG"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 58,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 68,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 76,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 86,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 24,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 58,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 77,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 83,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

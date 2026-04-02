@@ -1,0 +1,89 @@
+{
+  "match_id": "02TP6B43DC000000VS5489BUVSPHI8RP",
+  "home_team": "SG Rotation Leipzig II",
+  "away_team": "SV Tapfer 06 Leipzig II",
+  "home_score": 3,
+  "away_score": 1,
+  "date": "08.03.2026",
+  "kickoff": "14:00",
+  "venue": "Rasenplatz, Rotation 1950 Großfeld 1, Delitzscher Str. 131, 04129 Leipzig",
+  "attendance": 35,
+  "matchday": 13,
+  "goals": [
+    {
+      "minute": 20,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00NP4TVM94000000VV0AG85VVT3JO22H"
+    },
+    {
+      "minute": 41,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/02UNELQDLS000000VS5489C1VUEQP6N6"
+    },
+    {
+      "minute": 65,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4THJ4000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 90,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00Q0EIQCS8000000VV0AG83KVVCG0OBK"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 48,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 55,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 55,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 70,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 70,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 81,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

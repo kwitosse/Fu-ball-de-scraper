@@ -1,0 +1,88 @@
+{
+  "match_id": "02TP6B435K000000VS5489BUVSPHI8RP",
+  "home_team": "SV Lipsia 93 Eutritzsch II",
+  "away_team": "SG Leipzig-Bienitz I",
+  "home_score": 1,
+  "away_score": 0,
+  "date": "06.09.2025",
+  "kickoff": "15:00",
+  "venue": "Rasenplatz, Eutritzsch Feld 1, Thaerstr. 5, 04129 Leipzig",
+  "attendance": 37,
+  "matchday": 3,
+  "goals": [
+    {
+      "minute": 76,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01V3LGAUN4000000VS541L4GVTBV7JIL"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 25,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 62,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 83,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 35,
+      "player_out": "#9",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 56,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 65,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 71,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 73,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 83,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 90,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

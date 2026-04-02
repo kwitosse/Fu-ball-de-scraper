@@ -1,0 +1,100 @@
+{
+  "match_id": "02TP6B45M4000000VS5489BUVSPHI8RP",
+  "home_team": "TSV Böhlitz-Ehrenberg 1990 I",
+  "away_team": "SG Olympia 1896 Leipzig II",
+  "home_score": 0,
+  "away_score": 1,
+  "date": "14.09.2025",
+  "kickoff": "15:00",
+  "venue": "Rasenplatz, Böhlitz Leipziger Straße, Leipziger Str. 124, 04178 Leipzig",
+  "attendance": 75,
+  "matchday": 4,
+  "goals": [
+    {
+      "minute": 87,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02FHGQ0I5K000000VUM1DNP5VU5PVP3B"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 21,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 60,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 58,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 60,
+      "player_out": "#8",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 60,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 74,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 82,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 83,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 90,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 90,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

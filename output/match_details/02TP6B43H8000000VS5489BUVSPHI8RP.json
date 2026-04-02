@@ -1,0 +1,123 @@
+{
+  "match_id": "02TP6B43H8000000VS5489BUVSPHI8RP",
+  "home_team": "Roter Stern Leipzig 99 II",
+  "away_team": "FSV Großpösna I",
+  "home_score": 3,
+  "away_score": 3,
+  "date": "15.11.2025",
+  "kickoff": "14:00",
+  "venue": "Rasenplatz, SpA Am Goethesteig GF Roter Stern, Goethesteig, 04279 Leipzig",
+  "attendance": 42,
+  "matchday": 12,
+  "goals": [
+    {
+      "minute": 22,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/028LDTCDRC000000VS541L4GVSD8NUTM"
+    },
+    {
+      "minute": 64,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/0245I9K7O0000000VS541L4KVUCITE80"
+    },
+    {
+      "minute": 71,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS42FA0000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 77,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01VOFKSONO000000VS54898GVV8OQ4P1"
+    },
+    {
+      "minute": 88,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/028LDTCDRC000000VS541L4GVSD8NUTM"
+    },
+    {
+      "minute": 90,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/02TAC328JK000000VS5489C2VSJNJVM9"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 86,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 56,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 62,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 62,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 78,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 81,
+      "player_out": "#15",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

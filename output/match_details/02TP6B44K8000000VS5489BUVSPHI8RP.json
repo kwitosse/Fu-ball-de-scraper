@@ -1,0 +1,122 @@
+{
+  "match_id": "02TP6B44K8000000VS5489BUVSPHI8RP",
+  "home_team": "SG Rotation Leipzig II",
+  "away_team": "VfB Zwenkau 02 II",
+  "home_score": 6,
+  "away_score": 1,
+  "date": "19.11.2025",
+  "kickoff": "13:00",
+  "venue": "Kunstrasenplatz, Sportschule - Kunstrasenplatz, Abtnaundorfer Str. 47, 04347 Leipzig",
+  "attendance": 40,
+  "matchday": 12,
+  "goals": [
+    {
+      "minute": 1,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01598OHHFG000000VV0AG811VVEDO5CH"
+    },
+    {
+      "minute": 45,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS5VMJG000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 62,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01598OHHFG000000VV0AG811VVEDO5CH"
+    },
+    {
+      "minute": 74,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01JEFNNSHO000000VV0AG80NVUV3DUHP"
+    },
+    {
+      "minute": 79,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02I0RRHRAO000000VUM1DNRMVSBCVM67"
+    },
+    {
+      "minute": 83,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01S8459340000000VS548985VS2I2GTN"
+    },
+    {
+      "minute": 90,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01246TVEQO000000VV0AG80NVVAN2FAL"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 86,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 31,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 55,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 63,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 66,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 75,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 77,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 80,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
+}

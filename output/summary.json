@@ -1,0 +1,16 @@
+{
+  "league": "Kreisliga A Herren, Kreis Leipzig",
+  "season": "2025/2026",
+  "region": "Sachsen",
+  "staffel_id": "02TKCSME94000008VS5489BUVUD1610F-G",
+  "scraped_at": "2026-04-02T18:12:27",
+  "total_matchdays": 26,
+  "total_matches": 201,
+  "matches_played": 0,
+  "teams_in_standings": 14,
+  "top_scorer": {
+    "player": "Philipp Anders",
+    "team": "SV Tapfer 06 Leipzig II",
+    "goals": 11
+  }
+}

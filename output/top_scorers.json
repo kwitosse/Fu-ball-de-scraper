@@ -1,0 +1,212 @@
+[
+  {
+    "rank": 1,
+    "player": "Philipp Anders",
+    "player_id": "00LNS4THJ4000000VV0AG85VVVPI7ST7",
+    "team": "SV Tapfer 06 Leipzig II",
+    "goals": 11
+  },
+  {
+    "rank": 1,
+    "player": "Oleksandr Martyniuk",
+    "player_id": "02SFDBJ98C000000VS5489B8VVEDVP3N",
+    "team": "SV Tapfer 06 Leipzig II",
+    "goals": 11
+  },
+  {
+    "rank": 3,
+    "player": "Spencer Stadler",
+    "player_id": null,
+    "team": "VfB Zwenkau 02 II",
+    "goals": 10
+  },
+  {
+    "rank": 3,
+    "player": "Tim Stumpfhauser",
+    "player_id": "00OQFRBUDG000000VV0AG83KVVMJE540",
+    "team": "SG Leipzig-Bienitz I",
+    "goals": 10
+  },
+  {
+    "rank": 3,
+    "player": "Marco Weichert",
+    "player_id": null,
+    "team": "SV Panitzsch/​Borsdorf II",
+    "goals": 10
+  },
+  {
+    "rank": 6,
+    "player": "Tim Kunath",
+    "player_id": "00K6AV9308000000VV0AG85VVS8G2T1F",
+    "team": "SG Olympia 1896 Leipzig II",
+    "goals": 9
+  },
+  {
+    "rank": 6,
+    "player": "Jakob Selnack",
+    "player_id": "00OFRNQI94000000VV0AG83KVSJ5737U",
+    "team": "SV Lipsia 93 Eutritzsch II",
+    "goals": 9
+  },
+  {
+    "rank": 8,
+    "player": "Tom Kattner",
+    "player_id": null,
+    "team": "SG LVB I",
+    "goals": 8
+  },
+  {
+    "rank": 8,
+    "player": "Lucas Wünsch",
+    "player_id": null,
+    "team": "FSV Großpösna I",
+    "goals": 8
+  },
+  {
+    "rank": 10,
+    "player": "Niklas Diosi",
+    "player_id": null,
+    "team": "TSV Böhlitz-Ehrenberg 1990 I",
+    "goals": 7
+  },
+  {
+    "rank": 10,
+    "player": "Fabian Heckel",
+    "player_id": null,
+    "team": "SV Fortuna Leipzig 02 I",
+    "goals": 7
+  },
+  {
+    "rank": 10,
+    "player": "Kai Stumpfhauser",
+    "player_id": "00OQFREM5C000000VV0AG83KVVMJE540",
+    "team": "SG Leipzig-Bienitz I",
+    "goals": 7
+  },
+  {
+    "rank": 10,
+    "player": "Manuel Wajer",
+    "player_id": "00K6AURLL8000000VV0AG85VVS8G2T1F",
+    "team": "SV Lipsia 93 Eutritzsch II",
+    "goals": 7
+  },
+  {
+    "rank": 10,
+    "player": "Ferdinand Weinlich",
+    "player_id": "00LN6HPCUG000000VV0AG85VVTNE19SS",
+    "team": "SG LVB I",
+    "goals": 7
+  },
+  {
+    "rank": 15,
+    "player": "Stanley Guzman",
+    "player_id": null,
+    "team": "SV Fortuna Leipzig 02 I",
+    "goals": 6
+  },
+  {
+    "rank": 16,
+    "player": "Tom Krause",
+    "player_id": null,
+    "team": "FC Blau-Weiß Leipzig II",
+    "goals": 5
+  },
+  {
+    "rank": 16,
+    "player": "Marc-Andre Staacke",
+    "player_id": "01598OHHFG000000VV0AG811VVEDO5CH",
+    "team": "VfB Zwenkau 02 II",
+    "goals": 5
+  },
+  {
+    "rank": 16,
+    "player": "Marcel Zander",
+    "player_id": "00UIT4FUHO000000VV0AG811VTN498IG",
+    "team": "SG Rotation Leipzig II",
+    "goals": 5
+  },
+  {
+    "rank": 19,
+    "player": "Dimitri Albrandt",
+    "player_id": "00LNS54O38000000VV0AG85VVVPI7ST7",
+    "team": "TSV Böhlitz-Ehrenberg 1990 I",
+    "goals": 4
+  },
+  {
+    "rank": 19,
+    "player": "Peter Arevalo Wenk",
+    "player_id": null,
+    "team": "TSV Böhlitz-Ehrenberg 1990 I",
+    "goals": 4
+  },
+  {
+    "rank": 19,
+    "player": "Mattes Buth",
+    "player_id": "01I5TNKKM8000000VV0AG811VSDCUP3O",
+    "team": "FC Blau-Weiß Leipzig II",
+    "goals": 4
+  },
+  {
+    "rank": 19,
+    "player": "Delron Lukas Daum",
+    "player_id": null,
+    "team": "SV Tapfer 06 Leipzig II",
+    "goals": 4
+  },
+  {
+    "rank": 19,
+    "player": "Durmus Metin Fischer",
+    "player_id": null,
+    "team": "Roter Stern Leipzig 99 II",
+    "goals": 4
+  },
+  {
+    "rank": 19,
+    "player": "Max Halko",
+    "player_id": null,
+    "team": "SV Tapfer 06 Leipzig II",
+    "goals": 4
+  },
+  {
+    "rank": 19,
+    "player": "Max Kieselbach",
+    "player_id": "00LNS4T0US000000VV0AG85VVVPI7ST7",
+    "team": "SG Olympia 1896 Leipzig II",
+    "goals": 4
+  },
+  {
+    "rank": 19,
+    "player": "Niklas Elias Kirsch-Osag",
+    "player_id": "01B3LJFAA0000000VV0AG80NVUQACAMB",
+    "team": "Roter Stern Leipzig 99 II",
+    "goals": 4
+  },
+  {
+    "rank": 19,
+    "player": "Pol Augustin Knödler",
+    "player_id": null,
+    "team": "SG Olympia 1896 Leipzig II",
+    "goals": 4
+  },
+  {
+    "rank": 19,
+    "player": "Kejus Kühne",
+    "player_id": null,
+    "team": "FC Blau-Weiß Leipzig II",
+    "goals": 4
+  },
+  {
+    "rank": 19,
+    "player": "Jannik Lehmann",
+    "player_id": "011OUTVQR4000000VV0AG811VVCD89UM",
+    "team": "SV Panitzsch/​Borsdorf II",
+    "goals": 4
+  },
+  {
+    "rank": 19,
+    "player": "Robin-Vinzenz Meyer",
+    "player_id": null,
+    "team": "SV Fortuna Leipzig 02 I",
+    "goals": 4
+  }
+]

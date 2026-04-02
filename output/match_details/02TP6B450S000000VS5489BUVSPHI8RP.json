@@ -1,0 +1,125 @@
+{
+  "match_id": "02TP6B450S000000VS5489BUVSPHI8RP",
+  "home_team": "SV Fortuna Leipzig 02 I",
+  "away_team": "TSV Böhlitz-Ehrenberg 1990 I",
+  "home_score": 0,
+  "away_score": 1,
+  "date": "05.10.2025",
+  "kickoff": "14:00",
+  "venue": "Rasenplatz, Fortuna-Sportpark Großfeld 1, Riesaer Str. 101, 04328 Leipzig",
+  "attendance": 34,
+  "matchday": 7,
+  "goals": [
+    {
+      "minute": 59,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01T1IVU0BO000000VS541L4JVVPU72J3"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 9,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 29,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 68,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow_red",
+      "player_profile_url": null
+    },
+    {
+      "minute": 69,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 70,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 82,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 84,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 85,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow_red",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 54,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 72,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 84,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 90,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}

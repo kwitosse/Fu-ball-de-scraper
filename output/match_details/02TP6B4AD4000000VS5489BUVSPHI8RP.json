@@ -1,0 +1,67 @@
+{
+  "match_id": "02TP6B4AD4000000VS5489BUVSPHI8RP",
+  "home_team": "FC Blau-Weiß Leipzig II",
+  "away_team": "SG Leipzig-Bienitz I",
+  "home_score": null,
+  "away_score": null,
+  "date": "22.03.2026",
+  "kickoff": "14:00",
+  "venue": "Rasenplatz, Stadion der Freundschaft Feld 1, Kantatenweg 39, 04229 Leipzig",
+  "attendance": 20,
+  "matchday": 15,
+  "goals": [],
+  "cards": [
+    {
+      "minute": 74,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 78,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 54,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 67,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 67,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 75,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 80,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 83,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
+}
