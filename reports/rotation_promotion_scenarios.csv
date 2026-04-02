@@ -1,0 +1,7 @@
+scenario,final_points,final_ppg,likely_top2_vs_rank2_pace,top2_if_rank2_drops_2pts_in_direct_duels,rank1_chance,min_avg_gd_per_game_to_reach_plus10
+6W 2D 2L,47,1.808,borderline/no,borderline/no,low,1.1
+7W 1D 2L,49,1.885,borderline/no,yes,low,1.1
+7W 2D 1L,50,1.923,borderline/no,yes,low,1.1
+8W 0D 2L,51,1.962,yes,yes,low,1.1
+8W 1D 1L,52,2.0,yes,yes,low,1.1
+9W 0D 1L,54,2.077,yes,yes,low,1.1
