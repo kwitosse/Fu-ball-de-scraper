@@ -3,7 +3,7 @@
     "league": "Herren Stadtklasse, Kreis Leipzig, Kreisliga A",
     "season": "2025/2026",
     "focus_team": "SG Rotation Leipzig II",
-    "analysis_generated_at": "2026-04-02T19:51:37+00:00",
+    "analysis_generated_at": "2026-04-02T20:09:03+00:00",
     "known_data_limitations": [
       "standings reflect MD16 (16 played), while match detail results currently contain fewer completed matches for some MDs",
       "fixture-level trend metrics are computed only from available played match_detail files"
@@ -62,15 +62,16 @@
       }
     ],
     "rank2_bands": {
-      "hold_current_pace": 50.4,
-      "slight_slowdown": 46.5,
-      "strong_finish": 54.3,
-      "direct_duel_adjusted": 48.4
+      "rank2_no_drop": 50.4,
+      "rank2_moderate_drop": 42.2,
+      "rank2_heavy_drop": 37.3,
+      "remaining_matches": 10
     },
     "required_points_from_last_10": {
-      "to_match_rank2_hold_pace": 24,
-      "to_beat_rank2_hold_pace_by_1": 25,
-      "to_match_rank2_direct_duel_adjusted": 22,
+      "to_match_rank2_no_drop": 24,
+      "to_beat_rank2_no_drop_by_1": 25,
+      "to_match_rank2_moderate_drop": 16,
+      "to_match_rank2_heavy_drop": 11,
       "conservative": 26,
       "realistic": 24,
       "aggressive": 28
@@ -239,6 +240,222 @@
       "high_direct_duel_drop": -4
     }
   },
+  "top7_direct_duel_projection": {
+    "top7_teams": [
+      "SV Tapfer 06 Leipzig II",
+      "SV Lipsia 93 Eutritzsch II",
+      "SG Olympia 1896 Leipzig II",
+      "SG Rotation Leipzig II",
+      "VfB Zwenkau 02 II",
+      "SG LVB I",
+      "FC Blau-Weiß Leipzig II"
+    ],
+    "remaining_top7_direct_duel_fixtures": [
+      {
+        "matchday": 17,
+        "date": null,
+        "home_team": "FC Blau-Weiß Leipzig II",
+        "away_team": "VfB Zwenkau 02 II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 18,
+        "date": null,
+        "home_team": "SG Rotation Leipzig II",
+        "away_team": "FC Blau-Weiß Leipzig II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 18,
+        "date": null,
+        "home_team": "SV Tapfer 06 Leipzig II",
+        "away_team": "SG Olympia 1896 Leipzig II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 19,
+        "date": null,
+        "home_team": "SV Lipsia 93 Eutritzsch II",
+        "away_team": "SV Tapfer 06 Leipzig II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 19,
+        "date": null,
+        "home_team": "VfB Zwenkau 02 II",
+        "away_team": "SG Rotation Leipzig II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 20,
+        "date": null,
+        "home_team": "SG Olympia 1896 Leipzig II",
+        "away_team": "VfB Zwenkau 02 II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 20,
+        "date": null,
+        "home_team": "SV Tapfer 06 Leipzig II",
+        "away_team": "SG LVB I",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 21,
+        "date": null,
+        "home_team": "SV Lipsia 93 Eutritzsch II",
+        "away_team": "SG Olympia 1896 Leipzig II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 22,
+        "date": null,
+        "home_team": "SG Olympia 1896 Leipzig II",
+        "away_team": "SG LVB I",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 22,
+        "date": null,
+        "home_team": "SV Lipsia 93 Eutritzsch II",
+        "away_team": "VfB Zwenkau 02 II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 23,
+        "date": null,
+        "home_team": "FC Blau-Weiß Leipzig II",
+        "away_team": "SV Tapfer 06 Leipzig II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 23,
+        "date": null,
+        "home_team": "SG LVB I",
+        "away_team": "SV Lipsia 93 Eutritzsch II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 24,
+        "date": null,
+        "home_team": "SG LVB I",
+        "away_team": "VfB Zwenkau 02 II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 24,
+        "date": null,
+        "home_team": "SV Tapfer 06 Leipzig II",
+        "away_team": "SG Rotation Leipzig II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 25,
+        "date": null,
+        "home_team": "FC Blau-Weiß Leipzig II",
+        "away_team": "SG Olympia 1896 Leipzig II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 26,
+        "date": null,
+        "home_team": "SG Olympia 1896 Leipzig II",
+        "away_team": "SG Rotation Leipzig II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      },
+      {
+        "matchday": 26,
+        "date": null,
+        "home_team": "SV Lipsia 93 Eutritzsch II",
+        "away_team": "FC Blau-Weiß Leipzig II",
+        "expected_home_points": 1.4,
+        "expected_away_points": 1.2,
+        "expected_total_points": 2.6
+      }
+    ],
+    "rival_expected_points_from_top7_direct_duels": [
+      {
+        "team": "SV Lipsia 93 Eutritzsch II",
+        "position": 2,
+        "scheduled_top7_direct_duels": 5,
+        "expected_points_from_top7_duels": 6.8,
+        "expected_point_leakage_vs_perfect": 8.2
+      },
+      {
+        "team": "SG Olympia 1896 Leipzig II",
+        "position": 3,
+        "scheduled_top7_direct_duels": 6,
+        "expected_points_from_top7_duels": 7.8,
+        "expected_point_leakage_vs_perfect": 10.2
+      },
+      {
+        "team": "SG Rotation Leipzig II",
+        "position": 4,
+        "scheduled_top7_direct_duels": 4,
+        "expected_points_from_top7_duels": 5.0,
+        "expected_point_leakage_vs_perfect": 7.0
+      },
+      {
+        "team": "VfB Zwenkau 02 II",
+        "position": 5,
+        "scheduled_top7_direct_duels": 5,
+        "expected_points_from_top7_duels": 6.2,
+        "expected_point_leakage_vs_perfect": 8.8
+      },
+      {
+        "team": "SG LVB I",
+        "position": 6,
+        "scheduled_top7_direct_duels": 4,
+        "expected_points_from_top7_duels": 5.2,
+        "expected_point_leakage_vs_perfect": 6.8
+      },
+      {
+        "team": "FC Blau-Weiß Leipzig II",
+        "position": 7,
+        "scheduled_top7_direct_duels": 5,
+        "expected_points_from_top7_duels": 6.6,
+        "expected_point_leakage_vs_perfect": 8.4
+      }
+    ],
+    "rank2_bands": {
+      "rank2_no_drop": 50.4,
+      "rank2_moderate_drop": 42.2,
+      "rank2_heavy_drop": 37.3,
+      "remaining_matches": 10
+    }
+  },
   "form_and_trends": {
     "known_played_matches": 14,
     "points_last_5": 9,
@@ -307,16 +524,16 @@
   ],
   "simulation": {
     "iterations": 4000,
-    "top2_probability": 0.07,
+    "top2_probability": 0.067,
     "position_probability": {
-      "2": 0.07,
-      "3": 0.212,
-      "4": 0.241,
-      "5": 0.215,
-      "6": 0.143,
+      "2": 0.067,
+      "3": 0.217,
+      "4": 0.247,
+      "5": 0.199,
+      "6": 0.147,
       "7": 0.079,
-      "8": 0.029,
-      "9": 0.008,
+      "8": 0.031,
+      "9": 0.011,
       "10": 0.002
     }
   },

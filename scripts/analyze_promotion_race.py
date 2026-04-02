@@ -280,6 +280,128 @@ def build_scenarios(current_points: int, played: int, remaining: int, threshold:
     return rows
 
 
+def expected_points_from_top7_direct_duels(
+    standings: list[TeamSnapshot],
+    matchdays: list[dict[str, Any]],
+    total_matches_per_team: int,
+) -> dict[str, Any]:
+    top7 = [t for t in standings if t.position <= 7]
+    top7_teams = {t.team for t in top7}
+
+    split_points: dict[str, dict[str, int]] = {
+        t.team: {"home_points": 0, "home_played": 0, "away_points": 0, "away_played": 0}
+        for t in top7
+    }
+    remaining_top7_fixtures: list[dict[str, Any]] = []
+    inferred_current_matchday = max((t.played for t in standings), default=0)
+
+    for md in matchdays:
+        md_number = md.get("matchday_number")
+        for m in md.get("matches", []):
+            home = m.get("home_team")
+            away = m.get("away_team")
+            if home not in top7_teams or away not in top7_teams:
+                continue
+            hs, a_s = m.get("home_score"), m.get("away_score")
+            if hs is None or a_s is None:
+                fixture_md = m.get("matchday") or md_number
+                if fixture_md is not None and fixture_md <= inferred_current_matchday:
+                    continue
+                remaining_top7_fixtures.append(
+                    {
+                        "matchday": fixture_md,
+                        "date": m.get("date"),
+                        "home_team": home,
+                        "away_team": away,
+                    }
+                )
+                continue
+
+            split_points[home]["home_played"] += 1
+            split_points[away]["away_played"] += 1
+            if hs > a_s:
+                split_points[home]["home_points"] += 3
+            elif hs == a_s:
+                split_points[home]["home_points"] += 1
+                split_points[away]["away_points"] += 1
+            else:
+                split_points[away]["away_points"] += 3
+
+    team_ppg_splits: dict[str, dict[str, float]] = {}
+    for team, row in split_points.items():
+        home_ppg = row["home_points"] / row["home_played"] if row["home_played"] else None
+        away_ppg = row["away_points"] / row["away_played"] if row["away_played"] else None
+        team_ppg_splits[team] = {
+            "home_ppg": round(home_ppg, 3) if home_ppg is not None else None,
+            "away_ppg": round(away_ppg, 3) if away_ppg is not None else None,
+            "home_played": row["home_played"],
+            "away_played": row["away_played"],
+        }
+
+    expected_points_by_team = {team: 0.0 for team in top7_teams}
+    expected_fixture_rows = []
+    for f in remaining_top7_fixtures:
+        home = f["home_team"]
+        away = f["away_team"]
+        home_split = team_ppg_splits[home]
+        away_split = team_ppg_splits[away]
+        exp_home = home_split["home_ppg"] if home_split["home_ppg"] is not None else 1.4
+        exp_away = away_split["away_ppg"] if away_split["away_ppg"] is not None else 1.2
+        expected_points_by_team[home] += exp_home
+        expected_points_by_team[away] += exp_away
+        expected_fixture_rows.append(
+            {
+                **f,
+                "expected_home_points": round(exp_home, 3),
+                "expected_away_points": round(exp_away, 3),
+                "expected_total_points": round(exp_home + exp_away, 3),
+            }
+        )
+
+    competitors = [t for t in top7 if t.position >= 2]
+    rival_rows = []
+    for t in competitors:
+        duel_count = sum(
+            1 for f in remaining_top7_fixtures if f["home_team"] == t.team or f["away_team"] == t.team
+        )
+        exp_pts = expected_points_by_team[t.team]
+        max_pts = duel_count * 3
+        rival_rows.append(
+            {
+                "team": t.team,
+                "position": t.position,
+                "scheduled_top7_direct_duels": duel_count,
+                "expected_points_from_top7_duels": round(exp_pts, 3),
+                "expected_point_leakage_vs_perfect": round(max_pts - exp_pts, 3),
+            }
+        )
+
+    second = next((t for t in standings if t.position == 2), standings[1])
+    remaining = total_matches_per_team - second.played
+    rank2_leakage = next(
+        (r["expected_point_leakage_vs_perfect"] for r in rival_rows if r["position"] == 2),
+        0.0,
+    )
+    no_drop = second.ppg * total_matches_per_team
+    moderate_drop = max(0.0, no_drop - rank2_leakage)
+    heavy_drop = max(0.0, no_drop - max(rank2_leakage * 1.6, rank2_leakage + 2.0))
+
+    return {
+        "top7_teams": [t.team for t in top7],
+        "remaining_top7_direct_duel_fixtures": sorted(
+            expected_fixture_rows,
+            key=lambda x: (x.get("matchday") or 999, x.get("home_team") or "", x.get("away_team") or ""),
+        ),
+        "rival_expected_points_from_top7_direct_duels": sorted(rival_rows, key=lambda x: x["position"]),
+        "rank2_bands": {
+            "rank2_no_drop": round(no_drop, 1),
+            "rank2_moderate_drop": round(moderate_drop, 1),
+            "rank2_heavy_drop": round(heavy_drop, 1),
+            "remaining_matches": remaining,
+        },
+    }
+
+
 def monte_carlo_top2_prob(
     standings: list[TeamSnapshot],
     focus: TeamSnapshot,
@@ -317,7 +439,7 @@ def monte_carlo_top2_prob(
 
 def main() -> None:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    standings_raw, _matchdays, details = read_inputs()
+    standings_raw, matchdays, details = read_inputs()
 
     standings = [snapshot_from_row(r) for r in standings_raw]
     standings_by_team = {r.team: r for r in standings}
@@ -353,17 +475,14 @@ def main() -> None:
 
     scenario_matrix = build_scenarios(focus.points, focus.played, remaining, threshold_realistic)
 
-    rank2_bands = {
-        "hold_current_pace": round(second.ppg * total_matches_per_team, 1),
-        "slight_slowdown": round(max(0, second.ppg - 0.15) * total_matches_per_team, 1),
-        "strong_finish": round((second.ppg + 0.15) * total_matches_per_team, 1),
-        "direct_duel_adjusted": round(max(0, second.ppg * total_matches_per_team - 2.0), 1),
-    }
+    top7_direct_duels = expected_points_from_top7_direct_duels(standings, matchdays, total_matches_per_team)
+    rank2_bands = top7_direct_duels["rank2_bands"]
 
     required_points = {
-        "to_match_rank2_hold_pace": max(0, math.ceil(rank2_bands["hold_current_pace"]) - focus.points),
-        "to_beat_rank2_hold_pace_by_1": max(0, math.ceil(rank2_bands["hold_current_pace"] + 1) - focus.points),
-        "to_match_rank2_direct_duel_adjusted": max(0, math.ceil(rank2_bands["direct_duel_adjusted"]) - focus.points),
+        "to_match_rank2_no_drop": max(0, math.ceil(rank2_bands["rank2_no_drop"]) - focus.points),
+        "to_beat_rank2_no_drop_by_1": max(0, math.ceil(rank2_bands["rank2_no_drop"] + 1) - focus.points),
+        "to_match_rank2_moderate_drop": max(0, math.ceil(rank2_bands["rank2_moderate_drop"]) - focus.points),
+        "to_match_rank2_heavy_drop": max(0, math.ceil(rank2_bands["rank2_heavy_drop"]) - focus.points),
         "conservative": max(0, threshold_conservative - focus.points),
         "realistic": max(0, threshold_realistic - focus.points),
         "aggressive": max(0, threshold_aggressive - focus.points),
@@ -450,6 +569,7 @@ def main() -> None:
                 "high_direct_duel_drop": -4,
             },
         },
+        "top7_direct_duel_projection": top7_direct_duels,
         "form_and_trends": form,
         "scenario_matrix": scenario_matrix,
         "simulation": mc,
@@ -489,9 +609,13 @@ def main() -> None:
         f"- Remaining matches: **{remaining}** | max final points: **{focus.points + remaining*3}**.",
         "",
         "## Promotion race summary",
-        f"- Current rank-2 pace projects to ~**{rank2_bands['hold_current_pace']}** points.",
+        f"- Current rank-2 pace projects to ~**{rank2_bands['rank2_no_drop']}** points.",
+        f"- Rank-2 moderate drop band (expected top-7 duel leakage): ~**{rank2_bands['rank2_moderate_drop']}** points.",
+        f"- Rank-2 heavy drop band (bigger leakage swing): ~**{rank2_bands['rank2_heavy_drop']}** points.",
         f"- Realistic top-2 target band: **{threshold_realistic}–{threshold_conservative}** points.",
         f"- Rotation therefore likely needs **{required_points['realistic']} to {required_points['conservative']}** points from last 10.",
+        f"- Threshold framing: **still possible** around {math.ceil(rank2_bands['rank2_heavy_drop'])}+ pts, "
+        f"**likely promotion** around {math.ceil(rank2_bands['rank2_moderate_drop'])}+ pts.",
         "",
         "## Scenario matrix",
         "| Scenario | Final pts | Final PPG | Top-2 pace check | Rank-1 chance |",
@@ -516,7 +640,7 @@ def main() -> None:
             f"- Average opponent PPG in run-in: **{fixture_strength_avg_ppg}**.",
             f"- Direct rival fixtures in your run-in: **{len(direct_rival_fixtures)}** ({', '.join(f['opponent'] for f in direct_rival_fixtures)}).",
             "- Buckets used: must-win / favorable but dangerous / six-pointer / difficult upset opportunity.",
-            f"- Adjusted rank-2 line (assuming rivals drop points in direct duels): **{rank2_bands['direct_duel_adjusted']}** points.",
+            f"- Adjusted rank-2 line from top-7 direct duel model (moderate drop): **{rank2_bands['rank2_moderate_drop']}** points.",
             "- Planned run-in fixtures considered in this analysis:",
             *[
                 f"  - {(f.get('date') or ('MD' + str(f.get('matchday', '?'))))} | {f['home_away']} vs {f['opponent']} "
@@ -527,8 +651,10 @@ def main() -> None:
             "## Direct-opponent leverage (important for your situation)",
             f"- You are currently **4 points** behind rank 2 ({second.points} vs {focus.points}).",
             "- Beating a direct rival is effectively a **6-point swing** in promotion race terms.",
-            "- If direct rivals trade points among themselves, the practical top-2 line can move down by ~2-4 points.",
-            f"- That lowers your likely target from ~{math.ceil(rank2_bands['hold_current_pace'])} to roughly **{math.ceil(rank2_bands['direct_duel_adjusted'])}** points.",
+            "- If direct rivals trade points among themselves, the practical top-2 line can move down meaningfully.",
+            f"- In this model, that shifts likely target from ~{math.ceil(rank2_bands['rank2_no_drop'])} "
+            f"to **{math.ceil(rank2_bands['rank2_moderate_drop'])}** (likely promotion), with "
+            f"**{math.ceil(rank2_bands['rank2_heavy_drop'])}** as a still-possible line.",
             "",
             "## Form and trend snapshot (from available played detail files)",
             f"- Known played matches in detail files for Rotation: **{form['known_played_matches']}**.",

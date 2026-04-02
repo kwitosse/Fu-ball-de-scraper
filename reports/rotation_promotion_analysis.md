@@ -12,8 +12,11 @@
 
 ## Promotion race summary
 - Current rank-2 pace projects to ~**50.4** points.
+- Rank-2 moderate drop band (expected top-7 duel leakage): ~**42.2** points.
+- Rank-2 heavy drop band (bigger leakage swing): ~**37.3** points.
 - Realistic top-2 target band: **51–53** points.
 - Rotation therefore likely needs **24 to 26** points from last 10.
+- Threshold framing: **still possible** around 38+ pts, **likely promotion** around 43+ pts.
 
 ## Scenario matrix
 | Scenario | Final pts | Final PPG | Top-2 pace check | Rank-1 chance |
@@ -36,7 +39,7 @@
 - Average opponent PPG in run-in: **1.331**.
 - Direct rival fixtures in your run-in: **2** (SV Tapfer 06 Leipzig II, SG Olympia 1896 Leipzig II).
 - Buckets used: must-win / favorable but dangerous / six-pointer / difficult upset opportunity.
-- Adjusted rank-2 line (assuming rivals drop points in direct duels): **48.4** points.
+- Adjusted rank-2 line from top-7 direct duel model (moderate drop): **42.2** points.
 - Planned run-in fixtures considered in this analysis:
   - 2026-04-12 | A vs SG Leipzig-Bienitz I (pos 8, 1.312 ppg, favorable but dangerous)
   - 2026-04-19 | H vs FC Blau-Weiß Leipzig II (pos 7, 1.5 ppg, favorable but dangerous)
@@ -52,8 +55,8 @@
 ## Direct-opponent leverage (important for your situation)
 - You are currently **4 points** behind rank 2 (31 vs 27).
 - Beating a direct rival is effectively a **6-point swing** in promotion race terms.
-- If direct rivals trade points among themselves, the practical top-2 line can move down by ~2-4 points.
-- That lowers your likely target from ~51 to roughly **49** points.
+- If direct rivals trade points among themselves, the practical top-2 line can move down meaningfully.
+- In this model, that shifts likely target from ~51 to **43** (likely promotion), with **38** as a still-possible line.
 
 ## Form and trend snapshot (from available played detail files)
 - Known played matches in detail files for Rotation: **14**.
@@ -62,7 +65,7 @@
 - Clean-sheet rate: **7.1%** | 2+ goals scored rate: **35.7%**.
 
 ## Simple projections
-- Monte Carlo lightweight model top-2 probability: **7.0%** (based on 4,000 sims, pace-calibrated).
+- Monte Carlo lightweight model top-2 probability: **6.7%** (based on 4,000 sims, pace-calibrated).
 - Sensitivity takeaway: one extra win (vs draw/loss) materially shifts top-2 odds because rank-2 line is near Rotation's reachable range.
 
 ## Practical football conclusions
