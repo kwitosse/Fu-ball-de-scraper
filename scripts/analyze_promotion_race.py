@@ -10,8 +10,10 @@ import csv
 import json
 import math
 import random
+from collections import defaultdict
 from datetime import datetime, timezone
 from dataclasses import dataclass
+from itertools import product
 from pathlib import Path
 from statistics import mean
 from typing import Any
@@ -315,6 +317,123 @@ def monte_carlo_top2_prob(
     }
 
 
+def fixture_outcome_probs(focus_ppg: float, opp_ppg: float, is_home: bool) -> dict[str, float]:
+    """Heuristic W/D/L probabilities anchored to relative PPG and venue."""
+    rating_gap = (focus_ppg - opp_ppg) + (0.12 if is_home else -0.08)
+    p_win = max(0.18, min(0.68, 0.42 + 0.35 * rating_gap))
+    p_draw = max(0.16, min(0.32, 0.26 - 0.08 * abs(rating_gap)))
+    p_loss = max(0.14, 1.0 - p_win - p_draw)
+    s = p_win + p_draw + p_loss
+    return {"W": p_win / s, "D": p_draw / s, "L": p_loss / s}
+
+
+def build_head_to_head_leverage(
+    fixtures: list[dict[str, Any]],
+    focus: TeamSnapshot,
+    threshold_realistic: int,
+    required_points_realistic: int,
+) -> dict[str, Any]:
+    leverage_fixtures = [f for f in fixtures if f["bucket"] == "six-pointer / direct rival"]
+    leverage_rows: list[dict[str, Any]] = []
+    scenario_totals: dict[tuple[int, int, int], dict[str, float]] = defaultdict(
+        lambda: {
+            "probability_mass": 0.0,
+            "paths": 0,
+            "rotation_points": 0.0,
+            "rival_points": 0.0,
+            "rival_points_prevented": 0.0,
+            "net_table_swing": 0.0,
+        }
+    )
+
+    fixture_prob_maps = []
+    for fx in leverage_fixtures:
+        probs = fixture_outcome_probs(focus.ppg, fx["opponent_ppg"], is_home=fx["home_away"] == "H")
+        baseline_rotation = probs["W"] * 3 + probs["D"] * 1
+        baseline_rival = probs["L"] * 3 + probs["D"] * 1
+        fx_row = {
+            "date_or_matchday": fx.get("date") or f"MD{fx.get('matchday')}",
+            "opponent": fx["opponent"],
+            "home_away": fx["home_away"],
+            "baseline": {
+                "rotation_expected_points": round(baseline_rotation, 3),
+                "rival_expected_points": round(baseline_rival, 3),
+            },
+            "outcomes": {},
+        }
+        for label, rot_pts, rival_pts in [("W", 3, 0), ("D", 1, 1), ("L", 0, 3)]:
+            rotation_delta = rot_pts - baseline_rotation
+            rival_prevented = baseline_rival - rival_pts
+            fx_row["outcomes"][label] = {
+                "probability": round(probs[label], 3),
+                "rotation_points_delta_vs_baseline": round(rotation_delta, 3),
+                "rival_points_prevented_allowed": round(rival_prevented, 3),
+                "net_table_swing": int(rot_pts + (3 - rival_pts)),
+            }
+        leverage_rows.append(fx_row)
+        fixture_prob_maps.append((fx_row, probs, baseline_rival))
+
+    # Compact scenario cube: aggregate all direct-match paths by W/D/L counts.
+    for outcome_combo in product(["W", "D", "L"], repeat=len(fixture_prob_maps)):
+        wins = outcome_combo.count("W")
+        draws = outcome_combo.count("D")
+        losses = outcome_combo.count("L")
+        key = (wins, draws, losses)
+        p = 1.0
+        rot_pts_sum = 0
+        rival_pts_sum = 0
+        rival_prevented_sum = 0.0
+        swing_sum = 0
+        for idx, outcome in enumerate(outcome_combo):
+            fx_row, probs, baseline_rival = fixture_prob_maps[idx]
+            p *= probs[outcome]
+            if outcome == "W":
+                rot_pts, rival_pts = 3, 0
+            elif outcome == "D":
+                rot_pts, rival_pts = 1, 1
+            else:
+                rot_pts, rival_pts = 0, 3
+            rot_pts_sum += rot_pts
+            rival_pts_sum += rival_pts
+            rival_prevented_sum += baseline_rival - rival_pts
+            swing_sum += fx_row["outcomes"][outcome]["net_table_swing"]
+        agg = scenario_totals[key]
+        agg["probability_mass"] += p
+        agg["paths"] += 1
+        agg["rotation_points"] += p * rot_pts_sum
+        agg["rival_points"] += p * rival_pts_sum
+        agg["rival_points_prevented"] += p * rival_prevented_sum
+        agg["net_table_swing"] += p * swing_sum
+
+    cube_rows = []
+    for (w, d, l), agg in sorted(scenario_totals.items(), key=lambda x: x[1]["probability_mass"], reverse=True):
+        prob = agg["probability_mass"]
+        if prob <= 0:
+            continue
+        rival_prevented = agg["rival_points_prevented"] / prob
+        implied_reduction = max(0, round(rival_prevented, 2))
+        cube_rows.append(
+            {
+                "scenario": f"{w}W/{d}D/{l}L",
+                "probability_mass": round(prob, 4),
+                "paths": int(agg["paths"]),
+                "avg_rotation_points_in_direct_matches": round(agg["rotation_points"] / prob, 3),
+                "avg_rival_points_in_direct_matches": round(agg["rival_points"] / prob, 3),
+                "avg_rival_points_prevented_allowed": round(rival_prevented, 3),
+                "avg_net_table_swing": round(agg["net_table_swing"] / prob, 3),
+                "implied_target_point_reduction": implied_reduction,
+                "implied_points_needed_from_last_10": max(0, required_points_realistic - int(round(implied_reduction))),
+                "implied_final_target_points": max(0, threshold_realistic - int(round(implied_reduction))),
+            }
+        )
+
+    return {
+        "leverage_fixture_count": len(leverage_fixtures),
+        "leverage_fixtures": leverage_rows,
+        "scenario_cube": cube_rows[:7],  # compact view: highest-probability slices
+    }
+
+
 def main() -> None:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     standings_raw, _matchdays, details = read_inputs()
@@ -392,6 +511,12 @@ def main() -> None:
     form = derive_recent_form(rotation_matches)
 
     mc = monte_carlo_top2_prob(standings, focus, remaining=remaining, iterations=4000)
+    head_to_head_leverage = build_head_to_head_leverage(
+        fixtures=fixtures,
+        focus=focus,
+        threshold_realistic=threshold_realistic,
+        required_points_realistic=required_points["realistic"],
+    )
 
     analysis = {
         "context": {
@@ -450,6 +575,7 @@ def main() -> None:
                 "high_direct_duel_drop": -4,
             },
         },
+        "head_to_head_leverage": head_to_head_leverage,
         "form_and_trends": form,
         "scenario_matrix": scenario_matrix,
         "simulation": mc,
@@ -529,6 +655,32 @@ def main() -> None:
             "- Beating a direct rival is effectively a **6-point swing** in promotion race terms.",
             "- If direct rivals trade points among themselves, the practical top-2 line can move down by ~2-4 points.",
             f"- That lowers your likely target from ~{math.ceil(rank2_bands['hold_current_pace'])} to roughly **{math.ceil(rank2_bands['direct_duel_adjusted'])}** points.",
+            "",
+            "## Why direct matches matter more than normal matches",
+            "- Direct-opponent fixtures are marked as **leverage fixtures** because each result changes both your points and a rival's points.",
+            "- In one direct game, swing logic is: **Win = +6 swing**, **Draw = +3 swing**, **Loss = +0 swing**.",
+            "- Leverage fixtures in this run-in:",
+            *[
+                f"  - {fx['date_or_matchday']} | {fx['home_away']} vs {fx['opponent']} "
+                f"(baseline: Rotation {fx['baseline']['rotation_expected_points']} pts, rival {fx['baseline']['rival_expected_points']} pts)"
+                for fx in head_to_head_leverage["leverage_fixtures"]
+            ],
+            "- Compact scenario cube (direct matches only):",
+            "| Scenario (W/D/L) | Prob. mass | Avg Rot pts | Avg Rival pts | Avg rival pts prevented | Avg swing | Target reduction |",
+            "|---|---:|---:|---:|---:|---:|---:|",
+            *[
+                f"| {row['scenario']} | {row['probability_mass']:.1%} | {row['avg_rotation_points_in_direct_matches']} | "
+                f"{row['avg_rival_points_in_direct_matches']} | {row['avg_rival_points_prevented_allowed']} | "
+                f"{row['avg_net_table_swing']} | {row['implied_target_point_reduction']} |"
+                for row in head_to_head_leverage["scenario_cube"]
+            ],
+            (
+                f"- Based on the highest-probability direct-match scenarios, realistic top-2 target can drop by about "
+                f"**{head_to_head_leverage['scenario_cube'][0]['implied_target_point_reduction']}** point(s), from "
+                f"**{threshold_realistic}** toward **{head_to_head_leverage['scenario_cube'][0]['implied_final_target_points']}**."
+                if head_to_head_leverage["scenario_cube"]
+                else "- No direct-rival fixtures were found in the remaining schedule, so there is no leverage-cube reduction estimate."
+            ),
             "",
             "## Form and trend snapshot (from available played detail files)",
             f"- Known played matches in detail files for Rotation: **{form['known_played_matches']}**.",

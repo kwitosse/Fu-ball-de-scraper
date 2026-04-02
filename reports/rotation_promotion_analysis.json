@@ -3,7 +3,7 @@
     "league": "Herren Stadtklasse, Kreis Leipzig, Kreisliga A",
     "season": "2025/2026",
     "focus_team": "SG Rotation Leipzig II",
-    "analysis_generated_at": "2026-04-02T19:51:37+00:00",
+    "analysis_generated_at": "2026-04-02T20:09:51+00:00",
     "known_data_limitations": [
       "standings reflect MD16 (16 played), while match detail results currently contain fewer completed matches for some MDs",
       "fixture-level trend metrics are computed only from available played match_detail files"
@@ -239,6 +239,143 @@
       "high_direct_duel_drop": -4
     }
   },
+  "head_to_head_leverage": {
+    "leverage_fixture_count": 2,
+    "leverage_fixtures": [
+      {
+        "date_or_matchday": "2026-06-07",
+        "opponent": "SV Tapfer 06 Leipzig II",
+        "home_away": "A",
+        "baseline": {
+          "rotation_expected_points": 0.729,
+          "rival_expected_points": 2.083
+        },
+        "outcomes": {
+          "W": {
+            "probability": 0.18,
+            "rotation_points_delta_vs_baseline": 2.271,
+            "rival_points_prevented_allowed": 2.083,
+            "net_table_swing": 6
+          },
+          "D": {
+            "probability": 0.189,
+            "rotation_points_delta_vs_baseline": 0.271,
+            "rival_points_prevented_allowed": 1.083,
+            "net_table_swing": 3
+          },
+          "L": {
+            "probability": 0.631,
+            "rotation_points_delta_vs_baseline": -0.729,
+            "rival_points_prevented_allowed": -0.917,
+            "net_table_swing": 0
+          }
+        }
+      },
+      {
+        "date_or_matchday": "2026-06-21",
+        "opponent": "SG Olympia 1896 Leipzig II",
+        "home_away": "A",
+        "baseline": {
+          "rotation_expected_points": 1.359,
+          "rival_expected_points": 1.392
+        },
+        "outcomes": {
+          "W": {
+            "probability": 0.37,
+            "rotation_points_delta_vs_baseline": 1.641,
+            "rival_points_prevented_allowed": 1.392,
+            "net_table_swing": 6
+          },
+          "D": {
+            "probability": 0.249,
+            "rotation_points_delta_vs_baseline": -0.359,
+            "rival_points_prevented_allowed": 0.392,
+            "net_table_swing": 3
+          },
+          "L": {
+            "probability": 0.381,
+            "rotation_points_delta_vs_baseline": -1.359,
+            "rival_points_prevented_allowed": -1.608,
+            "net_table_swing": 0
+          }
+        }
+      }
+    ],
+    "scenario_cube": [
+      {
+        "scenario": "1W/0D/1L",
+        "probability_mass": 0.3023,
+        "paths": 2,
+        "avg_rotation_points_in_direct_matches": 3.0,
+        "avg_rival_points_in_direct_matches": 3.0,
+        "avg_rival_points_prevented_allowed": 0.475,
+        "avg_net_table_swing": 6.0,
+        "implied_target_point_reduction": 0.48,
+        "implied_points_needed_from_last_10": 24,
+        "implied_final_target_points": 51
+      },
+      {
+        "scenario": "0W/0D/2L",
+        "probability_mass": 0.2407,
+        "paths": 1,
+        "avg_rotation_points_in_direct_matches": 0.0,
+        "avg_rival_points_in_direct_matches": 6.0,
+        "avg_rival_points_prevented_allowed": -2.525,
+        "avg_net_table_swing": 0.0,
+        "implied_target_point_reduction": 0,
+        "implied_points_needed_from_last_10": 24,
+        "implied_final_target_points": 51
+      },
+      {
+        "scenario": "0W/1D/1L",
+        "probability_mass": 0.2289,
+        "paths": 2,
+        "avg_rotation_points_in_direct_matches": 1.0,
+        "avg_rival_points_in_direct_matches": 4.0,
+        "avg_rival_points_prevented_allowed": -0.525,
+        "avg_net_table_swing": 3.0,
+        "implied_target_point_reduction": 0,
+        "implied_points_needed_from_last_10": 24,
+        "implied_final_target_points": 51
+      },
+      {
+        "scenario": "1W/1D/0L",
+        "probability_mass": 0.1146,
+        "paths": 2,
+        "avg_rotation_points_in_direct_matches": 4.0,
+        "avg_rival_points_in_direct_matches": 1.0,
+        "avg_rival_points_prevented_allowed": 2.475,
+        "avg_net_table_swing": 9.0,
+        "implied_target_point_reduction": 2.48,
+        "implied_points_needed_from_last_10": 22,
+        "implied_final_target_points": 49
+      },
+      {
+        "scenario": "2W/0D/0L",
+        "probability_mass": 0.0666,
+        "paths": 1,
+        "avg_rotation_points_in_direct_matches": 6.0,
+        "avg_rival_points_in_direct_matches": 0.0,
+        "avg_rival_points_prevented_allowed": 3.475,
+        "avg_net_table_swing": 12.0,
+        "implied_target_point_reduction": 3.48,
+        "implied_points_needed_from_last_10": 21,
+        "implied_final_target_points": 48
+      },
+      {
+        "scenario": "0W/2D/0L",
+        "probability_mass": 0.0469,
+        "paths": 1,
+        "avg_rotation_points_in_direct_matches": 2.0,
+        "avg_rival_points_in_direct_matches": 2.0,
+        "avg_rival_points_prevented_allowed": 1.475,
+        "avg_net_table_swing": 6.0,
+        "implied_target_point_reduction": 1.48,
+        "implied_points_needed_from_last_10": 23,
+        "implied_final_target_points": 50
+      }
+    ]
+  },
   "form_and_trends": {
     "known_played_matches": 14,
     "points_last_5": 9,
@@ -307,17 +444,17 @@
   ],
   "simulation": {
     "iterations": 4000,
-    "top2_probability": 0.07,
+    "top2_probability": 0.075,
     "position_probability": {
-      "2": 0.07,
-      "3": 0.212,
-      "4": 0.241,
-      "5": 0.215,
-      "6": 0.143,
-      "7": 0.079,
-      "8": 0.029,
-      "9": 0.008,
-      "10": 0.002
+      "2": 0.075,
+      "3": 0.206,
+      "4": 0.248,
+      "5": 0.212,
+      "6": 0.151,
+      "7": 0.076,
+      "8": 0.025,
+      "9": 0.007,
+      "10": 0.001
     }
   },
   "conclusions": {

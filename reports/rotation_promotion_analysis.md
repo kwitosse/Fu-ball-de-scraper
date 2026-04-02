@@ -55,6 +55,23 @@
 - If direct rivals trade points among themselves, the practical top-2 line can move down by ~2-4 points.
 - That lowers your likely target from ~51 to roughly **49** points.
 
+## Why direct matches matter more than normal matches
+- Direct-opponent fixtures are marked as **leverage fixtures** because each result changes both your points and a rival's points.
+- In one direct game, swing logic is: **Win = +6 swing**, **Draw = +3 swing**, **Loss = +0 swing**.
+- Leverage fixtures in this run-in:
+  - 2026-06-07 | A vs SV Tapfer 06 Leipzig II (baseline: Rotation 0.729 pts, rival 2.083 pts)
+  - 2026-06-21 | A vs SG Olympia 1896 Leipzig II (baseline: Rotation 1.359 pts, rival 1.392 pts)
+- Compact scenario cube (direct matches only):
+| Scenario (W/D/L) | Prob. mass | Avg Rot pts | Avg Rival pts | Avg rival pts prevented | Avg swing | Target reduction |
+|---|---:|---:|---:|---:|---:|---:|
+| 1W/0D/1L | 30.2% | 3.0 | 3.0 | 0.475 | 6.0 | 0.48 |
+| 0W/0D/2L | 24.1% | 0.0 | 6.0 | -2.525 | 0.0 | 0 |
+| 0W/1D/1L | 22.9% | 1.0 | 4.0 | -0.525 | 3.0 | 0 |
+| 1W/1D/0L | 11.5% | 4.0 | 1.0 | 2.475 | 9.0 | 2.48 |
+| 2W/0D/0L | 6.7% | 6.0 | 0.0 | 3.475 | 12.0 | 3.48 |
+| 0W/2D/0L | 4.7% | 2.0 | 2.0 | 1.475 | 6.0 | 1.48 |
+- Based on the highest-probability direct-match scenarios, realistic top-2 target can drop by about **0.48** point(s), from **51** toward **51**.
+
 ## Form and trend snapshot (from available played detail files)
 - Known played matches in detail files for Rotation: **14**.
 - Points last 5: **9** | points last 8: **12**.
@@ -62,7 +79,7 @@
 - Clean-sheet rate: **7.1%** | 2+ goals scored rate: **35.7%**.
 
 ## Simple projections
-- Monte Carlo lightweight model top-2 probability: **7.0%** (based on 4,000 sims, pace-calibrated).
+- Monte Carlo lightweight model top-2 probability: **7.5%** (based on 4,000 sims, pace-calibrated).
 - Sensitivity takeaway: one extra win (vs draw/loss) materially shifts top-2 odds because rank-2 line is near Rotation's reachable range.
 
 ## Practical football conclusions
