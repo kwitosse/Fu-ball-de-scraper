@@ -62,7 +62,7 @@
 - Clean-sheet rate: **7.1%** | 2+ goals scored rate: **35.7%**.
 
 ## Simple projections
-- Monte Carlo lightweight model top-2 probability: **7.0%** (based on 4,000 sims, pace-calibrated).
+- Monte Carlo lightweight model top-2 probability: **7.3%** (based on 4,000 sims, pace-calibrated).
 - Sensitivity takeaway: one extra win (vs draw/loss) materially shifts top-2 odds because rank-2 line is near Rotation's reachable range.
 
 ## Practical football conclusions
@@ -71,3 +71,25 @@
 3. **Most promotion-like profile**: **7–8 wins**, **max 1–2 losses**, and positive GD swing of **+11 to +16** in run-in.
 4. **Rank-1/title path**: still mathematically possible but near-miracle; requires both elite Rotation run and significant leader slowdown.
 5. **Strategic priority order**: win must-win games first, then maximize points in direct six-pointers, while tightening defense to protect GD gains.
+
+## Match plan (run-in tactical targets)
+| # | Date | H/A | Opponent | Tier | Min | Target | Stretch | Cum target |
+|---:|---|:---:|---|---|---|---|---|---:|
+| 1 | 2026-04-12 | A | SG Leipzig-Bienitz I | acceptable_draw | draw | win | win_by_2+ | 3 |
+| 2 | 2026-04-19 | H | FC Blau-Weiß Leipzig II | upset_bonus | draw | win | win_by_2+ | 6 |
+| 3 | 2026-04-26 | A | VfB Zwenkau 02 II | acceptable_draw | draw | win | win_by_2+ | 9 |
+| 4 | 2026-05-02 | H | FSV Großpösna I | must_win | win | win | win_by_2+ | 12 |
+| 5 | 2026-05-10 | H | TSV Böhlitz-Ehrenberg 1990 I | must_win | win | win | win_by_2+ | 15 |
+| 6 | 2026-05-16 | A | Roter Stern Leipzig 99 II | must_win | draw | win | win_by_2+ | 18 |
+| 7 | 2026-05-31 | H | SV Panitzsch/​Borsdorf II | upset_bonus | draw | win | win_by_2+ | 21 |
+| 8 | 2026-06-07 | A | SV Tapfer 06 Leipzig II | promotion_six_pointer | draw | win | win_by_2+ | 24 |
+| 9 | 2026-06-14 | H | SV Victoria 90 Leipzig I | must_win | win | win | win_by_2+ | 27 |
+| 10 | 2026-06-21 | A | SG Olympia 1896 Leipzig II | promotion_six_pointer | draw | win | win_by_2+ | 30 |
+
+### Cumulative checkpoints and red-line triggers
+| After match | Cum min pts | Cum target pts | Remaining games | Red-line trigger | Revised points needed | Revised PPG needed |
+|---:|---:|---:|---:|---|---:|---:|
+| 3 | 3 | 9 | 7 | if points <= 2 after match 3 | 22 | 3.14 |
+| 5 | 9 | 15 | 5 | if points <= 8 after match 5 | 16 | 3.20 |
+| 7 | 11 | 21 | 3 | if points <= 10 after match 7 | 14 | 4.67 |
+| 10 | 16 | 30 | 0 | if points <= 15 after match 10 | 9 | 0.00 |
