@@ -3,7 +3,7 @@
     "league": "Herren Stadtklasse, Kreis Leipzig, Kreisliga A",
     "season": "2025/2026",
     "focus_team": "SG Rotation Leipzig II",
-    "analysis_generated_at": "2026-04-02T19:51:37+00:00",
+    "analysis_generated_at": "2026-04-02T20:09:41+00:00",
     "known_data_limitations": [
       "standings reflect MD16 (16 played), while match detail results currently contain fewer completed matches for some MDs",
       "fixture-level trend metrics are computed only from available played match_detail files"
@@ -81,42 +81,68 @@
     }
   },
   "goal_difference": {
-    "top4_current_goal_diff": {
-      "SV Tapfer 06 Leipzig II": 39,
-      "SV Lipsia 93 Eutritzsch II": 8,
-      "SG Olympia 1896 Leipzig II": 18,
-      "SG Rotation Leipzig II": -1
-    },
-    "rotation_gap_vs_top4": {
-      "SV Tapfer 06 Leipzig II": -40,
+    "focus_team_current_gd": -1,
+    "current_gd_gap_rotation_vs_direct_rivals": {
       "SV Lipsia 93 Eutritzsch II": -9,
-      "SG Olympia 1896 Leipzig II": -19
+      "SG Olympia 1896 Leipzig II": -19,
+      "VfB Zwenkau 02 II": -6,
+      "SG LVB I": -10,
+      "FC Blau-Weiß Leipzig II": -4
     },
-    "target_ranges": {
-      "minimum_viable_end_gd": {
-        "net_gd_gain_needed": 6,
-        "avg_gd_per_game_needed": 0.6,
-        "example_path": {
-          "goals_for_last_10": 18,
-          "goals_against_last_10": 12
-        }
+    "rival_projected_final_gd_from_current_rates": {
+      "SV Lipsia 93 Eutritzsch II": {
+        "current_gd": 8,
+        "gf_rate": 1.938,
+        "ga_rate": 1.438,
+        "projected_run_in_gf": 19.4,
+        "projected_run_in_ga": 14.4,
+        "projected_final_gd": 13.0
       },
-      "realistic_end_gd": {
-        "net_gd_gain_needed": 11,
-        "avg_gd_per_game_needed": 1.1,
-        "example_path": {
-          "goals_for_last_10": 21,
-          "goals_against_last_10": 10
-        }
+      "SG Olympia 1896 Leipzig II": {
+        "current_gd": 18,
+        "gf_rate": 2.812,
+        "ga_rate": 1.688,
+        "projected_run_in_gf": 28.1,
+        "projected_run_in_ga": 16.9,
+        "projected_final_gd": 29.2
       },
-      "strong_end_gd": {
-        "net_gd_gain_needed": 16,
-        "avg_gd_per_game_needed": 1.6,
-        "example_path": {
-          "goals_for_last_10": 24,
-          "goals_against_last_10": 8
-        }
+      "VfB Zwenkau 02 II": {
+        "current_gd": 5,
+        "gf_rate": 2.375,
+        "ga_rate": 2.062,
+        "projected_run_in_gf": 23.8,
+        "projected_run_in_ga": 20.6,
+        "projected_final_gd": 8.1
+      },
+      "SG LVB I": {
+        "current_gd": 9,
+        "gf_rate": 2.125,
+        "ga_rate": 1.562,
+        "projected_run_in_gf": 21.2,
+        "projected_run_in_ga": 15.6,
+        "projected_final_gd": 14.6
+      },
+      "FC Blau-Weiß Leipzig II": {
+        "current_gd": 3,
+        "gf_rate": 1.938,
+        "ga_rate": 1.75,
+        "projected_run_in_gf": 19.4,
+        "projected_run_in_ga": 17.5,
+        "projected_final_gd": 4.9
       }
+    },
+    "tie_scenarios": {
+      "rank2_team": "SV Lipsia 93 Eutritzsch II",
+      "rank3_team": "SG Olympia 1896 Leipzig II",
+      "rank2_projected_final_gd": 13.0,
+      "rank3_projected_final_gd": 29.2,
+      "rotation_gd_gain_needed_to_beat_rank2_tie": 15,
+      "rotation_gd_gain_needed_to_beat_rank3_tie": 32,
+      "recommended_safety_gd_gain": 32
+    },
+    "practical_run_in_gf_ga_targets": {
+      "minimum": "42:10",
+      "preferred": "43:9"
     }
   },
   "remaining_fixtures": {
@@ -310,14 +336,14 @@
     "top2_probability": 0.07,
     "position_probability": {
       "2": 0.07,
-      "3": 0.212,
+      "3": 0.219,
       "4": 0.241,
-      "5": 0.215,
-      "6": 0.143,
-      "7": 0.079,
-      "8": 0.029,
+      "5": 0.189,
+      "6": 0.161,
+      "7": 0.084,
+      "8": 0.027,
       "9": 0.008,
-      "10": 0.002
+      "10": 0.003
     }
   },
   "conclusions": {

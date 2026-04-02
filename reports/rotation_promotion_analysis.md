@@ -26,10 +26,14 @@
 | 9W 0D 1L | 54 | 2.077 | yes | low |
 
 ## Goal-difference analysis
-- Current GD gaps to promotion rivals: SV Tapfer 06 Leipzig II: -40, SV Lipsia 93 Eutritzsch II: -9, SG Olympia 1896 Leipzig II: -19.
-- Minimum viable end-GD target: **+5** (needs +6 swing).
-- Realistic tiebreak-safe target: **+10** (needs +11 swing, ~+1.10/game).
-- Practical run-in profile for +10 GD: roughly score ~21 and concede ~10 over last 10.
+- Current GD gaps (Rotation minus rival) vs direct rivals (2/3/5/6/7): SV Lipsia 93 Eutritzsch II: -9, SG Olympia 1896 Leipzig II: -19, VfB Zwenkau 02 II: -6, SG LVB I: -10, FC Blau-Weiß Leipzig II: -4.
+- Projected rank-2 (SV Lipsia 93 Eutritzsch II) end-GD on current rates: **+13.0**.
+- Projected rank-3 (SG Olympia 1896 Leipzig II) end-GD on current rates: **+29.2**.
+
+### Tiebreak safety target vs direct rivals
+- To win a points tie vs projected rank-2, Rotation likely needs about **+15** GD gain from now.
+- To win a points tie vs projected rank-3, Rotation likely needs about **+32** GD gain from now.
+- Practical run-in target (GF:GA over last 10): minimum **42:10**, preferred **43:9**.
 
 ## Remaining fixtures and difficulty
 - Remaining fixtures identified in data: **10**.

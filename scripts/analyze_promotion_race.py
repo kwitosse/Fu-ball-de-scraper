@@ -280,6 +280,30 @@ def build_scenarios(current_points: int, played: int, remaining: int, threshold:
     return rows
 
 
+def project_final_gd(team: TeamSnapshot, remaining: int) -> dict[str, Any]:
+    gf_rate = team.goals_for / team.played if team.played else 0.0
+    ga_rate = team.goals_against / team.played if team.played else 0.0
+    projected_run_in_gf = gf_rate * remaining
+    projected_run_in_ga = ga_rate * remaining
+    projected_final_gd = team.goal_diff + (projected_run_in_gf - projected_run_in_ga)
+    return {
+        "current_gd": team.goal_diff,
+        "gf_rate": round(gf_rate, 3),
+        "ga_rate": round(ga_rate, 3),
+        "projected_run_in_gf": round(projected_run_in_gf, 1),
+        "projected_run_in_ga": round(projected_run_in_ga, 1),
+        "projected_final_gd": round(projected_final_gd, 1),
+    }
+
+
+def practical_run_in_target(required_gd_gain: int, remaining: int) -> dict[str, str]:
+    minimum_ga = max(8, remaining)
+    minimum_gf = minimum_ga + max(8, required_gd_gain)
+    preferred_ga = max(7, minimum_ga - 1)
+    preferred_gf = preferred_ga + max(12, required_gd_gain + 2)
+    return {"minimum": f"{minimum_gf}:{minimum_ga}", "preferred": f"{preferred_gf}:{preferred_ga}"}
+
+
 def monte_carlo_top2_prob(
     standings: list[TeamSnapshot],
     focus: TeamSnapshot,
@@ -369,25 +393,40 @@ def main() -> None:
         "aggressive": max(0, threshold_aggressive - focus.points),
     }
 
-    gd_top4 = {r.team: r.goal_diff for r in rivals}
-    gd_gaps = {team: focus.goal_diff - gd for team, gd in gd_top4.items() if team != focus.team}
-
-    goal_targets = {
-        "minimum_viable_end_gd": 5,
-        "realistic_end_gd": 10,
-        "strong_end_gd": 15,
+    direct_rival_positions = {2, 3, 5, 6, 7}
+    direct_rivals = [
+        r for r in standings if r.position in direct_rival_positions and r.team != focus.team
+    ]
+    gd_gap_vs_direct_rivals = {r.team: focus.goal_diff - r.goal_diff for r in direct_rivals}
+    rival_final_gd_projection = {
+        r.team: project_final_gd(r, remaining) for r in direct_rivals
     }
-    goal_plan = {}
-    for label, target_gd in goal_targets.items():
-        gain_needed = target_gd - focus.goal_diff
-        goal_plan[label] = {
-            "net_gd_gain_needed": gain_needed,
-            "avg_gd_per_game_needed": round(gain_needed / remaining, 2),
-            "example_path": {
-                "goals_for_last_10": 18 if target_gd <= 5 else (21 if target_gd <= 10 else 24),
-                "goals_against_last_10": 12 if target_gd <= 5 else (10 if target_gd <= 10 else 8),
-            },
-        }
+
+    rank2_team = next((t for t in standings if t.position == 2), second)
+    rank3_team = next((t for t in standings if t.position == 3), standings[2])
+    rank2_proj_final_gd = rival_final_gd_projection.get(rank2_team.team, project_final_gd(rank2_team, remaining))
+    rank3_proj_final_gd = rival_final_gd_projection.get(rank3_team.team, project_final_gd(rank3_team, remaining))
+
+    rank2_tie_required_gain = math.ceil(rank2_proj_final_gd["projected_final_gd"] + 1 - focus.goal_diff)
+    rank3_tie_required_gain = math.ceil(rank3_proj_final_gd["projected_final_gd"] + 1 - focus.goal_diff)
+    safety_gain = max(rank2_tie_required_gain, rank3_tie_required_gain, 0)
+    practical_targets = practical_run_in_target(safety_gain, remaining)
+
+    goal_difference_analysis = {
+        "focus_team_current_gd": focus.goal_diff,
+        "current_gd_gap_rotation_vs_direct_rivals": gd_gap_vs_direct_rivals,
+        "rival_projected_final_gd_from_current_rates": rival_final_gd_projection,
+        "tie_scenarios": {
+            "rank2_team": rank2_team.team,
+            "rank3_team": rank3_team.team,
+            "rank2_projected_final_gd": rank2_proj_final_gd["projected_final_gd"],
+            "rank3_projected_final_gd": rank3_proj_final_gd["projected_final_gd"],
+            "rotation_gd_gain_needed_to_beat_rank2_tie": max(0, rank2_tie_required_gain),
+            "rotation_gd_gain_needed_to_beat_rank3_tie": max(0, rank3_tie_required_gain),
+            "recommended_safety_gd_gain": safety_gain,
+        },
+        "practical_run_in_gf_ga_targets": practical_targets,
+    }
 
     form = derive_recent_form(rotation_matches)
 
@@ -426,11 +465,7 @@ def main() -> None:
                 "safer_target": "8W-1D-1L (25 points)",
             },
         },
-        "goal_difference": {
-            "top4_current_goal_diff": gd_top4,
-            "rotation_gap_vs_top4": gd_gaps,
-            "target_ranges": goal_plan,
-        },
+        "goal_difference": goal_difference_analysis,
         "remaining_fixtures": {
             "count": len(fixtures),
             "average_opponent_ppg": fixture_strength_avg_ppg,
@@ -506,10 +541,14 @@ def main() -> None:
         [
             "",
             "## Goal-difference analysis",
-            f"- Current GD gaps to promotion rivals: {', '.join(f'{k}: {v:+d}' for k,v in gd_gaps.items())}.",
-            f"- Minimum viable end-GD target: **+5** (needs {goal_plan['minimum_viable_end_gd']['net_gd_gain_needed']:+d} swing).",
-            f"- Realistic tiebreak-safe target: **+10** (needs {goal_plan['realistic_end_gd']['net_gd_gain_needed']:+d} swing, ~{goal_plan['realistic_end_gd']['avg_gd_per_game_needed']:+.2f}/game).",
-            "- Practical run-in profile for +10 GD: roughly score ~21 and concede ~10 over last 10.",
+            f"- Current GD gaps (Rotation minus rival) vs direct rivals (2/3/5/6/7): {', '.join(f'{k}: {v:+d}' for k,v in gd_gap_vs_direct_rivals.items())}.",
+            f"- Projected rank-2 ({rank2_team.team}) end-GD on current rates: **{rank2_proj_final_gd['projected_final_gd']:+.1f}**.",
+            f"- Projected rank-3 ({rank3_team.team}) end-GD on current rates: **{rank3_proj_final_gd['projected_final_gd']:+.1f}**.",
+            "",
+            "### Tiebreak safety target vs direct rivals",
+            f"- To win a points tie vs projected rank-2, Rotation likely needs about **+{max(0, rank2_tie_required_gain)}** GD gain from now.",
+            f"- To win a points tie vs projected rank-3, Rotation likely needs about **+{max(0, rank3_tie_required_gain)}** GD gain from now.",
+            f"- Practical run-in target (GF:GA over last {remaining}): minimum **{practical_targets['minimum']}**, preferred **{practical_targets['preferred']}**.",
             "",
             "## Remaining fixtures and difficulty",
             f"- Remaining fixtures identified in data: **{len(fixtures)}**.",
