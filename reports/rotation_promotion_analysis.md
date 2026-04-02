@@ -62,8 +62,26 @@
 - Clean-sheet rate: **7.1%** | 2+ goals scored rate: **35.7%**.
 
 ## Simple projections
-- Monte Carlo lightweight model top-2 probability: **7.0%** (based on 4,000 sims, pace-calibrated).
+- Monte Carlo lightweight model top-2 probability: **7.4%** (based on 4,000 sims, pace-calibrated).
 - Sensitivity takeaway: one extra win (vs draw/loss) materially shifts top-2 odds because rank-2 line is near Rotation's reachable range.
+
+## Checkpoint engine (after matches 3, 5, 7)
+- Realistic path baseline: **24 points from last 10** (roughly 7W+ profile).
+- States are modeled as: **ahead = +2 pts**, **on-track = target**, **behind = -2 pts** versus checkpoint target.
+- Low-probability warning rule: **If ≤X points by checkpoint, promotion chance becomes low.**
+- All-in trigger means only high-variance strategy remains (aggressive pressing/line-breaking risk profile).
+
+| Checkpoint | State | Pts by CP (assumed) | Need pts in remaining | Max losses allowed | Required GD pace | Low-chance line | All-in trigger |
+|---:|---|---:|---:|---:|---:|---:|---|
+| M3 | ahead | 10 | 14 / 7 | 2 | +0.81/g | ≤6 pts | no |
+| M3 | on-track | 8 | 16 / 7 | 1 | +1.10/g | ≤6 pts | YES |
+| M3 | behind | 6 | 18 / 7 | 1 | +1.39/g | ≤6 pts | YES |
+| M5 | ahead | 14 | 10 / 5 | 1 | +0.70/g | ≤10 pts | YES |
+| M5 | on-track | 12 | 12 / 5 | 1 | +1.10/g | ≤10 pts | YES |
+| M5 | behind | 10 | 14 / 5 | 0 | +1.50/g | ≤10 pts | YES |
+| M7 | ahead | 19 | 5 / 3 | 1 | +0.43/g | ≤15 pts | YES |
+| M7 | on-track | 17 | 7 / 3 | 0 | +1.10/g | ≤15 pts | YES |
+| M7 | behind | 15 | 9 / 3 | 0 | +1.77/g | ≤15 pts | YES |
 
 ## Practical football conclusions
 1. **Realistic target**: finish around **51–53 points** (≈ 24–26 points from last 10).

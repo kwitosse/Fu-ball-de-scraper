@@ -3,7 +3,7 @@
     "league": "Herren Stadtklasse, Kreis Leipzig, Kreisliga A",
     "season": "2025/2026",
     "focus_team": "SG Rotation Leipzig II",
-    "analysis_generated_at": "2026-04-02T19:51:37+00:00",
+    "analysis_generated_at": "2026-04-02T20:09:00+00:00",
     "known_data_limitations": [
       "standings reflect MD16 (16 played), while match detail results currently contain fewer completed matches for some MDs",
       "fixture-level trend metrics are computed only from available played match_detail files"
@@ -249,6 +249,136 @@
     "games_2plus_goals_rate": 0.357,
     "losses_after_conceding_first": 8
   },
+  "checkpoint_engine": {
+    "realistic_path_reference": "7W+ from final 10 (target points based on current rank-2 pace)",
+    "total_run_in_matches": 10,
+    "realistic_points_needed": 24,
+    "realistic_gd_swing_needed": 11,
+    "state_offsets": {
+      "ahead": 2,
+      "on-track": 0,
+      "behind": -2
+    },
+    "decision_rows": [
+      {
+        "checkpoint_after_match": 3,
+        "state": "ahead",
+        "state_rank": 0,
+        "target_points_by_checkpoint": 8,
+        "points_at_checkpoint_assumed": 10,
+        "needed_points_in_remaining_matches": 14,
+        "remaining_matches": 7,
+        "max_losses_allowed": 2,
+        "required_gd_pace_per_game": 0.81,
+        "low_chance_if_points_at_or_below": 6,
+        "all_in_trigger": false
+      },
+      {
+        "checkpoint_after_match": 3,
+        "state": "on-track",
+        "state_rank": 1,
+        "target_points_by_checkpoint": 8,
+        "points_at_checkpoint_assumed": 8,
+        "needed_points_in_remaining_matches": 16,
+        "remaining_matches": 7,
+        "max_losses_allowed": 1,
+        "required_gd_pace_per_game": 1.1,
+        "low_chance_if_points_at_or_below": 6,
+        "all_in_trigger": true
+      },
+      {
+        "checkpoint_after_match": 3,
+        "state": "behind",
+        "state_rank": 2,
+        "target_points_by_checkpoint": 8,
+        "points_at_checkpoint_assumed": 6,
+        "needed_points_in_remaining_matches": 18,
+        "remaining_matches": 7,
+        "max_losses_allowed": 1,
+        "required_gd_pace_per_game": 1.39,
+        "low_chance_if_points_at_or_below": 6,
+        "all_in_trigger": true
+      },
+      {
+        "checkpoint_after_match": 5,
+        "state": "ahead",
+        "state_rank": 0,
+        "target_points_by_checkpoint": 12,
+        "points_at_checkpoint_assumed": 14,
+        "needed_points_in_remaining_matches": 10,
+        "remaining_matches": 5,
+        "max_losses_allowed": 1,
+        "required_gd_pace_per_game": 0.7,
+        "low_chance_if_points_at_or_below": 10,
+        "all_in_trigger": true
+      },
+      {
+        "checkpoint_after_match": 5,
+        "state": "on-track",
+        "state_rank": 1,
+        "target_points_by_checkpoint": 12,
+        "points_at_checkpoint_assumed": 12,
+        "needed_points_in_remaining_matches": 12,
+        "remaining_matches": 5,
+        "max_losses_allowed": 1,
+        "required_gd_pace_per_game": 1.1,
+        "low_chance_if_points_at_or_below": 10,
+        "all_in_trigger": true
+      },
+      {
+        "checkpoint_after_match": 5,
+        "state": "behind",
+        "state_rank": 2,
+        "target_points_by_checkpoint": 12,
+        "points_at_checkpoint_assumed": 10,
+        "needed_points_in_remaining_matches": 14,
+        "remaining_matches": 5,
+        "max_losses_allowed": 0,
+        "required_gd_pace_per_game": 1.5,
+        "low_chance_if_points_at_or_below": 10,
+        "all_in_trigger": true
+      },
+      {
+        "checkpoint_after_match": 7,
+        "state": "ahead",
+        "state_rank": 0,
+        "target_points_by_checkpoint": 17,
+        "points_at_checkpoint_assumed": 19,
+        "needed_points_in_remaining_matches": 5,
+        "remaining_matches": 3,
+        "max_losses_allowed": 1,
+        "required_gd_pace_per_game": 0.43,
+        "low_chance_if_points_at_or_below": 15,
+        "all_in_trigger": true
+      },
+      {
+        "checkpoint_after_match": 7,
+        "state": "on-track",
+        "state_rank": 1,
+        "target_points_by_checkpoint": 17,
+        "points_at_checkpoint_assumed": 17,
+        "needed_points_in_remaining_matches": 7,
+        "remaining_matches": 3,
+        "max_losses_allowed": 0,
+        "required_gd_pace_per_game": 1.1,
+        "low_chance_if_points_at_or_below": 15,
+        "all_in_trigger": true
+      },
+      {
+        "checkpoint_after_match": 7,
+        "state": "behind",
+        "state_rank": 2,
+        "target_points_by_checkpoint": 17,
+        "points_at_checkpoint_assumed": 15,
+        "needed_points_in_remaining_matches": 9,
+        "remaining_matches": 3,
+        "max_losses_allowed": 0,
+        "required_gd_pace_per_game": 1.77,
+        "low_chance_if_points_at_or_below": 15,
+        "all_in_trigger": true
+      }
+    ]
+  },
   "scenario_matrix": [
     {
       "scenario": "6W 2D 2L",
@@ -307,16 +437,16 @@
   ],
   "simulation": {
     "iterations": 4000,
-    "top2_probability": 0.07,
+    "top2_probability": 0.074,
     "position_probability": {
-      "2": 0.07,
-      "3": 0.212,
-      "4": 0.241,
-      "5": 0.215,
-      "6": 0.143,
-      "7": 0.079,
-      "8": 0.029,
-      "9": 0.008,
+      "2": 0.074,
+      "3": 0.213,
+      "4": 0.258,
+      "5": 0.202,
+      "6": 0.142,
+      "7": 0.074,
+      "8": 0.025,
+      "9": 0.011,
       "10": 0.002
     }
   },

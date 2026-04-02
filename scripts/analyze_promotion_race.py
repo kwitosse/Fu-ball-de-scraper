@@ -280,6 +280,64 @@ def build_scenarios(current_points: int, played: int, remaining: int, threshold:
     return rows
 
 
+def build_checkpoint_engine(
+    realistic_points_needed: int,
+    realistic_gd_swing_needed: int,
+    checkpoints: list[int] | None = None,
+    total_run_in_matches: int = 10,
+) -> dict[str, Any]:
+    checkpoints = checkpoints or [3, 5, 7]
+    state_offsets = {"ahead": 2, "on-track": 0, "behind": -2}
+    state_rank = {"ahead": 0, "on-track": 1, "behind": 2}
+    rows: list[dict[str, Any]] = []
+
+    for checkpoint in checkpoints:
+        cp_target_points = math.ceil(realistic_points_needed * checkpoint / total_run_in_matches)
+        cp_target_gd = round(realistic_gd_swing_needed * checkpoint / total_run_in_matches, 1)
+        remaining_matches = total_run_in_matches - checkpoint
+        low_chance_threshold = max(0, cp_target_points - 2)
+
+        for state, offset in state_offsets.items():
+            points_at_checkpoint = max(0, cp_target_points + offset)
+            gd_at_checkpoint = cp_target_gd + offset
+            needed_points_remaining = max(0, realistic_points_needed - points_at_checkpoint)
+            wins_needed_floor = math.ceil(needed_points_remaining / 3) if remaining_matches > 0 else 0
+            max_losses_allowed = max(0, remaining_matches - wins_needed_floor)
+            gd_needed_remaining = realistic_gd_swing_needed - gd_at_checkpoint
+            gd_pace_needed = (
+                round(gd_needed_remaining / remaining_matches, 2) if remaining_matches > 0 else 0.0
+            )
+            all_in_trigger = (
+                needed_points_remaining >= (remaining_matches * 2 + 1)
+                or max_losses_allowed <= 1
+                or (remaining_matches > 0 and gd_pace_needed >= 1.6)
+            )
+            rows.append(
+                {
+                    "checkpoint_after_match": checkpoint,
+                    "state": state,
+                    "state_rank": state_rank[state],
+                    "target_points_by_checkpoint": cp_target_points,
+                    "points_at_checkpoint_assumed": points_at_checkpoint,
+                    "needed_points_in_remaining_matches": needed_points_remaining,
+                    "remaining_matches": remaining_matches,
+                    "max_losses_allowed": max_losses_allowed,
+                    "required_gd_pace_per_game": gd_pace_needed,
+                    "low_chance_if_points_at_or_below": low_chance_threshold,
+                    "all_in_trigger": all_in_trigger,
+                }
+            )
+
+    return {
+        "realistic_path_reference": "7W+ from final 10 (target points based on current rank-2 pace)",
+        "total_run_in_matches": total_run_in_matches,
+        "realistic_points_needed": realistic_points_needed,
+        "realistic_gd_swing_needed": realistic_gd_swing_needed,
+        "state_offsets": state_offsets,
+        "decision_rows": rows,
+    }
+
+
 def monte_carlo_top2_prob(
     standings: list[TeamSnapshot],
     focus: TeamSnapshot,
@@ -390,6 +448,12 @@ def main() -> None:
         }
 
     form = derive_recent_form(rotation_matches)
+    checkpoint_engine = build_checkpoint_engine(
+        realistic_points_needed=required_points["realistic"],
+        realistic_gd_swing_needed=goal_plan["realistic_end_gd"]["net_gd_gain_needed"],
+        checkpoints=[3, 5, 7],
+        total_run_in_matches=remaining,
+    )
 
     mc = monte_carlo_top2_prob(standings, focus, remaining=remaining, iterations=4000)
 
@@ -451,6 +515,7 @@ def main() -> None:
             },
         },
         "form_and_trends": form,
+        "checkpoint_engine": checkpoint_engine,
         "scenario_matrix": scenario_matrix,
         "simulation": mc,
         "conclusions": {
@@ -539,6 +604,26 @@ def main() -> None:
             "## Simple projections",
             f"- Monte Carlo lightweight model top-2 probability: **{mc['top2_probability']:.1%}** (based on 4,000 sims, pace-calibrated).",
             "- Sensitivity takeaway: one extra win (vs draw/loss) materially shifts top-2 odds because rank-2 line is near Rotation's reachable range.",
+            "",
+            "## Checkpoint engine (after matches 3, 5, 7)",
+            f"- Realistic path baseline: **{checkpoint_engine['realistic_points_needed']} points from last {remaining}** (roughly 7W+ profile).",
+            "- States are modeled as: **ahead = +2 pts**, **on-track = target**, **behind = -2 pts** versus checkpoint target.",
+            "- Low-probability warning rule: **If ≤X points by checkpoint, promotion chance becomes low.**",
+            "- All-in trigger means only high-variance strategy remains (aggressive pressing/line-breaking risk profile).",
+            "",
+            "| Checkpoint | State | Pts by CP (assumed) | Need pts in remaining | Max losses allowed | Required GD pace | Low-chance line | All-in trigger |",
+            "|---:|---|---:|---:|---:|---:|---:|---|",
+            *[
+                f"| M{row['checkpoint_after_match']} | {row['state']} | {row['points_at_checkpoint_assumed']} | "
+                f"{row['needed_points_in_remaining_matches']} / {row['remaining_matches']} | "
+                f"{row['max_losses_allowed']} | {row['required_gd_pace_per_game']:+.2f}/g | "
+                f"≤{row['low_chance_if_points_at_or_below']} pts | "
+                f"{'YES' if row['all_in_trigger'] else 'no'} |"
+                for row in sorted(
+                    checkpoint_engine["decision_rows"],
+                    key=lambda x: (x["checkpoint_after_match"], x["state_rank"]),
+                )
+            ],
             "",
             "## Practical football conclusions",
             "1. **Realistic target**: finish around **51–53 points** (≈ 24–26 points from last 10).",
