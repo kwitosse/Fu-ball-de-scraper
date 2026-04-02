@@ -26,14 +26,10 @@
 | 9W 0D 1L | 54 | 2.077 | yes | low |
 
 ## Goal-difference analysis
-- Current GD gaps (Rotation minus rival) vs direct rivals (2/3/5/6/7): SV Lipsia 93 Eutritzsch II: -9, SG Olympia 1896 Leipzig II: -19, VfB Zwenkau 02 II: -6, SG LVB I: -10, FC Blau-Weiß Leipzig II: -4.
-- Projected rank-2 (SV Lipsia 93 Eutritzsch II) end-GD on current rates: **+13.0**.
-- Projected rank-3 (SG Olympia 1896 Leipzig II) end-GD on current rates: **+29.2**.
-
-### Tiebreak safety target vs direct rivals
-- To win a points tie vs projected rank-2, Rotation likely needs about **+15** GD gain from now.
-- To win a points tie vs projected rank-3, Rotation likely needs about **+32** GD gain from now.
-- Practical run-in target (GF:GA over last 10): minimum **42:10**, preferred **43:9**.
+- Current GD gaps to promotion rivals: SV Tapfer 06 Leipzig II: -40, SV Lipsia 93 Eutritzsch II: -9, SG Olympia 1896 Leipzig II: -19.
+- Minimum viable end-GD target: **+5** (needs +6 swing).
+- Realistic tiebreak-safe target: **+10** (needs +11 swing, ~+1.10/game).
+- Practical run-in profile for +10 GD: roughly score ~21 and concede ~10 over last 10.
 
 ## Remaining fixtures and difficulty
 - Remaining fixtures identified in data: **10**.
@@ -60,13 +56,16 @@
 - That lowers your likely target from ~51 to roughly **49** points.
 
 ## Form and trend snapshot (from available played detail files)
-- Known played matches in detail files for Rotation: **14**.
-- Points last 5: **9** | points last 8: **12**.
-- Avg GF last 5: **2.8** | Avg GA last 5: **0.8**.
-- Clean-sheet rate: **7.1%** | 2+ goals scored rate: **35.7%**.
+- Known played matches in detail files for Rotation: **16**.
+- Points last 5: **5** | points last 8: **11**.
+- Avg GF last 5: **0.6** | Avg GA last 5: **0.6**.
+- Clean-sheet rate: **18.8%** | 2+ goals scored rate: **31.2%**.
 
 ## Simple projections
-- Monte Carlo lightweight model top-2 probability: **7.3%** (based on 4,000 sims, pace-calibrated).
+- Monte Carlo lightweight model top-2 probability: **7.2%** (based on 4,000 sims, pace-calibrated).
+- Fixture-strength Poisson model top-2 probability: **18.8%** (8,000 sims across 75 modeled fixtures).
+- Fixture-strength expected final points: **41.11** (remaining xPts: **14.11**).
+- Final-points distribution (Poisson model): **P10 36 / P50 41 / P90 46**.
 - Sensitivity takeaway: one extra win (vs draw/loss) materially shifts top-2 odds because rank-2 line is near Rotation's reachable range.
 
 ## Practical football conclusions
