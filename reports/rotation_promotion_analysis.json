@@ -1,0 +1,312 @@
+{
+  "context": {
+    "league": "Herren Stadtklasse, Kreis Leipzig, Kreisliga A",
+    "season": "2025/2026",
+    "focus_team": "SG Rotation Leipzig II",
+    "analysis_generated_at": "2026-04-02T19:26:40+00:00",
+    "known_data_limitations": [
+      "standings reflect MD16 (16 played), while match detail results currently contain fewer completed matches for some MDs",
+      "fixture-level trend metrics are computed only from available played match_detail files"
+    ]
+  },
+  "current_state": {
+    "position": 4,
+    "points": 27,
+    "record": {
+      "wins": 8,
+      "draws": 3,
+      "losses": 5
+    },
+    "goals": {
+      "for": 22,
+      "against": 23,
+      "diff": -1
+    },
+    "ppg": 1.688,
+    "gf_per_game": 1.375,
+    "ga_per_game": 1.438,
+    "remaining_matches": 10,
+    "max_possible_points": 57,
+    "gap_to_rank1": 13,
+    "gap_to_rank2": 4
+  },
+  "pace_projection": {
+    "rival_projection": [
+      {
+        "team": "SV Tapfer 06 Leipzig II",
+        "position": 1,
+        "current_points": 40,
+        "ppg": 2.5,
+        "projected_final_points": 65.0
+      },
+      {
+        "team": "SV Lipsia 93 Eutritzsch II",
+        "position": 2,
+        "current_points": 31,
+        "ppg": 1.938,
+        "projected_final_points": 50.4
+      },
+      {
+        "team": "SG Olympia 1896 Leipzig II",
+        "position": 3,
+        "current_points": 28,
+        "ppg": 1.75,
+        "projected_final_points": 45.5
+      },
+      {
+        "team": "SG Rotation Leipzig II",
+        "position": 4,
+        "current_points": 27,
+        "ppg": 1.688,
+        "projected_final_points": 43.9
+      }
+    ],
+    "rank2_bands": {
+      "hold_current_pace": 50.4,
+      "slight_slowdown": 46.5,
+      "strong_finish": 54.3
+    },
+    "required_points_from_last_10": {
+      "to_match_rank2_hold_pace": 24,
+      "to_beat_rank2_hold_pace_by_1": 25,
+      "conservative": 26,
+      "realistic": 24,
+      "aggressive": 28
+    },
+    "required_record_hint": {
+      "realistic_target": "at least 7W-1D-2L (22 points)",
+      "safer_target": "8W-1D-1L (25 points)"
+    }
+  },
+  "goal_difference": {
+    "top4_current_goal_diff": {
+      "SV Tapfer 06 Leipzig II": 39,
+      "SV Lipsia 93 Eutritzsch II": 8,
+      "SG Olympia 1896 Leipzig II": 18,
+      "SG Rotation Leipzig II": -1
+    },
+    "rotation_gap_vs_top4": {
+      "SV Tapfer 06 Leipzig II": -40,
+      "SV Lipsia 93 Eutritzsch II": -9,
+      "SG Olympia 1896 Leipzig II": -19
+    },
+    "target_ranges": {
+      "minimum_viable_end_gd": {
+        "net_gd_gain_needed": 6,
+        "avg_gd_per_game_needed": 0.6,
+        "example_path": {
+          "goals_for_last_10": 18,
+          "goals_against_last_10": 12
+        }
+      },
+      "realistic_end_gd": {
+        "net_gd_gain_needed": 11,
+        "avg_gd_per_game_needed": 1.1,
+        "example_path": {
+          "goals_for_last_10": 21,
+          "goals_against_last_10": 10
+        }
+      },
+      "strong_end_gd": {
+        "net_gd_gain_needed": 16,
+        "avg_gd_per_game_needed": 1.6,
+        "example_path": {
+          "goals_for_last_10": 24,
+          "goals_against_last_10": 8
+        }
+      }
+    }
+  },
+  "remaining_fixtures": {
+    "count": 10,
+    "average_opponent_ppg": 1.462,
+    "fixtures": [
+      {
+        "matchday": 14,
+        "home_away": "A",
+        "opponent": "SG LVB I",
+        "opponent_pos": 6,
+        "opponent_points": 25,
+        "opponent_ppg": 1.562,
+        "bucket": "difficult upset opportunity",
+        "first_leg_result": "L 1:3"
+      },
+      {
+        "matchday": 16,
+        "home_away": "H",
+        "opponent": "SV Lipsia 93 Eutritzsch II",
+        "opponent_pos": 2,
+        "opponent_points": 31,
+        "opponent_ppg": 1.938,
+        "bucket": "six-pointer / direct rival",
+        "first_leg_result": "D 2:2"
+      },
+      {
+        "matchday": 17,
+        "home_away": "A",
+        "opponent": "SG Leipzig-Bienitz I",
+        "opponent_pos": 8,
+        "opponent_points": 21,
+        "opponent_ppg": 1.312,
+        "bucket": "favorable but dangerous",
+        "first_leg_result": "L 0:3"
+      },
+      {
+        "matchday": 18,
+        "home_away": "H",
+        "opponent": "FC Blau-Weiß Leipzig II",
+        "opponent_pos": 7,
+        "opponent_points": 24,
+        "opponent_ppg": 1.5,
+        "bucket": "favorable but dangerous",
+        "first_leg_result": "W 2:1"
+      },
+      {
+        "matchday": 19,
+        "home_away": "A",
+        "opponent": "VfB Zwenkau 02 II",
+        "opponent_pos": 5,
+        "opponent_points": 26,
+        "opponent_ppg": 1.625,
+        "bucket": "difficult upset opportunity",
+        "first_leg_result": "W 6:1"
+      },
+      {
+        "matchday": 20,
+        "home_away": "H",
+        "opponent": "FSV Großpösna I",
+        "opponent_pos": 11,
+        "opponent_points": 15,
+        "opponent_ppg": 0.938,
+        "bucket": "must-win",
+        "first_leg_result": "L 0:1"
+      },
+      {
+        "matchday": 21,
+        "home_away": "H",
+        "opponent": "TSV Böhlitz-Ehrenberg 1990 I",
+        "opponent_pos": 10,
+        "opponent_points": 19,
+        "opponent_ppg": 1.188,
+        "bucket": "favorable but dangerous",
+        "first_leg_result": "L 0:3"
+      },
+      {
+        "matchday": 22,
+        "home_away": "A",
+        "opponent": "Roter Stern Leipzig 99 II",
+        "opponent_pos": 13,
+        "opponent_points": 13,
+        "opponent_ppg": 0.812,
+        "bucket": "must-win",
+        "first_leg_result": "L 0:1"
+      },
+      {
+        "matchday": 23,
+        "home_away": "H",
+        "opponent": "SV Panitzsch/​Borsdorf II",
+        "opponent_pos": 9,
+        "opponent_points": 20,
+        "opponent_ppg": 1.25,
+        "bucket": "favorable but dangerous",
+        "first_leg_result": "W 5:0"
+      },
+      {
+        "matchday": 24,
+        "home_away": "A",
+        "opponent": "SV Tapfer 06 Leipzig II",
+        "opponent_pos": 1,
+        "opponent_points": 40,
+        "opponent_ppg": 2.5,
+        "bucket": "six-pointer / direct rival",
+        "first_leg_result": "W 3:1"
+      }
+    ]
+  },
+  "form_and_trends": {
+    "known_played_matches": 14,
+    "points_last_5": 9,
+    "points_last_8": 12,
+    "avg_gf_last_5": 2.8,
+    "avg_ga_last_5": 0.8,
+    "clean_sheet_rate": 0.071,
+    "games_2plus_goals_rate": 0.357,
+    "losses_after_conceding_first": 8
+  },
+  "scenario_matrix": [
+    {
+      "scenario": "6W 2D 2L",
+      "final_points": 47,
+      "final_ppg": 1.808,
+      "likely_top2_vs_rank2_pace": "borderline/no",
+      "rank1_chance": "low",
+      "min_avg_gd_per_game_to_reach_plus10": 1.1
+    },
+    {
+      "scenario": "7W 1D 2L",
+      "final_points": 49,
+      "final_ppg": 1.885,
+      "likely_top2_vs_rank2_pace": "borderline/no",
+      "rank1_chance": "low",
+      "min_avg_gd_per_game_to_reach_plus10": 1.1
+    },
+    {
+      "scenario": "7W 2D 1L",
+      "final_points": 50,
+      "final_ppg": 1.923,
+      "likely_top2_vs_rank2_pace": "borderline/no",
+      "rank1_chance": "low",
+      "min_avg_gd_per_game_to_reach_plus10": 1.1
+    },
+    {
+      "scenario": "8W 0D 2L",
+      "final_points": 51,
+      "final_ppg": 1.962,
+      "likely_top2_vs_rank2_pace": "yes",
+      "rank1_chance": "low",
+      "min_avg_gd_per_game_to_reach_plus10": 1.1
+    },
+    {
+      "scenario": "8W 1D 1L",
+      "final_points": 52,
+      "final_ppg": 2.0,
+      "likely_top2_vs_rank2_pace": "yes",
+      "rank1_chance": "low",
+      "min_avg_gd_per_game_to_reach_plus10": 1.1
+    },
+    {
+      "scenario": "9W 0D 1L",
+      "final_points": 54,
+      "final_ppg": 2.077,
+      "likely_top2_vs_rank2_pace": "yes",
+      "rank1_chance": "low",
+      "min_avg_gd_per_game_to_reach_plus10": 1.1
+    }
+  ],
+  "simulation": {
+    "iterations": 4000,
+    "top2_probability": 0.066,
+    "position_probability": {
+      "2": 0.066,
+      "3": 0.212,
+      "4": 0.248,
+      "5": 0.205,
+      "6": 0.143,
+      "7": 0.091,
+      "8": 0.026,
+      "9": 0.008,
+      "10": 0.002
+    }
+  },
+  "conclusions": {
+    "realistic_top2_total_points": 51,
+    "minimum_acceptable_points_from_last_10": 24,
+    "promotion_like_profile": [
+      "Win at least 7 of the last 10 matches",
+      "Limit losses to maximum 2, ideally 1",
+      "Target +11 to +16 goal-difference swing over run-in",
+      "Prioritize direct-rival six-pointers and avoid slip-ups in must-win bucket"
+    ],
+    "title_path_assessment": "Near-miracle: requires Rotation near-perfect run and rank-1 pace collapse."
+  }
+}
