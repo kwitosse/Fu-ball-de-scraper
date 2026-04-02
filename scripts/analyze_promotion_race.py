@@ -10,6 +10,7 @@ import csv
 import json
 import math
 import random
+from collections import defaultdict
 from datetime import datetime, timezone
 from dataclasses import dataclass
 from pathlib import Path
@@ -63,6 +64,15 @@ class Scenario:
     @property
     def points_gain(self) -> int:
         return self.wins * 3 + self.draws
+
+
+@dataclass
+class TeamStrength:
+    attack_home: float
+    defense_home: float
+    attack_away: float
+    defense_away: float
+    total_matches: int
 
 
 def load_json(path: Path) -> Any:
@@ -374,6 +384,211 @@ def build_match_plan(fixtures: list[dict[str, Any]], required_points_target: int
     }
 
 
+def _safe_rate(value: float, minimum: float = 0.25, maximum: float = 4.5) -> float:
+    return max(minimum, min(maximum, value))
+
+
+def _poisson_probs(lmbda: float, max_goals: int = 8) -> list[float]:
+    probs = [0.0 for _ in range(max_goals + 1)]
+    probs[0] = math.exp(-lmbda)
+    for k in range(1, max_goals):
+        probs[k] = probs[k - 1] * lmbda / k
+    probs[max_goals] = max(0.0, 1.0 - sum(probs[:-1]))
+    return probs
+
+
+def derive_team_strengths(played_matches: list[dict[str, Any]]) -> tuple[dict[str, TeamStrength], dict[str, float]]:
+    if not played_matches:
+        return {}, {"league_home_gf": 1.3, "league_away_gf": 1.1}
+
+    league_home_gf = mean([m["home_score"] for m in played_matches])
+    league_away_gf = mean([m["away_score"] for m in played_matches])
+
+    base = lambda: {
+        "home_played": 0,
+        "away_played": 0,
+        "home_gf": 0,
+        "home_ga": 0,
+        "away_gf": 0,
+        "away_ga": 0,
+    }
+    team_stats: dict[str, dict[str, float]] = defaultdict(base)
+    for m in played_matches:
+        h = m["home_team"]
+        a = m["away_team"]
+        hs = m["home_score"]
+        a_s = m["away_score"]
+        team_stats[h]["home_played"] += 1
+        team_stats[h]["home_gf"] += hs
+        team_stats[h]["home_ga"] += a_s
+        team_stats[a]["away_played"] += 1
+        team_stats[a]["away_gf"] += a_s
+        team_stats[a]["away_ga"] += hs
+
+    # Pseudo-count shrinkage toward league mean to reduce overfitting in small samples.
+    prior_matches = 6.0
+    strengths: dict[str, TeamStrength] = {}
+    for team, s in team_stats.items():
+        home_played = max(1.0, s["home_played"])
+        away_played = max(1.0, s["away_played"])
+
+        home_gf_rate = (s["home_gf"] + prior_matches * league_home_gf) / (s["home_played"] + prior_matches)
+        home_ga_rate = (s["home_ga"] + prior_matches * league_away_gf) / (s["home_played"] + prior_matches)
+        away_gf_rate = (s["away_gf"] + prior_matches * league_away_gf) / (s["away_played"] + prior_matches)
+        away_ga_rate = (s["away_ga"] + prior_matches * league_home_gf) / (s["away_played"] + prior_matches)
+
+        strengths[team] = TeamStrength(
+            attack_home=_safe_rate(home_gf_rate / _safe_rate(league_home_gf, 0.5, 3.0), 0.5, 2.0),
+            defense_home=_safe_rate(home_ga_rate / _safe_rate(league_away_gf, 0.5, 3.0), 0.5, 2.0),
+            attack_away=_safe_rate(away_gf_rate / _safe_rate(league_away_gf, 0.5, 3.0), 0.5, 2.0),
+            defense_away=_safe_rate(away_ga_rate / _safe_rate(league_home_gf, 0.5, 3.0), 0.5, 2.0),
+            total_matches=int(home_played + away_played),
+        )
+
+    return strengths, {"league_home_gf": league_home_gf, "league_away_gf": league_away_gf}
+
+
+def fixture_outcome_probabilities(
+    home_team: str,
+    away_team: str,
+    strengths: dict[str, TeamStrength],
+    baselines: dict[str, float],
+) -> tuple[dict[str, float], dict[str, float]]:
+    league_home = baselines["league_home_gf"]
+    league_away = baselines["league_away_gf"]
+    hs = strengths.get(home_team)
+    a_s = strengths.get(away_team)
+    if not hs or not a_s:
+        # Fallback for missing teams.
+        hs = TeamStrength(1.0, 1.0, 1.0, 1.0, 0)
+        a_s = TeamStrength(1.0, 1.0, 1.0, 1.0, 0)
+
+    lambda_home = _safe_rate(league_home * hs.attack_home * a_s.defense_away)
+    lambda_away = _safe_rate(league_away * a_s.attack_away * hs.defense_home)
+
+    p_h = _poisson_probs(lambda_home)
+    p_a = _poisson_probs(lambda_away)
+    home_win = 0.0
+    draw = 0.0
+    away_win = 0.0
+    for i, p_i in enumerate(p_h):
+        for j, p_j in enumerate(p_a):
+            p = p_i * p_j
+            if i > j:
+                home_win += p
+            elif i == j:
+                draw += p
+            else:
+                away_win += p
+
+    return (
+        {"home_win": round(home_win, 4), "draw": round(draw, 4), "away_win": round(away_win, 4)},
+        {"expected_home_goals": round(lambda_home, 3), "expected_away_goals": round(lambda_away, 3)},
+    )
+
+
+def build_remaining_fixtures(details: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    pending = [
+        {
+            "match_id": m.get("match_id"),
+            "matchday": m.get("matchday"),
+            "date": m.get("date"),
+            "home_team": m.get("home_team"),
+            "away_team": m.get("away_team"),
+        }
+        for m in details
+        if m.get("home_score") is None
+        and m.get("away_score") is None
+        and m.get("home_team")
+        and m.get("away_team")
+    ]
+    return sorted(pending, key=lambda x: (x.get("matchday") or 999, x.get("match_id") or ""))
+
+
+def model_based_top2_projection(
+    standings: list[TeamSnapshot],
+    details: list[dict[str, Any]],
+    focus_team: str,
+    iterations: int = 8000,
+) -> dict[str, Any]:
+    played_matches = [
+        m for m in details if m.get("home_score") is not None and m.get("away_score") is not None
+    ]
+    remaining_fixtures = build_remaining_fixtures(details)
+    strengths, baselines = derive_team_strengths(played_matches)
+
+    fixtures_probs = []
+    for fx in remaining_fixtures:
+        probs, xg = fixture_outcome_probabilities(fx["home_team"], fx["away_team"], strengths, baselines)
+        fixtures_probs.append({**fx, **probs, **xg})
+
+    starts = {t.team: t.points for t in standings}
+    top2 = 0
+    finish_positions: dict[int, int] = {}
+    finish_points: list[int] = []
+    for _ in range(iterations):
+        totals = dict(starts)
+        for fx in fixtures_probs:
+            r = random.random()
+            if r < fx["home_win"]:
+                totals[fx["home_team"]] += 3
+            elif r < fx["home_win"] + fx["draw"]:
+                totals[fx["home_team"]] += 1
+                totals[fx["away_team"]] += 1
+            else:
+                totals[fx["away_team"]] += 3
+        ranked = sorted(totals.items(), key=lambda x: (x[1], random.random()), reverse=True)
+        pos = [t for t, _ in ranked].index(focus_team) + 1
+        finish_positions[pos] = finish_positions.get(pos, 0) + 1
+        if pos <= 2:
+            top2 += 1
+        finish_points.append(totals[focus_team])
+
+    finish_points.sort()
+    q10 = finish_points[max(0, int(0.10 * len(finish_points)) - 1)] if finish_points else 0
+    q50 = finish_points[max(0, int(0.50 * len(finish_points)) - 1)] if finish_points else 0
+    q90 = finish_points[max(0, int(0.90 * len(finish_points)) - 1)] if finish_points else 0
+
+    focus_fixture_probs = [
+        fx
+        for fx in fixtures_probs
+        if fx["home_team"] == focus_team or fx["away_team"] == focus_team
+    ]
+    focus_xpts = 0.0
+    for fx in focus_fixture_probs:
+        if fx["home_team"] == focus_team:
+            focus_xpts += fx["home_win"] * 3 + fx["draw"] * 1
+        else:
+            focus_xpts += fx["away_win"] * 3 + fx["draw"] * 1
+
+    return {
+        "iterations": iterations,
+        "remaining_fixtures_modeled": len(fixtures_probs),
+        "baseline_goal_rates": {
+            "league_home_gf": round(baselines["league_home_gf"], 3),
+            "league_away_gf": round(baselines["league_away_gf"], 3),
+        },
+        "top2_probability": round(top2 / iterations, 3) if iterations else 0.0,
+        "position_probability": {
+            str(k): round(v / iterations, 3) for k, v in sorted(finish_positions.items())
+        },
+        "focus_points_distribution": {"p10": q10, "p50": q50, "p90": q90},
+        "focus_expected_points_from_remaining": round(focus_xpts, 2),
+        "focus_expected_final_points": round(starts.get(focus_team, 0) + focus_xpts, 2),
+        "focus_fixture_probabilities": focus_fixture_probs,
+        "team_strengths": {
+            k: {
+                "attack_home": round(v.attack_home, 3),
+                "defense_home": round(v.defense_home, 3),
+                "attack_away": round(v.attack_away, 3),
+                "defense_away": round(v.defense_away, 3),
+                "matches_used": v.total_matches,
+            }
+            for k, v in sorted(strengths.items())
+        },
+    }
+
+
 def monte_carlo_top2_prob(
     standings: list[TeamSnapshot],
     focus: TeamSnapshot,
@@ -486,6 +701,7 @@ def main() -> None:
     form = derive_recent_form(rotation_matches)
 
     mc = monte_carlo_top2_prob(standings, focus, remaining=remaining, iterations=4000)
+    model_projection = model_based_top2_projection(standings, details, focus_team=FOCUS_TEAM, iterations=8000)
     match_plan = build_match_plan(fixtures, required_points["realistic"])
 
     analysis = {
@@ -548,7 +764,10 @@ def main() -> None:
         "form_and_trends": form,
         "scenario_matrix": scenario_matrix,
         "match_plan": match_plan,
-        "simulation": mc,
+        "simulation": {
+            "pace_calibrated": mc,
+            "fixture_strength_poisson": model_projection,
+        },
         "conclusions": {
             "realistic_top2_total_points": threshold_realistic,
             "minimum_acceptable_points_from_last_10": required_points["realistic"],
@@ -637,6 +856,9 @@ def main() -> None:
             "",
             "## Simple projections",
             f"- Monte Carlo lightweight model top-2 probability: **{mc['top2_probability']:.1%}** (based on 4,000 sims, pace-calibrated).",
+            f"- Fixture-strength Poisson model top-2 probability: **{model_projection['top2_probability']:.1%}** (8,000 sims across {model_projection['remaining_fixtures_modeled']} modeled fixtures).",
+            f"- Fixture-strength expected final points: **{model_projection['focus_expected_final_points']}** (remaining xPts: **{model_projection['focus_expected_points_from_remaining']}**).",
+            f"- Final-points distribution (Poisson model): **P10 {model_projection['focus_points_distribution']['p10']} / P50 {model_projection['focus_points_distribution']['p50']} / P90 {model_projection['focus_points_distribution']['p90']}**.",
             "- Sensitivity takeaway: one extra win (vs draw/loss) materially shifts top-2 odds because rank-2 line is near Rotation's reachable range.",
             "",
             "## Practical football conclusions",
