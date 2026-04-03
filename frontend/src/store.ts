@@ -26,6 +26,7 @@ type Action =
   | { type: 'DELETE_SCENARIO'; id: string }
   | { type: 'RENAME_SCENARIO'; id: string; name: string }
   | { type: 'IMPORT_SCENARIO'; scenario: Scenario }
+  | { type: 'DUPLICATE_SCENARIO'; id: string }
   | { type: 'APPLY_BASELINE' }
 
 // ---- Helpers ----
@@ -199,6 +200,24 @@ function reducer(state: AppState, action: Action): AppState {
       }
     }
 
+    case 'DUPLICATE_SCENARIO': {
+      const source = state.scenarios.find(s => s.id === action.id)
+      if (!source) return state
+      const clone: Scenario = {
+        ...source,
+        id: `scenario-${Date.now()}`,
+        name: `${source.name} (Kopie)`,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+        overrides: { ...source.overrides },
+      }
+      return {
+        ...state,
+        scenarios: [...state.scenarios, clone],
+        activeScenarioId: clone.id,
+      }
+    }
+
     case 'APPLY_BASELINE': {
       if (!state.appData) return state
       const overrides = makePrefillOverrides(state.appData)
@@ -212,6 +231,24 @@ function reducer(state: AppState, action: Action): AppState {
     default:
       return state
   }
+}
+
+export function hasUnsavedChanges(
+  activeScenario: Scenario | null,
+  appData: AppData | null
+): boolean {
+  if (!activeScenario || !appData) return false
+  const baseline = makePrefillOverrides(appData)
+  const overrides = activeScenario.overrides
+  const allKeys = new Set([...Object.keys(baseline), ...Object.keys(overrides)])
+  for (const key of allKeys) {
+    const b = baseline[key]
+    const o = overrides[key]
+    if (!b && o) return true
+    if (b && !o) return true
+    if (b && o && (b.home_score !== o.home_score || b.away_score !== o.away_score)) return true
+  }
+  return false
 }
 
 // ---- Context ----

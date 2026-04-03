@@ -1,14 +1,16 @@
 import React, { useRef, useState } from 'react'
-import { useAppState, useAppDispatch, useActiveScenario } from '../store'
+import { useAppState, useAppDispatch, useActiveScenario, hasUnsavedChanges } from '../store'
 import { Scenario } from '../types'
+import { computeTable } from '../tableEngine'
 
 export default function ScenariosView() {
-  const { scenarios } = useAppState()
+  const { scenarios, appData } = useAppState()
   const activeScenario = useActiveScenario()
   const dispatch = useAppDispatch()
   const [newName, setNewName] = useState('')
   const [renamingId, setRenamingId] = useState<string | null>(null)
   const [renameValue, setRenameValue] = useState('')
+  const [compareId, setCompareId] = useState<string | null>(null)
   const fileRef = useRef<HTMLInputElement>(null)
 
   function handleCreate() {
@@ -102,8 +104,21 @@ export default function ScenariosView() {
           </div>
           <div className="scenario-actions">
             {s.id !== activeScenario?.id && (
-              <button className="icon-btn" onClick={() => dispatch({ type: 'SWITCH_SCENARIO', id: s.id })}>
+              <button className="icon-btn" onClick={() => {
+                if (hasUnsavedChanges(activeScenario, appData)) {
+                  if (!confirm('Das aktive Szenario hat ungespeicherte Änderungen. Trotzdem wechseln?')) return
+                }
+                dispatch({ type: 'SWITCH_SCENARIO', id: s.id })
+              }}>
                 Laden
+              </button>
+            )}
+            <button className="icon-btn" onClick={() => dispatch({ type: 'DUPLICATE_SCENARIO', id: s.id })} title="Duplizieren">
+              ⧉
+            </button>
+            {s.id !== activeScenario?.id && (
+              <button className="icon-btn" onClick={() => setCompareId(id => id === s.id ? null : s.id)} title="Vergleichen">
+                {compareId === s.id ? '✕' : '⇄'}
               </button>
             )}
             <button className="icon-btn" onClick={() => startRename(s)}>✎</button>
@@ -116,6 +131,48 @@ export default function ScenariosView() {
           </div>
         </div>
       ))}
+
+      {/* Compare view */}
+      {compareId && appData && activeScenario && (() => {
+        const compareScenario = scenarios.find(s => s.id === compareId)
+        if (!compareScenario) return null
+        const tableA = computeTable(appData.fixtures, appData.predictions, activeScenario.overrides)
+        const tableB = computeTable(appData.fixtures, appData.predictions, compareScenario.overrides)
+        const posMapB = new Map(tableB.map(r => [r.team_id, r.position]))
+        return (
+          <div style={{ marginBottom: 16 }}>
+            <div style={{ fontSize: 12, color: 'var(--text2)', marginBottom: 8 }}>
+              Vergleich: <strong style={{ color: 'var(--text)' }}>{activeScenario.name}</strong> vs <strong style={{ color: 'var(--text)' }}>{compareScenario.name}</strong>
+            </div>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
+              <thead>
+                <tr>
+                  <th style={{ textAlign: 'left', color: 'var(--text2)', padding: '4px 6px', borderBottom: '1px solid var(--border)' }}>Team</th>
+                  <th style={{ textAlign: 'right', color: 'var(--text2)', padding: '4px 6px', borderBottom: '1px solid var(--border)' }}>{activeScenario.name.slice(0,8)}</th>
+                  <th style={{ textAlign: 'right', color: 'var(--text2)', padding: '4px 6px', borderBottom: '1px solid var(--border)' }}>{compareScenario.name.slice(0,8)}</th>
+                  <th style={{ textAlign: 'right', color: 'var(--text2)', padding: '4px 6px', borderBottom: '1px solid var(--border)' }}>Δ</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tableA.map(r => {
+                  const posB = posMapB.get(r.team_id) ?? r.position
+                  const diff = posB - r.position
+                  return (
+                    <tr key={r.team_id} style={{ borderBottom: '1px solid var(--border)' }}>
+                      <td style={{ padding: '5px 6px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 120 }}>{r.team}</td>
+                      <td style={{ textAlign: 'right', padding: '5px 6px', fontWeight: 600 }}>{r.position}</td>
+                      <td style={{ textAlign: 'right', padding: '5px 6px' }}>{posB}</td>
+                      <td style={{ textAlign: 'right', padding: '5px 6px', color: diff > 0 ? 'var(--green)' : diff < 0 ? 'var(--red)' : 'var(--text2)' }}>
+                        {diff > 0 ? `▲${diff}` : diff < 0 ? `▼${Math.abs(diff)}` : '='}
+                      </td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+        )
+      })()}
 
       {/* Import */}
       <div style={{ marginTop: 16 }}>

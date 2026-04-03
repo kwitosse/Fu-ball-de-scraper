@@ -1,3 +1,4 @@
+declare const __APP_VERSION__: string
 import React from 'react'
 import { useAppState, useAppDispatch } from '../store'
 
@@ -77,7 +78,7 @@ export default function SettingsView() {
       <div className="card">
         <div className="info-row">
           <span>App-Version</span>
-          <span className="info-value">1.0.0</span>
+          <span className="info-value">{__APP_VERSION__}</span>
         </div>
         <div className="info-row">
           <span>Datenspeicher</span>

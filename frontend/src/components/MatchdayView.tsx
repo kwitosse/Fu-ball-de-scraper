@@ -1,11 +1,37 @@
 import React, { useState } from 'react'
 import { useAppState, useAppDispatch, useActiveScenario } from '../store'
 import FixtureCard from './FixtureCard'
+import { computeTable } from '../tableEngine'
 
 export default function MatchdayView() {
   const { appData } = useAppState()
   const dispatch = useAppDispatch()
   const activeScenario = useActiveScenario()
+
+  const liveTable = React.useMemo(() => {
+    if (!appData || !activeScenario) return []
+    return computeTable(appData.fixtures, appData.predictions, activeScenario.overrides)
+  }, [appData, activeScenario])
+
+  // Pick focus team: team with most unplayed fixtures (or first from unplayed fixtures)
+  const focusTeamId = React.useMemo(() => {
+    if (!appData) return null
+    const unplayed = appData.fixtures.filter(f => f.status !== 'played')
+    if (unplayed.length === 0) return null
+    // Count fixtures per team
+    const counts = new Map<string, number>()
+    unplayed.forEach(f => {
+      counts.set(f.home_team_id, (counts.get(f.home_team_id) ?? 0) + 1)
+      counts.set(f.away_team_id, (counts.get(f.away_team_id) ?? 0) + 1)
+    })
+    let maxId = unplayed[0].home_team_id
+    let maxCount = 0
+    counts.forEach((c, id) => { if (c > maxCount) { maxCount = c; maxId = id } })
+    return maxId
+  }, [appData])
+
+  const focusRow = liveTable.find(r => r.team_id === focusTeamId)
+  const baselinePos = appData?.baselineTable.find(r => r.team_id === focusTeamId)?.position ?? null
 
   // Group fixtures by matchday
   const matchdays = React.useMemo(() => {
@@ -50,6 +76,18 @@ export default function MatchdayView() {
   return (
     <div>
       <div className="page-title">Spieltage</div>
+      {focusRow && (
+        <div style={{ background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 8, padding: '8px 12px', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 16, fontSize: 12, flexWrap: 'wrap' }}>
+          <span style={{ fontWeight: 700, color: 'var(--text)' }}>📍 {focusRow.team}</span>
+          <span>Platz <strong style={{ color: 'var(--accent)' }}>#{focusRow.position}</strong></span>
+          <span style={{ color: 'var(--text2)' }}>{focusRow.points} Pkt</span>
+          {baselinePos !== null && baselinePos !== focusRow.position && (
+            <span style={{ color: baselinePos > focusRow.position ? 'var(--green)' : 'var(--red)' }}>
+              {baselinePos > focusRow.position ? '▲' : '▼'}{Math.abs(baselinePos - focusRow.position)} vs. Baseline
+            </span>
+          )}
+        </div>
+      )}
       {matchdays.map(({ num, fixtures }) => {
         const isOpen = openMatchday === num
         const edits = overrideCount(num)
@@ -86,6 +124,36 @@ export default function MatchdayView() {
 
             {isOpen && (
               <div style={{ padding: '0 12px 12px' }}>
+                <div style={{ display: 'flex', gap: 8, padding: '8px 0 4px', flexWrap: 'wrap' }}>
+                  <button
+                    style={{ background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 16, fontSize: 12, padding: '6px 14px', color: 'var(--text)', cursor: 'pointer', minHeight: 36 }}
+                    onClick={() => {
+                      // Apply baseline for this matchday: dispatch SET_SCORE_OVERRIDE for each unplayed fixture using prediction
+                      fixtures.filter(f => f.status !== 'played').forEach(f => {
+                        const pred = appData.predictions[f.match_id]
+                        if (pred) dispatch({ type: 'SET_SCORE_OVERRIDE', match_id: f.match_id, home_score: pred.home_score, away_score: pred.away_score })
+                      })
+                    }}
+                  >
+                    ↺ Baseline
+                  </button>
+                  <button
+                    style={{ background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 16, fontSize: 12, padding: '6px 14px', color: 'var(--text)', cursor: 'pointer', minHeight: 36 }}
+                    onClick={() => {
+                      // Randomize: for each unplayed fixture, take prediction and add random -1/0/+1 to each score
+                      fixtures.filter(f => f.status !== 'played').forEach(f => {
+                        const pred = appData.predictions[f.match_id]
+                        const base_h = pred?.home_score ?? 1
+                        const base_a = pred?.away_score ?? 1
+                        const delta_h = Math.floor(Math.random() * 3) - 1
+                        const delta_a = Math.floor(Math.random() * 3) - 1
+                        dispatch({ type: 'SET_SCORE_OVERRIDE', match_id: f.match_id, home_score: Math.max(0, Math.min(9, base_h + delta_h)), away_score: Math.max(0, Math.min(9, base_a + delta_a)) })
+                      })
+                    }}
+                  >
+                    🎲 Zufällig
+                  </button>
+                </div>
                 {fixtures.map(f => (
                   <FixtureCard
                     key={f.match_id}

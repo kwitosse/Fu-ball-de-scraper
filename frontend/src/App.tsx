@@ -11,7 +11,7 @@ type Page = 'matchdays' | 'table' | 'scenarios' | 'settings'
 
 export default function App() {
   const [page, setPage] = useState<Page>('matchdays')
-  const { loading, error } = useAppState()
+  const { loading, error, appData } = useAppState()
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -52,8 +52,18 @@ export default function App() {
     )
   }
 
+  const generated_at = appData?.dataVersion?.generated_at
+  const formattedDate = generated_at
+    ? new Date(generated_at).toISOString().slice(0, 16).replace('T', ' ') + ' UTC'
+    : ''
+
   return (
     <>
+      {formattedDate && (
+        <div style={{ position: 'sticky', top: 0, zIndex: 50, background: 'var(--surface2)', borderBottom: '1px solid var(--border)', padding: '4px 12px', fontSize: 11, color: 'var(--text2)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span>Datenstand: {formattedDate}</span><span style={{ color: 'var(--accent)' }}>Fu-ball Live</span>
+        </div>
+      )}
       <main className="page">
         {page === 'matchdays' && <MatchdayView />}
         {page === 'table' && <LiveTable />}
