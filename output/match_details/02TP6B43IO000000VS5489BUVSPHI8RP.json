@@ -13,14 +13,14 @@
     {
       "minute": 34,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01598OHHFG000000VV0AG811VVEDO5CH"
     },
     {
       "minute": 56,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00OS3CAUN0000000VV0AG83KVT283J6L"
     }
@@ -29,26 +29,19 @@
     {
       "minute": 61,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 77,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 87,
-      "player": null,
-      "team": "home",
-      "card_type": "yellow",
-      "player_profile_url": null
-    },
-    {
-      "minute": 90,
       "player": null,
       "team": "away",
       "card_type": "yellow",
@@ -58,6 +51,13 @@
       "minute": 90,
       "player": null,
       "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -67,37 +67,37 @@
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 68,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 78,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 79,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 83,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 85,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     }
   ]
 }

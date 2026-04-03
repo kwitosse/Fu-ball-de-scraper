@@ -2,8 +2,8 @@
   "match_id": "02TP6B450S000000VS5489BUVSPHI8RP",
   "home_team": "SV Fortuna Leipzig 02 I",
   "away_team": "TSV Böhlitz-Ehrenberg 1990 I",
-  "home_score": 0,
-  "away_score": 1,
+  "home_score": 1,
+  "away_score": 0,
   "date": "05.10.2025",
   "kickoff": "14:00",
   "venue": "Rasenplatz, Fortuna-Sportpark Großfeld 1, Riesaer Str. 101, 04328 Leipzig",
@@ -13,7 +13,7 @@
     {
       "minute": 59,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01T1IVU0BO000000VS541L4JVVPU72J3"
     }
@@ -22,70 +22,70 @@
     {
       "minute": 9,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 29,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 68,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow_red",
       "player_profile_url": null
     },
     {
       "minute": 69,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 70,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 82,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 84,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 85,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 90,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow_red",
       "player_profile_url": null
     },
     {
       "minute": 90,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -95,31 +95,31 @@
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 54,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 72,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 84,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 90,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     }
   ]
 }

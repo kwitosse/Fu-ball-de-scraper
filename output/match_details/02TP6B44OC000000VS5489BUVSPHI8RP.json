@@ -2,8 +2,8 @@
   "match_id": "02TP6B44OC000000VS5489BUVSPHI8RP",
   "home_team": "SV Panitzsch/​Borsdorf II",
   "away_team": "SG LVB I",
-  "home_score": 2,
-  "away_score": 1,
+  "home_score": 1,
+  "away_score": 2,
   "date": "18.10.2025",
   "kickoff": "12:30",
   "venue": "Rasenplatz, Panitzsch Großfeld, Sommerfelder Str., 04451 Borsdorf",
@@ -13,21 +13,21 @@
     {
       "minute": 41,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/013IHU6PHC000000VV0AG80NVUOKH4LB"
     },
     {
       "minute": 53,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00OLKRQOI0000000VV0AG83KVS5RI27J"
     },
     {
       "minute": 74,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02FRECL00C000000VUM1DNOIVU191IJO"
     }
@@ -36,61 +36,54 @@
     {
       "minute": 36,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 37,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 57,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 61,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 70,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 73,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 76,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 77,
-      "player": null,
-      "team": "home",
-      "card_type": "yellow",
-      "player_profile_url": null
-    },
-    {
-      "minute": 90,
       "player": null,
       "team": "away",
       "card_type": "yellow",
@@ -100,6 +93,13 @@
       "minute": 90,
       "player": null,
       "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -109,28 +109,34 @@
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 59,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 62,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 71,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 80,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 85,
       "player_out": "k.A.",
       "player_in": "k.A.",
       "team": "away"
@@ -139,13 +145,7 @@
       "minute": 85,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
-    },
-    {
-      "minute": 85,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     }
   ]
 }

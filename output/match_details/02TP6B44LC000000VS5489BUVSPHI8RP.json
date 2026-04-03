@@ -2,8 +2,8 @@
   "match_id": "02TP6B44LC000000VS5489BUVSPHI8RP",
   "home_team": "SV Victoria 90 Leipzig I",
   "away_team": "SG Olympia 1896 Leipzig II",
-  "home_score": 1,
-  "away_score": 0,
+  "home_score": 0,
+  "away_score": 1,
   "date": "19.10.2025",
   "kickoff": "14:00",
   "venue": "Rasenplatz, Victoria Großfeld 1, Am Luppedeich 3, 04159 Leipzig",
@@ -13,7 +13,7 @@
     {
       "minute": 72,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00K6AV9308000000VV0AG85VVS8G2T1F"
     }
@@ -22,21 +22,21 @@
     {
       "minute": 9,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 22,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 84,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -46,18 +46,6 @@
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
-    },
-    {
-      "minute": 46,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "away"
-    },
-    {
-      "minute": 46,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
       "team": "home"
     },
     {
@@ -65,30 +53,42 @@
       "player_out": "k.A.",
       "player_in": "k.A.",
       "team": "home"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
     },
     {
       "minute": 64,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 64,
       "player_out": "#9",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 64,
       "player_out": "#2",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 77,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     }
   ]
 }

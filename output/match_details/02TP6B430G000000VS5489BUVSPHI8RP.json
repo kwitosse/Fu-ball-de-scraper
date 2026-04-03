@@ -2,8 +2,8 @@
   "match_id": "02TP6B430G000000VS5489BUVSPHI8RP",
   "home_team": "SG Rotation Leipzig II",
   "away_team": "SG Olympia 1896 Leipzig II",
-  "home_score": 1,
-  "away_score": 2,
+  "home_score": 2,
+  "away_score": 1,
   "date": "24.08.2025",
   "kickoff": "15:00",
   "venue": "Rasenplatz, Rotation 1950 Großfeld 1, Delitzscher Str. 131, 04129 Leipzig",
@@ -13,21 +13,21 @@
     {
       "minute": 23,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01763LLQDK000000VV0AG811VUFT5QPC"
     },
     {
       "minute": 66,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02VJL20UH0000000VUM1D522VTQILG7C"
     },
     {
       "minute": 84,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00K6AV9308000000VV0AG85VVS8G2T1F"
     }
@@ -36,42 +36,42 @@
     {
       "minute": 37,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 63,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 73,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 88,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 90,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 90,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -81,37 +81,37 @@
       "minute": 19,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 59,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 59,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 59,
       "player_out": "#28",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 75,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 83,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     }
   ]
 }

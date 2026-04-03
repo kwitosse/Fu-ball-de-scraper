@@ -2,8 +2,8 @@
   "match_id": "02TP6B43P4000000VS5489BUVSPHI8RP",
   "home_team": "VfB Zwenkau 02 II",
   "away_team": "SV Lipsia 93 Eutritzsch II",
-  "home_score": 2,
-  "away_score": 1,
+  "home_score": 1,
+  "away_score": 2,
   "date": "09.11.2025",
   "kickoff": "14:00",
   "venue": "Rasenplatz, Zwenkau Großfeld 2, Eythraer Weg 2, 04442 Zwenkau",
@@ -13,21 +13,21 @@
     {
       "minute": 1,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00K6AURLL8000000VV0AG85VVS8G2T1F"
     },
     {
       "minute": 32,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00K6AURLL8000000VV0AG85VVS8G2T1F"
     },
     {
       "minute": 36,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4PLH4000000VV0AG85VVVPI7ST7"
     }
@@ -36,56 +36,49 @@
     {
       "minute": 45,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 48,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 58,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 62,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 72,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 75,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 86,
       "player": null,
-      "team": "away",
-      "card_type": "yellow",
-      "player_profile_url": null
-    },
-    {
-      "minute": 90,
-      "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
@@ -93,6 +86,13 @@
       "minute": 90,
       "player": null,
       "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -102,37 +102,37 @@
       "minute": 64,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 64,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 74,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 83,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 88,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 90,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     }
   ]
 }

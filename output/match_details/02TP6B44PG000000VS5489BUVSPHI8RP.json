@@ -2,8 +2,8 @@
   "match_id": "02TP6B44PG000000VS5489BUVSPHI8RP",
   "home_team": "VfB Zwenkau 02 II",
   "away_team": "SV Victoria 90 Leipzig I",
-  "home_score": 0,
-  "away_score": 2,
+  "home_score": 2,
+  "away_score": 0,
   "date": "05.10.2025",
   "kickoff": "15:00",
   "venue": "Rasenplatz, Zwenkau Großfeld 2, Eythraer Weg 2, 04442 Zwenkau",
@@ -13,14 +13,14 @@
     {
       "minute": 43,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS6D6BK000000VV0AG85VVVPI7ST7"
     },
     {
       "minute": 58,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS5VMJG000000VV0AG85VVVPI7ST7"
     }
@@ -29,7 +29,7 @@
     {
       "minute": 45,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -39,43 +39,43 @@
       "minute": 65,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 71,
       "player_out": "k.A.",
       "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 75,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
       "team": "home"
     },
     {
       "minute": 75,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
-    },
-    {
-      "minute": 75,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 80,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
-    },
-    {
-      "minute": 86,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 86,
       "player_out": "k.A.",
       "player_in": "k.A.",
       "team": "away"
+    },
+    {
+      "minute": 86,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
     }
   ]
 }

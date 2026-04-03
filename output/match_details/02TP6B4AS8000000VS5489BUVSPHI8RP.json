@@ -13,28 +13,28 @@
     {
       "minute": 11,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4L6R0000000VV0AG85VVVPI7ST7"
     },
     {
       "minute": 14,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01745URQS8000000VV0AG811VUFT5QPC"
     },
     {
       "minute": 78,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4AI54000000VV0AG85VVVPI7ST7"
     },
     {
       "minute": 82,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS5VMJG000000VV0AG85VVVPI7ST7"
     }
@@ -43,27 +43,20 @@
     {
       "minute": 34,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 37,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 52,
       "player": null,
-      "team": "away",
-      "card_type": "yellow",
-      "player_profile_url": null
-    },
-    {
-      "minute": 90,
-      "player": null,
       "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
@@ -72,6 +65,13 @@
       "minute": 90,
       "player": null,
       "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -81,37 +81,37 @@
       "minute": 54,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 57,
       "player_out": "k.A.",
       "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 63,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
       "team": "home"
     },
     {
       "minute": 63,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 63,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
-    },
-    {
-      "minute": 63,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 65,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     }
   ]
 }

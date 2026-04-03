@@ -7,11 +7,18 @@ into output/app_data/ for the football league prediction app.
 """
 
 import json
-import os
-import math
 from pathlib import Path
 from datetime import datetime, timezone
 from collections import defaultdict
+
+from prediction_model import (
+    blend_strength,
+    choose_scoreline,
+    confidence_from_outcome_probabilities,
+    expected_goals,
+    get_form_factor,
+    outcome_probabilities,
+)
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -398,30 +405,17 @@ print(f"  Head-to-head pairings computed: {len(h2h)}")
 # ---------------------------------------------------------------------------
 print("\n=== Step 3: Prediction Engine ===")
 
-HOME_FACTOR = 1.10
 league_home_goal_base = max(league_avg_home_gf_per_game, 1.5)
 league_away_goal_base = max(league_avg_away_gf_per_game, 1.2)
 
 
-def get_form_factor_atk(form_last5_gf, season_gf_pg):
-    if season_gf_pg and season_gf_pg > 0:
-        return clamp(form_last5_gf / season_gf_pg, 0.90, 1.10)
-    return 1.0
-
-
-def get_form_factor_def(form_last5_ga, season_ga_pg):
-    if season_ga_pg and season_ga_pg > 0:
-        return clamp(form_last5_ga / season_ga_pg, 0.90, 1.10)
-    return 1.0
-
-
-def build_rationale(htid, atid, xg_home, xg_away, home_stats, away_stats):
+def build_rationale(htid, atid, xg_home, xg_away, home_stats, away_stats, strengths):
     factors = []
 
-    home_atk = home_stats.get("home_attack_strength", 1.0)
-    away_def = away_stats.get("away_defense_weakness", 1.0)
-    away_atk = away_stats.get("away_attack_strength", 1.0)
-    home_def = home_stats.get("home_defense_weakness", 1.0)
+    home_atk = strengths["home_attack"]
+    away_def = strengths["away_defense"]
+    away_atk = strengths["away_attack"]
+    home_def = strengths["home_defense"]
 
     if home_atk >= 1.3:
         factors.append(f"Strong home attack ({home_atk:.1f}x avg)")
@@ -486,63 +480,81 @@ for f in unplayed_fixtures:
     home_stats = team_stats.get(htid, {})
     away_stats = team_stats.get(atid, {})
 
-    # Attack/defense strengths with fallback to 1.0
-    home_attack_str = home_stats.get("home_attack_strength", 1.0)
-    away_attack_str = away_stats.get("away_attack_strength", 1.0)
-    away_defense_weakness = away_stats.get("away_defense_weakness", 1.0)
-    home_defense_weakness = home_stats.get("home_defense_weakness", 1.0)
+    home_attack_str = blend_strength(
+        home_stats.get("home_attack_strength", 1.0),
+        home_stats.get("attack_strength", 1.0),
+        home_stats.get("home_played", 0),
+    )
+    away_attack_str = blend_strength(
+        away_stats.get("away_attack_strength", 1.0),
+        away_stats.get("attack_strength", 1.0),
+        away_stats.get("away_played", 0),
+    )
+    away_defense_weakness = blend_strength(
+        away_stats.get("away_defense_weakness", 1.0),
+        away_stats.get("defense_weakness", 1.0),
+        away_stats.get("away_played", 0),
+    )
+    home_defense_weakness = blend_strength(
+        home_stats.get("home_defense_weakness", 1.0),
+        home_stats.get("defense_weakness", 1.0),
+        home_stats.get("home_played", 0),
+    )
 
     # Form factors
-    form_atk_home = get_form_factor_atk(
+    form_atk_home = get_form_factor(
         home_stats.get("form_last5_gf", 0.0),
         home_stats.get("season_gf_per_game", 0.0)
     ) if home_stats.get("played", 0) > 0 else 1.0
 
-    form_def_away = get_form_factor_def(
+    form_def_away = get_form_factor(
         away_stats.get("form_last5_ga", 0.0),
         away_stats.get("season_ga_per_game", 0.0)
     ) if away_stats.get("played", 0) > 0 else 1.0
 
-    form_atk_away = get_form_factor_atk(
+    form_atk_away = get_form_factor(
         away_stats.get("form_last5_gf", 0.0),
         away_stats.get("season_gf_per_game", 0.0)
     ) if away_stats.get("played", 0) > 0 else 1.0
 
-    form_def_home = get_form_factor_def(
+    form_def_home = get_form_factor(
         home_stats.get("form_last5_ga", 0.0),
         home_stats.get("season_ga_per_game", 0.0)
     ) if home_stats.get("played", 0) > 0 else 1.0
 
-    xg_home = (league_home_goal_base
-                * home_attack_str
-                * away_defense_weakness
-                * form_atk_home
-                * form_def_away
-                * HOME_FACTOR)
+    xg_home = expected_goals(
+        league_home_goal_base,
+        home_attack_str,
+        away_defense_weakness,
+        attack_form=form_atk_home,
+        defense_form=form_def_away,
+    )
+    xg_away = expected_goals(
+        league_away_goal_base,
+        away_attack_str,
+        home_defense_weakness,
+        attack_form=form_atk_away,
+        defense_form=form_def_home,
+    )
 
-    xg_away = (league_away_goal_base
-                * away_attack_str
-                * home_defense_weakness
-                * form_atk_away
-                * form_def_home
-                / HOME_FACTOR)
+    pred_home, pred_away = choose_scoreline(xg_home, xg_away)
+    home_win_prob, draw_prob, away_win_prob = outcome_probabilities(xg_home, xg_away)
+    confidence = confidence_from_outcome_probabilities(home_win_prob, draw_prob, away_win_prob)
 
-    xg_home = clamp(xg_home, 0.2, 4.5)
-    xg_away = clamp(xg_away, 0.2, 4.5)
-
-    # Banker's rounding (Python's built-in round() uses banker's rounding)
-    pred_home = round(xg_home)
-    pred_away = round(xg_away)
-
-    diff = abs(xg_home - xg_away)
-    if diff > 0.8:
-        confidence = "high"
-    elif diff > 0.4:
-        confidence = "medium"
-    else:
-        confidence = "low"
-
-    rationale = build_rationale(htid, atid, xg_home, xg_away, home_stats, away_stats)
+    rationale = build_rationale(
+        htid,
+        atid,
+        xg_home,
+        xg_away,
+        home_stats,
+        away_stats,
+        strengths={
+            "home_attack": home_attack_str,
+            "away_attack": away_attack_str,
+            "away_defense": away_defense_weakness,
+            "home_defense": home_defense_weakness,
+        },
+    )
 
     prefill_predictions[f["match_id"]] = {
         "home_score": pred_home,
@@ -626,7 +638,7 @@ print(f"  Written: {baseline_path} ({len(table)} teams)")
 # --- data_version.json ---
 version_data = {
     "generated_at": generated_at,
-    "model_version": "v1.0.0",
+    "model_version": "v1.1.0",
     "source": "output/",
 }
 version_path = APP_DATA_DIR / "data_version.json"

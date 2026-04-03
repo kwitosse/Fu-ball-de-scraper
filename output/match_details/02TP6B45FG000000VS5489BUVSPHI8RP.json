@@ -2,8 +2,8 @@
   "match_id": "02TP6B45FG000000VS5489BUVSPHI8RP",
   "home_team": "SG Olympia 1896 Leipzig II",
   "away_team": "Roter Stern Leipzig 99 II",
-  "home_score": 1,
-  "away_score": 3,
+  "home_score": 3,
+  "away_score": 1,
   "date": "20.09.2025",
   "kickoff": "15:00",
   "venue": "Kunstrasenplatz, SG Olympia KR-Großfeld Mühlwiese, Waldstr. 177, 04105 Leipzig",
@@ -13,28 +13,28 @@
     {
       "minute": 12,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00M7EQ1FF8000000VV0AG83KVS3TDH74"
     },
     {
       "minute": 15,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01B3LJFAA0000000VV0AG80NVUQACAMB"
     },
     {
       "minute": 44,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02QP2481A0000000VUM1D51MVTQ7P2BT"
     },
     {
       "minute": 73,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00P7MPRCES000000VV0AG83KVSEQIVDD"
     }
@@ -45,49 +45,49 @@
       "minute": 38,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 46,
       "player_out": "#8",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 46,
       "player_out": "#15",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 46,
       "player_out": "#20",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 62,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 70,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 73,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     }
   ]
 }

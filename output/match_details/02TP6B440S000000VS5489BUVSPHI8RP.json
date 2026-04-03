@@ -2,8 +2,8 @@
   "match_id": "02TP6B440S000000VS5489BUVSPHI8RP",
   "home_team": "Roter Stern Leipzig 99 II",
   "away_team": "FC Blau-Weiß Leipzig II",
-  "home_score": 1,
-  "away_score": 2,
+  "home_score": 2,
+  "away_score": 1,
   "date": "01.11.2025",
   "kickoff": "14:00",
   "venue": "Rasenplatz, SpA Am Goethesteig GF Roter Stern, Goethesteig, 04279 Leipzig",
@@ -13,21 +13,21 @@
     {
       "minute": 47,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01B3LJFAA0000000VV0AG80NVUQACAMB"
     },
     {
       "minute": 90,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01ARA42TFO000000VV0AG811VU4MSGAC"
     },
     {
       "minute": 90,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/0245I9K7O0000000VS541L4KVUCITE80"
     }
@@ -36,28 +36,28 @@
     {
       "minute": 65,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 67,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 83,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 90,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -67,43 +67,43 @@
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 66,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 67,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 79,
       "player_out": "#15",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 79,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 88,
       "player_out": "#13",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     }
   ]
 }

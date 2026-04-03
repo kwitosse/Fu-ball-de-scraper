@@ -2,8 +2,8 @@
   "match_id": "02TP6B4A6O000000VS5489BUVSPHI8RP",
   "home_team": "Roter Stern Leipzig 99 II",
   "away_team": "SG Olympia 1896 Leipzig II",
-  "home_score": 0,
-  "away_score": 4,
+  "home_score": 4,
+  "away_score": 0,
   "date": "21.03.2026",
   "kickoff": "15:00",
   "venue": "Rasenplatz, SpA Am Goethesteig GF Roter Stern, Goethesteig, 04279 Leipzig",
@@ -13,28 +13,28 @@
     {
       "minute": 34,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "own_goal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02BVG0E7N8000000VUM1DNO5VVIOUCKL"
     },
     {
       "minute": 36,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": null
     },
     {
       "minute": 90,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": null
     },
     {
       "minute": 90,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": null
     }
@@ -43,21 +43,21 @@
     {
       "minute": 63,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 80,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 84,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -67,55 +67,55 @@
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 64,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 67,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 69,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 74,
       "player_out": "#28",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 74,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 74,
       "player_out": "#13",
       "player_in": "#20",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 83,
       "player_out": "#15",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     }
   ]
 }

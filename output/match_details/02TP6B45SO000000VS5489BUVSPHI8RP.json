@@ -2,8 +2,8 @@
   "match_id": "02TP6B45SO000000VS5489BUVSPHI8RP",
   "home_team": "SV Panitzsch/​Borsdorf II",
   "away_team": "SV Tapfer 06 Leipzig II",
-  "home_score": 2,
-  "away_score": 0,
+  "home_score": 0,
+  "away_score": 2,
   "date": "12.09.2025",
   "kickoff": "18:00",
   "venue": "Rasenplatz, Panitzsch Großfeld, Sommerfelder Str., 04451 Borsdorf",
@@ -13,14 +13,14 @@
     {
       "minute": 2,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/02SFDBJ98C000000VS5489B8VVEDVP3N"
     },
     {
       "minute": 78,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02EONMM2GC000000VUM1DNP3VSU597FK"
     }
@@ -29,49 +29,49 @@
     {
       "minute": 35,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 49,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 61,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 65,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 71,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 87,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 90,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -81,22 +81,16 @@
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 58,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
       "team": "away"
     },
     {
       "minute": 58,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "home"
-    },
-    {
-      "minute": 58,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "home"
-    },
-    {
-      "minute": 60,
       "player_out": "k.A.",
       "player_in": "k.A.",
       "team": "away"
@@ -105,25 +99,31 @@
       "minute": 60,
       "player_out": "k.A.",
       "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 60,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 70,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
       "team": "away"
     },
     {
       "minute": 70,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
-    },
-    {
-      "minute": 70,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 80,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     }
   ]
 }

@@ -2,8 +2,8 @@
   "match_id": "02TP6B45M4000000VS5489BUVSPHI8RP",
   "home_team": "TSV Böhlitz-Ehrenberg 1990 I",
   "away_team": "SG Olympia 1896 Leipzig II",
-  "home_score": 0,
-  "away_score": 1,
+  "home_score": 1,
+  "away_score": 0,
   "date": "14.09.2025",
   "kickoff": "15:00",
   "venue": "Rasenplatz, Böhlitz Leipziger Straße, Leipziger Str. 124, 04178 Leipzig",
@@ -13,7 +13,7 @@
     {
       "minute": 87,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02FHGQ0I5K000000VUM1DNP5VU5PVP3B"
     }
@@ -22,21 +22,21 @@
     {
       "minute": 21,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 60,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 90,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -46,40 +46,46 @@
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 58,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 60,
       "player_out": "#8",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 60,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 74,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 82,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 83,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 90,
       "player_out": "k.A.",
       "player_in": "k.A.",
       "team": "home"
@@ -88,13 +94,7 @@
       "minute": 90,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
-    },
-    {
-      "minute": 90,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     }
   ]
 }

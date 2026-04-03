@@ -2,8 +2,8 @@
   "match_id": "02TP6B4AAG000000VS5489BUVSPHI8RP",
   "home_team": "SV Panitzsch/​Borsdorf II",
   "away_team": "SV Victoria 90 Leipzig I",
-  "home_score": 0,
-  "away_score": 2,
+  "home_score": 2,
+  "away_score": 0,
   "date": "21.03.2026",
   "kickoff": "12:30",
   "venue": "Rasenplatz, Panitzsch Großfeld, Sommerfelder Str., 04451 Borsdorf",
@@ -13,14 +13,14 @@
     {
       "minute": 24,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "own_goal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01BI61JJ4O000000VV0AG80NVTC301MB"
     },
     {
       "minute": 88,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01LQ4HI0IC000000VS541L4FVTH0JFIJ"
     }
@@ -29,49 +29,49 @@
     {
       "minute": 24,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 43,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 44,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow_red",
       "player_profile_url": null
     },
     {
       "minute": 64,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 67,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 87,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 90,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -81,13 +81,13 @@
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 58,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     }
   ]
 }

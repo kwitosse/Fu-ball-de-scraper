@@ -84,6 +84,9 @@ export default function SettingsView() {
           <span>Datenspeicher</span>
           <span className="info-value">localStorage</span>
         </div>
+        <div style={{ fontSize: 12, color: 'var(--text2)', marginTop: 10, lineHeight: 1.5 }}>
+          Das Standard-Szenario folgt automatisch dem aktuellen Datenstand. Eigene Szenarien bleiben beim nächsten Datenupdate erhalten.
+        </div>
       </div>
     </div>
   )

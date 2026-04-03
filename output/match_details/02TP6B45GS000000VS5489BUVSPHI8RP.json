@@ -2,8 +2,8 @@
   "match_id": "02TP6B45GS000000VS5489BUVSPHI8RP",
   "home_team": "SV Victoria 90 Leipzig I",
   "away_team": "SV Panitzsch/​Borsdorf II",
-  "home_score": 5,
-  "away_score": 2,
+  "home_score": 2,
+  "away_score": 5,
   "date": "21.09.2025",
   "kickoff": "14:21",
   "venue": "Rasenplatz, Victoria Großfeld 1, Am Luppedeich 3, 04159 Leipzig",
@@ -13,49 +13,49 @@
     {
       "minute": 30,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01LQ4HI0IC000000VS541L4FVTH0JFIJ"
     },
     {
       "minute": 30,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00OLKRQOI0000000VV0AG83KVS5RI27J"
     },
     {
       "minute": 33,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4FPBK000000VV0AG85VVVPI7ST7"
     },
     {
       "minute": 37,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00S95GL2LK000000VV0AG80NVVH5BM65"
     },
     {
       "minute": 73,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02SH1SO5U0000000VUM1D5ANVTP5GPSD"
     },
     {
       "minute": 84,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00OLKRQOI0000000VV0AG83KVS5RI27J"
     },
     {
       "minute": 89,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/02TALH4QIC000000VS5489C2VSJNJVM9"
     }
@@ -64,21 +64,21 @@
     {
       "minute": 32,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 72,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 85,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -88,43 +88,43 @@
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 60,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
       "team": "away"
     },
     {
       "minute": 60,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
-    },
-    {
-      "minute": 60,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 63,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 72,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 81,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     }
   ]
 }

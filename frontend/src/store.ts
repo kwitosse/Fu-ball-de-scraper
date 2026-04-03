@@ -6,9 +6,16 @@ import { AppData, Scenario, ScoreOverride } from './types'
 interface AppState {
   scenarios: Scenario[]
   activeScenarioId: string
+  scenarioDataKey: string | null
   appData: AppData | null
   loading: boolean
   error: string | null
+}
+
+export interface StoredScenarioState {
+  dataKey: string | null
+  scenarios: Scenario[]
+  activeScenarioId: string
 }
 
 // ---- Actions ----
@@ -32,6 +39,10 @@ type Action =
 // ---- Helpers ----
 
 const LS_KEY = 'fu-ball-scenarios'
+
+export function getScenarioDataKey(appData: AppData): string {
+  return `${appData.dataVersion.generated_at}|${appData.dataVersion.model_version}`
+}
 
 function makePrefillOverrides(appData: AppData): Record<string, ScoreOverride> {
   const overrides: Record<string, ScoreOverride> = {}
@@ -59,21 +70,79 @@ function makeDefaultScenario(appData: AppData): Scenario {
   }
 }
 
-function loadScenariosFromLS(): Scenario[] | null {
+export function parseStoredScenarioState(raw: string | null): StoredScenarioState | null {
+  if (!raw) return null
   try {
-    const raw = localStorage.getItem(LS_KEY)
-    if (!raw) return null
-    return JSON.parse(raw) as Scenario[]
+    const parsed = JSON.parse(raw) as StoredScenarioState | Scenario[]
+    if (Array.isArray(parsed)) {
+      return {
+        dataKey: null,
+        scenarios: parsed,
+        activeScenarioId: parsed[0]?.id ?? '',
+      }
+    }
+    if (!parsed || !Array.isArray(parsed.scenarios)) return null
+    return {
+      dataKey: typeof parsed.dataKey === 'string' ? parsed.dataKey : null,
+      scenarios: parsed.scenarios,
+      activeScenarioId: typeof parsed.activeScenarioId === 'string'
+        ? parsed.activeScenarioId
+        : parsed.scenarios[0]?.id ?? '',
+    }
   } catch {
     return null
   }
 }
 
-function saveScenariosToLS(scenarios: Scenario[]): void {
+function loadScenariosFromLS(): StoredScenarioState | null {
+  return parseStoredScenarioState(localStorage.getItem(LS_KEY))
+}
+
+function saveScenariosToLS(storedState: StoredScenarioState): void {
   try {
-    localStorage.setItem(LS_KEY, JSON.stringify(scenarios))
+    localStorage.setItem(LS_KEY, JSON.stringify(storedState))
   } catch {
     // ignore
+  }
+}
+
+export function reconcileStoredScenarioState(
+  storedState: StoredScenarioState | null,
+  appData: AppData
+): StoredScenarioState {
+  const defaultScenario = makeDefaultScenario(appData)
+  const currentDataKey = getScenarioDataKey(appData)
+
+  if (!storedState || storedState.scenarios.length === 0) {
+    return {
+      dataKey: currentDataKey,
+      scenarios: [defaultScenario],
+      activeScenarioId: defaultScenario.id,
+    }
+  }
+
+  if (storedState.dataKey === currentDataKey) {
+    const hasDefault = storedState.scenarios.some(s => s.id === defaultScenario.id)
+    const scenarios = hasDefault ? storedState.scenarios : [defaultScenario, ...storedState.scenarios]
+    const activeScenarioId = scenarios.some(s => s.id === storedState.activeScenarioId)
+      ? storedState.activeScenarioId
+      : defaultScenario.id
+    return {
+      dataKey: currentDataKey,
+      scenarios,
+      activeScenarioId,
+    }
+  }
+
+  const customScenarios = storedState.scenarios.filter(s => s.id !== defaultScenario.id)
+  const activeScenarioId = customScenarios.some(s => s.id === storedState.activeScenarioId)
+    ? storedState.activeScenarioId
+    : defaultScenario.id
+
+  return {
+    dataKey: currentDataKey,
+    scenarios: [defaultScenario, ...customScenarios],
+    activeScenarioId,
   }
 }
 
@@ -93,18 +162,19 @@ function reducer(state: AppState, action: Action): AppState {
   switch (action.type) {
     case 'SET_DATA': {
       const appData = action.payload
-      // If we already have scenarios loaded from LS, keep them but ensure default exists
-      if (state.scenarios.length === 0) {
-        const defaultScenario = makeDefaultScenario(appData)
-        return {
-          ...state,
-          appData,
-          loading: false,
-          scenarios: [defaultScenario],
-          activeScenarioId: defaultScenario.id,
-        }
+      const storedState = reconcileStoredScenarioState({
+        dataKey: state.scenarioDataKey,
+        scenarios: state.scenarios,
+        activeScenarioId: state.activeScenarioId,
+      }, appData)
+      return {
+        ...state,
+        appData,
+        loading: false,
+        scenarios: storedState.scenarios,
+        activeScenarioId: storedState.activeScenarioId,
+        scenarioDataKey: storedState.dataKey,
       }
-      return { ...state, appData, loading: false }
     }
 
     case 'SET_LOADING':
@@ -259,6 +329,7 @@ const DispatchContext = createContext<React.Dispatch<Action> | null>(null)
 const initialState: AppState = {
   scenarios: [],
   activeScenarioId: '',
+  scenarioDataKey: null,
   appData: null,
   loading: true,
   error: null,
@@ -270,8 +341,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const init: AppState = storedScenarios
     ? {
         ...initialState,
-        scenarios: storedScenarios,
-        activeScenarioId: storedScenarios[0]?.id ?? '',
+        scenarios: storedScenarios.scenarios,
+        activeScenarioId: storedScenarios.activeScenarioId,
+        scenarioDataKey: storedScenarios.dataKey,
       }
     : initialState
 
@@ -279,10 +351,14 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
   // Persist scenarios whenever they change
   useEffect(() => {
-    if (state.scenarios.length > 0) {
-      saveScenariosToLS(state.scenarios)
+    if (state.scenarios.length > 0 && state.scenarioDataKey) {
+      saveScenariosToLS({
+        dataKey: state.scenarioDataKey,
+        scenarios: state.scenarios,
+        activeScenarioId: state.activeScenarioId,
+      })
     }
-  }, [state.scenarios])
+  }, [state.activeScenarioId, state.scenarioDataKey, state.scenarios])
 
   return React.createElement(
     StateContext.Provider,

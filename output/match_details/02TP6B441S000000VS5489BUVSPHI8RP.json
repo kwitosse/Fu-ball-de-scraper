@@ -2,8 +2,8 @@
   "match_id": "02TP6B441S000000VS5489BUVSPHI8RP",
   "home_team": "TSV Böhlitz-Ehrenberg 1990 I",
   "away_team": "SG Rotation Leipzig II",
-  "home_score": 3,
-  "away_score": 0,
+  "home_score": 0,
+  "away_score": 3,
   "date": "02.11.2025",
   "kickoff": "14:00",
   "venue": "Rasenplatz, Böhlitz Leipziger Straße, Leipziger Str. 124, 04178 Leipzig",
@@ -13,21 +13,21 @@
     {
       "minute": 52,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS5G8GK000000VV0AG85VVVPI7ST7"
     },
     {
       "minute": 69,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00O48O3128000000VV0AG83KVTGT8G00"
     },
     {
       "minute": 72,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01KJQAOBAK000000VV0AG80NVUPL3BSD"
     }
@@ -36,21 +36,21 @@
     {
       "minute": 28,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 75,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 90,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -60,22 +60,16 @@
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 55,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
       "team": "home"
     },
     {
       "minute": 55,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "away"
-    },
-    {
-      "minute": 55,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "away"
-    },
-    {
-      "minute": 56,
       "player_out": "k.A.",
       "player_in": "k.A.",
       "team": "home"
@@ -84,37 +78,43 @@
       "minute": 56,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
+    },
+    {
+      "minute": 56,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
     },
     {
       "minute": 65,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 73,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 74,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 79,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 81,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     }
   ]
 }

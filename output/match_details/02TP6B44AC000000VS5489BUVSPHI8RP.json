@@ -2,8 +2,8 @@
   "match_id": "02TP6B44AC000000VS5489BUVSPHI8RP",
   "home_team": "SV Lipsia 93 Eutritzsch II",
   "away_team": "SV Victoria 90 Leipzig I",
-  "home_score": 5,
-  "away_score": 0,
+  "home_score": 0,
+  "away_score": 5,
   "date": "25.10.2025",
   "kickoff": "15:00",
   "venue": "Rasenplatz, Eutritzsch Feld 1, Thaerstr. 5, 04129 Leipzig",
@@ -13,35 +13,35 @@
     {
       "minute": 2,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01T1I6VP3O000000VS541L4KVVKPRK7T"
     },
     {
       "minute": 12,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "own_goal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01PNJK3SS8000000VS541L4FVSBNUL7H"
     },
     {
       "minute": 52,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01T1I6VP3O000000VS541L4KVVKPRK7T"
     },
     {
       "minute": 90,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01PNJK3SS8000000VS541L4FVSBNUL7H"
     },
     {
       "minute": 90,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02HJS0IM34000000VUM1DNPJVTSR9G5L"
     }
@@ -50,21 +50,21 @@
     {
       "minute": 38,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 59,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 80,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -74,30 +74,24 @@
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 52,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 57,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 70,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
-    },
-    {
-      "minute": 79,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
       "team": "home"
     },
     {
@@ -107,7 +101,7 @@
       "team": "away"
     },
     {
-      "minute": 90,
+      "minute": 79,
       "player_out": "k.A.",
       "player_in": "k.A.",
       "team": "home"
@@ -116,7 +110,13 @@
       "minute": 90,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
+    },
+    {
+      "minute": 90,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
     }
   ]
 }

@@ -2,8 +2,8 @@
   "match_id": "02TP6B4440000000VS5489BUVSPHI8RP",
   "home_team": "SG Olympia 1896 Leipzig II",
   "away_team": "SV Lipsia 93 Eutritzsch II",
-  "home_score": 2,
-  "away_score": 3,
+  "home_score": 3,
+  "away_score": 2,
   "date": "01.11.2025",
   "kickoff": "15:00",
   "venue": "Kunstrasenplatz, SG Olympia KR-Großfeld Mühlwiese, Waldstr. 177, 04105 Leipzig",
@@ -13,35 +13,35 @@
     {
       "minute": 1,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/024N78HGC0000000VS541L4KVV7NMKE6"
     },
     {
       "minute": 21,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02J28H71FG000000VUM1DNPCVU4MLK3F"
     },
     {
       "minute": 30,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/024N78HGC0000000VS541L4KVV7NMKE6"
     },
     {
       "minute": 55,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02G89228AO000000VUM1DNOTVS5U3SOL"
     },
     {
       "minute": 56,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "own_goal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4T0NO000000VV0AG85VVVPI7ST7"
     }
@@ -50,7 +50,7 @@
     {
       "minute": 42,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -60,18 +60,6 @@
       "minute": 46,
       "player_out": "#8",
       "player_in": "k.A.",
-      "team": "away"
-    },
-    {
-      "minute": 46,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "away"
-    },
-    {
-      "minute": 46,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
       "team": "home"
     },
     {
@@ -79,42 +67,54 @@
       "player_out": "k.A.",
       "player_in": "k.A.",
       "team": "home"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
     },
     {
       "minute": 64,
       "player_out": "k.A.",
       "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 70,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
       "team": "away"
     },
     {
       "minute": 70,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
-    },
-    {
-      "minute": 70,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 72,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 81,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 83,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     }
   ]
 }

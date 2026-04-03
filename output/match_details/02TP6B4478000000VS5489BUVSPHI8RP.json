@@ -2,8 +2,8 @@
   "match_id": "02TP6B4478000000VS5489BUVSPHI8RP",
   "home_team": "SV Panitzsch/​Borsdorf II",
   "away_team": "SG Leipzig-Bienitz I",
-  "home_score": 2,
-  "away_score": 7,
+  "home_score": 7,
+  "away_score": 2,
   "date": "01.11.2025",
   "kickoff": "11:30",
   "venue": "Rasenplatz, Panitzsch Großfeld, Sommerfelder Str., 04451 Borsdorf",
@@ -13,63 +13,63 @@
     {
       "minute": 5,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01LQ4HI0IC000000VS541L4FVTH0JFIJ"
     },
     {
       "minute": 31,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4FPBK000000VV0AG85VVVPI7ST7"
     },
     {
       "minute": 37,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00OQFRBUDG000000VV0AG83KVVMJE540"
     },
     {
       "minute": 45,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4FPBK000000VV0AG85VVVPI7ST7"
     },
     {
       "minute": 73,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01V3LGAUN4000000VS541L4GVTBV7JIL"
     },
     {
       "minute": 75,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02Q0JSUCDS000000VUM1D52BVVOH9BD5"
     },
     {
       "minute": 77,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00OANDAEMC000000VV0AG83KVU713MQC"
     },
     {
       "minute": 82,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01AIKFD2LO000000VV0AG80NVU35M1P8"
     },
     {
       "minute": 90,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/01BI61JJ4O000000VV0AG80NVTC301MB"
     }
@@ -78,35 +78,35 @@
     {
       "minute": 27,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "red",
       "player_profile_url": null
     },
     {
       "minute": 51,
       "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 56,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 60,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "red",
       "player_profile_url": null
     },
     {
       "minute": 89,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -116,43 +116,43 @@
       "minute": 62,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 66,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 68,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 69,
       "player_out": "k.A.",
       "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 76,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
       "team": "home"
     },
     {
       "minute": 76,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
-    },
-    {
-      "minute": 76,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 81,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     }
   ]
 }

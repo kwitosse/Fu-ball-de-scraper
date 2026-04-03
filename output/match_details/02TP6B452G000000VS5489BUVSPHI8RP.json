@@ -2,8 +2,8 @@
   "match_id": "02TP6B452G000000VS5489BUVSPHI8RP",
   "home_team": "Roter Stern Leipzig 99 II",
   "away_team": "SV Lipsia 93 Eutritzsch II",
-  "home_score": 2,
-  "away_score": 0,
+  "home_score": 0,
+  "away_score": 2,
   "date": "27.09.2025",
   "kickoff": "15:00",
   "venue": "Kunstrasenplatz, Teichstraße Allwetterplatz GF, Teichstr. 12, 04277 Leipzig",
@@ -13,14 +13,14 @@
     {
       "minute": 9,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00OFRNQI94000000VV0AG83KVSJ5737U"
     },
     {
       "minute": 55,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": null
     }
@@ -29,13 +29,6 @@
     {
       "minute": 57,
       "player": null,
-      "team": "away",
-      "card_type": "yellow",
-      "player_profile_url": null
-    },
-    {
-      "minute": 60,
-      "player": null,
       "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
@@ -44,6 +37,13 @@
       "minute": 60,
       "player": null,
       "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 60,
+      "player": null,
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -53,55 +53,55 @@
       "minute": 45,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 49,
       "player_out": "k.A.",
       "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 59,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
       "team": "away"
     },
     {
       "minute": 59,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
-    },
-    {
-      "minute": 59,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 65,
       "player_out": "#15",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 65,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     },
     {
       "minute": 78,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 82,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 84,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
+      "team": "home"
     }
   ]
 }

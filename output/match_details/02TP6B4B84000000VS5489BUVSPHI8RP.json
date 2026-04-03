@@ -2,8 +2,8 @@
   "match_id": "02TP6B4B84000000VS5489BUVSPHI8RP",
   "home_team": "FSV Großpösna I",
   "away_team": "SG Olympia 1896 Leipzig II",
-  "home_score": 2,
-  "away_score": 4,
+  "home_score": 4,
+  "away_score": 2,
   "date": "29.03.2026",
   "kickoff": "14:30",
   "venue": "Rasenplatz, Großpösna Großfeld, Am Sportplatz 1, 04463 Großpösna",
@@ -13,42 +13,42 @@
     {
       "minute": 11,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS6GGHK000000VV0AG85VVVPI7ST7"
     },
     {
       "minute": 24,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00K6AV9308000000VV0AG85VVS8G2T1F"
     },
     {
       "minute": 45,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/028LDTCDRC000000VS541L4GVSD8NUTM"
     },
     {
       "minute": 61,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS59COO000000VV0AG85VVVPI7ST7"
     },
     {
       "minute": 75,
       "scorer": null,
-      "team": "away",
+      "team": "home",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/028LDTCDRC000000VS541L4GVSD8NUTM"
     },
     {
       "minute": 81,
       "scorer": null,
-      "team": "home",
+      "team": "away",
       "goal_type": "normal",
       "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02101PTID8000000VS541L4KVVAVAT4L"
     }
@@ -57,21 +57,14 @@
     {
       "minute": 42,
       "player": null,
-      "team": "home",
+      "team": "away",
       "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 43,
       "player": null,
-      "team": "away",
-      "card_type": "yellow",
-      "player_profile_url": null
-    },
-    {
-      "minute": 90,
-      "player": null,
-      "team": "away",
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     },
@@ -79,13 +72,20 @@
       "minute": 90,
       "player": null,
       "team": "home",
-      "card_type": "red",
+      "card_type": "yellow",
       "player_profile_url": null
     },
     {
       "minute": 90,
       "player": null,
       "team": "away",
+      "card_type": "red",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "home",
       "card_type": "yellow",
       "player_profile_url": null
     }
@@ -95,43 +95,43 @@
       "minute": 46,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "away"
-    },
-    {
-      "minute": 59,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
       "team": "home"
     },
     {
       "minute": 59,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
+    },
+    {
+      "minute": 59,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
     },
     {
       "minute": 63,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 63,
       "player_out": "k.A.",
       "player_in": "k.A.",
-      "team": "home"
-    },
-    {
-      "minute": 67,
-      "player_out": "k.A.",
-      "player_in": "k.A.",
-      "team": "home"
+      "team": "away"
     },
     {
       "minute": 67,
       "player_out": "k.A.",
       "player_in": "k.A.",
       "team": "away"
+    },
+    {
+      "minute": 67,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
     }
   ]
 }
