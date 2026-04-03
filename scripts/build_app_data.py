@@ -48,6 +48,45 @@ def parse_date(date_str):
         return date_str
 
 
+def detail_score_is_trustworthy(detail):
+    """Only trust detail scores when the course data supports them.
+
+    The fussball.de detail page can expose unrelated generic scores in the page
+    text for unplayed fixtures. Accept only:
+    - scores backed by parsed goal events, where counts line up exactly
+    - explicit 0:0 matches with no goal events
+    """
+    if not detail:
+        return False
+
+    home_score = detail.get("home_score")
+    away_score = detail.get("away_score")
+    if home_score is None or away_score is None:
+        return False
+
+    goals = detail.get("goals") or []
+    if not goals:
+        return home_score == 0 and away_score == 0
+
+    counted_home = 0
+    counted_away = 0
+    for goal in goals:
+        side = goal.get("team")
+        is_own_goal = goal.get("goal_type") == "own_goal"
+        if is_own_goal:
+            if side == "away":
+                counted_home += 1
+            elif side == "home":
+                counted_away += 1
+        else:
+            if side == "home":
+                counted_home += 1
+            elif side == "away":
+                counted_away += 1
+
+    return counted_home == home_score and counted_away == away_score
+
+
 # ---------------------------------------------------------------------------
 # Step 1: Load data
 # ---------------------------------------------------------------------------
@@ -127,9 +166,14 @@ for md in matchdays_raw:
 
         detail = detail_map.get(mid, {})
 
-        # Determine scores: prefer match_details if available
-        home_score = detail.get("home_score") if detail else m.get("home_score")
-        away_score = detail.get("away_score") if detail else m.get("away_score")
+        # Determine scores: prefer match_details only when the detail score is
+        # supported by parsed goal events or a clean 0:0.
+        if detail_score_is_trustworthy(detail):
+            home_score = detail.get("home_score")
+            away_score = detail.get("away_score")
+        else:
+            home_score = m.get("home_score")
+            away_score = m.get("away_score")
 
         # Flag as played if both scores are not None
         is_played = (home_score is not None) and (away_score is not None)
@@ -556,52 +600,23 @@ with open(pred_path, "w") as f:
 print(f"  Written: {pred_path} ({len(prefill_predictions)} predictions)")
 
 # --- baseline_table.json ---
-# Compute table from played matches only
-baseline = {}  # team_id -> row
-for tid, info in team_map.items():
-    baseline[tid] = {
-        "team_id": tid,
-        "team": info["name"],
-        "played": 0,
-        "wins": 0,
-        "draws": 0,
-        "losses": 0,
-        "goals_for": 0,
-        "goals_against": 0,
-        "goal_diff": 0,
-        "points": 0,
+# Use the official scraped standings as the baseline for the frontend table.
+table = [
+    {
+        "team_id": row["team_id"],
+        "team": row["team"],
+        "played": row["played"],
+        "wins": row["wins"],
+        "draws": row["draws"],
+        "losses": row["losses"],
+        "goals_for": row["goals_for"],
+        "goals_against": row["goals_against"],
+        "goal_diff": row["goal_diff"],
+        "points": row["points"],
+        "position": row["position"],
     }
-
-for f in played_fixtures:
-    htid = f["home_team_id"]
-    atid = f["away_team_id"]
-    hs = f["home_score"] or 0
-    as_ = f["away_score"] or 0
-
-    for tid, gf, ga in [(htid, hs, as_), (atid, as_, hs)]:
-        if not tid or tid not in baseline:
-            continue
-        row = baseline[tid]
-        row["played"] += 1
-        row["goals_for"] += gf
-        row["goals_against"] += ga
-        row["goal_diff"] = row["goals_for"] - row["goals_against"]
-        if gf > ga:
-            row["wins"] += 1
-            row["points"] += 3
-        elif gf == ga:
-            row["draws"] += 1
-            row["points"] += 1
-        else:
-            row["losses"] += 1
-
-# Sort and assign positions
-table = sorted(
-    baseline.values(),
-    key=lambda r: (-r["points"], -r["goal_diff"], -r["goals_for"], r["team"])
-)
-for i, row in enumerate(table):
-    row["position"] = i + 1
+    for row in standings_raw
+]
 
 baseline_path = APP_DATA_DIR / "baseline_table.json"
 with open(baseline_path, "w") as f:

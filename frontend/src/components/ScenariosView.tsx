@@ -136,8 +136,8 @@ export default function ScenariosView() {
       {compareId && appData && activeScenario && (() => {
         const compareScenario = scenarios.find(s => s.id === compareId)
         if (!compareScenario) return null
-        const tableA = computeTable(appData.fixtures, appData.predictions, activeScenario.overrides)
-        const tableB = computeTable(appData.fixtures, appData.predictions, compareScenario.overrides)
+        const tableA = computeTable(appData.fixtures, appData.predictions, activeScenario.overrides, appData.baselineTable)
+        const tableB = computeTable(appData.fixtures, appData.predictions, compareScenario.overrides, appData.baselineTable)
         const posMapB = new Map(tableB.map(r => [r.team_id, r.position]))
         return (
           <div style={{ marginBottom: 16 }}>

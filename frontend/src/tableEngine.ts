@@ -14,7 +14,8 @@ interface TeamStats {
 export function computeTable(
   fixtures: Fixture[],
   predictions: Record<string, Prediction>,
-  overrides: Record<string, ScoreOverride>
+  overrides: Record<string, ScoreOverride>,
+  baselineTable: TableRow[] = []
 ): TableRow[] {
   // 1. Build team set from fixtures
   const teamMap = new Map<string, TeamStats>()
@@ -34,6 +35,21 @@ export function computeTable(
     }
   }
 
+  if (baselineTable.length > 0) {
+    for (const row of baselineTable) {
+      teamMap.set(row.team_id, {
+        team_id: row.team_id,
+        team: row.team,
+        played: row.played,
+        wins: row.wins,
+        draws: row.draws,
+        losses: row.losses,
+        goals_for: row.goals_for,
+        goals_against: row.goals_against,
+      })
+    }
+  }
+
   for (const f of fixtures) {
     ensureTeam(f.home_team_id, f.home_team)
     ensureTeam(f.away_team_id, f.away_team)
@@ -43,6 +59,17 @@ export function computeTable(
   for (const f of fixtures) {
     let home: number
     let away: number
+
+    const hasOfficialResult =
+      f.status === 'played' &&
+      f.home_score !== null &&
+      f.away_score !== null
+
+    if (baselineTable.length > 0 && hasOfficialResult) {
+      // When an official baseline table is available, keep historical results
+      // anchored to that source and simulate only unplayed fixtures.
+      continue
+    }
 
     if (
       f.status === 'played' &&

@@ -10,7 +10,7 @@ export default function MatchdayView() {
 
   const liveTable = React.useMemo(() => {
     if (!appData || !activeScenario) return []
-    return computeTable(appData.fixtures, appData.predictions, activeScenario.overrides)
+    return computeTable(appData.fixtures, appData.predictions, activeScenario.overrides, appData.baselineTable)
   }, [appData, activeScenario])
 
   // Pick focus team: team with most unplayed fixtures (or first from unplayed fixtures)

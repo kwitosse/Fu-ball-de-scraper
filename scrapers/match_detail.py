@@ -32,7 +32,6 @@ logger = logging.getLogger(__name__)
 
 MINUTE_RE = re.compile(r"(\d{1,3})(?:\+\d+)?['\u2019\u0027]?")
 TITLE_SCORE_RE = re.compile(r"Ergebnis:\s*(\d+)\s*:\s*(\d+)", re.I)
-GENERIC_SCORE_RE = re.compile(r"\b(\d{1,2})\s*:\s*(\d{1,2})\b")
 
 
 def _extract_minute(el: Tag) -> Optional[int]:
@@ -50,9 +49,9 @@ def _extract_minute(el: Tag) -> Optional[int]:
 def _team_side(el: Tag) -> str:
     classes = el.get("class", [])
     if "event-right" in classes:
-        return "home"
-    if "event-left" in classes:
         return "away"
+    if "event-left" in classes:
+        return "home"
     return "unknown"
 
 
@@ -172,12 +171,6 @@ class MatchDetailScraper:
             if m:
                 score_home = int(m.group(1))
                 score_away = int(m.group(2))
-        if score_home is None or score_away is None:
-            m = GENERIC_SCORE_RE.search(full_text)
-            if m:
-                score_home = int(m.group(1))
-                score_away = int(m.group(2))
-
         return MatchDetail(
             match_id=match_id,
             home_team=home_team,

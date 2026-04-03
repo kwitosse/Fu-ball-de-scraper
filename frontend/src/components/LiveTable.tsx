@@ -10,7 +10,7 @@ export default function LiveTable() {
 
   const table = React.useMemo(() => {
     if (!appData || !activeScenario) return []
-    return computeTable(appData.fixtures, appData.predictions, activeScenario.overrides)
+    return computeTable(appData.fixtures, appData.predictions, activeScenario.overrides, appData.baselineTable)
   }, [appData, activeScenario])
 
   const baselineMap = React.useMemo(() => {
