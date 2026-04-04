@@ -1,16 +1,22 @@
 import React from 'react'
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts'
 import { useAppState } from '../store'
-import { computeTable } from '../tableEngine'
-import { AnalysisReport, Fixture, TableRow } from '../types'
+import type { AnalysisReport, Fixture, TableRow } from '../types'
+import { buildRivalProjectionData, buildRivalTrendData, buildTrendSeries } from '../lib/insightsChartData'
 import { Badge } from './ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
-
-type TrendPoint = {
-  matchday: number
-  points: number
-  position: number
-  goalDiff: number
-}
+import { CHART_AXIS, CHART_COLORS, CHART_GRID, ChartShell, ChartTooltipContent } from './ui/chart'
 
 type SplitStats = {
   played: number
@@ -24,6 +30,10 @@ type SplitStats = {
 
 function formatNumber(value: number): string {
   return Number.isInteger(value) ? String(value) : value.toFixed(1)
+}
+
+function formatSignedNumber(value: number): string {
+  return value > 0 ? `+${formatNumber(value)}` : formatNumber(value)
 }
 
 function formatPercent(value: number): string {
@@ -98,77 +108,100 @@ function ProgressTrack({
   )
 }
 
-function MiniLineChart({
-  data,
-  color,
-  invert = false,
-}: {
-  data: number[]
-  color: string
-  invert?: boolean
-}) {
-  if (data.length === 0) {
-    return <div className="h-24 rounded-2xl border border-dashed border-white/8 bg-white/4" />
-  }
-
-  const width = 320
-  const height = 96
-  const padding = 10
-  const min = Math.min(...data)
-  const max = Math.max(...data)
-  const range = max - min || 1
-  const points = data.map((value, index) => {
-    const x = padding + (index * (width - padding * 2)) / Math.max(1, data.length - 1)
-    const normalized = (value - min) / range
-    const yBase = invert ? normalized : 1 - normalized
-    const y = padding + yBase * (height - padding * 2)
-    return `${x},${y}`
-  }).join(' ')
-
+function ChartEmptyState({ message }: { message: string }) {
   return (
-    <svg viewBox={`0 0 ${width} ${height}`} className="h-24 w-full overflow-visible">
-      <rect x="0" y="0" width={width} height={height} rx="16" fill="rgba(255,255,255,0.03)" />
-      <polyline fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth="2" points={`${padding},${height - padding} ${width - padding},${height - padding}`} />
-      <polyline fill="none" stroke={color} strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" points={points} />
-    </svg>
+    <ChartShell heightClassName="h-72">
+      <div className="flex h-full items-center justify-center rounded-2xl border border-dashed border-white/10 text-sm text-[var(--text2)]">
+        {message}
+      </div>
+    </ChartShell>
   )
 }
 
-function buildTrendSeries(fixtures: Fixture[], baselineTable: TableRow[], focusTeam: string): TrendPoint[] {
-  const playedFixtures = fixtures
-    .filter(f => f.status === 'played' && f.home_score !== null && f.away_score !== null)
-    .sort((a, b) => a.matchday - b.matchday)
+function TrendChart({
+  title,
+  subtitle,
+  data,
+  dataKey,
+  color,
+  invert = false,
+  valueFormatter,
+}: {
+  title: string
+  subtitle: string
+  data: Array<{ matchday: number; [key: string]: number }>
+  dataKey: 'points' | 'position' | 'goalDiff'
+  color: string
+  invert?: boolean
+  valueFormatter: (value: number) => string
+}) {
+  if (!data.length) {
+    return (
+      <div>
+        <div className="mb-2 text-sm text-[var(--text2)]">{title}</div>
+        <ChartEmptyState message="Noch keine gespielten Spieltage vorhanden." />
+        <div className="mt-2 text-xs text-[var(--text2)]">{subtitle}</div>
+      </div>
+    )
+  }
 
-  const matchdays = Array.from(new Set(playedFixtures.map(f => f.matchday))).sort((a, b) => a - b)
+  const yDomain = dataKey === 'position'
+    ? [1, Math.max(...data.map(point => point[dataKey]), 4)]
+    : undefined
 
-  return matchdays.map(matchday => {
-    const partial = playedFixtures.filter(f => f.matchday <= matchday)
-    const table = computeTable(partial, {}, {}, [])
-    const row = table.find(entry => entry.team === focusTeam)
-    const baseline = baselineTable.find(entry => entry.team === focusTeam)
-    return {
-      matchday,
-      points: row?.points ?? baseline?.points ?? 0,
-      position: row?.position ?? baseline?.position ?? 0,
-      goalDiff: row?.goal_diff ?? baseline?.goal_diff ?? 0,
-    }
-  })
+  return (
+    <div>
+      <div className="mb-2 text-sm text-[var(--text2)]">{title}</div>
+      <ChartShell heightClassName="h-72">
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={data} margin={{ top: 12, right: 10, left: -18, bottom: 2 }}>
+            <CartesianGrid stroke={CHART_GRID} strokeDasharray="3 3" vertical={false} />
+            <XAxis
+              dataKey="matchday"
+              tick={{ fill: CHART_AXIS, fontSize: 12 }}
+              tickLine={{ stroke: CHART_GRID }}
+              axisLine={{ stroke: CHART_GRID }}
+              tickFormatter={value => `MD ${value}`}
+            />
+            <YAxis
+              reversed={invert}
+              domain={yDomain}
+              allowDecimals={false}
+              tick={{ fill: CHART_AXIS, fontSize: 12 }}
+              tickLine={{ stroke: CHART_GRID }}
+              axisLine={{ stroke: CHART_GRID }}
+              width={38}
+            />
+            <Tooltip
+              content={(
+                <ChartTooltipContent
+                  labelFormatter={label => `Spieltag ${label}`}
+                  valueFormatter={value => valueFormatter(Number(value ?? 0))}
+                />
+              )}
+            />
+            <Line
+              type="monotone"
+              dataKey={dataKey}
+              stroke={color}
+              strokeWidth={3}
+              dot={{ r: 2.5, strokeWidth: 0, fill: color }}
+              activeDot={{ r: 5, strokeWidth: 0, fill: color }}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </ChartShell>
+      <div className="mt-2 text-xs text-[var(--text2)]">{subtitle}</div>
+    </div>
+  )
 }
 
-function buildRivalSeries(fixtures: Fixture[], baselineTable: TableRow[], teams: string[]): { team: string; points: number[] }[] {
-  const playedFixtures = fixtures
-    .filter(f => f.status === 'played' && f.home_score !== null && f.away_score !== null)
-    .sort((a, b) => a.matchday - b.matchday)
-  const matchdays = Array.from(new Set(playedFixtures.map(f => f.matchday))).sort((a, b) => a - b)
-
-  return teams.map(team => ({
-    team,
-    points: matchdays.map(matchday => {
-      const partial = playedFixtures.filter(f => f.matchday <= matchday)
-      const row = computeTable(partial, {}, {}, []).find(entry => entry.team === team)
-      return row?.points ?? baselineTable.find(entry => entry.team === team)?.points ?? 0
-    }),
-  }))
+function buildColorMap(teams: string[], focusTeam: string) {
+  const palette = [CHART_COLORS.accent, CHART_COLORS.yellow, CHART_COLORS.cyan, CHART_COLORS.violet, CHART_COLORS.green]
+  return teams.reduce<Record<string, string>>((acc, team, index) => {
+    acc[team] = team === focusTeam ? CHART_COLORS.accent : palette[index % palette.length]
+    return acc
+  }, {})
 }
 
 function summarizeSplit(fixtures: Fixture[], focusTeam: string, predicate: (fixture: Fixture) => boolean): SplitStats {
@@ -269,8 +302,13 @@ export default function InsightsView() {
   const focusTeam = report.context.focus_team
   const targetMax = topTarget(report)
   const trendSeries = buildTrendSeries(appData.fixtures, appData.baselineTable, focusTeam)
-  const rivalNames = (report.pace_projection.rival_projection ?? []).slice(0, 4).map(row => row.team)
-  const rivalSeries = buildRivalSeries(appData.fixtures, appData.baselineTable, rivalNames)
+  const rivalTeams = Array.from(new Set([
+    focusTeam,
+    ...((report.pace_projection.rival_projection ?? []).slice(0, 4).map(row => row.team)),
+  ]))
+  const rivalTrendData = buildRivalTrendData(appData.fixtures, appData.baselineTable, rivalTeams)
+  const rivalProjectionData = buildRivalProjectionData(report)
+  const rivalColors = buildColorMap(rivalTeams, focusTeam)
   const homeSplit = summarizeSplit(appData.fixtures, focusTeam, fixture => fixture.home_team === focusTeam)
   const awaySplit = summarizeSplit(appData.fixtures, focusTeam, fixture => fixture.away_team === focusTeam)
   const halfSplit = getHalfSplit(appData.fixtures, focusTeam, appData.baselineTable)
@@ -339,27 +377,51 @@ export default function InsightsView() {
           <Badge variant="secondary">Rival Race</Badge>
           <CardTitle className="text-base">Aktuelle Punkte und Pace-Projektionen</CardTitle>
           <CardDescription>
-            Die Balken zeigen Ist-Punkte, die Marker die projizierten Endpunkte bei gehaltenem Tempo.
+            Interaktive Gegenüberstellung von Ist-Stand und projizierten Endpunkten.
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4 pt-0">
-          {(report.pace_projection.rival_projection ?? []).map(row => (
-            <div key={row.team} className="space-y-2">
-              <div className="flex items-center justify-between gap-3 text-sm">
-                <div className="min-w-0">
-                  <span className={`font-semibold ${row.team === focusTeam ? 'text-[var(--accent)]' : 'text-[var(--text)]'}`}>{row.team}</span>
-                  <span className="ml-2 text-[var(--text2)]">#{row.position}</span>
-                </div>
-                <div className="shrink-0 text-[var(--text2)]">{row.current_points} now / {formatNumber(row.projected_final_points)} proj</div>
-              </div>
-              <div className="relative h-3 rounded-full bg-white/8">
-                <div className={`h-full rounded-full ${row.team === focusTeam ? 'bg-[linear-gradient(90deg,var(--accent),#ff8a65)]' : 'bg-[linear-gradient(90deg,rgba(255,255,255,0.35),rgba(255,255,255,0.18))]'}`} style={{ width: `${clampRatio(row.current_points, targetMax) * 100}%` }} />
-                <div className="absolute inset-y-[-5px] w-px bg-[var(--yellow)]" style={{ left: `${clampRatio(row.projected_final_points, targetMax) * 100}%` }} />
-              </div>
-            </div>
-          ))}
+        <CardContent className="pt-0">
+          {rivalProjectionData.length ? (
+            <ChartShell heightClassName="h-80">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={rivalProjectionData} layout="vertical" margin={{ top: 6, right: 18, left: 6, bottom: 2 }} barGap={10}>
+                  <CartesianGrid stroke={CHART_GRID} strokeDasharray="3 3" horizontal={false} />
+                  <XAxis
+                    type="number"
+                    tick={{ fill: CHART_AXIS, fontSize: 12 }}
+                    tickLine={{ stroke: CHART_GRID }}
+                    axisLine={{ stroke: CHART_GRID }}
+                  />
+                  <YAxis
+                    type="category"
+                    dataKey="team"
+                    tick={{ fill: CHART_AXIS, fontSize: 12 }}
+                    tickLine={{ stroke: CHART_GRID }}
+                    axisLine={{ stroke: CHART_GRID }}
+                    width={118}
+                  />
+                  <Tooltip
+                    content={(
+                      <ChartTooltipContent
+                        valueFormatter={(value, item) => {
+                          if (item.dataKey === 'projectedPoints') return `${formatNumber(Number(value ?? 0))} proj`
+                          if (item.dataKey === 'currentPoints') return `${formatNumber(Number(value ?? 0))} aktuell`
+                          return formatNumber(Number(value ?? 0))
+                        }}
+                      />
+                    )}
+                  />
+                  <Legend wrapperStyle={{ color: CHART_AXIS, fontSize: '12px' }} />
+                  <Bar name="Aktuell" dataKey="currentPoints" fill={CHART_COLORS.accent} radius={[0, 6, 6, 0]} />
+                  <Bar name="Projiziert" dataKey="projectedPoints" fill={CHART_COLORS.yellow} fillOpacity={0.76} radius={[0, 6, 6, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartShell>
+          ) : (
+            <ChartEmptyState message="Keine Rivalen-Projektionen im Report vorhanden." />
+          )}
           {report.direct_rival_impact ? (
-            <div className="rounded-2xl border border-white/8 bg-white/4 px-4 py-3 text-sm text-[var(--text2)]">
+            <div className="mt-4 rounded-2xl border border-white/8 bg-white/4 px-4 py-3 text-sm text-[var(--text2)]">
               <div className="font-semibold text-[var(--text)]">Direktduell-Hebel</div>
               <div className="mt-1">{report.direct_rival_impact.leverage_note}</div>
             </div>
@@ -374,21 +436,31 @@ export default function InsightsView() {
             <CardTitle className="text-base">Rotation über die Spieltage</CardTitle>
           </CardHeader>
           <CardContent className="grid gap-4 pt-0 md:grid-cols-3">
-            <div>
-              <div className="mb-2 text-sm text-[var(--text2)]">Punkte kumuliert</div>
-              <MiniLineChart data={trendSeries.map(point => point.points)} color="var(--accent)" />
-              <div className="mt-2 text-xs text-[var(--text2)]">MD {trendSeries[0]?.matchday ?? '-'} bis MD {trendSeries[trendSeries.length - 1]?.matchday ?? '-'}</div>
-            </div>
-            <div>
-              <div className="mb-2 text-sm text-[var(--text2)]">Tabellenplatz</div>
-              <MiniLineChart data={trendSeries.map(point => point.position)} color="var(--yellow)" invert />
-              <div className="mt-2 text-xs text-[var(--text2)]">Niedriger ist besser</div>
-            </div>
-            <div>
-              <div className="mb-2 text-sm text-[var(--text2)]">Torverhältnis-Differenz</div>
-              <MiniLineChart data={trendSeries.map(point => point.goalDiff)} color="var(--green)" />
-              <div className="mt-2 text-xs text-[var(--text2)]">Aktuell {report.current_state.goals.diff >= 0 ? '+' : ''}{report.current_state.goals.diff}</div>
-            </div>
+            <TrendChart
+              title="Punkte kumuliert"
+              subtitle={`MD ${trendSeries[0]?.matchday ?? '-'} bis MD ${trendSeries[trendSeries.length - 1]?.matchday ?? '-'}`}
+              data={trendSeries}
+              dataKey="points"
+              color={CHART_COLORS.accent}
+              valueFormatter={value => `${value} Punkte`}
+            />
+            <TrendChart
+              title="Tabellenplatz"
+              subtitle="Niedriger ist besser"
+              data={trendSeries}
+              dataKey="position"
+              color={CHART_COLORS.yellow}
+              invert
+              valueFormatter={value => `Platz ${value}`}
+            />
+            <TrendChart
+              title="Torverhältnis-Differenz"
+              subtitle={`Aktuell ${formatSignedNumber(report.current_state.goals.diff)}`}
+              data={trendSeries}
+              dataKey="goalDiff"
+              color={CHART_COLORS.green}
+              valueFormatter={value => formatSignedNumber(value)}
+            />
           </CardContent>
         </Card>
 
@@ -397,19 +469,53 @@ export default function InsightsView() {
             <Badge variant="secondary">Rivalen-Verlauf</Badge>
             <CardTitle className="text-base">Kumulative Punkte der Hauptkonkurrenten</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4 pt-0">
-            {rivalSeries.map((series, index) => {
-              const colors = ['var(--accent)', 'var(--yellow)', '#7dd3fc', '#c084fc']
-              return (
-                <div key={series.team}>
-                  <div className="mb-2 flex items-center justify-between gap-3 text-sm">
-                    <span className={`font-semibold ${series.team === focusTeam ? 'text-[var(--accent)]' : 'text-[var(--text)]'}`}>{series.team}</span>
-                    <span className="text-[var(--text2)]">{series.points[series.points.length - 1] ?? 0} Punkte</span>
-                  </div>
-                  <MiniLineChart data={series.points} color={colors[index % colors.length]} />
-                </div>
-              )
-            })}
+          <CardContent className="pt-0">
+            {rivalTrendData.length ? (
+              <ChartShell heightClassName="h-[26rem]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={rivalTrendData} margin={{ top: 12, right: 12, left: -16, bottom: 4 }}>
+                    <CartesianGrid stroke={CHART_GRID} strokeDasharray="3 3" vertical={false} />
+                    <XAxis
+                      dataKey="matchday"
+                      tick={{ fill: CHART_AXIS, fontSize: 12 }}
+                      tickLine={{ stroke: CHART_GRID }}
+                      axisLine={{ stroke: CHART_GRID }}
+                      tickFormatter={value => `MD ${value}`}
+                    />
+                    <YAxis
+                      allowDecimals={false}
+                      tick={{ fill: CHART_AXIS, fontSize: 12 }}
+                      tickLine={{ stroke: CHART_GRID }}
+                      axisLine={{ stroke: CHART_GRID }}
+                      width={36}
+                    />
+                    <Tooltip
+                      content={(
+                        <ChartTooltipContent
+                          labelFormatter={label => `Spieltag ${label}`}
+                          valueFormatter={value => `${value} Punkte`}
+                        />
+                      )}
+                    />
+                    <Legend wrapperStyle={{ color: CHART_AXIS, fontSize: '12px' }} />
+                    {rivalTeams.map(team => (
+                      <Line
+                        key={team}
+                        type="monotone"
+                        dataKey={team}
+                        stroke={rivalColors[team]}
+                        strokeWidth={team === focusTeam ? 3.2 : 2.4}
+                        dot={false}
+                        activeDot={{ r: 4.5, strokeWidth: 0 }}
+                        name={team}
+                      />
+                    ))}
+                  </LineChart>
+                </ResponsiveContainer>
+              </ChartShell>
+            ) : (
+              <ChartEmptyState message="Noch keine Rivalen-Verlaufsdaten vorhanden." />
+            )}
           </CardContent>
         </Card>
       </div>
