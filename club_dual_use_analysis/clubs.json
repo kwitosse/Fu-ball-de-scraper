@@ -26,5 +26,12 @@
     "first_team_id": "011MI9P0AC000000VTVG0001VTR8C1K7",
     "second_team_name": "FC Blau-Weiß Leipzig II",
     "second_team_id": "011MIC4SUG000000VTVG0001VTR8C1K7"
+  },
+  "rotation": {
+    "club_name": "SG Rotation Leipzig 1950",
+    "first_team_name": "SG Rotation Leipzig",
+    "first_team_id": "011MIF82V8000000VTVG0001VTR8C1K7",
+    "second_team_name": "SG Rotation Leipzig II",
+    "second_team_id": "01DNMVIUMC000000VV0AG80NVSQ3PCMQ"
   }
 }

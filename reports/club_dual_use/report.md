@@ -1,6 +1,6 @@
 # Club Dual-Appearance Analysis
 
-Generated at: 2026-04-04T14:45:58.315025+02:00
+Generated at: 2026-04-04T15:03:51.309647+02:00
 
 Rule window: ordered appearances within 5 days
 Match scope: official competitions only (`ME`, `PO`)
@@ -411,6 +411,235 @@ Match scope: official competitions only (`ME`, `PO`)
   First team: 2026-03-10 19:30 - SG Olympia 1896 Leipzig I vs SV Schleußig 1990 I (02TP6728V8000000VS5489BUVSPHI8RP)
   First team: 2026-03-15 14:00 - SG Olympia 1896 Leipzig I vs SV Eiche Wachau (02TP672JSS000000VS5489BUVSPHI8RP)
   Second team: 2026-02-21 13:00 - SG Olympia 1896 Leipzig II vs SSV Markranstädt II (02VI9QAKVC000000VS5489BTVVTMOPA6)
+
+## SG Rotation Leipzig 1950
+
+- Official matches in season feed: 64
+- Played official matches checked: 44
+- Matches processed with lineup data: 44
+- Matches missing lineup: 0
+- Matches missing match-course data: 0
+- Unresolved player profiles: 0
+
+### First Team -> Second Team cases (9)
+
+- Abdullah Jasim Alqatash: SG Rotation Leipzig vs SV Leipzig-Thekla I on 2025-08-23 15:30 -> SG Rotation Leipzig II vs SG Olympia 1896 Leipzig II on 2025-08-24 15:00, gap 23.5h
+- Abdullah Jasim Alqatash: SG Rotation Leipzig vs SSV Markranstädt II on 2025-09-06 15:00 -> SG Rotation Leipzig II vs SV Victoria 90 Leipzig I on 2025-09-07 14:00, gap 23.0h
+- Majed Hassan: SG Rotation Leipzig vs SSV Markranstädt II on 2025-09-06 15:00 -> SG Rotation Leipzig II vs SV Victoria 90 Leipzig I on 2025-09-07 14:00, gap 23.0h
+- Abdullah Jasim Alqatash: SG Rotation Leipzig vs FC Blau-Weiß Leipzig I on 2025-10-18 15:00 -> SG Rotation Leipzig II vs VfB Zwenkau 02 II on 2025-10-19 15:00, gap 24.0h
+- Brian Milkowski: SG Rotation Leipzig vs FC Blau-Weiß Leipzig I on 2025-10-18 15:00 -> SG Rotation Leipzig II vs VfB Zwenkau 02 II on 2025-10-19 15:00, gap 24.0h
+- Sascha Harder: SG Rotation Leipzig vs FC Blau-Weiß Leipzig I on 2025-10-18 15:00 -> SG Rotation Leipzig II vs VfB Zwenkau 02 II on 2025-10-19 15:00, gap 24.0h
+- Abdullah Jasim Alqatash: SG Rotation Leipzig vs SV Eiche Wachau on 2025-11-16 14:00 -> SG Rotation Leipzig II vs VfB Zwenkau 02 II on 2025-11-19 13:00, gap 71.0h
+- Brian Milkowski: SG Rotation Leipzig vs SV Eiche Wachau on 2025-11-16 14:00 -> SG Rotation Leipzig II vs VfB Zwenkau 02 II on 2025-11-19 13:00, gap 71.0h
+- Abdullah Jasim Alqatash: SG Rotation Leipzig vs SV Schleußig 1990 I on 2025-11-29 13:00 -> SG Rotation Leipzig II vs FSV Großpösna I on 2025-11-30 14:00, gap 25.0h
+
+### Second Team -> First Team cases (3)
+
+- Sascha Harder: SG Rotation Leipzig II vs SG Motor Gohlis-Nord I on 2025-10-11 14:00 -> SG Rotation Leipzig vs SV Eiche Wachau on 2025-10-12 14:00, gap 24.0h
+- Abdullah Jasim Alqatash: SG Rotation Leipzig II vs SV Panitzsch/​Borsdorf II on 2025-11-15 11:30 -> SG Rotation Leipzig vs SV Eiche Wachau on 2025-11-16 14:00, gap 26.5h
+- Abdullah Jasim Alqatash: SG Rotation Leipzig II vs SG LVB I on 2026-03-14 15:00 -> SG Rotation Leipzig vs SG Taucha 99 II on 2026-03-15 15:00, gap 24.0h
+
+### Shared Players Across Both Teams (13)
+
+- Abdullah Jasim Alqatash: first-team 13, second-team 10, first seen 2025-08-23, last seen 2026-03-29
+  First team: 2025-08-23 15:30 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672CVG000000VS5489BUVSPHI8RP)
+  First team: 2025-08-31 15:00 - SG Rotation Leipzig vs SC Eintracht Schkeuditz I (02TP672CJO000000VS5489BUVSPHI8RP)
+  First team: 2025-09-06 15:00 - SG Rotation Leipzig vs SSV Markranstädt II (02TP6728FG000000VS5489BUVSPHI8RP)
+  First team: 2025-09-14 15:00 - SG Rotation Leipzig vs SG Taucha 99 II (02TP672C24000000VS5489BUVSPHI8RP)
+  First team: 2025-09-21 15:30 - SG Rotation Leipzig vs SG Motor Gohlis-Nord I (02TP672BQK000000VS5489BUVSPHI8RP)
+  First team: 2025-10-05 15:00 - SG Rotation Leipzig vs TSV 1886 Markkleeberg I (02TP672B1K000000VS5489BUVSPHI8RP)
+  First team: 2025-10-12 14:00 - SG Rotation Leipzig vs SV Eiche Wachau (02U5FBMEPG000000VS5489BTVV378D77)
+  First team: 2025-10-18 15:00 - SG Rotation Leipzig vs FC Blau-Weiß Leipzig I (02TP672ALS000000VS5489BUVSPHI8RP)
+  First team: 2025-11-08 15:30 - SG Rotation Leipzig vs Leipziger SV Südwest I (02TP6729GC000000VS5489BUVSPHI8RP)
+  First team: 2025-11-16 14:00 - SG Rotation Leipzig vs SV Eiche Wachau (02TP672994000000VS5489BUVSPHI8RP)
+  First team: 2025-11-29 13:00 - SG Rotation Leipzig vs SV Schleußig 1990 I (02UN7G56FK000000VS5489BTVTPCB0P4)
+  First team: 2026-03-15 15:00 - SG Rotation Leipzig vs SG Taucha 99 II (02TP672JLC000000VS5489BUVSPHI8RP)
+  First team: 2026-03-22 15:00 - SG Rotation Leipzig vs SG Motor Gohlis-Nord I (02TP672J8O000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-24 15:00 - SG Rotation Leipzig II vs SG Olympia 1896 Leipzig II (02TP6B430G000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-07 14:00 - SG Rotation Leipzig II vs SV Victoria 90 Leipzig I (02TP6B4374000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-19 15:00 - SG Rotation Leipzig II vs VfB Zwenkau 02 II (02TP6B44K8000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-26 14:30 - SG Rotation Leipzig II vs FSV Großpösna I (02TP6B44BK000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-02 14:00 - SG Rotation Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B441S000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-15 11:30 - SG Rotation Leipzig II vs SV Panitzsch/​Borsdorf II (02TP6B43O4000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-19 13:00 - SG Rotation Leipzig II vs VfB Zwenkau 02 II (02TP6B44K8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-30 14:00 - SG Rotation Leipzig II vs FSV Großpösna I (02TP6B44BK000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-14 15:00 - SG Rotation Leipzig II vs SG LVB I (02TP6B4ANK000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-29 15:00 - SG Rotation Leipzig II vs SV Lipsia 93 Eutritzsch II (02TP6B4B5S000000VS5489BUVSPHI8RP)
+- Brian Milkowski: first-team 6, second-team 6, first seen 2025-08-23, last seen 2025-11-30
+  First team: 2025-08-23 15:30 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672CVG000000VS5489BUVSPHI8RP)
+  First team: 2025-09-21 15:30 - SG Rotation Leipzig vs SG Motor Gohlis-Nord I (02TP672BQK000000VS5489BUVSPHI8RP)
+  First team: 2025-09-28 15:30 - SG Rotation Leipzig vs SV Schleußig 1990 I (02TP672BIS000000VS5489BUVSPHI8RP)
+  First team: 2025-10-12 14:00 - SG Rotation Leipzig vs SV Eiche Wachau (02U5FBMEPG000000VS5489BTVV378D77)
+  First team: 2025-10-18 15:00 - SG Rotation Leipzig vs FC Blau-Weiß Leipzig I (02TP672ALS000000VS5489BUVSPHI8RP)
+  First team: 2025-11-16 14:00 - SG Rotation Leipzig vs SV Eiche Wachau (02TP672994000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-19 15:00 - SG Rotation Leipzig II vs VfB Zwenkau 02 II (02TP6B44K8000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-26 14:30 - SG Rotation Leipzig II vs FSV Großpösna I (02TP6B44BK000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-02 14:00 - SG Rotation Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B441S000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-09 14:00 - SG Rotation Leipzig II vs Roter Stern Leipzig 99 II (02TP6B43S8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-19 13:00 - SG Rotation Leipzig II vs VfB Zwenkau 02 II (02TP6B44K8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-30 14:00 - SG Rotation Leipzig II vs FSV Großpösna I (02TP6B44BK000000VS5489BUVSPHI8RP)
+- Felix Teichmann: first-team 17, second-team 2, first seen 2025-08-10, last seen 2026-03-29
+  First team: 2025-08-10 15:00 - SG Rotation Leipzig vs SG Olympia 1896 Leipzig I (02TP672DF8000000VS5489BUVSPHI8RP)
+  First team: 2025-09-14 15:00 - SG Rotation Leipzig vs SG Taucha 99 II (02TP672C24000000VS5489BUVSPHI8RP)
+  First team: 2025-09-21 15:30 - SG Rotation Leipzig vs SG Motor Gohlis-Nord I (02TP672BQK000000VS5489BUVSPHI8RP)
+  First team: 2025-09-28 15:30 - SG Rotation Leipzig vs SV Schleußig 1990 I (02TP672BIS000000VS5489BUVSPHI8RP)
+  First team: 2025-10-05 15:00 - SG Rotation Leipzig vs TSV 1886 Markkleeberg I (02TP672B1K000000VS5489BUVSPHI8RP)
+  First team: 2025-10-12 14:00 - SG Rotation Leipzig vs SV Eiche Wachau (02U5FBMEPG000000VS5489BTVV378D77)
+  First team: 2025-10-18 15:00 - SG Rotation Leipzig vs FC Blau-Weiß Leipzig I (02TP672ALS000000VS5489BUVSPHI8RP)
+  First team: 2025-11-02 14:00 - SG Rotation Leipzig vs TuS Leutzsch 1990 I (02TP6729U0000000VS5489BUVSPHI8RP)
+  First team: 2025-11-16 14:00 - SG Rotation Leipzig vs SV Eiche Wachau (02TP672994000000VS5489BUVSPHI8RP)
+  First team: 2025-11-19 15:30 - SG Rotation Leipzig vs TuS Leutzsch 1990 I (02TP6729U0000000VS5489BUVSPHI8RP)
+  First team: 2025-11-22 14:00 - SG Rotation Leipzig vs LFV Sachsen Leipzig I (02TP67292S000000VS5489BUVSPHI8RP)
+  First team: 2026-02-22 14:30 - SG Rotation Leipzig vs LFV Sachsen Leipzig I (02TP67292S000000VS5489BUVSPHI8RP)
+  First team: 2026-03-01 13:00 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672L28000000VS5489BUVSPHI8RP)
+  First team: 2026-03-07 15:00 - SG Rotation Leipzig vs SC Eintracht Schkeuditz I (02TP672KGC000000VS5489BUVSPHI8RP)
+  First team: 2026-03-15 15:00 - SG Rotation Leipzig vs SG Taucha 99 II (02TP672JLC000000VS5489BUVSPHI8RP)
+  First team: 2026-03-22 15:00 - SG Rotation Leipzig vs SG Motor Gohlis-Nord I (02TP672J8O000000VS5489BUVSPHI8RP)
+  First team: 2026-03-29 15:00 - SG Rotation Leipzig vs SG Olympia 1896 Leipzig I (02TP672LQ0000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-31 15:00 - SG Rotation Leipzig II vs SV Lipsia 93 Eutritzsch II (02TP6B460S000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-07 14:00 - SG Rotation Leipzig II vs SV Victoria 90 Leipzig I (02TP6B4374000000VS5489BUVSPHI8RP)
+- Kingsley Demaving: first-team 5, second-team 10, first seen 2025-08-23, last seen 2026-03-22
+  First team: 2025-08-23 15:30 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672CVG000000VS5489BUVSPHI8RP)
+  First team: 2025-09-06 15:00 - SG Rotation Leipzig vs SSV Markranstädt II (02TP6728FG000000VS5489BUVSPHI8RP)
+  First team: 2025-10-05 15:00 - SG Rotation Leipzig vs TSV 1886 Markkleeberg I (02TP672B1K000000VS5489BUVSPHI8RP)
+  First team: 2025-11-22 14:00 - SG Rotation Leipzig vs LFV Sachsen Leipzig I (02TP67292S000000VS5489BUVSPHI8RP)
+  First team: 2026-02-22 14:30 - SG Rotation Leipzig vs LFV Sachsen Leipzig I (02TP67292S000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-31 15:00 - SG Rotation Leipzig II vs SV Lipsia 93 Eutritzsch II (02TP6B460S000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-14 15:00 - SG Rotation Leipzig II vs SG LVB I (02TP6B45OO000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-21 14:00 - SG Rotation Leipzig II vs SV Fortuna Leipzig 02 I (02TP6B45JC000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-28 15:00 - SG Rotation Leipzig II vs SG Leipzig-Bienitz I (02TP6B4568000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-11 14:00 - SG Rotation Leipzig II vs SG Motor Gohlis-Nord I (02U5FBMF14000000VS5489BTVV378D77)
+  Second team: 2025-11-02 14:00 - SG Rotation Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B441S000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-09 14:00 - SG Rotation Leipzig II vs Roter Stern Leipzig 99 II (02TP6B43S8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-15 11:30 - SG Rotation Leipzig II vs SV Panitzsch/​Borsdorf II (02TP6B43O4000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-14 15:00 - SG Rotation Leipzig II vs SG LVB I (02TP6B4ANK000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-22 15:00 - SG Rotation Leipzig II vs SV Fortuna Leipzig 02 I (02TP6B4AF4000000VS5489BUVSPHI8RP)
+- Lukas Hirsch: first-team 2, second-team 6, first seen 2025-08-31, last seen 2026-03-29
+  First team: 2025-09-06 15:00 - SG Rotation Leipzig vs SSV Markranstädt II (02TP6728FG000000VS5489BUVSPHI8RP)
+  First team: 2025-11-08 15:30 - SG Rotation Leipzig vs Leipziger SV Südwest I (02TP6729GC000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-31 15:00 - SG Rotation Leipzig II vs SV Lipsia 93 Eutritzsch II (02TP6B460S000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-14 15:00 - SG Rotation Leipzig II vs SG LVB I (02TP6B45OO000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-21 14:00 - SG Rotation Leipzig II vs SV Fortuna Leipzig 02 I (02TP6B45JC000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-28 15:00 - SG Rotation Leipzig II vs SG Leipzig-Bienitz I (02TP6B4568000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-11 14:00 - SG Rotation Leipzig II vs SG Motor Gohlis-Nord I (02U5FBMF14000000VS5489BTVV378D77)
+  Second team: 2026-03-29 15:00 - SG Rotation Leipzig II vs SV Lipsia 93 Eutritzsch II (02TP6B4B5S000000VS5489BUVSPHI8RP)
+- Lukas Pätz: first-team 16, second-team 2, first seen 2025-08-17, last seen 2026-03-29
+  First team: 2025-08-17 15:00 - SG Rotation Leipzig vs SV Mölkau 04 I (02TP6728MK000000VS5489BUVSPHI8RP)
+  First team: 2025-08-23 15:30 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672CVG000000VS5489BUVSPHI8RP)
+  First team: 2025-08-31 15:00 - SG Rotation Leipzig vs SC Eintracht Schkeuditz I (02TP672CJO000000VS5489BUVSPHI8RP)
+  First team: 2025-09-06 15:00 - SG Rotation Leipzig vs SSV Markranstädt II (02TP6728FG000000VS5489BUVSPHI8RP)
+  First team: 2025-09-14 15:00 - SG Rotation Leipzig vs SG Taucha 99 II (02TP672C24000000VS5489BUVSPHI8RP)
+  First team: 2025-09-21 15:30 - SG Rotation Leipzig vs SG Motor Gohlis-Nord I (02TP672BQK000000VS5489BUVSPHI8RP)
+  First team: 2025-10-26 14:00 - SG Rotation Leipzig vs Roter Stern Leipzig I (02TP672A4G000000VS5489BUVSPHI8RP)
+  First team: 2025-11-02 14:00 - SG Rotation Leipzig vs TuS Leutzsch 1990 I (02TP6729U0000000VS5489BUVSPHI8RP)
+  First team: 2025-11-08 15:30 - SG Rotation Leipzig vs Leipziger SV Südwest I (02TP6729GC000000VS5489BUVSPHI8RP)
+  First team: 2025-11-16 14:00 - SG Rotation Leipzig vs SV Eiche Wachau (02TP672994000000VS5489BUVSPHI8RP)
+  First team: 2025-11-19 15:30 - SG Rotation Leipzig vs TuS Leutzsch 1990 I (02TP6729U0000000VS5489BUVSPHI8RP)
+  First team: 2025-11-22 14:00 - SG Rotation Leipzig vs LFV Sachsen Leipzig I (02TP67292S000000VS5489BUVSPHI8RP)
+  First team: 2025-11-29 13:00 - SG Rotation Leipzig vs SV Schleußig 1990 I (02UN7G56FK000000VS5489BTVTPCB0P4)
+  First team: 2026-02-22 14:30 - SG Rotation Leipzig vs LFV Sachsen Leipzig I (02TP67292S000000VS5489BUVSPHI8RP)
+  First team: 2026-03-01 13:00 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672L28000000VS5489BUVSPHI8RP)
+  First team: 2026-03-22 15:00 - SG Rotation Leipzig vs SG Motor Gohlis-Nord I (02TP672J8O000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-14 15:00 - SG Rotation Leipzig II vs SG LVB I (02TP6B4ANK000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-29 15:00 - SG Rotation Leipzig II vs SV Lipsia 93 Eutritzsch II (02TP6B4B5S000000VS5489BUVSPHI8RP)
+- Majed Hassan: first-team 20, second-team 3, first seen 2025-08-10, last seen 2026-03-29
+  First team: 2025-08-10 15:00 - SG Rotation Leipzig vs SG Olympia 1896 Leipzig I (02TP672DF8000000VS5489BUVSPHI8RP)
+  First team: 2025-08-17 15:00 - SG Rotation Leipzig vs SV Mölkau 04 I (02TP6728MK000000VS5489BUVSPHI8RP)
+  First team: 2025-08-31 15:00 - SG Rotation Leipzig vs SC Eintracht Schkeuditz I (02TP672CJO000000VS5489BUVSPHI8RP)
+  First team: 2025-09-06 15:00 - SG Rotation Leipzig vs SSV Markranstädt II (02TP6728FG000000VS5489BUVSPHI8RP)
+  First team: 2025-09-14 15:00 - SG Rotation Leipzig vs SG Taucha 99 II (02TP672C24000000VS5489BUVSPHI8RP)
+  First team: 2025-09-21 15:30 - SG Rotation Leipzig vs SG Motor Gohlis-Nord I (02TP672BQK000000VS5489BUVSPHI8RP)
+  First team: 2025-09-28 15:30 - SG Rotation Leipzig vs SV Schleußig 1990 I (02TP672BIS000000VS5489BUVSPHI8RP)
+  First team: 2025-10-12 14:00 - SG Rotation Leipzig vs SV Eiche Wachau (02U5FBMEPG000000VS5489BTVV378D77)
+  First team: 2025-10-18 15:00 - SG Rotation Leipzig vs FC Blau-Weiß Leipzig I (02TP672ALS000000VS5489BUVSPHI8RP)
+  First team: 2025-10-26 14:00 - SG Rotation Leipzig vs Roter Stern Leipzig I (02TP672A4G000000VS5489BUVSPHI8RP)
+  First team: 2025-11-02 14:00 - SG Rotation Leipzig vs TuS Leutzsch 1990 I (02TP6729U0000000VS5489BUVSPHI8RP)
+  First team: 2025-11-08 15:30 - SG Rotation Leipzig vs Leipziger SV Südwest I (02TP6729GC000000VS5489BUVSPHI8RP)
+  First team: 2025-11-16 14:00 - SG Rotation Leipzig vs SV Eiche Wachau (02TP672994000000VS5489BUVSPHI8RP)
+  First team: 2025-11-19 15:30 - SG Rotation Leipzig vs TuS Leutzsch 1990 I (02TP6729U0000000VS5489BUVSPHI8RP)
+  First team: 2025-11-22 14:00 - SG Rotation Leipzig vs LFV Sachsen Leipzig I (02TP67292S000000VS5489BUVSPHI8RP)
+  First team: 2025-11-29 13:00 - SG Rotation Leipzig vs SV Schleußig 1990 I (02UN7G56FK000000VS5489BTVTPCB0P4)
+  First team: 2026-02-22 14:30 - SG Rotation Leipzig vs LFV Sachsen Leipzig I (02TP67292S000000VS5489BUVSPHI8RP)
+  First team: 2026-03-01 13:00 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672L28000000VS5489BUVSPHI8RP)
+  First team: 2026-03-22 15:00 - SG Rotation Leipzig vs SG Motor Gohlis-Nord I (02TP672J8O000000VS5489BUVSPHI8RP)
+  First team: 2026-03-29 15:00 - SG Rotation Leipzig vs SG Olympia 1896 Leipzig I (02TP672LQ0000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-24 15:00 - SG Rotation Leipzig II vs SG Olympia 1896 Leipzig II (02TP6B430G000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-07 14:00 - SG Rotation Leipzig II vs SV Victoria 90 Leipzig I (02TP6B4374000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-02 14:00 - SG Rotation Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B441S000000VS5489BUVSPHI8RP)
+- Maximilian Schmidt: first-team 2, second-team 5, first seen 2025-08-10, last seen 2026-03-29
+  First team: 2025-08-10 15:00 - SG Rotation Leipzig vs SG Olympia 1896 Leipzig I (02TP672DF8000000VS5489BUVSPHI8RP)
+  First team: 2025-08-23 15:30 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672CVG000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-23 14:00 - SG Rotation Leipzig II vs SV Tapfer 06 Leipzig II (02TP6B43DC000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-08 14:00 - SG Rotation Leipzig II vs SV Tapfer 06 Leipzig II (02TP6B43DC000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-14 15:00 - SG Rotation Leipzig II vs SG LVB I (02TP6B4ANK000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-22 15:00 - SG Rotation Leipzig II vs SV Fortuna Leipzig 02 I (02TP6B4AF4000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-29 15:00 - SG Rotation Leipzig II vs SV Lipsia 93 Eutritzsch II (02TP6B4B5S000000VS5489BUVSPHI8RP)
+- Moritz Engelhardt: first-team 13, second-team 4, first seen 2025-08-10, last seen 2026-03-29
+  First team: 2025-08-10 15:00 - SG Rotation Leipzig vs SG Olympia 1896 Leipzig I (02TP672DF8000000VS5489BUVSPHI8RP)
+  First team: 2025-08-17 15:00 - SG Rotation Leipzig vs SV Mölkau 04 I (02TP6728MK000000VS5489BUVSPHI8RP)
+  First team: 2025-08-23 15:30 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672CVG000000VS5489BUVSPHI8RP)
+  First team: 2025-09-28 15:30 - SG Rotation Leipzig vs SV Schleußig 1990 I (02TP672BIS000000VS5489BUVSPHI8RP)
+  First team: 2025-10-12 14:00 - SG Rotation Leipzig vs SV Eiche Wachau (02U5FBMEPG000000VS5489BTVV378D77)
+  First team: 2025-10-18 15:00 - SG Rotation Leipzig vs FC Blau-Weiß Leipzig I (02TP672ALS000000VS5489BUVSPHI8RP)
+  First team: 2025-10-26 14:00 - SG Rotation Leipzig vs Roter Stern Leipzig I (02TP672A4G000000VS5489BUVSPHI8RP)
+  First team: 2025-11-02 14:00 - SG Rotation Leipzig vs TuS Leutzsch 1990 I (02TP6729U0000000VS5489BUVSPHI8RP)
+  First team: 2025-11-08 15:30 - SG Rotation Leipzig vs Leipziger SV Südwest I (02TP6729GC000000VS5489BUVSPHI8RP)
+  First team: 2025-11-16 14:00 - SG Rotation Leipzig vs SV Eiche Wachau (02TP672994000000VS5489BUVSPHI8RP)
+  First team: 2025-11-19 15:30 - SG Rotation Leipzig vs TuS Leutzsch 1990 I (02TP6729U0000000VS5489BUVSPHI8RP)
+  First team: 2025-11-29 13:00 - SG Rotation Leipzig vs SV Schleußig 1990 I (02UN7G56FK000000VS5489BTVTPCB0P4)
+  First team: 2026-03-01 13:00 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672L28000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-14 15:00 - SG Rotation Leipzig II vs SG LVB I (02TP6B45OO000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-21 14:00 - SG Rotation Leipzig II vs SV Fortuna Leipzig 02 I (02TP6B45JC000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-02 14:00 - SG Rotation Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B441S000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-29 15:00 - SG Rotation Leipzig II vs SV Lipsia 93 Eutritzsch II (02TP6B4B5S000000VS5489BUVSPHI8RP)
+- Robert Merfert: first-team 5, second-team 2, first seen 2025-10-19, last seen 2026-03-15
+  First team: 2025-10-26 14:00 - SG Rotation Leipzig vs Roter Stern Leipzig I (02TP672A4G000000VS5489BUVSPHI8RP)
+  First team: 2025-11-29 13:00 - SG Rotation Leipzig vs SV Schleußig 1990 I (02UN7G56FK000000VS5489BTVTPCB0P4)
+  First team: 2026-03-01 13:00 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672L28000000VS5489BUVSPHI8RP)
+  First team: 2026-03-07 15:00 - SG Rotation Leipzig vs SC Eintracht Schkeuditz I (02TP672KGC000000VS5489BUVSPHI8RP)
+  First team: 2026-03-15 15:00 - SG Rotation Leipzig vs SG Taucha 99 II (02TP672JLC000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-19 15:00 - SG Rotation Leipzig II vs VfB Zwenkau 02 II (02TP6B44K8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-19 13:00 - SG Rotation Leipzig II vs VfB Zwenkau 02 II (02TP6B44K8000000VS5489BUVSPHI8RP)
+- Sascha Harder: first-team 12, second-team 6, first seen 2025-08-10, last seen 2025-11-19
+  First team: 2025-08-10 15:00 - SG Rotation Leipzig vs SG Olympia 1896 Leipzig I (02TP672DF8000000VS5489BUVSPHI8RP)
+  First team: 2025-08-17 15:00 - SG Rotation Leipzig vs SV Mölkau 04 I (02TP6728MK000000VS5489BUVSPHI8RP)
+  First team: 2025-08-23 15:30 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672CVG000000VS5489BUVSPHI8RP)
+  First team: 2025-08-31 15:00 - SG Rotation Leipzig vs SC Eintracht Schkeuditz I (02TP672CJO000000VS5489BUVSPHI8RP)
+  First team: 2025-09-06 15:00 - SG Rotation Leipzig vs SSV Markranstädt II (02TP6728FG000000VS5489BUVSPHI8RP)
+  First team: 2025-09-14 15:00 - SG Rotation Leipzig vs SG Taucha 99 II (02TP672C24000000VS5489BUVSPHI8RP)
+  First team: 2025-09-21 15:30 - SG Rotation Leipzig vs SG Motor Gohlis-Nord I (02TP672BQK000000VS5489BUVSPHI8RP)
+  First team: 2025-09-28 15:30 - SG Rotation Leipzig vs SV Schleußig 1990 I (02TP672BIS000000VS5489BUVSPHI8RP)
+  First team: 2025-10-05 15:00 - SG Rotation Leipzig vs TSV 1886 Markkleeberg I (02TP672B1K000000VS5489BUVSPHI8RP)
+  First team: 2025-10-12 14:00 - SG Rotation Leipzig vs SV Eiche Wachau (02U5FBMEPG000000VS5489BTVV378D77)
+  First team: 2025-10-18 15:00 - SG Rotation Leipzig vs FC Blau-Weiß Leipzig I (02TP672ALS000000VS5489BUVSPHI8RP)
+  First team: 2025-10-26 14:00 - SG Rotation Leipzig vs Roter Stern Leipzig I (02TP672A4G000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-11 14:00 - SG Rotation Leipzig II vs SG Motor Gohlis-Nord I (02U5FBMF14000000VS5489BTVV378D77)
+  Second team: 2025-10-19 15:00 - SG Rotation Leipzig II vs VfB Zwenkau 02 II (02TP6B44K8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-02 14:00 - SG Rotation Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B441S000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-09 14:00 - SG Rotation Leipzig II vs Roter Stern Leipzig 99 II (02TP6B43S8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-15 11:30 - SG Rotation Leipzig II vs SV Panitzsch/​Borsdorf II (02TP6B43O4000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-19 13:00 - SG Rotation Leipzig II vs VfB Zwenkau 02 II (02TP6B44K8000000VS5489BUVSPHI8RP)
+- Tom Fuchs: first-team 6, second-team 2, first seen 2025-09-14, last seen 2026-03-29
+  First team: 2025-09-28 15:30 - SG Rotation Leipzig vs SV Schleußig 1990 I (02TP672BIS000000VS5489BUVSPHI8RP)
+  First team: 2025-11-22 14:00 - SG Rotation Leipzig vs LFV Sachsen Leipzig I (02TP67292S000000VS5489BUVSPHI8RP)
+  First team: 2026-02-22 14:30 - SG Rotation Leipzig vs LFV Sachsen Leipzig I (02TP67292S000000VS5489BUVSPHI8RP)
+  First team: 2026-03-01 13:00 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672L28000000VS5489BUVSPHI8RP)
+  First team: 2026-03-22 15:00 - SG Rotation Leipzig vs SG Motor Gohlis-Nord I (02TP672J8O000000VS5489BUVSPHI8RP)
+  First team: 2026-03-29 15:00 - SG Rotation Leipzig vs SG Olympia 1896 Leipzig I (02TP672LQ0000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-14 15:00 - SG Rotation Leipzig II vs SG LVB I (02TP6B45OO000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-21 14:00 - SG Rotation Leipzig II vs SV Fortuna Leipzig 02 I (02TP6B45JC000000VS5489BUVSPHI8RP)
+- Tony Wittenbecher: first-team 9, second-team 2, first seen 2025-08-10, last seen 2026-03-29
+  First team: 2025-08-10 15:00 - SG Rotation Leipzig vs SG Olympia 1896 Leipzig I (02TP672DF8000000VS5489BUVSPHI8RP)
+  First team: 2025-08-23 15:30 - SG Rotation Leipzig vs SV Leipzig-Thekla I (02TP672CVG000000VS5489BUVSPHI8RP)
+  First team: 2025-10-05 15:00 - SG Rotation Leipzig vs TSV 1886 Markkleeberg I (02TP672B1K000000VS5489BUVSPHI8RP)
+  First team: 2025-10-12 14:00 - SG Rotation Leipzig vs SV Eiche Wachau (02U5FBMEPG000000VS5489BTVV378D77)
+  First team: 2025-10-18 15:00 - SG Rotation Leipzig vs FC Blau-Weiß Leipzig I (02TP672ALS000000VS5489BUVSPHI8RP)
+  First team: 2025-10-26 14:00 - SG Rotation Leipzig vs Roter Stern Leipzig I (02TP672A4G000000VS5489BUVSPHI8RP)
+  First team: 2025-11-29 13:00 - SG Rotation Leipzig vs SV Schleußig 1990 I (02UN7G56FK000000VS5489BTVTPCB0P4)
+  First team: 2026-03-22 15:00 - SG Rotation Leipzig vs SG Motor Gohlis-Nord I (02TP672J8O000000VS5489BUVSPHI8RP)
+  First team: 2026-03-29 15:00 - SG Rotation Leipzig vs SG Olympia 1896 Leipzig I (02TP672LQ0000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-23 14:00 - SG Rotation Leipzig II vs SV Tapfer 06 Leipzig II (02TP6B43DC000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-08 14:00 - SG Rotation Leipzig II vs SV Tapfer 06 Leipzig II (02TP6B43DC000000VS5489BUVSPHI8RP)
 
 ## VfB Zwenkau
 
