@@ -1,8 +1,8 @@
 import React from 'react'
-import { BarChart3, CalendarDays, FolderKanban, Goal, ListOrdered, Settings } from 'lucide-react'
+import { BarChart3, CalendarDays, FolderKanban, Goal, ListOrdered, Settings, ShieldAlert } from 'lucide-react'
 import { cn } from '../lib/utils'
 
-type Page = 'matchdays' | 'table' | 'insights' | 'analysis' | 'scenarios' | 'settings'
+type Page = 'matchdays' | 'table' | 'insights' | 'performance' | 'analysis' | 'scenarios' | 'settings'
 
 interface BottomNavProps {
   activePage: Page
@@ -26,6 +26,11 @@ const tabs: { id: Page; label: string; icon: React.ReactNode }[] = [
     icon: <BarChart3 className="size-5" />,
   },
   {
+    id: 'performance',
+    label: 'Performance',
+    icon: <ShieldAlert className="size-5" />,
+  },
+  {
     id: 'analysis',
     label: 'Analyse',
     icon: <Goal className="size-5" />,
@@ -45,7 +50,7 @@ const tabs: { id: Page; label: string; icon: React.ReactNode }[] = [
 export default function BottomNav({ activePage, onNavigate }: BottomNavProps) {
   return (
     <nav className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[rgba(22,33,62,0.95)] pb-[var(--safe-bottom)] backdrop-blur-xl">
-      <div className="mx-auto grid h-[var(--nav-h)] w-full max-w-6xl grid-cols-6">
+      <div className="mx-auto grid h-[var(--nav-h)] w-full max-w-6xl grid-cols-7">
       {tabs.map(tab => (
         <button
           key={tab.id}

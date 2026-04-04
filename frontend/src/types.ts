@@ -64,6 +64,7 @@ export interface AppData {
   analysisReport: AnalysisReport | null
   analysisMarkdown: string | null
   matchPlan: MatchPlan | null
+  rotationPerformanceReport: RotationPerformanceReport | null
 }
 
 export interface QaReport {
@@ -245,6 +246,156 @@ export interface MatchPlanMatch {
   minimum_points: number
   target_points: number
   cumulative_target_points: number
+}
+
+export interface RotationPerformanceReport {
+  context: {
+    focus_team: string
+    generated_at: string
+    known_limitations: string[]
+  }
+  coverage: {
+    played_match_count: number
+    timeline_match_count: number
+    timeline_coverage_rate: number
+    card_coverage_rate: number
+  }
+  summary: {
+    played: number
+    wins: number
+    draws: number
+    losses: number
+    points: number
+    ppg: number
+    goals_for: number
+    goals_against: number
+    goal_diff: number
+    record: string
+    clean_sheets: number
+    failed_to_score: number
+  }
+  timing: {
+    goal_bins_for: GoalBin[]
+    goal_bins_against: GoalBin[]
+    avg_first_goal_for_minute: number | null
+    avg_first_goal_against_minute: number | null
+    second_half_share_for: number
+    second_half_share_against: number
+    late_goal_share_for: number
+    late_goal_share_against: number
+    late_goal_matches_for: number
+    late_goal_matches_against: number
+  }
+  game_states: {
+    scored_first: PerformanceSplit
+    conceded_first: PerformanceSplit
+    no_goal_timeline: PerformanceSplit
+    halftime_ahead: PerformanceSplit
+    halftime_level: PerformanceSplit
+    halftime_behind: PerformanceSplit
+    clean_sheet_record: PerformanceSplit
+    scored_two_plus_record: PerformanceSplit
+    conceded_two_plus_record: PerformanceSplit
+    lead_lost_matches: number
+    dropped_points_after_leading: number
+    won_points_after_trailing: number
+    avg_equalizer_response_minutes: number | null
+  }
+  splits: {
+    home: PerformanceSplit
+    away: PerformanceSplit
+  }
+  discipline: {
+    total_yellow: number
+    total_red: number
+    red_card_matches: number
+    avg_cards_in_wins: number
+    avg_cards_in_draws: number
+    avg_cards_in_losses: number
+  }
+  findings: RotationFinding[]
+  matches: RotationPerformanceMatch[]
+}
+
+export interface GoalBin {
+  label: string
+  count: number
+}
+
+export interface PerformanceSplit {
+  played: number
+  wins: number
+  draws: number
+  losses: number
+  points: number
+  ppg: number
+  goals_for: number
+  goals_against: number
+  goal_diff: number
+  record: string
+  gf_per_game: number
+  ga_per_game: number
+}
+
+export interface RotationFinding {
+  id: string
+  title: string
+  value: string
+  tone: 'good' | 'warn' | 'accent'
+  sample_size: number
+  explanation: string
+}
+
+export interface RotationPerformanceMatch {
+  match_id: string
+  matchday: number
+  date: string | null
+  time: string | null
+  home_away: 'H' | 'A'
+  opponent: string
+  score_for: number
+  score_against: number
+  result: 'win' | 'draw' | 'loss'
+  points: number
+  halftime_for: number
+  halftime_against: number
+  halftime_state: 'ahead' | 'level' | 'behind'
+  first_goal: 'for' | 'against' | null
+  kept_clean_sheet: boolean
+  failed_to_score: boolean
+  scored_two_plus: boolean
+  conceded_two_plus: boolean
+  led_then_dropped_points: boolean
+  trailed_then_won_points: boolean
+  has_trusted_timeline: boolean
+  attendance: number | null
+  venue: string | null
+  kickoff: string | null
+  discipline: {
+    our_yellow: number
+    our_red: number
+    opponent_yellow: number
+    opponent_red: number
+  }
+  substitutions: {
+    our_count: number
+    opponent_count: number
+  }
+  goal_timeline: RotationGoalTimelineEvent[]
+  derived: {
+    ever_led: boolean
+    ever_trailed: boolean
+    lead_lost: boolean
+    equalizer_response_minutes: number[]
+  }
+}
+
+export interface RotationGoalTimelineEvent {
+  kind: 'for' | 'against'
+  minute: number | null
+  goal_type: string
+  score_for: number
+  score_against: number
 }
 
 export interface MatchPlanCheckpoint {

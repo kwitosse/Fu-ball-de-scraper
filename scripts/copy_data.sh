@@ -8,6 +8,7 @@ report_files=(
   "reports/rotation_promotion_analysis.json"
   "reports/rotation_promotion_analysis.md"
   "reports/rotation_match_plan.json"
+  "reports/rotation_match_performance.json"
 )
 
 for report_file in "${report_files[@]}"; do

@@ -1,1 +1,2 @@
-python scripts/build_app_data.py
+python3 scripts/build_app_data.py
+python3 scripts/analyze_rotation_match_performance.py

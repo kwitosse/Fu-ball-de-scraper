@@ -1,0 +1,1358 @@
+{
+  "context": {
+    "focus_team": "SG Rotation Leipzig II",
+    "generated_at": "2026-04-04T12:27:05Z",
+    "known_limitations": [
+      "Zeitachsenmetriken basieren nur auf Match-Details mit vertrauenswuerdigem Torverlauf.",
+      "0:0-Spiele zaehlen in Ergebnis-Splits, aber nicht in Ersttor- oder Minutenverteilungen.",
+      "Spielernamen sind in fussball.de-Events obfuskiert und werden deshalb nicht ausgewertet."
+    ]
+  },
+  "coverage": {
+    "played_match_count": 16,
+    "timeline_match_count": 16,
+    "timeline_coverage_rate": 1.0,
+    "card_coverage_rate": 1.0
+  },
+  "summary": {
+    "played": 16,
+    "wins": 8,
+    "draws": 4,
+    "losses": 4,
+    "points": 28,
+    "ppg": 1.75,
+    "goals_for": 23,
+    "goals_against": 22,
+    "goal_diff": 1,
+    "record": "8-4-4",
+    "clean_sheets": 7,
+    "failed_to_score": 3
+  },
+  "timing": {
+    "goal_bins_for": [
+      {
+        "label": "0-15",
+        "count": 3
+      },
+      {
+        "label": "16-30",
+        "count": 2
+      },
+      {
+        "label": "31-45",
+        "count": 4
+      },
+      {
+        "label": "46-60",
+        "count": 4
+      },
+      {
+        "label": "61-75",
+        "count": 5
+      },
+      {
+        "label": "76-90",
+        "count": 5
+      }
+    ],
+    "goal_bins_against": [
+      {
+        "label": "0-15",
+        "count": 2
+      },
+      {
+        "label": "16-30",
+        "count": 2
+      },
+      {
+        "label": "31-45",
+        "count": 5
+      },
+      {
+        "label": "46-60",
+        "count": 2
+      },
+      {
+        "label": "61-75",
+        "count": 4
+      },
+      {
+        "label": "76-90",
+        "count": 7
+      }
+    ],
+    "avg_first_goal_for_minute": 41.38,
+    "avg_first_goal_against_minute": 39.33,
+    "second_half_share_for": 0.609,
+    "second_half_share_against": 0.591,
+    "late_goal_share_for": 0.217,
+    "late_goal_share_against": 0.318,
+    "late_goal_matches_for": 5,
+    "late_goal_matches_against": 5
+  },
+  "game_states": {
+    "scored_first": {
+      "played": 10,
+      "wins": 8,
+      "draws": 1,
+      "losses": 1,
+      "points": 25,
+      "ppg": 2.5,
+      "goals_for": 19,
+      "goals_against": 6,
+      "goal_diff": 13,
+      "record": "8-1-1",
+      "gf_per_game": 1.9,
+      "ga_per_game": 0.6
+    },
+    "conceded_first": {
+      "played": 4,
+      "wins": 0,
+      "draws": 1,
+      "losses": 3,
+      "points": 1,
+      "ppg": 0.25,
+      "goals_for": 4,
+      "goals_against": 16,
+      "goal_diff": -12,
+      "record": "0-1-3",
+      "gf_per_game": 1.0,
+      "ga_per_game": 4.0
+    },
+    "no_goal_timeline": {
+      "played": 2,
+      "wins": 0,
+      "draws": 2,
+      "losses": 0,
+      "points": 2,
+      "ppg": 1.0,
+      "goals_for": 0,
+      "goals_against": 0,
+      "goal_diff": 0,
+      "record": "0-2-0",
+      "gf_per_game": 0.0,
+      "ga_per_game": 0.0
+    },
+    "halftime_ahead": {
+      "played": 5,
+      "wins": 5,
+      "draws": 0,
+      "losses": 0,
+      "points": 15,
+      "ppg": 3.0,
+      "goals_for": 10,
+      "goals_against": 2,
+      "goal_diff": 8,
+      "record": "5-0-0",
+      "gf_per_game": 2.0,
+      "ga_per_game": 0.4
+    },
+    "halftime_level": {
+      "played": 8,
+      "wins": 3,
+      "draws": 4,
+      "losses": 1,
+      "points": 13,
+      "ppg": 1.62,
+      "goals_for": 11,
+      "goals_against": 6,
+      "goal_diff": 5,
+      "record": "3-4-1",
+      "gf_per_game": 1.38,
+      "ga_per_game": 0.75
+    },
+    "halftime_behind": {
+      "played": 3,
+      "wins": 0,
+      "draws": 0,
+      "losses": 3,
+      "points": 0,
+      "ppg": 0.0,
+      "goals_for": 2,
+      "goals_against": 14,
+      "goal_diff": -12,
+      "record": "0-0-3",
+      "gf_per_game": 0.67,
+      "ga_per_game": 4.67
+    },
+    "clean_sheet_record": {
+      "played": 7,
+      "wins": 5,
+      "draws": 2,
+      "losses": 0,
+      "points": 17,
+      "ppg": 2.43,
+      "goals_for": 9,
+      "goals_against": 0,
+      "goal_diff": 9,
+      "record": "5-2-0",
+      "gf_per_game": 1.29,
+      "ga_per_game": 0.0
+    },
+    "scored_two_plus_record": {
+      "played": 6,
+      "wins": 5,
+      "draws": 1,
+      "losses": 0,
+      "points": 16,
+      "ppg": 2.67,
+      "goals_for": 16,
+      "goals_against": 5,
+      "goal_diff": 11,
+      "record": "5-1-0",
+      "gf_per_game": 2.67,
+      "ga_per_game": 0.83
+    },
+    "conceded_two_plus_record": {
+      "played": 5,
+      "wins": 0,
+      "draws": 1,
+      "losses": 4,
+      "points": 1,
+      "ppg": 0.2,
+      "goals_for": 5,
+      "goals_against": 18,
+      "goal_diff": -13,
+      "record": "0-1-4",
+      "gf_per_game": 1.0,
+      "ga_per_game": 3.6
+    },
+    "lead_lost_matches": 3,
+    "dropped_points_after_leading": 3,
+    "won_points_after_trailing": 1,
+    "avg_equalizer_response_minutes": 31
+  },
+  "splits": {
+    "home": {
+      "played": 8,
+      "wins": 5,
+      "draws": 1,
+      "losses": 2,
+      "points": 16,
+      "ppg": 2.0,
+      "goals_for": 12,
+      "goals_against": 11,
+      "goal_diff": 1,
+      "record": "5-1-2",
+      "gf_per_game": 1.5,
+      "ga_per_game": 1.38
+    },
+    "away": {
+      "played": 8,
+      "wins": 3,
+      "draws": 3,
+      "losses": 2,
+      "points": 12,
+      "ppg": 1.5,
+      "goals_for": 11,
+      "goals_against": 11,
+      "goal_diff": 0,
+      "record": "3-3-2",
+      "gf_per_game": 1.38,
+      "ga_per_game": 1.38
+    }
+  },
+  "discipline": {
+    "total_yellow": 39,
+    "total_red": 1,
+    "red_card_matches": 1,
+    "avg_cards_in_wins": 3,
+    "avg_cards_in_draws": 1.75,
+    "avg_cards_in_losses": 2.25
+  },
+  "matches": [
+    {
+      "match_id": "02TP6B4374000000VS5489BUVSPHI8RP",
+      "matchday": 1,
+      "date": "07.09.2025",
+      "time": "14:00",
+      "home_away": "A",
+      "opponent": "SV Victoria 90 Leipzig I",
+      "gf": 1,
+      "ga": 1,
+      "score_for": 1,
+      "score_against": 1,
+      "result": "draw",
+      "points": 1,
+      "halftime_for": 1,
+      "halftime_against": 1,
+      "halftime_state": "level",
+      "first_goal": "for",
+      "kept_clean_sheet": false,
+      "failed_to_score": false,
+      "scored_two_plus": false,
+      "conceded_two_plus": false,
+      "led_then_dropped_points": true,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 33,
+      "venue": "Rasenplatz, Victoria Großfeld 1, Am Luppedeich 3, 04159 Leipzig",
+      "kickoff": "14:00",
+      "discipline": {
+        "our_yellow": 2,
+        "our_red": 0,
+        "opponent_yellow": 4,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 4,
+        "opponent_count": 1
+      },
+      "goal_timeline": [
+        {
+          "kind": "for",
+          "minute": 6,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 0
+        },
+        {
+          "kind": "against",
+          "minute": 42,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 1
+        }
+      ],
+      "derived": {
+        "ever_led": true,
+        "ever_trailed": false,
+        "lead_lost": true,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B430G000000VS5489BUVSPHI8RP",
+      "matchday": 1,
+      "date": "24.08.2025",
+      "time": "15:00",
+      "home_away": "H",
+      "opponent": "SG Olympia 1896 Leipzig II",
+      "gf": 2,
+      "ga": 1,
+      "score_for": 2,
+      "score_against": 1,
+      "result": "win",
+      "points": 3,
+      "halftime_for": 1,
+      "halftime_against": 0,
+      "halftime_state": "ahead",
+      "first_goal": "for",
+      "kept_clean_sheet": false,
+      "failed_to_score": false,
+      "scored_two_plus": true,
+      "conceded_two_plus": false,
+      "led_then_dropped_points": false,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 35,
+      "venue": "Rasenplatz, Rotation 1950 Großfeld 1, Delitzscher Str. 131, 04129 Leipzig",
+      "kickoff": "15:00",
+      "discipline": {
+        "our_yellow": 5,
+        "our_red": 0,
+        "opponent_yellow": 1,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 1,
+        "opponent_count": 5
+      },
+      "goal_timeline": [
+        {
+          "kind": "for",
+          "minute": 23,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 0
+        },
+        {
+          "kind": "for",
+          "minute": 66,
+          "goal_type": "normal",
+          "score_for": 2,
+          "score_against": 0
+        },
+        {
+          "kind": "against",
+          "minute": 84,
+          "goal_type": "normal",
+          "score_for": 2,
+          "score_against": 1
+        }
+      ],
+      "derived": {
+        "ever_led": true,
+        "ever_trailed": false,
+        "lead_lost": false,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B460S000000VS5489BUVSPHI8RP",
+      "matchday": 2,
+      "date": "31.08.2025",
+      "time": "15:00",
+      "home_away": "A",
+      "opponent": "SV Lipsia 93 Eutritzsch II",
+      "gf": 2,
+      "ga": 2,
+      "score_for": 2,
+      "score_against": 2,
+      "result": "draw",
+      "points": 1,
+      "halftime_for": 1,
+      "halftime_against": 1,
+      "halftime_state": "level",
+      "first_goal": "against",
+      "kept_clean_sheet": false,
+      "failed_to_score": false,
+      "scored_two_plus": true,
+      "conceded_two_plus": true,
+      "led_then_dropped_points": true,
+      "trailed_then_won_points": true,
+      "has_trusted_timeline": true,
+      "attendance": 82,
+      "venue": "Rasenplatz, Eutritzsch Feld 1, Thaerstr. 5, 04129 Leipzig",
+      "kickoff": "15:00",
+      "discipline": {
+        "our_yellow": 0,
+        "our_red": 0,
+        "opponent_yellow": 0,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 4,
+        "opponent_count": 5
+      },
+      "goal_timeline": [
+        {
+          "kind": "against",
+          "minute": 13,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 1
+        },
+        {
+          "kind": "for",
+          "minute": 44,
+          "goal_type": "own_goal",
+          "score_for": 1,
+          "score_against": 1
+        },
+        {
+          "kind": "for",
+          "minute": 50,
+          "goal_type": "normal",
+          "score_for": 2,
+          "score_against": 1
+        },
+        {
+          "kind": "against",
+          "minute": 58,
+          "goal_type": "normal",
+          "score_for": 2,
+          "score_against": 2
+        }
+      ],
+      "derived": {
+        "ever_led": true,
+        "ever_trailed": true,
+        "lead_lost": true,
+        "equalizer_response_minutes": [
+          31
+        ]
+      }
+    },
+    {
+      "match_id": "02TP6B45OO000000VS5489BUVSPHI8RP",
+      "matchday": 4,
+      "date": "14.09.2025",
+      "time": "15:00",
+      "home_away": "H",
+      "opponent": "SG LVB I",
+      "gf": 3,
+      "ga": 1,
+      "score_for": 3,
+      "score_against": 1,
+      "result": "win",
+      "points": 3,
+      "halftime_for": 2,
+      "halftime_against": 0,
+      "halftime_state": "ahead",
+      "first_goal": "for",
+      "kept_clean_sheet": false,
+      "failed_to_score": false,
+      "scored_two_plus": true,
+      "conceded_two_plus": false,
+      "led_then_dropped_points": false,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 30,
+      "venue": "Rasenplatz, Rotation 1950 Großfeld 1, Delitzscher Str. 131, 04129 Leipzig",
+      "kickoff": "15:00",
+      "discipline": {
+        "our_yellow": 1,
+        "our_red": 0,
+        "opponent_yellow": 2,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 3,
+        "opponent_count": 4
+      },
+      "goal_timeline": [
+        {
+          "kind": "for",
+          "minute": 11,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 0
+        },
+        {
+          "kind": "for",
+          "minute": 34,
+          "goal_type": "normal",
+          "score_for": 2,
+          "score_against": 0
+        },
+        {
+          "kind": "against",
+          "minute": 49,
+          "goal_type": "normal",
+          "score_for": 2,
+          "score_against": 1
+        },
+        {
+          "kind": "for",
+          "minute": 84,
+          "goal_type": "normal",
+          "score_for": 3,
+          "score_against": 1
+        }
+      ],
+      "derived": {
+        "ever_led": true,
+        "ever_trailed": false,
+        "lead_lost": false,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B45JC000000VS5489BUVSPHI8RP",
+      "matchday": 5,
+      "date": "21.09.2025",
+      "time": "14:00",
+      "home_away": "A",
+      "opponent": "SV Fortuna Leipzig 02 I",
+      "gf": 3,
+      "ga": 1,
+      "score_for": 3,
+      "score_against": 1,
+      "result": "win",
+      "points": 3,
+      "halftime_for": 0,
+      "halftime_against": 0,
+      "halftime_state": "level",
+      "first_goal": "for",
+      "kept_clean_sheet": false,
+      "failed_to_score": false,
+      "scored_two_plus": true,
+      "conceded_two_plus": false,
+      "led_then_dropped_points": false,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 35,
+      "venue": "Rasenplatz, Fortuna-Sportpark Großfeld 1, Riesaer Str. 101, 04328 Leipzig",
+      "kickoff": "14:00",
+      "discipline": {
+        "our_yellow": 2,
+        "our_red": 1,
+        "opponent_yellow": 6,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 5,
+        "opponent_count": 4
+      },
+      "goal_timeline": [
+        {
+          "kind": "for",
+          "minute": 54,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 0
+        },
+        {
+          "kind": "for",
+          "minute": 70,
+          "goal_type": "normal",
+          "score_for": 2,
+          "score_against": 0
+        },
+        {
+          "kind": "against",
+          "minute": 85,
+          "goal_type": "normal",
+          "score_for": 2,
+          "score_against": 1
+        },
+        {
+          "kind": "for",
+          "minute": 88,
+          "goal_type": "normal",
+          "score_for": 3,
+          "score_against": 1
+        }
+      ],
+      "derived": {
+        "ever_led": true,
+        "ever_trailed": false,
+        "lead_lost": false,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B4568000000VS5489BUVSPHI8RP",
+      "matchday": 6,
+      "date": "28.09.2025",
+      "time": "15:00",
+      "home_away": "H",
+      "opponent": "SG Leipzig-Bienitz I",
+      "gf": 3,
+      "ga": 0,
+      "score_for": 3,
+      "score_against": 0,
+      "result": "win",
+      "points": 3,
+      "halftime_for": 1,
+      "halftime_against": 0,
+      "halftime_state": "ahead",
+      "first_goal": "for",
+      "kept_clean_sheet": true,
+      "failed_to_score": false,
+      "scored_two_plus": true,
+      "conceded_two_plus": false,
+      "led_then_dropped_points": false,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 15,
+      "venue": "Rasenplatz, Rotation 1950 Großfeld 1, Delitzscher Str. 131, 04129 Leipzig",
+      "kickoff": "15:00",
+      "discipline": {
+        "our_yellow": 3,
+        "our_red": 0,
+        "opponent_yellow": 1,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 2,
+        "opponent_count": 2
+      },
+      "goal_timeline": [
+        {
+          "kind": "for",
+          "minute": 36,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 0
+        },
+        {
+          "kind": "for",
+          "minute": 51,
+          "goal_type": "normal",
+          "score_for": 2,
+          "score_against": 0
+        },
+        {
+          "kind": "for",
+          "minute": 82,
+          "goal_type": "normal",
+          "score_for": 3,
+          "score_against": 0
+        }
+      ],
+      "derived": {
+        "ever_led": true,
+        "ever_trailed": false,
+        "lead_lost": false,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B44UC000000VS5489BUVSPHI8RP",
+      "matchday": 7,
+      "date": "05.10.2025",
+      "time": "14:00",
+      "home_away": "A",
+      "opponent": "FC Blau-Weiß Leipzig II",
+      "gf": 1,
+      "ga": 2,
+      "score_for": 1,
+      "score_against": 2,
+      "result": "loss",
+      "points": 0,
+      "halftime_for": 1,
+      "halftime_against": 1,
+      "halftime_state": "level",
+      "first_goal": "for",
+      "kept_clean_sheet": false,
+      "failed_to_score": false,
+      "scored_two_plus": false,
+      "conceded_two_plus": true,
+      "led_then_dropped_points": true,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 15,
+      "venue": "Rasenplatz, Stadion der Freundschaft Feld 1, Kantatenweg 39, 04229 Leipzig",
+      "kickoff": "14:00",
+      "discipline": {
+        "our_yellow": 3,
+        "our_red": 0,
+        "opponent_yellow": 3,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 4,
+        "opponent_count": 2
+      },
+      "goal_timeline": [
+        {
+          "kind": "for",
+          "minute": 12,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 0
+        },
+        {
+          "kind": "against",
+          "minute": 44,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 1
+        },
+        {
+          "kind": "against",
+          "minute": 78,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 2
+        }
+      ],
+      "derived": {
+        "ever_led": true,
+        "ever_trailed": true,
+        "lead_lost": true,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B44K8000000VS5489BUVSPHI8RP",
+      "matchday": 8,
+      "date": "19.11.2025",
+      "time": "13:00",
+      "home_away": "H",
+      "opponent": "VfB Zwenkau 02 II",
+      "gf": 1,
+      "ga": 6,
+      "score_for": 1,
+      "score_against": 6,
+      "result": "loss",
+      "points": 0,
+      "halftime_for": 0,
+      "halftime_against": 2,
+      "halftime_state": "behind",
+      "first_goal": "against",
+      "kept_clean_sheet": false,
+      "failed_to_score": false,
+      "scored_two_plus": false,
+      "conceded_two_plus": true,
+      "led_then_dropped_points": false,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 40,
+      "venue": "Kunstrasenplatz, Sportschule - Kunstrasenplatz, Abtnaundorfer Str. 47, 04347 Leipzig",
+      "kickoff": "13:00",
+      "discipline": {
+        "our_yellow": 1,
+        "our_red": 0,
+        "opponent_yellow": 0,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 4,
+        "opponent_count": 4
+      },
+      "goal_timeline": [
+        {
+          "kind": "against",
+          "minute": 1,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 1
+        },
+        {
+          "kind": "against",
+          "minute": 45,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 2
+        },
+        {
+          "kind": "against",
+          "minute": 62,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 3
+        },
+        {
+          "kind": "against",
+          "minute": 74,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 4
+        },
+        {
+          "kind": "against",
+          "minute": 79,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 5
+        },
+        {
+          "kind": "against",
+          "minute": 83,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 6
+        },
+        {
+          "kind": "for",
+          "minute": 90,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 6
+        }
+      ],
+      "derived": {
+        "ever_led": false,
+        "ever_trailed": true,
+        "lead_lost": false,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B44BK000000VS5489BUVSPHI8RP",
+      "matchday": 9,
+      "date": "30.11.2025",
+      "time": "14:00",
+      "home_away": "A",
+      "opponent": "FSV Großpösna I",
+      "gf": 1,
+      "ga": 0,
+      "score_for": 1,
+      "score_against": 0,
+      "result": "win",
+      "points": 3,
+      "halftime_for": 0,
+      "halftime_against": 0,
+      "halftime_state": "level",
+      "first_goal": "for",
+      "kept_clean_sheet": true,
+      "failed_to_score": false,
+      "scored_two_plus": false,
+      "conceded_two_plus": false,
+      "led_then_dropped_points": false,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 35,
+      "venue": "Rasenplatz, Großpösna Großfeld, Am Sportplatz 1, 04463 Großpösna",
+      "kickoff": "14:00",
+      "discipline": {
+        "our_yellow": 5,
+        "our_red": 0,
+        "opponent_yellow": 5,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 3,
+        "opponent_count": 2
+      },
+      "goal_timeline": [
+        {
+          "kind": "for",
+          "minute": 63,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 0
+        }
+      ],
+      "derived": {
+        "ever_led": true,
+        "ever_trailed": false,
+        "lead_lost": false,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B441S000000VS5489BUVSPHI8RP",
+      "matchday": 10,
+      "date": "02.11.2025",
+      "time": "14:00",
+      "home_away": "A",
+      "opponent": "TSV Böhlitz-Ehrenberg 1990 I",
+      "gf": 3,
+      "ga": 0,
+      "score_for": 3,
+      "score_against": 0,
+      "result": "win",
+      "points": 3,
+      "halftime_for": 0,
+      "halftime_against": 0,
+      "halftime_state": "level",
+      "first_goal": "for",
+      "kept_clean_sheet": true,
+      "failed_to_score": false,
+      "scored_two_plus": true,
+      "conceded_two_plus": false,
+      "led_then_dropped_points": false,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 70,
+      "venue": "Rasenplatz, Böhlitz Leipziger Straße, Leipziger Str. 124, 04178 Leipzig",
+      "kickoff": "14:00",
+      "discipline": {
+        "our_yellow": 2,
+        "our_red": 0,
+        "opponent_yellow": 1,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 5,
+        "opponent_count": 5
+      },
+      "goal_timeline": [
+        {
+          "kind": "for",
+          "minute": 52,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 0
+        },
+        {
+          "kind": "for",
+          "minute": 69,
+          "goal_type": "normal",
+          "score_for": 2,
+          "score_against": 0
+        },
+        {
+          "kind": "for",
+          "minute": 72,
+          "goal_type": "normal",
+          "score_for": 3,
+          "score_against": 0
+        }
+      ],
+      "derived": {
+        "ever_led": true,
+        "ever_trailed": false,
+        "lead_lost": false,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B43S8000000VS5489BUVSPHI8RP",
+      "matchday": 11,
+      "date": "09.11.2025",
+      "time": "14:00",
+      "home_away": "H",
+      "opponent": "Roter Stern Leipzig 99 II",
+      "gf": 1,
+      "ga": 0,
+      "score_for": 1,
+      "score_against": 0,
+      "result": "win",
+      "points": 3,
+      "halftime_for": 1,
+      "halftime_against": 0,
+      "halftime_state": "ahead",
+      "first_goal": "for",
+      "kept_clean_sheet": true,
+      "failed_to_score": false,
+      "scored_two_plus": false,
+      "conceded_two_plus": false,
+      "led_then_dropped_points": false,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 20,
+      "venue": "Rasenplatz, Rotation 1950 Großfeld 1, Delitzscher Str. 131, 04129 Leipzig",
+      "kickoff": "14:00",
+      "discipline": {
+        "our_yellow": 3,
+        "our_red": 0,
+        "opponent_yellow": 0,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 5,
+        "opponent_count": 5
+      },
+      "goal_timeline": [
+        {
+          "kind": "for",
+          "minute": 21,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 0
+        }
+      ],
+      "derived": {
+        "ever_led": true,
+        "ever_trailed": false,
+        "lead_lost": false,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B43O4000000VS5489BUVSPHI8RP",
+      "matchday": 12,
+      "date": "15.11.2025",
+      "time": "11:30",
+      "home_away": "A",
+      "opponent": "SV Panitzsch/​Borsdorf II",
+      "gf": 0,
+      "ga": 5,
+      "score_for": 0,
+      "score_against": 5,
+      "result": "loss",
+      "points": 0,
+      "halftime_for": 0,
+      "halftime_against": 2,
+      "halftime_state": "behind",
+      "first_goal": "against",
+      "kept_clean_sheet": false,
+      "failed_to_score": true,
+      "scored_two_plus": false,
+      "conceded_two_plus": true,
+      "led_then_dropped_points": false,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 30,
+      "venue": "Rasenplatz, Panitzsch Großfeld, Sommerfelder Str., 04451 Borsdorf",
+      "kickoff": "11:30",
+      "discipline": {
+        "our_yellow": 4,
+        "our_red": 0,
+        "opponent_yellow": 2,
+        "opponent_red": 1
+      },
+      "substitutions": {
+        "our_count": 4,
+        "opponent_count": 4
+      },
+      "goal_timeline": [
+        {
+          "kind": "against",
+          "minute": 16,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 1
+        },
+        {
+          "kind": "against",
+          "minute": 32,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 2
+        },
+        {
+          "kind": "against",
+          "minute": 70,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 3
+        },
+        {
+          "kind": "against",
+          "minute": 83,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 4
+        },
+        {
+          "kind": "against",
+          "minute": 87,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 5
+        }
+      ],
+      "derived": {
+        "ever_led": false,
+        "ever_trailed": true,
+        "lead_lost": false,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B43DC000000VS5489BUVSPHI8RP",
+      "matchday": 13,
+      "date": "08.03.2026",
+      "time": "14:00",
+      "home_away": "H",
+      "opponent": "SV Tapfer 06 Leipzig II",
+      "gf": 1,
+      "ga": 3,
+      "score_for": 1,
+      "score_against": 3,
+      "result": "loss",
+      "points": 0,
+      "halftime_for": 0,
+      "halftime_against": 2,
+      "halftime_state": "behind",
+      "first_goal": "against",
+      "kept_clean_sheet": false,
+      "failed_to_score": false,
+      "scored_two_plus": false,
+      "conceded_two_plus": true,
+      "led_then_dropped_points": false,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 35,
+      "venue": "Rasenplatz, Rotation 1950 Großfeld 1, Delitzscher Str. 131, 04129 Leipzig",
+      "kickoff": "14:00",
+      "discipline": {
+        "our_yellow": 1,
+        "our_red": 0,
+        "opponent_yellow": 0,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 1,
+        "opponent_count": 5
+      },
+      "goal_timeline": [
+        {
+          "kind": "against",
+          "minute": 20,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 1
+        },
+        {
+          "kind": "against",
+          "minute": 41,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 2
+        },
+        {
+          "kind": "against",
+          "minute": 65,
+          "goal_type": "normal",
+          "score_for": 0,
+          "score_against": 3
+        },
+        {
+          "kind": "for",
+          "minute": 90,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 3
+        }
+      ],
+      "derived": {
+        "ever_led": false,
+        "ever_trailed": true,
+        "lead_lost": false,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B4ANK000000VS5489BUVSPHI8RP",
+      "matchday": 14,
+      "date": "14.03.2026",
+      "time": "15:00",
+      "home_away": "A",
+      "opponent": "SG LVB I",
+      "gf": 0,
+      "ga": 0,
+      "score_for": 0,
+      "score_against": 0,
+      "result": "draw",
+      "points": 1,
+      "halftime_for": 0,
+      "halftime_against": 0,
+      "halftime_state": "level",
+      "first_goal": null,
+      "kept_clean_sheet": true,
+      "failed_to_score": true,
+      "scored_two_plus": false,
+      "conceded_two_plus": false,
+      "led_then_dropped_points": false,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 45,
+      "venue": "Rasenplatz, LVB Großfeld 1, Neue Linie 1, 04277 Leipzig",
+      "kickoff": "15:00",
+      "discipline": {
+        "our_yellow": 3,
+        "our_red": 0,
+        "opponent_yellow": 1,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 4,
+        "opponent_count": 4
+      },
+      "goal_timeline": [],
+      "derived": {
+        "ever_led": false,
+        "ever_trailed": false,
+        "lead_lost": false,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B4AF4000000VS5489BUVSPHI8RP",
+      "matchday": 15,
+      "date": "22.03.2026",
+      "time": "15:00",
+      "home_away": "H",
+      "opponent": "SV Fortuna Leipzig 02 I",
+      "gf": 1,
+      "ga": 0,
+      "score_for": 1,
+      "score_against": 0,
+      "result": "win",
+      "points": 3,
+      "halftime_for": 1,
+      "halftime_against": 0,
+      "halftime_state": "ahead",
+      "first_goal": "for",
+      "kept_clean_sheet": true,
+      "failed_to_score": false,
+      "scored_two_plus": false,
+      "conceded_two_plus": false,
+      "led_then_dropped_points": false,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 23,
+      "venue": "Rasenplatz, Rotation 1950 Großfeld 1, Delitzscher Str. 131, 04129 Leipzig",
+      "kickoff": "15:00",
+      "discipline": {
+        "our_yellow": 2,
+        "our_red": 0,
+        "opponent_yellow": 2,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 5,
+        "opponent_count": 1
+      },
+      "goal_timeline": [
+        {
+          "kind": "for",
+          "minute": 36,
+          "goal_type": "normal",
+          "score_for": 1,
+          "score_against": 0
+        }
+      ],
+      "derived": {
+        "ever_led": true,
+        "ever_trailed": false,
+        "lead_lost": false,
+        "equalizer_response_minutes": []
+      }
+    },
+    {
+      "match_id": "02TP6B4B5S000000VS5489BUVSPHI8RP",
+      "matchday": 16,
+      "date": "29.03.2026",
+      "time": "15:00",
+      "home_away": "H",
+      "opponent": "SV Lipsia 93 Eutritzsch II",
+      "gf": 0,
+      "ga": 0,
+      "score_for": 0,
+      "score_against": 0,
+      "result": "draw",
+      "points": 1,
+      "halftime_for": 0,
+      "halftime_against": 0,
+      "halftime_state": "level",
+      "first_goal": null,
+      "kept_clean_sheet": true,
+      "failed_to_score": true,
+      "scored_two_plus": false,
+      "conceded_two_plus": false,
+      "led_then_dropped_points": false,
+      "trailed_then_won_points": false,
+      "has_trusted_timeline": true,
+      "attendance": 85,
+      "venue": "Rasenplatz, Rotation 1950 Großfeld 1, Delitzscher Str. 131, 04129 Leipzig",
+      "kickoff": "15:00",
+      "discipline": {
+        "our_yellow": 2,
+        "our_red": 0,
+        "opponent_yellow": 3,
+        "opponent_red": 0
+      },
+      "substitutions": {
+        "our_count": 3,
+        "opponent_count": 3
+      },
+      "goal_timeline": [],
+      "derived": {
+        "ever_led": false,
+        "ever_trailed": false,
+        "lead_lost": false,
+        "equalizer_response_minutes": []
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "scored-first",
+      "title": "Erstes Tor bleibt der staerkste Hebel",
+      "value": "8-1-1",
+      "tone": "good",
+      "sample_size": 10,
+      "explanation": "Wenn Rotation zuerst trifft, holt das Team aktuell 2.5 Punkte pro Spiel."
+    },
+    {
+      "id": "conceded-first",
+      "title": "Rueckstand kostet fast immer Punkte",
+      "value": "0-1-3",
+      "tone": "warn",
+      "sample_size": 4,
+      "explanation": "Nach dem ersten Gegentor liegt der aktuelle Schnitt nur bei 0.25 Punkten pro Spiel."
+    },
+    {
+      "id": "late-concessions",
+      "title": "Spaete Gegentore sind die klarste Fragilitaet",
+      "value": "7 Gegentore",
+      "tone": "warn",
+      "sample_size": 16,
+      "explanation": "Die Phase 76-90 ist aktuell das haeufigste Gegentorfenster."
+    },
+    {
+      "id": "halftime-control",
+      "title": "Halbzeitfuehrung ist fast gleichbedeutend mit Kontrolle",
+      "value": "5-0-0",
+      "tone": "accent",
+      "sample_size": 5,
+      "explanation": "Rotation hat im trusted Datensatz kein Spiel nach Halbzeitfuehrung verloren oder remis gespielt."
+    },
+    {
+      "id": "defensive-floor",
+      "title": "Zu Null stabilisiert Ergebnisse sofort",
+      "value": "5-2-0",
+      "tone": "good",
+      "sample_size": 7,
+      "explanation": "Ohne Gegentor bleibt die Wahrscheinlichkeit fuer mindestens einen Punkt sehr hoch."
+    }
+  ]
+}

@@ -8,8 +8,9 @@ import InsightsView from './components/InsightsView'
 import AnalysisView from './components/AnalysisView'
 import ScenariosView from './components/ScenariosView'
 import SettingsView from './components/SettingsView'
+import RotationPerformanceView from './components/RotationPerformanceView'
 
-type Page = 'matchdays' | 'table' | 'insights' | 'analysis' | 'scenarios' | 'settings'
+type Page = 'matchdays' | 'table' | 'insights' | 'performance' | 'analysis' | 'scenarios' | 'settings'
 
 export default function App() {
   const [page, setPage] = useState<Page>('matchdays')
@@ -73,6 +74,7 @@ export default function App() {
         {page === 'matchdays' && <MatchdayView />}
         {page === 'table' && <LiveTable />}
         {page === 'insights' && <InsightsView />}
+        {page === 'performance' && <RotationPerformanceView />}
         {page === 'analysis' && <AnalysisView />}
         {page === 'scenarios' && <ScenariosView />}
         {page === 'settings' && <SettingsView />}
