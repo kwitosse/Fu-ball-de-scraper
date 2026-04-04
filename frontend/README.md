@@ -8,7 +8,7 @@ Mobile-first PWA for editing remaining football fixtures and instantly seeing th
 
 ```bash
 # 1. Generate app data from scraped output
-python ../scripts/build_app_data.py
+bash ../scripts/build_app_data.sh
 
 # 2. Copy data into the frontend
 bash ../scripts/copy_data.sh
@@ -49,15 +49,20 @@ frontend/
 │   │   ├── prefill_predictions.json
 │   │   ├── baseline_table.json
 │   │   └── data_version.json
+│   ├── reports/            # Rotation analysis assets copied from ../reports/
+│   │   ├── rotation_promotion_analysis.json
+│   │   ├── rotation_match_plan.json
+│   │   └── rotation_match_performance.json
 │   ├── _headers            # Netlify cache headers
 │   ├── favicon.svg
 │   └── icon-192.png / icon-512.png
 ├── src/
 │   ├── components/
-│   │   ├── BottomNav.tsx       # 4-tab sticky bottom navigation
+│   │   ├── BottomNav.tsx       # Sticky bottom navigation
 │   │   ├── MatchdayView.tsx    # Accordion fixture editor (default page)
 │   │   ├── FixtureCard.tsx     # Single match with +/- score controls
 │   │   ├── LiveTable.tsx       # Live league table with rank deltas
+│   │   ├── RotationPerformanceView.tsx # SG Rotation performance dashboard + drilldown
 │   │   ├── ScenariosView.tsx   # Scenario CRUD + compare view
 │   │   └── SettingsView.tsx    # Data info + reset actions
 │   ├── App.tsx             # Root component, data loading, page routing
@@ -76,6 +81,13 @@ frontend/
 ---
 
 ## Pages
+
+### Performance
+- SG Rotation Leipzig II only
+- Uses `rotation_match_performance.json` from `public/reports/`
+- Shows headline findings, goal timing charts, scored-first / conceded-first splits, halftime-state records, stability metrics, home vs away splits, and expandable match drilldowns
+- Timing charts and event-state metrics use only trusted match-detail timelines
+- Result splits still use the canonical app fixture data
 
 ### Spieltage (Matchdays)
 - Fixtures grouped by matchday, collapsed by default
@@ -117,18 +129,19 @@ frontend/
 output/standings.json  ─┐
 output/matchdays.json  ─┤─► scripts/build_app_data.py ─► output/app_data/*.json
 output/match_details/  ─┘                                        │
-reports/*.json / *.md ────────────────────────────────────────────┘
+                         scripts/analyze_rotation_match_performance.py ─► reports/rotation_match_performance.json
+reports/*.json / *.md ─────────────────────────────────────────────────────────────────────────────────────────────┘
                                                                   ▼
                                                 scripts/copy_data.sh
                                                                   │
                                                                   ▼
-                                   frontend/public/data/*.json + public/reports/*
+                                   frontend/public/data/*.json + frontend/public/reports/*
                                                                   │
                                                                   ▼
-                                              App loads → store → tableEngine
+                                              App loads → store → tableEngine / report views
                                                                   │
                                                                   ▼
-                                                      Live Table (re-renders)
+                                                      Live Table and Rotation dashboards
 ```
 
 **Score priority** (highest to lowest):
@@ -157,6 +170,8 @@ useAppState()       // full state
 useAppDispatch()    // dispatch actions
 useActiveScenario() // current Scenario object
 ```
+
+`appData` also carries optional report payloads loaded from `public/reports/`, including promotion analysis, match plan, and the SG Rotation match performance report.
 
 **Key actions:**
 
@@ -198,11 +213,11 @@ When new match results are scraped, refresh the app data:
 
 ```bash
 # From repo root
-python scripts/build_app_data.py
+bash scripts/build_app_data.sh
 bash scripts/copy_data.sh
 ```
 
-This also copies the promotion-analysis report assets from `reports/` into `frontend/public/reports/`.
+This also copies the promotion-analysis and match-performance report assets from `reports/` into `frontend/public/reports/`.
 
 Then rebuild/redeploy the frontend.
 
