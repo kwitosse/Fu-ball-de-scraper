@@ -9,7 +9,8 @@ A focused Python scraping and analysis project for **fussball.de** league data, 
 This repository combines:
 
 1. a production-style scraper for standings, matchdays, match details, and top scorers, and
-2. a downstream promotion-race analysis workflow for **SG Rotation Leipzig II**.
+2. a downstream promotion-race analysis workflow for **SG Rotation Leipzig II**, and
+3. a dual-use player analysis workflow for selected first-team / second-team club pairs.
 
 ## Project goals
 
@@ -41,6 +42,11 @@ This repository combines:
 - `reports/rotation_promotion_analysis.json` is the machine-readable analysis payload.
 - `reports/rotation_promotion_scenarios.csv` stores scenario matrix rows.
 - `reports/rotation_match_plan.json` captures run-in plan/checkpoint targets.
+- `club_dual_use_analysis/analyze.py` computes cross-team player-usage checks for configured club pairs.
+- `reports/club_dual_use/report.md` is the human-readable dual-use report.
+- `reports/club_dual_use/analysis.json` is the machine-readable dual-use payload.
+- `reports/club_dual_use/dual_appearance_cases.csv` stores the short-window cross-team cases.
+- `reports/club_dual_use/shared_players.csv` stores players who appeared for both teams across the season.
 
 ## Documentation map (where to read what)
 
@@ -58,6 +64,10 @@ If you want orientation fast, read in this order:
 3. **`reports/rotation_promotion_analysis.md`**
    - Current project-level football conclusions and target bands.
    - Scenario matrix, GD targets, run-in fixture difficulty, and checkpoint logic.
+
+4. **`club_dual_use_analysis/README.md`**
+   - How the dual-use player analysis works.
+   - Config file location, output files, and rule assumptions.
 
 ## Quick start
 
@@ -87,6 +97,12 @@ python scraper.py --all --no-details
 
 ```bash
 python scripts/analyze_promotion_race.py
+```
+
+### 4) Run dual-use player analysis
+
+```bash
+python club_dual_use_analysis/analyze.py --output-dir reports/club_dual_use
 ```
 
 Outputs are written under `reports/`.
