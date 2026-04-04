@@ -1,0 +1,728 @@
+# Club Dual-Appearance Analysis
+
+Generated at: 2026-04-04T14:51:37.760135+02:00
+
+Rule window: ordered appearances within 5 days
+Match scope: official competitions only (`ME`, `PO`)
+
+## FC Blau-Weiß Leipzig
+
+- Official matches in season feed: 62
+- Played official matches checked: 42
+- Matches processed with lineup data: 42
+- Matches missing lineup: 0
+- Matches missing match-course data: 0
+- Unresolved player profiles: 0
+
+### First Team -> Second Team cases (1)
+
+- Jonas Arndt: FC Blau-Weiß Leipzig vs SC Eintracht Schkeuditz I on 2025-08-23 15:00 -> FC Blau-Weiß Leipzig II vs SV Lipsia 93 Eutritzsch II on 2025-08-24 14:00, gap 23.0h
+
+### Second Team -> First Team cases (1)
+
+- Shervin Janbazi: FC Blau-Weiß Leipzig II vs VfB Zwenkau 02 II on 2025-10-02 19:00 -> FC Blau-Weiß Leipzig vs Roter Stern Leipzig I on 2025-10-05 15:00, gap 68.0h
+
+### Shared Players Across Both Teams (8)
+
+- Finn Malte Müller: first-team 17, second-team 1, first seen 2025-09-20, last seen 2026-03-29
+  First team: 2025-09-20 15:00 - FC Blau-Weiß Leipzig vs SV Schleußig 1990 I (02TP672BS4000000VS5489BUVSPHI8RP)
+  First team: 2025-09-27 13:00 - FC Blau-Weiß Leipzig vs TSV 1886 Markkleeberg I (02TP672BH8000000VS5489BUVSPHI8RP)
+  First team: 2025-10-05 15:00 - FC Blau-Weiß Leipzig vs Roter Stern Leipzig I (02TP672AS4000000VS5489BUVSPHI8RP)
+  First team: 2025-10-18 15:00 - FC Blau-Weiß Leipzig vs SG Rotation Leipzig I (02TP672ALS000000VS5489BUVSPHI8RP)
+  First team: 2025-10-21 19:30 - FC Blau-Weiß Leipzig vs SG Olympia 1896 Leipzig I (02TP6728EK000000VS5489BUVSPHI8RP)
+  First team: 2025-10-26 14:00 - FC Blau-Weiß Leipzig vs TuS Leutzsch 1990 I (02TP672A78000000VS5489BUVSPHI8RP)
+  First team: 2025-11-01 14:00 - FC Blau-Weiß Leipzig vs Leipziger SV Südwest I (02TP6729VC000000VS5489BUVSPHI8RP)
+  First team: 2025-11-09 14:00 - FC Blau-Weiß Leipzig vs SV Eiche Wachau (02TP6729OS000000VS5489BUVSPHI8RP)
+  First team: 2025-11-15 14:00 - FC Blau-Weiß Leipzig vs LFV Sachsen Leipzig I (02TP6729AC000000VS5489BUVSPHI8RP)
+  First team: 2025-11-22 14:00 - FC Blau-Weiß Leipzig vs SV Mölkau 04 I (02TP67291G000000VS5489BUVSPHI8RP)
+  First team: 2025-11-29 13:00 - FC Blau-Weiß Leipzig vs Leipziger SV Südwest (02UN7G56EK000000VS5489BTVTPCB0P4)
+  First team: 2026-02-21 13:00 - FC Blau-Weiß Leipzig vs SV Schleußig 1990 I (02VI9QAKUK000000VS5489BTVVTMOPA6)
+  First team: 2026-02-28 14:00 - FC Blau-Weiß Leipzig vs SC Eintracht Schkeuditz I (02TP672KVO000000VS5489BUVSPHI8RP)
+  First team: 2026-03-08 15:30 - FC Blau-Weiß Leipzig vs SG Taucha 99 II (02TP672KIS000000VS5489BUVSPHI8RP)
+  First team: 2026-03-14 15:00 - FC Blau-Weiß Leipzig vs SG Motor Gohlis-Nord I (02TP672K6G000000VS5489BUVSPHI8RP)
+  First team: 2026-03-22 15:30 - FC Blau-Weiß Leipzig vs SV Schleußig 1990 I (02TP672JBC000000VS5489BUVSPHI8RP)
+  First team: 2026-03-29 15:00 - FC Blau-Weiß Leipzig vs SV Leipzig-Thekla I (02TP672LSK000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-12 14:00 - FC Blau-Weiß Leipzig II vs SV Fortuna Leipzig 02 I (02U5FBMEU0000000VS5489BTVV378D77)
+- Jonas Arndt: first-team 1, second-team 12, first seen 2025-08-23, last seen 2026-03-15
+  First team: 2025-08-23 15:00 - FC Blau-Weiß Leipzig vs SC Eintracht Schkeuditz I (02TP672CU0000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-24 14:00 - FC Blau-Weiß Leipzig II vs SV Lipsia 93 Eutritzsch II (02TP6B4318000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-30 15:00 - FC Blau-Weiß Leipzig II vs SG LVB I (02TP6B45VG000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-06 15:00 - FC Blau-Weiß Leipzig II vs SG Olympia 1896 Leipzig II (02TP6B436C000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-14 15:30 - FC Blau-Weiß Leipzig II vs SV Fortuna Leipzig 02 I (02TP6B45Q4000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-21 14:30 - FC Blau-Weiß Leipzig II vs SG Leipzig-Bienitz I (02TP6B45I4000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-05 14:00 - FC Blau-Weiß Leipzig II vs SG Rotation Leipzig II (02TP6B44UC000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-12 14:00 - FC Blau-Weiß Leipzig II vs SV Fortuna Leipzig 02 I (02U5FBMEU0000000VS5489BTVV378D77)
+  Second team: 2025-10-19 14:30 - FC Blau-Weiß Leipzig II vs FSV Großpösna I (02TP6B44J0000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-26 14:00 - FC Blau-Weiß Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B44D8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-01 14:00 - FC Blau-Weiß Leipzig II vs Roter Stern Leipzig 99 II (02TP6B440S000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-16 14:00 - FC Blau-Weiß Leipzig II vs SV Tapfer 06 Leipzig II (02TP6B43MO000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-15 14:00 - FC Blau-Weiß Leipzig II vs SV Fortuna Leipzig 02 I (02TP6B4APO000000VS5489BUVSPHI8RP)
+- Jonas Malte Popp: first-team 2, second-team 1, first seen 2025-10-05, last seen 2025-11-15
+  First team: 2025-10-05 15:00 - FC Blau-Weiß Leipzig vs Roter Stern Leipzig I (02TP672AS4000000VS5489BUVSPHI8RP)
+  First team: 2025-11-15 14:00 - FC Blau-Weiß Leipzig vs LFV Sachsen Leipzig I (02TP6729AC000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-09 14:00 - FC Blau-Weiß Leipzig II vs SV Panitzsch/​Borsdorf II (02TP6B43T8000000VS5489BUVSPHI8RP)
+- Julius Karl Emil Becker: first-team 13, second-team 1, first seen 2025-08-10, last seen 2026-03-29
+  First team: 2025-08-10 13:00 - FC Blau-Weiß Leipzig vs SV Leipzig-Thekla I (02TP672DGS000000VS5489BUVSPHI8RP)
+  First team: 2025-08-20 18:30 - FC Blau-Weiß Leipzig vs SSV Markranstädt II (02TP6728NK000000VS5489BUVSPHI8RP)
+  First team: 2025-09-14 15:00 - FC Blau-Weiß Leipzig vs SG Motor Gohlis-Nord I (02TP672CD8000000VS5489BUVSPHI8RP)
+  First team: 2025-09-20 15:00 - FC Blau-Weiß Leipzig vs SV Schleußig 1990 I (02TP672BS4000000VS5489BUVSPHI8RP)
+  First team: 2025-09-27 13:00 - FC Blau-Weiß Leipzig vs TSV 1886 Markkleeberg I (02TP672BH8000000VS5489BUVSPHI8RP)
+  First team: 2025-10-05 15:00 - FC Blau-Weiß Leipzig vs Roter Stern Leipzig I (02TP672AS4000000VS5489BUVSPHI8RP)
+  First team: 2025-10-18 15:00 - FC Blau-Weiß Leipzig vs SG Rotation Leipzig I (02TP672ALS000000VS5489BUVSPHI8RP)
+  First team: 2025-10-21 19:30 - FC Blau-Weiß Leipzig vs SG Olympia 1896 Leipzig I (02TP6728EK000000VS5489BUVSPHI8RP)
+  First team: 2025-11-01 14:00 - FC Blau-Weiß Leipzig vs Leipziger SV Südwest I (02TP6729VC000000VS5489BUVSPHI8RP)
+  First team: 2026-02-21 13:00 - FC Blau-Weiß Leipzig vs SV Schleußig 1990 I (02VI9QAKUK000000VS5489BTVVTMOPA6)
+  First team: 2026-02-28 14:00 - FC Blau-Weiß Leipzig vs SC Eintracht Schkeuditz I (02TP672KVO000000VS5489BUVSPHI8RP)
+  First team: 2026-03-08 15:30 - FC Blau-Weiß Leipzig vs SG Taucha 99 II (02TP672KIS000000VS5489BUVSPHI8RP)
+  First team: 2026-03-29 15:00 - FC Blau-Weiß Leipzig vs SV Leipzig-Thekla I (02TP672LSK000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-12 14:00 - FC Blau-Weiß Leipzig II vs SV Fortuna Leipzig 02 I (02U5FBMEU0000000VS5489BTVV378D77)
+- Lukas Heither: first-team 6, second-team 1, first seen 2025-11-01, last seen 2026-03-29
+  First team: 2025-11-01 14:00 - FC Blau-Weiß Leipzig vs Leipziger SV Südwest I (02TP6729VC000000VS5489BUVSPHI8RP)
+  First team: 2025-11-29 13:00 - FC Blau-Weiß Leipzig vs Leipziger SV Südwest (02UN7G56EK000000VS5489BTVTPCB0P4)
+  First team: 2026-02-28 14:00 - FC Blau-Weiß Leipzig vs SC Eintracht Schkeuditz I (02TP672KVO000000VS5489BUVSPHI8RP)
+  First team: 2026-03-08 15:30 - FC Blau-Weiß Leipzig vs SG Taucha 99 II (02TP672KIS000000VS5489BUVSPHI8RP)
+  First team: 2026-03-22 15:30 - FC Blau-Weiß Leipzig vs SV Schleußig 1990 I (02TP672JBC000000VS5489BUVSPHI8RP)
+  First team: 2026-03-29 15:00 - FC Blau-Weiß Leipzig vs SV Leipzig-Thekla I (02TP672LSK000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-16 14:00 - FC Blau-Weiß Leipzig II vs SV Tapfer 06 Leipzig II (02TP6B43MO000000VS5489BUVSPHI8RP)
+- Marcel Sirenko: first-team 16, second-team 2, first seen 2025-08-10, last seen 2026-03-29
+  First team: 2025-08-10 13:00 - FC Blau-Weiß Leipzig vs SV Leipzig-Thekla I (02TP672DGS000000VS5489BUVSPHI8RP)
+  First team: 2025-08-17 14:00 - FC Blau-Weiß Leipzig vs SV Naunhof 1920 (02TPJJRTKO000000VS5489BTVV0LE4BT)
+  First team: 2025-08-20 18:30 - FC Blau-Weiß Leipzig vs SSV Markranstädt II (02TP6728NK000000VS5489BUVSPHI8RP)
+  First team: 2025-08-23 15:00 - FC Blau-Weiß Leipzig vs SC Eintracht Schkeuditz I (02TP672CU0000000VS5489BUVSPHI8RP)
+  First team: 2025-08-30 15:00 - FC Blau-Weiß Leipzig vs SG Taucha 99 II (02TP672CLC000000VS5489BUVSPHI8RP)
+  First team: 2025-09-07 12:30 - FC Blau-Weiß Leipzig vs Chemnitzer FC (02U52D9MIK000000VS5489BUVS8CK5KT)
+  First team: 2025-09-14 15:00 - FC Blau-Weiß Leipzig vs SG Motor Gohlis-Nord I (02TP672CD8000000VS5489BUVSPHI8RP)
+  First team: 2025-09-27 13:00 - FC Blau-Weiß Leipzig vs TSV 1886 Markkleeberg I (02TP672BH8000000VS5489BUVSPHI8RP)
+  First team: 2025-10-18 15:00 - FC Blau-Weiß Leipzig vs SG Rotation Leipzig I (02TP672ALS000000VS5489BUVSPHI8RP)
+  First team: 2025-10-21 19:30 - FC Blau-Weiß Leipzig vs SG Olympia 1896 Leipzig I (02TP6728EK000000VS5489BUVSPHI8RP)
+  First team: 2025-11-01 14:00 - FC Blau-Weiß Leipzig vs Leipziger SV Südwest I (02TP6729VC000000VS5489BUVSPHI8RP)
+  First team: 2025-11-15 14:00 - FC Blau-Weiß Leipzig vs LFV Sachsen Leipzig I (02TP6729AC000000VS5489BUVSPHI8RP)
+  First team: 2025-11-22 14:00 - FC Blau-Weiß Leipzig vs SV Mölkau 04 I (02TP67291G000000VS5489BUVSPHI8RP)
+  First team: 2025-11-29 13:00 - FC Blau-Weiß Leipzig vs Leipziger SV Südwest (02UN7G56EK000000VS5489BTVTPCB0P4)
+  First team: 2026-02-21 13:00 - FC Blau-Weiß Leipzig vs SV Schleußig 1990 I (02VI9QAKUK000000VS5489BTVVTMOPA6)
+  First team: 2026-03-29 15:00 - FC Blau-Weiß Leipzig vs SV Leipzig-Thekla I (02TP672LSK000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-09 14:00 - FC Blau-Weiß Leipzig II vs SV Panitzsch/​Borsdorf II (02TP6B43T8000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-22 14:00 - FC Blau-Weiß Leipzig II vs SG Leipzig-Bienitz I (02TP6B4AD4000000VS5489BUVSPHI8RP)
+- Moritz Große Perdekamp: first-team 5, second-team 1, first seen 2025-11-01, last seen 2026-03-14
+  First team: 2025-11-09 14:00 - FC Blau-Weiß Leipzig vs SV Eiche Wachau (02TP6729OS000000VS5489BUVSPHI8RP)
+  First team: 2026-02-21 13:00 - FC Blau-Weiß Leipzig vs SV Schleußig 1990 I (02VI9QAKUK000000VS5489BTVVTMOPA6)
+  First team: 2026-02-28 14:00 - FC Blau-Weiß Leipzig vs SC Eintracht Schkeuditz I (02TP672KVO000000VS5489BUVSPHI8RP)
+  First team: 2026-03-08 15:30 - FC Blau-Weiß Leipzig vs SG Taucha 99 II (02TP672KIS000000VS5489BUVSPHI8RP)
+  First team: 2026-03-14 15:00 - FC Blau-Weiß Leipzig vs SG Motor Gohlis-Nord I (02TP672K6G000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-01 14:00 - FC Blau-Weiß Leipzig II vs Roter Stern Leipzig 99 II (02TP6B440S000000VS5489BUVSPHI8RP)
+- Shervin Janbazi: first-team 9, second-team 4, first seen 2025-09-20, last seen 2026-03-14
+  First team: 2025-09-20 15:00 - FC Blau-Weiß Leipzig vs SV Schleußig 1990 I (02TP672BS4000000VS5489BUVSPHI8RP)
+  First team: 2025-09-27 13:00 - FC Blau-Weiß Leipzig vs TSV 1886 Markkleeberg I (02TP672BH8000000VS5489BUVSPHI8RP)
+  First team: 2025-10-05 15:00 - FC Blau-Weiß Leipzig vs Roter Stern Leipzig I (02TP672AS4000000VS5489BUVSPHI8RP)
+  First team: 2025-10-18 15:00 - FC Blau-Weiß Leipzig vs SG Rotation Leipzig I (02TP672ALS000000VS5489BUVSPHI8RP)
+  First team: 2025-10-21 19:30 - FC Blau-Weiß Leipzig vs SG Olympia 1896 Leipzig I (02TP6728EK000000VS5489BUVSPHI8RP)
+  First team: 2025-10-26 14:00 - FC Blau-Weiß Leipzig vs TuS Leutzsch 1990 I (02TP672A78000000VS5489BUVSPHI8RP)
+  First team: 2025-11-01 14:00 - FC Blau-Weiß Leipzig vs Leipziger SV Südwest I (02TP6729VC000000VS5489BUVSPHI8RP)
+  First team: 2025-11-29 13:00 - FC Blau-Weiß Leipzig vs Leipziger SV Südwest (02UN7G56EK000000VS5489BTVTPCB0P4)
+  First team: 2026-03-14 15:00 - FC Blau-Weiß Leipzig vs SG Motor Gohlis-Nord I (02TP672K6G000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-02 19:00 - FC Blau-Weiß Leipzig II vs VfB Zwenkau 02 II (02TP6B457O000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-12 14:00 - FC Blau-Weiß Leipzig II vs SV Fortuna Leipzig 02 I (02U5FBMEU0000000VS5489BTVV378D77)
+  Second team: 2025-11-09 14:00 - FC Blau-Weiß Leipzig II vs SV Panitzsch/​Borsdorf II (02TP6B43T8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-16 14:00 - FC Blau-Weiß Leipzig II vs SV Tapfer 06 Leipzig II (02TP6B43MO000000VS5489BUVSPHI8RP)
+
+## SV Lipsia 93 Eutritzsch
+
+- Official matches in season feed: 59
+- Played official matches checked: 39
+- Matches processed with lineup data: 39
+- Matches missing lineup: 0
+- Matches missing match-course data: 0
+- Unresolved player profiles: 0
+
+### First Team -> Second Team cases (0)
+
+- None
+
+### Second Team -> First Team cases (0)
+
+- None
+
+### Shared Players Across Both Teams (13)
+
+- Anton Husar: first-team 4, second-team 3, first seen 2025-08-31, last seen 2026-03-21
+  First team: 2025-09-21 15:00 - SV Lipsia 93 Eutritzsch vs VfB Fortuna Chemnitz (02TLC8Q9I4000000VS5489BUVUD1610F)
+  First team: 2025-11-01 14:00 - SV Lipsia 93 Eutritzsch vs SG Taucha 99 (02TLC8Q7D0000000VS5489BUVUD1610F)
+  First team: 2026-03-14 15:00 - SV Lipsia 93 Eutritzsch vs VfL Pirna-Copitz (02TLC8QI8G000000VS5489BUVUD1610F)
+  First team: 2026-03-21 15:00 - SV Lipsia 93 Eutritzsch vs VfB Fortuna Chemnitz (02TLC8QI0C000000VS5489BUVUD1610F)
+  Second team: 2025-08-31 15:00 - SV Lipsia 93 Eutritzsch II vs SG Rotation Leipzig II (02TP6B460S000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-09 14:00 - SV Lipsia 93 Eutritzsch II vs VfB Zwenkau 02 II (02TP6B43P4000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-15 14:00 - SV Lipsia 93 Eutritzsch II vs SG LVB I (02TP6B43JO000000VS5489BUVSPHI8RP)
+- Artem Tsarenko: first-team 3, second-team 2, first seen 2025-09-07, last seen 2025-11-09
+  First team: 2025-09-07 15:30 - SV Lipsia 93 Eutritzsch vs SV Fortschritt Lunzenau (02U52D9MBS000000VS5489BUVS8CK5KT)
+  First team: 2025-10-12 14:00 - SV Lipsia 93 Eutritzsch vs SSV Fortschritt Lichtenstein (02UCGF6N5S000000VS5489BUVT0P4V1F)
+  First team: 2025-10-25 14:00 - SV Lipsia 93 Eutritzsch vs BSG Stahl Riesa (02TLC8Q7PC000000VS5489BUVUD1610F)
+  Second team: 2025-10-19 14:00 - SV Lipsia 93 Eutritzsch II vs SV Tapfer 06 Leipzig II (02TP6B44MG000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-09 14:00 - SV Lipsia 93 Eutritzsch II vs VfB Zwenkau 02 II (02TP6B43P4000000VS5489BUVSPHI8RP)
+- Felix Hilsberg: first-team 10, second-team 3, first seen 2025-08-30, last seen 2026-03-29
+  First team: 2025-08-30 14:00 - SV Lipsia 93 Eutritzsch vs FC Oberlausitz Neugersdorf (02TLC8QA50000000VS5489BUVUD1610F)
+  First team: 2025-09-07 15:30 - SV Lipsia 93 Eutritzsch vs SV Fortschritt Lunzenau (02U52D9MBS000000VS5489BUVS8CK5KT)
+  First team: 2025-09-13 15:00 - SV Lipsia 93 Eutritzsch vs VfL Pirna-Copitz (02TLC8Q9NC000000VS5489BUVUD1610F)
+  First team: 2025-09-21 15:00 - SV Lipsia 93 Eutritzsch vs VfB Fortuna Chemnitz (02TLC8Q9I4000000VS5489BUVUD1610F)
+  First team: 2025-10-12 14:00 - SV Lipsia 93 Eutritzsch vs SSV Fortschritt Lichtenstein (02UCGF6N5S000000VS5489BUVT0P4V1F)
+  First team: 2025-10-25 14:00 - SV Lipsia 93 Eutritzsch vs BSG Stahl Riesa (02TLC8Q7PC000000VS5489BUVUD1610F)
+  First team: 2025-11-08 14:00 - SV Lipsia 93 Eutritzsch vs SC Borea Dresden (02TLC8Q72K000000VS5489BUVUD1610F)
+  First team: 2025-11-29 14:00 - SV Lipsia 93 Eutritzsch vs SC Freital II (02TLC8Q6CC000000VS5489BUVUD1610F)
+  First team: 2026-03-01 14:00 - SV Lipsia 93 Eutritzsch vs Reichenbacher FC (02TLC8QJMG000000VS5489BUVUD1610F)
+  First team: 2026-03-07 15:00 - SV Lipsia 93 Eutritzsch vs FC Oberlausitz Neugersdorf (02TLC8QIV4000000VS5489BUVUD1610F)
+  Second team: 2025-11-23 14:00 - SV Lipsia 93 Eutritzsch II vs SV Fortuna Leipzig 02 I (02TP6B43FS000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-22 15:00 - SV Lipsia 93 Eutritzsch II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B4A4O000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-29 15:00 - SV Lipsia 93 Eutritzsch II vs SG Rotation Leipzig II (02TP6B4B5S000000VS5489BUVSPHI8RP)
+- Gorjan Wild: first-team 3, second-team 1, first seen 2026-03-07, last seen 2026-03-28
+  First team: 2026-03-07 15:00 - SV Lipsia 93 Eutritzsch vs FC Oberlausitz Neugersdorf (02TLC8QIV4000000VS5489BUVUD1610F)
+  First team: 2026-03-14 15:00 - SV Lipsia 93 Eutritzsch vs VfL Pirna-Copitz (02TLC8QI8G000000VS5489BUVUD1610F)
+  First team: 2026-03-28 14:00 - SV Lipsia 93 Eutritzsch vs SSV Markranstädt (02TLC8QKKK000000VS5489BUVUD1610F)
+  Second team: 2026-03-22 15:00 - SV Lipsia 93 Eutritzsch II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B4A4O000000VS5489BUVSPHI8RP)
+- Julius Felter: first-team 9, second-team 2, first seen 2025-08-30, last seen 2026-03-14
+  First team: 2025-08-30 14:00 - SV Lipsia 93 Eutritzsch vs FC Oberlausitz Neugersdorf (02TLC8QA50000000VS5489BUVUD1610F)
+  First team: 2025-09-13 15:00 - SV Lipsia 93 Eutritzsch vs VfL Pirna-Copitz (02TLC8Q9NC000000VS5489BUVUD1610F)
+  First team: 2025-10-05 15:00 - SV Lipsia 93 Eutritzsch vs SG Dynamo Dresden U23 (02TLC8Q8JS000000VS5489BUVUD1610F)
+  First team: 2025-11-01 14:00 - SV Lipsia 93 Eutritzsch vs SG Taucha 99 (02TLC8Q7D0000000VS5489BUVUD1610F)
+  First team: 2025-11-08 14:00 - SV Lipsia 93 Eutritzsch vs SC Borea Dresden (02TLC8Q72K000000VS5489BUVUD1610F)
+  First team: 2025-12-06 13:30 - SV Lipsia 93 Eutritzsch vs SV Tapfer 06 Leipzig (02TLC8Q60C000000VS5489BUVUD1610F)
+  First team: 2026-03-01 14:00 - SV Lipsia 93 Eutritzsch vs Reichenbacher FC (02TLC8QJMG000000VS5489BUVUD1610F)
+  First team: 2026-03-07 15:00 - SV Lipsia 93 Eutritzsch vs FC Oberlausitz Neugersdorf (02TLC8QIV4000000VS5489BUVUD1610F)
+  First team: 2026-03-14 15:00 - SV Lipsia 93 Eutritzsch vs VfL Pirna-Copitz (02TLC8QI8G000000VS5489BUVUD1610F)
+  Second team: 2025-09-27 15:00 - SV Lipsia 93 Eutritzsch II vs Roter Stern Leipzig 99 II (02TP6B452G000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-23 14:00 - SV Lipsia 93 Eutritzsch II vs SV Fortuna Leipzig 02 I (02TP6B43FS000000VS5489BUVSPHI8RP)
+- Ludwig Geigenmüller: first-team 1, second-team 2, first seen 2025-08-23, last seen 2026-03-14
+  First team: 2025-08-23 15:00 - SV Lipsia 93 Eutritzsch vs Reichenbacher FC (02TLC8QAJC000000VS5489BUVUD1610F)
+  Second team: 2025-11-15 14:00 - SV Lipsia 93 Eutritzsch II vs SG LVB I (02TP6B43JO000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-14 15:00 - SV Lipsia 93 Eutritzsch II vs FSV Großpösna I (02TP6B4ALC000000VS5489BUVSPHI8RP)
+- Marius Hoffmann: first-team 3, second-team 9, first seen 2025-08-24, last seen 2026-03-01
+  First team: 2025-11-29 14:00 - SV Lipsia 93 Eutritzsch vs SC Freital II (02TLC8Q6CC000000VS5489BUVUD1610F)
+  First team: 2025-12-06 13:30 - SV Lipsia 93 Eutritzsch vs SV Tapfer 06 Leipzig (02TLC8Q60C000000VS5489BUVUD1610F)
+  First team: 2026-03-01 14:00 - SV Lipsia 93 Eutritzsch vs Reichenbacher FC (02TLC8QJMG000000VS5489BUVUD1610F)
+  Second team: 2025-08-24 14:00 - SV Lipsia 93 Eutritzsch II vs FC Blau-Weiß Leipzig II (02TP6B4318000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-31 15:00 - SV Lipsia 93 Eutritzsch II vs SG Rotation Leipzig II (02TP6B460S000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-14 14:30 - SV Lipsia 93 Eutritzsch II vs FSV Großpösna I (02TP6B45NC000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-20 15:00 - SV Lipsia 93 Eutritzsch II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B45E0000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-27 15:00 - SV Lipsia 93 Eutritzsch II vs Roter Stern Leipzig 99 II (02TP6B452G000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-12 14:00 - SV Lipsia 93 Eutritzsch II vs SG Olympia 1896 Leipzig I (02U5FBMESG000000VS5489BTVV378D77)
+  Second team: 2025-10-19 14:00 - SV Lipsia 93 Eutritzsch II vs SV Tapfer 06 Leipzig II (02TP6B44MG000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-25 15:00 - SV Lipsia 93 Eutritzsch II vs SV Victoria 90 Leipzig I (02TP6B44AC000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-01 15:00 - SV Lipsia 93 Eutritzsch II vs SG Olympia 1896 Leipzig II (02TP6B4440000000VS5489BUVSPHI8RP)
+- Max Demmler: first-team 13, second-team 2, first seen 2025-08-08, last seen 2026-03-29
+  First team: 2025-08-08 19:00 - SV Lipsia 93 Eutritzsch vs SSV Markranstädt (02TLC8QB70000000VS5489BUVUD1610F)
+  First team: 2025-08-23 15:00 - SV Lipsia 93 Eutritzsch vs Reichenbacher FC (02TLC8QAJC000000VS5489BUVUD1610F)
+  First team: 2025-09-07 15:30 - SV Lipsia 93 Eutritzsch vs SV Fortschritt Lunzenau (02U52D9MBS000000VS5489BUVS8CK5KT)
+  First team: 2025-09-13 15:00 - SV Lipsia 93 Eutritzsch vs VfL Pirna-Copitz (02TLC8Q9NC000000VS5489BUVUD1610F)
+  First team: 2025-10-05 15:00 - SV Lipsia 93 Eutritzsch vs SG Dynamo Dresden U23 (02TLC8Q8JS000000VS5489BUVUD1610F)
+  First team: 2025-10-18 15:00 - SV Lipsia 93 Eutritzsch vs FV Dresden 06 Laubegast (02TLC8Q83K000000VS5489BUVUD1610F)
+  First team: 2025-10-25 14:00 - SV Lipsia 93 Eutritzsch vs BSG Stahl Riesa (02TLC8Q7PC000000VS5489BUVUD1610F)
+  First team: 2025-11-01 14:00 - SV Lipsia 93 Eutritzsch vs SG Taucha 99 (02TLC8Q7D0000000VS5489BUVUD1610F)
+  First team: 2025-11-08 14:00 - SV Lipsia 93 Eutritzsch vs SC Borea Dresden (02TLC8Q72K000000VS5489BUVUD1610F)
+  First team: 2025-11-16 14:00 - SV Lipsia 93 Eutritzsch vs SG Handwerk Rabenstein (02TLC8Q6N4000000VS5489BUVUD1610F)
+  First team: 2025-11-22 14:00 - SV Lipsia 93 Eutritzsch vs Dresdner SC 1898 (02TLC8Q6GO000000VS5489BUVUD1610F)
+  First team: 2025-11-29 14:00 - SV Lipsia 93 Eutritzsch vs SC Freital II (02TLC8Q6CC000000VS5489BUVUD1610F)
+  First team: 2025-12-06 13:30 - SV Lipsia 93 Eutritzsch vs SV Tapfer 06 Leipzig (02TLC8Q60C000000VS5489BUVUD1610F)
+  Second team: 2025-09-20 15:00 - SV Lipsia 93 Eutritzsch II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B45E0000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-29 15:00 - SV Lipsia 93 Eutritzsch II vs SG Rotation Leipzig II (02TP6B4B5S000000VS5489BUVSPHI8RP)
+- Oscar Nkwocha: first-team 4, second-team 4, first seen 2025-09-06, last seen 2026-03-29
+  First team: 2025-09-13 15:00 - SV Lipsia 93 Eutritzsch vs VfL Pirna-Copitz (02TLC8Q9NC000000VS5489BUVUD1610F)
+  First team: 2025-09-21 15:00 - SV Lipsia 93 Eutritzsch vs VfB Fortuna Chemnitz (02TLC8Q9I4000000VS5489BUVUD1610F)
+  First team: 2025-10-12 14:00 - SV Lipsia 93 Eutritzsch vs SSV Fortschritt Lichtenstein (02UCGF6N5S000000VS5489BUVT0P4V1F)
+  First team: 2025-11-22 14:00 - SV Lipsia 93 Eutritzsch vs Dresdner SC 1898 (02TLC8Q6GO000000VS5489BUVUD1610F)
+  Second team: 2025-09-06 15:00 - SV Lipsia 93 Eutritzsch II vs SG Leipzig-Bienitz I (02TP6B435K000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-19 14:00 - SV Lipsia 93 Eutritzsch II vs SV Tapfer 06 Leipzig II (02TP6B44MG000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-09 14:00 - SV Lipsia 93 Eutritzsch II vs VfB Zwenkau 02 II (02TP6B43P4000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-29 15:00 - SV Lipsia 93 Eutritzsch II vs SG Rotation Leipzig II (02TP6B4B5S000000VS5489BUVSPHI8RP)
+- Pirmin Loritz: first-team 1, second-team 1, first seen 2025-09-27, last seen 2025-10-05
+  First team: 2025-10-05 15:00 - SV Lipsia 93 Eutritzsch vs SG Dynamo Dresden U23 (02TLC8Q8JS000000VS5489BUVUD1610F)
+  Second team: 2025-09-27 15:00 - SV Lipsia 93 Eutritzsch II vs Roter Stern Leipzig 99 II (02TP6B452G000000VS5489BUVSPHI8RP)
+- Simon Kügler: first-team 10, second-team 1, first seen 2025-08-08, last seen 2026-03-14
+  First team: 2025-08-08 19:00 - SV Lipsia 93 Eutritzsch vs SSV Markranstädt (02TLC8QB70000000VS5489BUVUD1610F)
+  First team: 2025-08-23 15:00 - SV Lipsia 93 Eutritzsch vs Reichenbacher FC (02TLC8QAJC000000VS5489BUVUD1610F)
+  First team: 2025-11-01 14:00 - SV Lipsia 93 Eutritzsch vs SG Taucha 99 (02TLC8Q7D0000000VS5489BUVUD1610F)
+  First team: 2025-11-08 14:00 - SV Lipsia 93 Eutritzsch vs SC Borea Dresden (02TLC8Q72K000000VS5489BUVUD1610F)
+  First team: 2025-11-16 14:00 - SV Lipsia 93 Eutritzsch vs SG Handwerk Rabenstein (02TLC8Q6N4000000VS5489BUVUD1610F)
+  First team: 2025-11-22 14:00 - SV Lipsia 93 Eutritzsch vs Dresdner SC 1898 (02TLC8Q6GO000000VS5489BUVUD1610F)
+  First team: 2025-11-29 14:00 - SV Lipsia 93 Eutritzsch vs SC Freital II (02TLC8Q6CC000000VS5489BUVUD1610F)
+  First team: 2026-03-01 14:00 - SV Lipsia 93 Eutritzsch vs Reichenbacher FC (02TLC8QJMG000000VS5489BUVUD1610F)
+  First team: 2026-03-07 15:00 - SV Lipsia 93 Eutritzsch vs FC Oberlausitz Neugersdorf (02TLC8QIV4000000VS5489BUVUD1610F)
+  First team: 2026-03-14 15:00 - SV Lipsia 93 Eutritzsch vs VfL Pirna-Copitz (02TLC8QI8G000000VS5489BUVUD1610F)
+  Second team: 2025-10-25 15:00 - SV Lipsia 93 Eutritzsch II vs SV Victoria 90 Leipzig I (02TP6B44AC000000VS5489BUVSPHI8RP)
+- Tom Erdmenger: first-team 5, second-team 11, first seen 2025-08-24, last seen 2026-03-22
+  First team: 2025-09-13 15:00 - SV Lipsia 93 Eutritzsch vs VfL Pirna-Copitz (02TLC8Q9NC000000VS5489BUVUD1610F)
+  First team: 2025-09-27 15:00 - SV Lipsia 93 Eutritzsch vs SV Tanne Thalheim (02TLC8Q8S0000000VS5489BUVUD1610F)
+  First team: 2025-10-12 14:00 - SV Lipsia 93 Eutritzsch vs SSV Fortschritt Lichtenstein (02UCGF6N5S000000VS5489BUVT0P4V1F)
+  First team: 2025-11-16 14:00 - SV Lipsia 93 Eutritzsch vs SG Handwerk Rabenstein (02TLC8Q6N4000000VS5489BUVUD1610F)
+  First team: 2025-11-29 14:00 - SV Lipsia 93 Eutritzsch vs SC Freital II (02TLC8Q6CC000000VS5489BUVUD1610F)
+  Second team: 2025-08-24 14:00 - SV Lipsia 93 Eutritzsch II vs FC Blau-Weiß Leipzig II (02TP6B4318000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-31 15:00 - SV Lipsia 93 Eutritzsch II vs SG Rotation Leipzig II (02TP6B460S000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-06 15:00 - SV Lipsia 93 Eutritzsch II vs SG Leipzig-Bienitz I (02TP6B435K000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-20 15:00 - SV Lipsia 93 Eutritzsch II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B45E0000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-04 15:00 - SV Lipsia 93 Eutritzsch II vs SV Panitzsch/​Borsdorf II (02TP6B44RS000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-19 14:00 - SV Lipsia 93 Eutritzsch II vs SV Tapfer 06 Leipzig II (02TP6B44MG000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-01 15:00 - SV Lipsia 93 Eutritzsch II vs SG Olympia 1896 Leipzig II (02TP6B4440000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-09 14:00 - SV Lipsia 93 Eutritzsch II vs VfB Zwenkau 02 II (02TP6B43P4000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-23 14:00 - SV Lipsia 93 Eutritzsch II vs SV Fortuna Leipzig 02 I (02TP6B43FS000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-14 15:00 - SV Lipsia 93 Eutritzsch II vs FSV Großpösna I (02TP6B4ALC000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-22 15:00 - SV Lipsia 93 Eutritzsch II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B4A4O000000VS5489BUVSPHI8RP)
+- Tommy Sanderson: first-team 1, second-team 3, first seen 2025-10-12, last seen 2025-11-15
+  First team: 2025-10-12 14:00 - SV Lipsia 93 Eutritzsch vs SSV Fortschritt Lichtenstein (02UCGF6N5S000000VS5489BUVT0P4V1F)
+  Second team: 2025-11-01 15:00 - SV Lipsia 93 Eutritzsch II vs SG Olympia 1896 Leipzig II (02TP6B4440000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-09 14:00 - SV Lipsia 93 Eutritzsch II vs VfB Zwenkau 02 II (02TP6B43P4000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-15 14:00 - SV Lipsia 93 Eutritzsch II vs SG LVB I (02TP6B43JO000000VS5489BUVSPHI8RP)
+
+## SG Olympia 1896 Leipzig
+
+- Official matches in season feed: 67
+- Played official matches checked: 46
+- Matches processed with lineup data: 45
+- Matches missing lineup: 1
+- Matches missing match-course data: 0
+- Unresolved player profiles: 0
+
+### First Team -> Second Team cases (0)
+
+- None
+
+### Second Team -> First Team cases (3)
+
+- Simon Kisabaka: SG Olympia 1896 Leipzig II vs FC Blau-Weiß Leipzig II on 2025-09-06 15:00 -> SG Olympia 1896 Leipzig I vs FC Blau-Weiß Leipzig I on 2025-09-07 15:00, gap 24.0h
+- Florian Schneider: SG Olympia 1896 Leipzig II vs SG Leipzig-Bienitz I on 2025-11-23 14:00 -> SG Olympia 1896 Leipzig I vs SV Schleußig 1990 I on 2025-11-23 15:00, gap 1.0h
+- Luca Virgilio: SG Olympia 1896 Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I on 2026-03-14 15:00 -> SG Olympia 1896 Leipzig I vs SV Eiche Wachau on 2026-03-15 14:00, gap 23.0h
+
+### Shared Players Across Both Teams (10)
+
+- Florian Schneider: first-team 7, second-team 7, first seen 2025-09-06, last seen 2026-03-15
+  First team: 2025-09-28 15:00 - SG Olympia 1896 Leipzig I vs SV Mölkau 04 I (02TP672BE4000000VS5489BUVSPHI8RP)
+  First team: 2025-11-01 14:00 - SG Olympia 1896 Leipzig I vs SC Eintracht Schkeuditz I (02TP6729RC000000VS5489BUVSPHI8RP)
+  First team: 2025-11-23 15:00 - SG Olympia 1896 Leipzig I vs SV Schleußig 1990 I (02TP6728V8000000VS5489BUVSPHI8RP)
+  First team: 2025-11-30 13:00 - SG Olympia 1896 Leipzig I vs SV Panitzsch/​Borsdorf II (02UN7G56AC000000VS5489BTVTPCB0P4)
+  First team: 2026-01-24 13:00 - SG Olympia 1896 Leipzig I vs SV Panitzsch/​Borsdorf II (02UN7G56AC000000VS5489BTVTPCB0P4)
+  First team: 2026-03-10 19:30 - SG Olympia 1896 Leipzig I vs SV Schleußig 1990 I (02TP6728V8000000VS5489BUVSPHI8RP)
+  First team: 2026-03-15 14:00 - SG Olympia 1896 Leipzig I vs SV Eiche Wachau (02TP672JSS000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-06 15:00 - SG Olympia 1896 Leipzig II vs FC Blau-Weiß Leipzig II (02TP6B436C000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-14 15:00 - SG Olympia 1896 Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B45M4000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-20 15:00 - SG Olympia 1896 Leipzig II vs Roter Stern Leipzig 99 II (02TP6B45FG000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-04 15:00 - SG Olympia 1896 Leipzig II vs SV Tapfer 06 Leipzig II (02TP6B44T4000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-08 14:00 - SG Olympia 1896 Leipzig II vs SG LVB I (02TP6B43Q8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-15 15:00 - SG Olympia 1896 Leipzig II vs SV Fortuna Leipzig 02 I (02TP6B43KO000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-23 14:00 - SG Olympia 1896 Leipzig II vs SG Leipzig-Bienitz I (02TP6B43F4000000VS5489BUVSPHI8RP)
+- Jan-Marvin Luick: first-team 4, second-team 1, first seen 2025-08-10, last seen 2026-04-02
+  First team: 2025-08-10 15:00 - SG Olympia 1896 Leipzig I vs SG Rotation Leipzig I (02TP672DF8000000VS5489BUVSPHI8RP)
+  First team: 2025-08-16 15:00 - SG Olympia 1896 Leipzig I vs TSV 1886 Markkleeberg I (02TP6728OK000000VS5489BUVSPHI8RP)
+  First team: 2026-02-22 14:00 - SG Olympia 1896 Leipzig I vs VfB Zwenkau 02 II (02VI9QAL08000000VS5489BTVVTMOPA6)
+  First team: 2026-04-02 19:00 - SG Olympia 1896 Leipzig I vs VfB Zwenkau 02 II (02VI9QAL08000000VS5489BTVVTMOPA6)
+  Second team: 2025-08-24 15:00 - SG Olympia 1896 Leipzig II vs SG Rotation Leipzig II (02TP6B430G000000VS5489BUVSPHI8RP)
+- Karl Richard Schmidtke: first-team 1, second-team 5, first seen 2025-09-06, last seen 2025-11-01
+  First team: 2025-11-01 14:00 - SG Olympia 1896 Leipzig I vs SC Eintracht Schkeuditz I (02TP6729RC000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-06 15:00 - SG Olympia 1896 Leipzig II vs FC Blau-Weiß Leipzig II (02TP6B436C000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-14 15:00 - SG Olympia 1896 Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B45M4000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-20 15:00 - SG Olympia 1896 Leipzig II vs Roter Stern Leipzig 99 II (02TP6B45FG000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-04 15:00 - SG Olympia 1896 Leipzig II vs SV Tapfer 06 Leipzig II (02TP6B44T4000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-26 14:00 - SG Olympia 1896 Leipzig II vs VfB Zwenkau 02 II (02TP6B4488000000VS5489BUVSPHI8RP)
+- Luca Virgilio: first-team 1, second-team 6, first seen 2025-08-24, last seen 2026-03-29
+  First team: 2026-03-15 14:00 - SG Olympia 1896 Leipzig I vs SV Eiche Wachau (02TP672JSS000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-24 15:00 - SG Olympia 1896 Leipzig II vs SG Rotation Leipzig II (02TP6B430G000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-30 15:00 - SG Olympia 1896 Leipzig II vs FSV Großpösna I (02TP6B4628000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-20 15:00 - SG Olympia 1896 Leipzig II vs Roter Stern Leipzig 99 II (02TP6B45FG000000VS5489BUVSPHI8RP)
+  Second team: 2026-02-21 13:00 - SG Olympia 1896 Leipzig II vs SSV Markranstädt II (02VI9QAKVC000000VS5489BTVVTMOPA6)
+  Second team: 2026-03-14 15:00 - SG Olympia 1896 Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B4AJC000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-29 14:30 - SG Olympia 1896 Leipzig II vs FSV Großpösna I (02TP6B4B84000000VS5489BUVSPHI8RP)
+- Morten Kaschel: first-team 7, second-team 3, first seen 2025-08-30, last seen 2026-03-22
+  First team: 2025-08-30 15:30 - SG Olympia 1896 Leipzig I vs Leipziger SV Südwest I (02TP672CGC000000VS5489BUVSPHI8RP)
+  First team: 2025-09-20 15:00 - SG Olympia 1896 Leipzig I vs LFV Sachsen Leipzig I (02TP672BV8000000VS5489BUVSPHI8RP)
+  First team: 2025-10-04 15:00 - SG Olympia 1896 Leipzig I vs SSV Markranstädt II (02TP672B38000000VS5489BUVSPHI8RP)
+  First team: 2025-10-26 15:00 - SG Olympia 1896 Leipzig I vs SV Leipzig-Thekla I (02TP672A8G000000VS5489BUVSPHI8RP)
+  First team: 2025-11-09 15:00 - SG Olympia 1896 Leipzig I vs SG Taucha 99 II (02TP6729J8000000VS5489BUVSPHI8RP)
+  First team: 2025-11-16 14:00 - SG Olympia 1896 Leipzig I vs SG Motor Gohlis-Nord I (02TP6729E0000000VS5489BUVSPHI8RP)
+  First team: 2026-03-22 15:00 - SG Olympia 1896 Leipzig I vs LFV Sachsen Leipzig I (02TP672JGG000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-06 15:00 - SG Olympia 1896 Leipzig II vs FC Blau-Weiß Leipzig II (02TP6B436C000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-14 15:00 - SG Olympia 1896 Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B45M4000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-19 14:00 - SG Olympia 1896 Leipzig II vs SV Victoria 90 Leipzig I (02TP6B44LC000000VS5489BUVSPHI8RP)
+- Pol Augustin Knödler: first-team 1, second-team 9, first seen 2025-10-19, last seen 2026-03-21
+  First team: 2025-11-01 14:00 - SG Olympia 1896 Leipzig I vs SC Eintracht Schkeuditz I (02TP6729RC000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-19 14:00 - SG Olympia 1896 Leipzig II vs SV Victoria 90 Leipzig I (02TP6B44LC000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-26 14:00 - SG Olympia 1896 Leipzig II vs VfB Zwenkau 02 II (02TP6B4488000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-08 14:00 - SG Olympia 1896 Leipzig II vs SG LVB I (02TP6B43Q8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-15 15:00 - SG Olympia 1896 Leipzig II vs SV Fortuna Leipzig 02 I (02TP6B43KO000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-23 14:00 - SG Olympia 1896 Leipzig II vs SG Leipzig-Bienitz I (02TP6B43F4000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-29 13:00 - SG Olympia 1896 Leipzig II vs SG Taucha 99 II (02UN7G56DO000000VS5489BTVTPCB0P4)
+  Second team: 2026-02-21 13:00 - SG Olympia 1896 Leipzig II vs SSV Markranstädt II (02VI9QAKVC000000VS5489BTVVTMOPA6)
+  Second team: 2026-03-14 15:00 - SG Olympia 1896 Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B4AJC000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-21 15:00 - SG Olympia 1896 Leipzig II vs Roter Stern Leipzig 99 II (02TP6B4A6O000000VS5489BUVSPHI8RP)
+- Simon Kisabaka: first-team 18, second-team 1, first seen 2025-08-10, last seen 2026-03-29
+  First team: 2025-08-10 15:00 - SG Olympia 1896 Leipzig I vs SG Rotation Leipzig I (02TP672DF8000000VS5489BUVSPHI8RP)
+  First team: 2025-08-16 15:00 - SG Olympia 1896 Leipzig I vs TSV 1886 Markkleeberg I (02TP6728OK000000VS5489BUVSPHI8RP)
+  First team: 2025-08-24 15:00 - SG Olympia 1896 Leipzig I vs TuS Leutzsch 1990 I (02TP672D14000000VS5489BUVSPHI8RP)
+  First team: 2025-09-07 15:00 - SG Olympia 1896 Leipzig I vs FC Blau-Weiß Leipzig I (02TP6728EK000000VS5489BUVSPHI8RP)
+  First team: 2025-09-14 15:30 - SG Olympia 1896 Leipzig I vs SV Eiche Wachau (02TP672C6O000000VS5489BUVSPHI8RP)
+  First team: 2025-09-20 15:00 - SG Olympia 1896 Leipzig I vs LFV Sachsen Leipzig I (02TP672BV8000000VS5489BUVSPHI8RP)
+  First team: 2025-09-28 15:00 - SG Olympia 1896 Leipzig I vs SV Mölkau 04 I (02TP672BE4000000VS5489BUVSPHI8RP)
+  First team: 2025-10-04 15:00 - SG Olympia 1896 Leipzig I vs SSV Markranstädt II (02TP672B38000000VS5489BUVSPHI8RP)
+  First team: 2025-10-12 14:00 - SG Olympia 1896 Leipzig I vs SV Lipsia 93 Eutritzsch II (02U5FBMESG000000VS5489BTVV378D77)
+  First team: 2025-10-19 15:00 - SG Olympia 1896 Leipzig I vs Roter Stern Leipzig I (02TP672AK4000000VS5489BUVSPHI8RP)
+  First team: 2025-10-21 19:30 - SG Olympia 1896 Leipzig I vs FC Blau-Weiß Leipzig I (02TP6728EK000000VS5489BUVSPHI8RP)
+  First team: 2025-10-26 15:00 - SG Olympia 1896 Leipzig I vs SV Leipzig-Thekla I (02TP672A8G000000VS5489BUVSPHI8RP)
+  First team: 2025-11-01 14:00 - SG Olympia 1896 Leipzig I vs SC Eintracht Schkeuditz I (02TP6729RC000000VS5489BUVSPHI8RP)
+  First team: 2025-11-09 15:00 - SG Olympia 1896 Leipzig I vs SG Taucha 99 II (02TP6729J8000000VS5489BUVSPHI8RP)
+  First team: 2025-11-16 14:00 - SG Olympia 1896 Leipzig I vs SG Motor Gohlis-Nord I (02TP6729E0000000VS5489BUVSPHI8RP)
+  First team: 2025-11-30 13:00 - SG Olympia 1896 Leipzig I vs SV Panitzsch/​Borsdorf II (02UN7G56AC000000VS5489BTVTPCB0P4)
+  First team: 2026-01-24 13:00 - SG Olympia 1896 Leipzig I vs SV Panitzsch/​Borsdorf II (02UN7G56AC000000VS5489BTVTPCB0P4)
+  First team: 2026-03-29 15:00 - SG Olympia 1896 Leipzig I vs SG Rotation Leipzig I (02TP672LQ0000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-06 15:00 - SG Olympia 1896 Leipzig II vs FC Blau-Weiß Leipzig II (02TP6B436C000000VS5489BUVSPHI8RP)
+- Tim Kunath: first-team 1, second-team 13, first seen 2025-08-16, last seen 2026-03-29
+  First team: 2025-08-16 15:00 - SG Olympia 1896 Leipzig I vs TSV 1886 Markkleeberg I (02TP6728OK000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-24 15:00 - SG Olympia 1896 Leipzig II vs SG Rotation Leipzig II (02TP6B430G000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-30 15:00 - SG Olympia 1896 Leipzig II vs FSV Großpösna I (02TP6B4628000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-06 15:00 - SG Olympia 1896 Leipzig II vs FC Blau-Weiß Leipzig II (02TP6B436C000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-14 15:00 - SG Olympia 1896 Leipzig II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B45M4000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-04 15:00 - SG Olympia 1896 Leipzig II vs SV Tapfer 06 Leipzig II (02TP6B44T4000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-19 14:00 - SG Olympia 1896 Leipzig II vs SV Victoria 90 Leipzig I (02TP6B44LC000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-26 14:00 - SG Olympia 1896 Leipzig II vs VfB Zwenkau 02 II (02TP6B4488000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-01 15:00 - SG Olympia 1896 Leipzig II vs SV Lipsia 93 Eutritzsch II (02TP6B4440000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-08 14:00 - SG Olympia 1896 Leipzig II vs SG LVB I (02TP6B43Q8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-23 14:00 - SG Olympia 1896 Leipzig II vs SG Leipzig-Bienitz I (02TP6B43F4000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-29 13:00 - SG Olympia 1896 Leipzig II vs SG Taucha 99 II (02UN7G56DO000000VS5489BTVTPCB0P4)
+  Second team: 2025-12-06 14:00 - SG Olympia 1896 Leipzig II vs SV Panitzsch/​Borsdorf II (02TP6B45A8000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-29 14:30 - SG Olympia 1896 Leipzig II vs FSV Großpösna I (02TP6B4B84000000VS5489BUVSPHI8RP)
+- Tim Nolte: first-team 11, second-team 3, first seen 2025-08-16, last seen 2026-04-02
+  First team: 2025-08-16 15:00 - SG Olympia 1896 Leipzig I vs TSV 1886 Markkleeberg I (02TP6728OK000000VS5489BUVSPHI8RP)
+  First team: 2025-08-30 15:30 - SG Olympia 1896 Leipzig I vs Leipziger SV Südwest I (02TP672CGC000000VS5489BUVSPHI8RP)
+  First team: 2025-09-28 15:00 - SG Olympia 1896 Leipzig I vs SV Mölkau 04 I (02TP672BE4000000VS5489BUVSPHI8RP)
+  First team: 2025-11-01 14:00 - SG Olympia 1896 Leipzig I vs SC Eintracht Schkeuditz I (02TP6729RC000000VS5489BUVSPHI8RP)
+  First team: 2025-11-16 14:00 - SG Olympia 1896 Leipzig I vs SG Motor Gohlis-Nord I (02TP6729E0000000VS5489BUVSPHI8RP)
+  First team: 2025-11-30 13:00 - SG Olympia 1896 Leipzig I vs SV Panitzsch/​Borsdorf II (02UN7G56AC000000VS5489BTVTPCB0P4)
+  First team: 2026-01-24 13:00 - SG Olympia 1896 Leipzig I vs SV Panitzsch/​Borsdorf II (02UN7G56AC000000VS5489BTVTPCB0P4)
+  First team: 2026-02-22 14:00 - SG Olympia 1896 Leipzig I vs VfB Zwenkau 02 II (02VI9QAL08000000VS5489BTVVTMOPA6)
+  First team: 2026-03-15 14:00 - SG Olympia 1896 Leipzig I vs SV Eiche Wachau (02TP672JSS000000VS5489BUVSPHI8RP)
+  First team: 2026-03-22 15:00 - SG Olympia 1896 Leipzig I vs LFV Sachsen Leipzig I (02TP672JGG000000VS5489BUVSPHI8RP)
+  First team: 2026-04-02 19:00 - SG Olympia 1896 Leipzig I vs VfB Zwenkau 02 II (02VI9QAL08000000VS5489BTVVTMOPA6)
+  Second team: 2025-08-24 15:00 - SG Olympia 1896 Leipzig II vs SG Rotation Leipzig II (02TP6B430G000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-20 15:00 - SG Olympia 1896 Leipzig II vs Roter Stern Leipzig 99 II (02TP6B45FG000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-08 14:00 - SG Olympia 1896 Leipzig II vs SG LVB I (02TP6B43Q8000000VS5489BUVSPHI8RP)
+- Tjark Von Borstel: first-team 11, second-team 1, first seen 2025-08-10, last seen 2026-03-15
+  First team: 2025-08-10 15:00 - SG Olympia 1896 Leipzig I vs SG Rotation Leipzig I (02TP672DF8000000VS5489BUVSPHI8RP)
+  First team: 2025-08-16 15:00 - SG Olympia 1896 Leipzig I vs TSV 1886 Markkleeberg I (02TP6728OK000000VS5489BUVSPHI8RP)
+  First team: 2025-09-14 15:30 - SG Olympia 1896 Leipzig I vs SV Eiche Wachau (02TP672C6O000000VS5489BUVSPHI8RP)
+  First team: 2025-09-20 15:00 - SG Olympia 1896 Leipzig I vs LFV Sachsen Leipzig I (02TP672BV8000000VS5489BUVSPHI8RP)
+  First team: 2025-09-28 15:00 - SG Olympia 1896 Leipzig I vs SV Mölkau 04 I (02TP672BE4000000VS5489BUVSPHI8RP)
+  First team: 2025-11-23 15:00 - SG Olympia 1896 Leipzig I vs SV Schleußig 1990 I (02TP6728V8000000VS5489BUVSPHI8RP)
+  First team: 2025-11-30 13:00 - SG Olympia 1896 Leipzig I vs SV Panitzsch/​Borsdorf II (02UN7G56AC000000VS5489BTVTPCB0P4)
+  First team: 2026-01-24 13:00 - SG Olympia 1896 Leipzig I vs SV Panitzsch/​Borsdorf II (02UN7G56AC000000VS5489BTVTPCB0P4)
+  First team: 2026-03-01 14:00 - SG Olympia 1896 Leipzig I vs TuS Leutzsch 1990 I (02TP672L50000000VS5489BUVSPHI8RP)
+  First team: 2026-03-10 19:30 - SG Olympia 1896 Leipzig I vs SV Schleußig 1990 I (02TP6728V8000000VS5489BUVSPHI8RP)
+  First team: 2026-03-15 14:00 - SG Olympia 1896 Leipzig I vs SV Eiche Wachau (02TP672JSS000000VS5489BUVSPHI8RP)
+  Second team: 2026-02-21 13:00 - SG Olympia 1896 Leipzig II vs SSV Markranstädt II (02VI9QAKVC000000VS5489BTVVTMOPA6)
+
+## VfB Zwenkau
+
+- Official matches in season feed: 65
+- Played official matches checked: 45
+- Matches processed with lineup data: 45
+- Matches missing lineup: 0
+- Matches missing match-course data: 0
+- Unresolved player profiles: 0
+
+### First Team -> Second Team cases (24)
+
+- Konstantin Leander Lorenz: VfB Zwenkau vs Radefelder SV 90 on 2025-08-23 15:00 -> VfB Zwenkau 02 II vs SV Fortuna Leipzig 02 I on 2025-08-24 14:00, gap 23.0h
+- Spencer Stadler: VfB Zwenkau vs Radefelder SV 90 on 2025-08-23 15:00 -> VfB Zwenkau 02 II vs SV Fortuna Leipzig 02 I on 2025-08-24 14:00, gap 23.0h
+- Konstantin Leander Lorenz: VfB Zwenkau vs Bornaer SV 91 on 2025-08-30 15:00 -> VfB Zwenkau 02 II vs SV Panitzsch/​Borsdorf II on 2025-08-31 15:00, gap 24.0h
+- Spencer Stadler: VfB Zwenkau vs Bornaer SV 91 on 2025-08-30 15:00 -> VfB Zwenkau 02 II vs SV Panitzsch/​Borsdorf II on 2025-08-31 15:00, gap 24.0h
+- Yannick Winkler: VfB Zwenkau vs Bornaer SV 91 on 2025-08-30 15:00 -> VfB Zwenkau 02 II vs SV Panitzsch/​Borsdorf II on 2025-08-31 15:00, gap 24.0h
+- Joshua Raschke: VfB Zwenkau vs FSV Zwickau on 2025-09-07 14:00 -> VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II on 2025-09-07 15:00, gap 1.0h
+- Spencer Stadler: VfB Zwenkau vs FSV Zwickau on 2025-09-07 14:00 -> VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II on 2025-09-07 15:00, gap 1.0h
+- Yannick Winkler: VfB Zwenkau vs FSV Zwickau on 2025-09-07 14:00 -> VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II on 2025-09-07 15:00, gap 1.0h
+- Spencer Stadler: VfB Zwenkau vs FV Gröditz 1911 on 2025-09-13 15:00 -> VfB Zwenkau 02 II vs SG Leipzig-Bienitz I on 2025-09-14 14:30, gap 23.5h
+- Willy Jaeger: VfB Zwenkau vs FV Gröditz 1911 on 2025-09-13 15:00 -> VfB Zwenkau 02 II vs SG Leipzig-Bienitz I on 2025-09-14 14:30, gap 23.5h
+- Joshua Raschke: VfB Zwenkau vs FV Gröditz 1911 on 2025-09-13 15:00 -> VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II on 2025-09-17 18:30, gap 99.5h
+- Spencer Stadler: VfB Zwenkau vs FV Gröditz 1911 on 2025-09-13 15:00 -> VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II on 2025-09-17 18:30, gap 99.5h
+- Willy Jaeger: VfB Zwenkau vs FV Gröditz 1911 on 2025-09-13 15:00 -> VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II on 2025-09-17 18:30, gap 99.5h
+- Yannick Winkler: VfB Zwenkau vs FV Gröditz 1911 on 2025-09-13 15:00 -> VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II on 2025-09-17 18:30, gap 99.5h
+- Konstantin Leander Lorenz: VfB Zwenkau vs SC Hartenfels Torgau on 2025-09-20 15:00 -> VfB Zwenkau 02 II vs SV Tapfer 06 Leipzig II on 2025-09-21 15:00, gap 24.0h
+- Max Bischoff: VfB Zwenkau vs BSG Chemie Leipzig II on 2025-10-18 15:00 -> VfB Zwenkau 02 II vs SG Rotation Leipzig II on 2025-10-19 15:00, gap 24.0h
+- Jann Malte Bertkau: VfB Zwenkau vs SG Motor Wilsdruff on 2025-11-01 14:00 -> VfB Zwenkau 02 II vs FSV Großpösna I on 2025-11-02 14:00, gap 24.0h
+- Max Bischoff: VfB Zwenkau vs SG Motor Wilsdruff on 2025-11-01 14:00 -> VfB Zwenkau 02 II vs FSV Großpösna I on 2025-11-02 14:00, gap 24.0h
+- Max Bischoff: VfB Zwenkau vs Meißner SV on 2025-11-15 14:00 -> VfB Zwenkau 02 II vs SG Rotation Leipzig II on 2025-11-19 13:00, gap 95.0h
+- Yannick Winkler: VfB Zwenkau vs Meißner SV on 2025-11-15 14:00 -> VfB Zwenkau 02 II vs SG Rotation Leipzig II on 2025-11-19 13:00, gap 95.0h
+- Spencer Stadler: VfB Zwenkau vs SV Panitzsch/​Borsdorf on 2026-02-21 14:00 -> VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig I on 2026-02-22 14:00, gap 24.0h
+- Yannick Winkler: VfB Zwenkau vs SV Panitzsch/​Borsdorf on 2026-02-21 14:00 -> VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig I on 2026-02-22 14:00, gap 24.0h
+- Spencer Stadler: VfB Zwenkau vs SV Panitzsch/​Borsdorf on 2026-03-31 19:00 -> VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig I on 2026-04-02 19:00, gap 48.0h
+- Yannick Winkler: VfB Zwenkau vs SV Panitzsch/​Borsdorf on 2026-03-31 19:00 -> VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig I on 2026-04-02 19:00, gap 48.0h
+
+### Second Team -> First Team cases (6)
+
+- Joshua Raschke: VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II on 2025-09-17 18:30 -> VfB Zwenkau vs SC Hartenfels Torgau on 2025-09-20 15:00, gap 68.5h
+- Malte Winderlich: VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II on 2025-09-17 18:30 -> VfB Zwenkau vs SC Hartenfels Torgau on 2025-09-20 15:00, gap 68.5h
+- Yannick Winkler: VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II on 2025-09-17 18:30 -> VfB Zwenkau vs SC Hartenfels Torgau on 2025-09-20 15:00, gap 68.5h
+- Adrian Thom: VfB Zwenkau 02 II vs SV Panitzsch/​Borsdorf II on 2026-03-28 12:30 -> VfB Zwenkau vs SV Panitzsch/​Borsdorf on 2026-03-31 19:00, gap 78.5h
+- Kevin Baierlein: VfB Zwenkau 02 II vs SV Panitzsch/​Borsdorf II on 2026-03-28 12:30 -> VfB Zwenkau vs SV Panitzsch/​Borsdorf on 2026-03-31 19:00, gap 78.5h
+- Yannick Winkler: VfB Zwenkau 02 II vs SV Panitzsch/​Borsdorf II on 2026-03-28 12:30 -> VfB Zwenkau vs SV Panitzsch/​Borsdorf on 2026-03-31 19:00, gap 78.5h
+
+### Shared Players Across Both Teams (15)
+
+- Adrian Thom: first-team 15, second-team 1, first seen 2025-08-08, last seen 2026-03-31
+  First team: 2025-08-08 18:30 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLP57C000000VS5489BUVUD1610F)
+  First team: 2025-08-23 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLP4EC000000VS5489BUVUD1610F)
+  First team: 2025-08-30 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLP46K000000VS5489BUVUD1610F)
+  First team: 2025-09-07 14:00 - VfB Zwenkau vs FSV Zwickau (02U52D9MK8000000VS5489BUVS8CK5KT)
+  First team: 2025-09-13 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLP3G4000000VS5489BUVUD1610F)
+  First team: 2025-09-20 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLP350000000VS5489BUVUD1610F)
+  First team: 2025-09-27 15:00 - VfB Zwenkau vs SV Fortschritt Lunzenau (02TLCLP2KK000000VS5489BUVUD1610F)
+  First team: 2025-10-05 15:00 - VfB Zwenkau vs HFC Colditz (02TLCLP2J4000000VS5489BUVUD1610F)
+  First team: 2025-10-26 16:00 - VfB Zwenkau vs SV Lindenau 1848 (02TLCLP1KC000000VS5489BUVUD1610F)
+  First team: 2025-11-01 14:00 - VfB Zwenkau vs SG Motor Wilsdruff (02TLCLP12C000000VS5489BUVUD1610F)
+  First team: 2025-11-08 14:30 - VfB Zwenkau vs SV Liebertwolkwitz (02TLCLP0RK000000VS5489BUVUD1610F)
+  First team: 2025-11-15 14:00 - VfB Zwenkau vs Meißner SV (02TLCLP0DG000000VS5489BUVUD1610F)
+  First team: 2025-12-06 13:30 - VfB Zwenkau vs Kickers 94 Markkleeberg (02TLCLOVI0000000VS5489BUVUD1610F)
+  First team: 2026-02-21 14:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  First team: 2026-03-31 19:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  Second team: 2026-03-28 12:30 - VfB Zwenkau 02 II vs SV Panitzsch/​Borsdorf II (02TP6B4B1C000000VS5489BUVSPHI8RP)
+- Cedric Jens Tauchnitz: first-team 8, second-team 3, first seen 2025-08-08, last seen 2026-04-02
+  First team: 2025-08-08 18:30 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLP57C000000VS5489BUVUD1610F)
+  First team: 2025-08-23 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLP4EC000000VS5489BUVUD1610F)
+  First team: 2025-09-07 14:00 - VfB Zwenkau vs FSV Zwickau (02U52D9MK8000000VS5489BUVS8CK5KT)
+  First team: 2025-09-13 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLP3G4000000VS5489BUVUD1610F)
+  First team: 2025-09-20 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLP350000000VS5489BUVUD1610F)
+  First team: 2025-10-05 15:00 - VfB Zwenkau vs HFC Colditz (02TLCLP2J4000000VS5489BUVUD1610F)
+  First team: 2025-12-06 13:30 - VfB Zwenkau vs Kickers 94 Markkleeberg (02TLCLOVI0000000VS5489BUVUD1610F)
+  First team: 2026-03-07 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLPD1S000000VS5489BUVUD1610F)
+  Second team: 2025-11-29 13:00 - VfB Zwenkau 02 II vs SC Eintracht Schkeuditz I (02UN7G56CS000000VS5489BTVTPCB0P4)
+  Second team: 2026-02-22 14:00 - VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig I (02VI9QAL08000000VS5489BTVVTMOPA6)
+  Second team: 2026-04-02 19:00 - VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig I (02VI9QAL08000000VS5489BTVVTMOPA6)
+- David Flöth: first-team 20, second-team 2, first seen 2025-08-08, last seen 2026-03-31
+  First team: 2025-08-08 18:30 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLP57C000000VS5489BUVUD1610F)
+  First team: 2025-08-23 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLP4EC000000VS5489BUVUD1610F)
+  First team: 2025-08-30 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLP46K000000VS5489BUVUD1610F)
+  First team: 2025-09-07 14:00 - VfB Zwenkau vs FSV Zwickau (02U52D9MK8000000VS5489BUVS8CK5KT)
+  First team: 2025-09-13 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLP3G4000000VS5489BUVUD1610F)
+  First team: 2025-09-20 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLP350000000VS5489BUVUD1610F)
+  First team: 2025-10-05 15:00 - VfB Zwenkau vs HFC Colditz (02TLCLP2J4000000VS5489BUVUD1610F)
+  First team: 2025-10-18 15:00 - VfB Zwenkau vs BSG Chemie Leipzig II (02TLCLP1OK000000VS5489BUVUD1610F)
+  First team: 2025-10-26 16:00 - VfB Zwenkau vs SV Lindenau 1848 (02TLCLP1KC000000VS5489BUVUD1610F)
+  First team: 2025-11-01 14:00 - VfB Zwenkau vs SG Motor Wilsdruff (02TLCLP12C000000VS5489BUVUD1610F)
+  First team: 2025-11-15 14:00 - VfB Zwenkau vs Meißner SV (02TLCLP0DG000000VS5489BUVUD1610F)
+  First team: 2025-11-22 14:00 - VfB Zwenkau vs SV Naunhof 1920 (02TLCLP054000000VS5489BUVUD1610F)
+  First team: 2025-11-30 13:00 - VfB Zwenkau vs Leipziger SC 1901 (02TLCLOVRG000000VS5489BUVUD1610F)
+  First team: 2025-12-06 13:30 - VfB Zwenkau vs Kickers 94 Markkleeberg (02TLCLOVI0000000VS5489BUVUD1610F)
+  First team: 2026-02-21 14:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  First team: 2026-03-01 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLPDDO000000VS5489BUVUD1610F)
+  First team: 2026-03-07 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLPD1S000000VS5489BUVUD1610F)
+  First team: 2026-03-14 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLPC0G000000VS5489BUVUD1610F)
+  First team: 2026-03-21 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLPBDC000000VS5489BUVUD1610F)
+  First team: 2026-03-31 19:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  Second team: 2025-10-11 14:00 - VfB Zwenkau 02 II vs Roter Stern Leipzig (02U5FBMF7O000000VS5489BTVV378D77)
+  Second team: 2025-11-09 14:00 - VfB Zwenkau 02 II vs SV Lipsia 93 Eutritzsch II (02TP6B43P4000000VS5489BUVSPHI8RP)
+- Ferdinand Wieser: first-team 16, second-team 1, first seen 2025-08-23, last seen 2026-03-31
+  First team: 2025-08-23 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLP4EC000000VS5489BUVUD1610F)
+  First team: 2025-08-30 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLP46K000000VS5489BUVUD1610F)
+  First team: 2025-09-13 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLP3G4000000VS5489BUVUD1610F)
+  First team: 2025-10-18 15:00 - VfB Zwenkau vs BSG Chemie Leipzig II (02TLCLP1OK000000VS5489BUVUD1610F)
+  First team: 2025-10-26 16:00 - VfB Zwenkau vs SV Lindenau 1848 (02TLCLP1KC000000VS5489BUVUD1610F)
+  First team: 2025-11-01 14:00 - VfB Zwenkau vs SG Motor Wilsdruff (02TLCLP12C000000VS5489BUVUD1610F)
+  First team: 2025-11-08 14:30 - VfB Zwenkau vs SV Liebertwolkwitz (02TLCLP0RK000000VS5489BUVUD1610F)
+  First team: 2025-11-15 14:00 - VfB Zwenkau vs Meißner SV (02TLCLP0DG000000VS5489BUVUD1610F)
+  First team: 2025-11-22 14:00 - VfB Zwenkau vs SV Naunhof 1920 (02TLCLP054000000VS5489BUVUD1610F)
+  First team: 2025-11-30 13:00 - VfB Zwenkau vs Leipziger SC 1901 (02TLCLOVRG000000VS5489BUVUD1610F)
+  First team: 2025-12-06 13:30 - VfB Zwenkau vs Kickers 94 Markkleeberg (02TLCLOVI0000000VS5489BUVUD1610F)
+  First team: 2026-02-21 14:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  First team: 2026-03-01 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLPDDO000000VS5489BUVUD1610F)
+  First team: 2026-03-07 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLPD1S000000VS5489BUVUD1610F)
+  First team: 2026-03-14 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLPC0G000000VS5489BUVUD1610F)
+  First team: 2026-03-31 19:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  Second team: 2025-10-11 14:00 - VfB Zwenkau 02 II vs Roter Stern Leipzig (02U5FBMF7O000000VS5489BTVV378D77)
+- Jan Konstantin Vahl: first-team 1, second-team 8, first seen 2025-09-21, last seen 2026-03-28
+  First team: 2025-09-27 15:00 - VfB Zwenkau vs SV Fortschritt Lunzenau (02TLCLP2KK000000VS5489BUVUD1610F)
+  Second team: 2025-09-21 15:00 - VfB Zwenkau 02 II vs SV Tapfer 06 Leipzig II (02TP6B45BG000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-02 19:00 - VfB Zwenkau 02 II vs FC Blau-Weiß Leipzig II (02TP6B457O000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-19 15:00 - VfB Zwenkau 02 II vs SG Rotation Leipzig II (02TP6B44K8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-09 14:00 - VfB Zwenkau 02 II vs SV Lipsia 93 Eutritzsch II (02TP6B43P4000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-16 14:00 - VfB Zwenkau 02 II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B43IO000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-19 13:00 - VfB Zwenkau 02 II vs SG Rotation Leipzig II (02TP6B44K8000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-22 14:00 - VfB Zwenkau 02 II vs SV Tapfer 06 Leipzig II (02TP6B4A0S000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-28 12:30 - VfB Zwenkau 02 II vs SV Panitzsch/​Borsdorf II (02TP6B4B1C000000VS5489BUVSPHI8RP)
+- Jann Malte Bertkau: first-team 20, second-team 2, first seen 2025-08-08, last seen 2026-03-31
+  First team: 2025-08-08 18:30 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLP57C000000VS5489BUVUD1610F)
+  First team: 2025-08-23 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLP4EC000000VS5489BUVUD1610F)
+  First team: 2025-08-30 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLP46K000000VS5489BUVUD1610F)
+  First team: 2025-09-07 14:00 - VfB Zwenkau vs FSV Zwickau (02U52D9MK8000000VS5489BUVS8CK5KT)
+  First team: 2025-09-13 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLP3G4000000VS5489BUVUD1610F)
+  First team: 2025-09-20 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLP350000000VS5489BUVUD1610F)
+  First team: 2025-10-05 15:00 - VfB Zwenkau vs HFC Colditz (02TLCLP2J4000000VS5489BUVUD1610F)
+  First team: 2025-10-18 15:00 - VfB Zwenkau vs BSG Chemie Leipzig II (02TLCLP1OK000000VS5489BUVUD1610F)
+  First team: 2025-10-26 16:00 - VfB Zwenkau vs SV Lindenau 1848 (02TLCLP1KC000000VS5489BUVUD1610F)
+  First team: 2025-11-01 14:00 - VfB Zwenkau vs SG Motor Wilsdruff (02TLCLP12C000000VS5489BUVUD1610F)
+  First team: 2025-11-08 14:30 - VfB Zwenkau vs SV Liebertwolkwitz (02TLCLP0RK000000VS5489BUVUD1610F)
+  First team: 2025-11-22 14:00 - VfB Zwenkau vs SV Naunhof 1920 (02TLCLP054000000VS5489BUVUD1610F)
+  First team: 2025-11-30 13:00 - VfB Zwenkau vs Leipziger SC 1901 (02TLCLOVRG000000VS5489BUVUD1610F)
+  First team: 2025-12-06 13:30 - VfB Zwenkau vs Kickers 94 Markkleeberg (02TLCLOVI0000000VS5489BUVUD1610F)
+  First team: 2026-02-21 14:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  First team: 2026-03-01 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLPDDO000000VS5489BUVUD1610F)
+  First team: 2026-03-07 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLPD1S000000VS5489BUVUD1610F)
+  First team: 2026-03-14 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLPC0G000000VS5489BUVUD1610F)
+  First team: 2026-03-21 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLPBDC000000VS5489BUVUD1610F)
+  First team: 2026-03-31 19:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  Second team: 2025-10-11 14:00 - VfB Zwenkau 02 II vs Roter Stern Leipzig (02U5FBMF7O000000VS5489BTVV378D77)
+  Second team: 2025-11-02 14:00 - VfB Zwenkau 02 II vs FSV Großpösna I (02TP6B442S000000VS5489BUVSPHI8RP)
+- Joshua Raschke: first-team 13, second-team 5, first seen 2025-08-23, last seen 2026-03-21
+  First team: 2025-08-23 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLP4EC000000VS5489BUVUD1610F)
+  First team: 2025-08-30 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLP46K000000VS5489BUVUD1610F)
+  First team: 2025-09-07 14:00 - VfB Zwenkau vs FSV Zwickau (02U52D9MK8000000VS5489BUVS8CK5KT)
+  First team: 2025-09-13 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLP3G4000000VS5489BUVUD1610F)
+  First team: 2025-09-20 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLP350000000VS5489BUVUD1610F)
+  First team: 2025-09-27 15:00 - VfB Zwenkau vs SV Fortschritt Lunzenau (02TLCLP2KK000000VS5489BUVUD1610F)
+  First team: 2025-11-01 14:00 - VfB Zwenkau vs SG Motor Wilsdruff (02TLCLP12C000000VS5489BUVUD1610F)
+  First team: 2025-11-08 14:30 - VfB Zwenkau vs SV Liebertwolkwitz (02TLCLP0RK000000VS5489BUVUD1610F)
+  First team: 2025-11-15 14:00 - VfB Zwenkau vs Meißner SV (02TLCLP0DG000000VS5489BUVUD1610F)
+  First team: 2025-11-22 14:00 - VfB Zwenkau vs SV Naunhof 1920 (02TLCLP054000000VS5489BUVUD1610F)
+  First team: 2025-11-30 13:00 - VfB Zwenkau vs Leipziger SC 1901 (02TLCLOVRG000000VS5489BUVUD1610F)
+  First team: 2025-12-06 13:30 - VfB Zwenkau vs Kickers 94 Markkleeberg (02TLCLOVI0000000VS5489BUVUD1610F)
+  First team: 2026-03-21 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLPBDC000000VS5489BUVUD1610F)
+  Second team: 2025-09-07 15:00 - VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II (02TP6B433G000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-17 18:30 - VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II (02TP6B433G000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-02 19:00 - VfB Zwenkau 02 II vs FC Blau-Weiß Leipzig II (02TP6B457O000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-26 14:00 - VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig II (02TP6B4488000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-15 15:00 - VfB Zwenkau 02 II vs SG Leipzig-Bienitz I (02TP6B4AS8000000VS5489BUVSPHI8RP)
+- Kevin Baierlein: first-team 3, second-team 13, first seen 2025-10-02, last seen 2026-03-31
+  First team: 2026-02-21 14:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  First team: 2026-03-07 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLPD1S000000VS5489BUVUD1610F)
+  First team: 2026-03-31 19:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  Second team: 2025-10-02 19:00 - VfB Zwenkau 02 II vs FC Blau-Weiß Leipzig II (02TP6B457O000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-05 15:00 - VfB Zwenkau 02 II vs SV Victoria 90 Leipzig I (02TP6B44PG000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-11 14:00 - VfB Zwenkau 02 II vs Roter Stern Leipzig (02U5FBMF7O000000VS5489BTVV378D77)
+  Second team: 2025-10-19 15:00 - VfB Zwenkau 02 II vs SG Rotation Leipzig II (02TP6B44K8000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-26 14:00 - VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig II (02TP6B4488000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-02 14:00 - VfB Zwenkau 02 II vs FSV Großpösna I (02TP6B442S000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-09 14:00 - VfB Zwenkau 02 II vs SV Lipsia 93 Eutritzsch II (02TP6B43P4000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-19 13:00 - VfB Zwenkau 02 II vs SG Rotation Leipzig II (02TP6B44K8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-23 14:00 - VfB Zwenkau 02 II vs SG LVB I (02TP6B439G000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-29 13:00 - VfB Zwenkau 02 II vs SC Eintracht Schkeuditz I (02UN7G56CS000000VS5489BTVTPCB0P4)
+  Second team: 2026-03-15 15:00 - VfB Zwenkau 02 II vs SG Leipzig-Bienitz I (02TP6B4AS8000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-22 14:00 - VfB Zwenkau 02 II vs SV Tapfer 06 Leipzig II (02TP6B4A0S000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-28 12:30 - VfB Zwenkau 02 II vs SV Panitzsch/​Borsdorf II (02TP6B4B1C000000VS5489BUVSPHI8RP)
+- Konstantin Leander Lorenz: first-team 20, second-team 4, first seen 2025-08-08, last seen 2026-03-31
+  First team: 2025-08-08 18:30 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLP57C000000VS5489BUVUD1610F)
+  First team: 2025-08-23 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLP4EC000000VS5489BUVUD1610F)
+  First team: 2025-08-30 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLP46K000000VS5489BUVUD1610F)
+  First team: 2025-09-07 14:00 - VfB Zwenkau vs FSV Zwickau (02U52D9MK8000000VS5489BUVS8CK5KT)
+  First team: 2025-09-20 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLP350000000VS5489BUVUD1610F)
+  First team: 2025-09-27 15:00 - VfB Zwenkau vs SV Fortschritt Lunzenau (02TLCLP2KK000000VS5489BUVUD1610F)
+  First team: 2025-10-05 15:00 - VfB Zwenkau vs HFC Colditz (02TLCLP2J4000000VS5489BUVUD1610F)
+  First team: 2025-10-18 15:00 - VfB Zwenkau vs BSG Chemie Leipzig II (02TLCLP1OK000000VS5489BUVUD1610F)
+  First team: 2025-10-26 16:00 - VfB Zwenkau vs SV Lindenau 1848 (02TLCLP1KC000000VS5489BUVUD1610F)
+  First team: 2025-11-01 14:00 - VfB Zwenkau vs SG Motor Wilsdruff (02TLCLP12C000000VS5489BUVUD1610F)
+  First team: 2025-11-08 14:30 - VfB Zwenkau vs SV Liebertwolkwitz (02TLCLP0RK000000VS5489BUVUD1610F)
+  First team: 2025-11-22 14:00 - VfB Zwenkau vs SV Naunhof 1920 (02TLCLP054000000VS5489BUVUD1610F)
+  First team: 2025-11-30 13:00 - VfB Zwenkau vs Leipziger SC 1901 (02TLCLOVRG000000VS5489BUVUD1610F)
+  First team: 2025-12-06 13:30 - VfB Zwenkau vs Kickers 94 Markkleeberg (02TLCLOVI0000000VS5489BUVUD1610F)
+  First team: 2026-02-21 14:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  First team: 2026-03-01 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLPDDO000000VS5489BUVUD1610F)
+  First team: 2026-03-07 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLPD1S000000VS5489BUVUD1610F)
+  First team: 2026-03-14 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLPC0G000000VS5489BUVUD1610F)
+  First team: 2026-03-21 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLPBDC000000VS5489BUVUD1610F)
+  First team: 2026-03-31 19:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  Second team: 2025-08-24 14:00 - VfB Zwenkau 02 II vs SV Fortuna Leipzig 02 I (02TP6B432O000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-31 15:00 - VfB Zwenkau 02 II vs SV Panitzsch/​Borsdorf II (02TP6B45U4000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-21 15:00 - VfB Zwenkau 02 II vs SV Tapfer 06 Leipzig II (02TP6B45BG000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-16 14:00 - VfB Zwenkau 02 II vs TSV Böhlitz-Ehrenberg 1990 I (02TP6B43IO000000VS5489BUVSPHI8RP)
+- Malte Winderlich: first-team 13, second-team 5, first seen 2025-08-08, last seen 2026-04-02
+  First team: 2025-08-08 18:30 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLP57C000000VS5489BUVUD1610F)
+  First team: 2025-08-30 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLP46K000000VS5489BUVUD1610F)
+  First team: 2025-09-20 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLP350000000VS5489BUVUD1610F)
+  First team: 2025-09-27 15:00 - VfB Zwenkau vs SV Fortschritt Lunzenau (02TLCLP2KK000000VS5489BUVUD1610F)
+  First team: 2025-10-05 15:00 - VfB Zwenkau vs HFC Colditz (02TLCLP2J4000000VS5489BUVUD1610F)
+  First team: 2025-10-18 15:00 - VfB Zwenkau vs BSG Chemie Leipzig II (02TLCLP1OK000000VS5489BUVUD1610F)
+  First team: 2025-10-26 16:00 - VfB Zwenkau vs SV Lindenau 1848 (02TLCLP1KC000000VS5489BUVUD1610F)
+  First team: 2025-11-01 14:00 - VfB Zwenkau vs SG Motor Wilsdruff (02TLCLP12C000000VS5489BUVUD1610F)
+  First team: 2025-11-08 14:30 - VfB Zwenkau vs SV Liebertwolkwitz (02TLCLP0RK000000VS5489BUVUD1610F)
+  First team: 2025-11-22 14:00 - VfB Zwenkau vs SV Naunhof 1920 (02TLCLP054000000VS5489BUVUD1610F)
+  First team: 2026-03-01 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLPDDO000000VS5489BUVUD1610F)
+  First team: 2026-03-14 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLPC0G000000VS5489BUVUD1610F)
+  First team: 2026-03-21 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLPBDC000000VS5489BUVUD1610F)
+  Second team: 2025-09-07 15:00 - VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II (02TP6B433G000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-14 14:30 - VfB Zwenkau 02 II vs SG Leipzig-Bienitz I (02TP6B45RC000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-17 18:30 - VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II (02TP6B433G000000VS5489BUVSPHI8RP)
+  Second team: 2026-02-22 14:00 - VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig I (02VI9QAL08000000VS5489BTVVTMOPA6)
+  Second team: 2026-04-02 19:00 - VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig I (02VI9QAL08000000VS5489BTVVTMOPA6)
+- Matteo Stets: first-team 8, second-team 1, first seen 2025-10-18, last seen 2026-03-31
+  First team: 2025-10-18 15:00 - VfB Zwenkau vs BSG Chemie Leipzig II (02TLCLP1OK000000VS5489BUVUD1610F)
+  First team: 2025-11-30 13:00 - VfB Zwenkau vs Leipziger SC 1901 (02TLCLOVRG000000VS5489BUVUD1610F)
+  First team: 2026-02-21 14:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  First team: 2026-03-01 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLPDDO000000VS5489BUVUD1610F)
+  First team: 2026-03-07 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLPD1S000000VS5489BUVUD1610F)
+  First team: 2026-03-14 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLPC0G000000VS5489BUVUD1610F)
+  First team: 2026-03-21 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLPBDC000000VS5489BUVUD1610F)
+  First team: 2026-03-31 19:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  Second team: 2025-10-26 14:00 - VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig II (02TP6B4488000000VS5489BUVSPHI8RP)
+- Max Bischoff: first-team 7, second-team 5, first seen 2025-09-27, last seen 2025-11-30
+  First team: 2025-09-27 15:00 - VfB Zwenkau vs SV Fortschritt Lunzenau (02TLCLP2KK000000VS5489BUVUD1610F)
+  First team: 2025-10-18 15:00 - VfB Zwenkau vs BSG Chemie Leipzig II (02TLCLP1OK000000VS5489BUVUD1610F)
+  First team: 2025-10-26 16:00 - VfB Zwenkau vs SV Lindenau 1848 (02TLCLP1KC000000VS5489BUVUD1610F)
+  First team: 2025-11-01 14:00 - VfB Zwenkau vs SG Motor Wilsdruff (02TLCLP12C000000VS5489BUVUD1610F)
+  First team: 2025-11-08 14:30 - VfB Zwenkau vs SV Liebertwolkwitz (02TLCLP0RK000000VS5489BUVUD1610F)
+  First team: 2025-11-15 14:00 - VfB Zwenkau vs Meißner SV (02TLCLP0DG000000VS5489BUVUD1610F)
+  First team: 2025-11-30 13:00 - VfB Zwenkau vs Leipziger SC 1901 (02TLCLOVRG000000VS5489BUVUD1610F)
+  Second team: 2025-10-02 19:00 - VfB Zwenkau 02 II vs FC Blau-Weiß Leipzig II (02TP6B457O000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-05 15:00 - VfB Zwenkau 02 II vs SV Victoria 90 Leipzig I (02TP6B44PG000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-19 15:00 - VfB Zwenkau 02 II vs SG Rotation Leipzig II (02TP6B44K8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-02 14:00 - VfB Zwenkau 02 II vs FSV Großpösna I (02TP6B442S000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-19 13:00 - VfB Zwenkau 02 II vs SG Rotation Leipzig II (02TP6B44K8000000VS5489BUVSPHI8RP)
+- Spencer Stadler: first-team 14, second-team 13, first seen 2025-08-08, last seen 2026-04-02
+  First team: 2025-08-08 18:30 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLP57C000000VS5489BUVUD1610F)
+  First team: 2025-08-23 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLP4EC000000VS5489BUVUD1610F)
+  First team: 2025-08-30 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLP46K000000VS5489BUVUD1610F)
+  First team: 2025-09-07 14:00 - VfB Zwenkau vs FSV Zwickau (02U52D9MK8000000VS5489BUVS8CK5KT)
+  First team: 2025-09-13 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLP3G4000000VS5489BUVUD1610F)
+  First team: 2025-09-27 15:00 - VfB Zwenkau vs SV Fortschritt Lunzenau (02TLCLP2KK000000VS5489BUVUD1610F)
+  First team: 2025-10-05 15:00 - VfB Zwenkau vs HFC Colditz (02TLCLP2J4000000VS5489BUVUD1610F)
+  First team: 2025-10-18 15:00 - VfB Zwenkau vs BSG Chemie Leipzig II (02TLCLP1OK000000VS5489BUVUD1610F)
+  First team: 2025-11-15 14:00 - VfB Zwenkau vs Meißner SV (02TLCLP0DG000000VS5489BUVUD1610F)
+  First team: 2025-11-30 13:00 - VfB Zwenkau vs Leipziger SC 1901 (02TLCLOVRG000000VS5489BUVUD1610F)
+  First team: 2026-02-21 14:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  First team: 2026-03-01 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLPDDO000000VS5489BUVUD1610F)
+  First team: 2026-03-21 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLPBDC000000VS5489BUVUD1610F)
+  First team: 2026-03-31 19:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  Second team: 2025-08-24 14:00 - VfB Zwenkau 02 II vs SV Fortuna Leipzig 02 I (02TP6B432O000000VS5489BUVSPHI8RP)
+  Second team: 2025-08-31 15:00 - VfB Zwenkau 02 II vs SV Panitzsch/​Borsdorf II (02TP6B45U4000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-07 15:00 - VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II (02TP6B433G000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-14 14:30 - VfB Zwenkau 02 II vs SG Leipzig-Bienitz I (02TP6B45RC000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-17 18:30 - VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II (02TP6B433G000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-21 15:00 - VfB Zwenkau 02 II vs SV Tapfer 06 Leipzig II (02TP6B45BG000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-11 14:00 - VfB Zwenkau 02 II vs Roter Stern Leipzig (02U5FBMF7O000000VS5489BTVV378D77)
+  Second team: 2025-10-26 14:00 - VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig II (02TP6B4488000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-02 14:00 - VfB Zwenkau 02 II vs FSV Großpösna I (02TP6B442S000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-09 14:00 - VfB Zwenkau 02 II vs SV Lipsia 93 Eutritzsch II (02TP6B43P4000000VS5489BUVSPHI8RP)
+  Second team: 2026-02-22 14:00 - VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig I (02VI9QAL08000000VS5489BTVVTMOPA6)
+  Second team: 2026-03-15 15:00 - VfB Zwenkau 02 II vs SG Leipzig-Bienitz I (02TP6B4AS8000000VS5489BUVSPHI8RP)
+  Second team: 2026-04-02 19:00 - VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig I (02VI9QAL08000000VS5489BTVVTMOPA6)
+- Willy Jaeger: first-team 1, second-team 5, first seen 2025-09-07, last seen 2025-10-26
+  First team: 2025-09-13 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLP3G4000000VS5489BUVUD1610F)
+  Second team: 2025-09-07 15:00 - VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II (02TP6B433G000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-14 14:30 - VfB Zwenkau 02 II vs SG Leipzig-Bienitz I (02TP6B45RC000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-17 18:30 - VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II (02TP6B433G000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-21 15:00 - VfB Zwenkau 02 II vs SV Tapfer 06 Leipzig II (02TP6B45BG000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-26 14:00 - VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig II (02TP6B4488000000VS5489BUVSPHI8RP)
+- Yannick Winkler: first-team 15, second-team 10, first seen 2025-08-08, last seen 2026-04-02
+  First team: 2025-08-08 18:30 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLP57C000000VS5489BUVUD1610F)
+  First team: 2025-08-23 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLP4EC000000VS5489BUVUD1610F)
+  First team: 2025-08-30 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLP46K000000VS5489BUVUD1610F)
+  First team: 2025-09-07 14:00 - VfB Zwenkau vs FSV Zwickau (02U52D9MK8000000VS5489BUVS8CK5KT)
+  First team: 2025-09-13 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLP3G4000000VS5489BUVUD1610F)
+  First team: 2025-09-20 15:00 - VfB Zwenkau vs SC Hartenfels Torgau (02TLCLP350000000VS5489BUVUD1610F)
+  First team: 2025-09-27 15:00 - VfB Zwenkau vs SV Fortschritt Lunzenau (02TLCLP2KK000000VS5489BUVUD1610F)
+  First team: 2025-10-05 15:00 - VfB Zwenkau vs HFC Colditz (02TLCLP2J4000000VS5489BUVUD1610F)
+  First team: 2025-11-15 14:00 - VfB Zwenkau vs Meißner SV (02TLCLP0DG000000VS5489BUVUD1610F)
+  First team: 2025-11-30 13:00 - VfB Zwenkau vs Leipziger SC 1901 (02TLCLOVRG000000VS5489BUVUD1610F)
+  First team: 2026-02-21 14:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  First team: 2026-03-01 15:00 - VfB Zwenkau vs Radefelder SV 90 (02TLCLPDDO000000VS5489BUVUD1610F)
+  First team: 2026-03-07 15:00 - VfB Zwenkau vs Bornaer SV 91 (02TLCLPD1S000000VS5489BUVUD1610F)
+  First team: 2026-03-14 15:00 - VfB Zwenkau vs FV Gröditz 1911 (02TLCLPC0G000000VS5489BUVUD1610F)
+  First team: 2026-03-31 19:00 - VfB Zwenkau vs SV Panitzsch/​Borsdorf (02TLCLPEN4000000VS5489BUVUD1610F)
+  Second team: 2025-08-31 15:00 - VfB Zwenkau 02 II vs SV Panitzsch/​Borsdorf II (02TP6B45U4000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-07 15:00 - VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II (02TP6B433G000000VS5489BUVSPHI8RP)
+  Second team: 2025-09-17 18:30 - VfB Zwenkau 02 II vs Roter Stern Leipzig 99 II (02TP6B433G000000VS5489BUVSPHI8RP)
+  Second team: 2025-10-19 15:00 - VfB Zwenkau 02 II vs SG Rotation Leipzig II (02TP6B44K8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-19 13:00 - VfB Zwenkau 02 II vs SG Rotation Leipzig II (02TP6B44K8000000VS5489BUVSPHI8RP)
+  Second team: 2025-11-23 14:00 - VfB Zwenkau 02 II vs SG LVB I (02TP6B439G000000VS5489BUVSPHI8RP)
+  Second team: 2026-02-22 14:00 - VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig I (02VI9QAL08000000VS5489BTVVTMOPA6)
+  Second team: 2026-03-22 14:00 - VfB Zwenkau 02 II vs SV Tapfer 06 Leipzig II (02TP6B4A0S000000VS5489BUVSPHI8RP)
+  Second team: 2026-03-28 12:30 - VfB Zwenkau 02 II vs SV Panitzsch/​Borsdorf II (02TP6B4B1C000000VS5489BUVSPHI8RP)
+  Second team: 2026-04-02 19:00 - VfB Zwenkau 02 II vs SG Olympia 1896 Leipzig I (02VI9QAL08000000VS5489BTVVTMOPA6)
