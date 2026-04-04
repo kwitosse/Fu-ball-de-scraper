@@ -24,8 +24,15 @@
 From the repo root:
 
 ```bash
-sudo docker compose -f /etc/docker/containers/fu-ball-live-table/docker-compose.yml up -d --build
+bash scripts/deploy.sh
 ```
+
+What it does:
+
+- runs `npm run build`
+- runs `npm test`
+- rebuilds and restarts the Docker service with `sudo docker compose -f /etc/docker/containers/fu-ball-live-table/docker-compose.yml up -d --build`
+- verifies the public URL returns `HTTP/2 200`
 
 ## Verification
 
