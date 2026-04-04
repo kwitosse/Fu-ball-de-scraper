@@ -1,6 +1,6 @@
 # Club Dual-Appearance Analysis
 
-Generated at: 2026-04-04T14:14:58.191459+02:00
+Generated at: 2026-04-04T14:45:58.315025+02:00
 
 Rule window: ordered appearances within 5 days
 Match scope: official competitions only (`ME`, `PO`)
