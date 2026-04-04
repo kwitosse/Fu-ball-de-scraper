@@ -58,19 +58,22 @@ export default function App() {
     : ''
 
   return (
-    <>
+    <div className="app-shell">
       {formattedDate && (
-        <div style={{ position: 'sticky', top: 0, zIndex: 50, background: 'var(--surface2)', borderBottom: '1px solid var(--border)', padding: '4px 12px', fontSize: 11, color: 'var(--text2)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span>Datenstand: {formattedDate}</span><span style={{ color: 'var(--accent)' }}>Fu-ball Live</span>
+        <div className="topbar-blur">
+          <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-3 py-[calc(0.5rem+var(--safe-top))] text-[10px] text-[var(--text2)] sm:px-4 sm:text-[11px]">
+            <span className="min-w-0 truncate">Datenstand: {formattedDate}</span>
+            <span className="shrink-0 font-semibold tracking-[0.2em] text-[var(--accent)] uppercase">Fu-ball Live</span>
+          </div>
         </div>
       )}
-      <main className="page">
+      <main className="page-frame">
         {page === 'matchdays' && <MatchdayView />}
         {page === 'table' && <LiveTable />}
         {page === 'scenarios' && <ScenariosView />}
         {page === 'settings' && <SettingsView />}
       </main>
       <BottomNav activePage={page} onNavigate={setPage} />
-    </>
+    </div>
   )
 }

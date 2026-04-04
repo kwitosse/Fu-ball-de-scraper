@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import { useAppState, useAppDispatch, useActiveScenario } from '../store'
 import FixtureCard from './FixtureCard'
 import { computeTable } from '../tableEngine'
+import { Card, CardContent } from './ui/card'
+import { Button } from './ui/button'
+import { Badge } from './ui/badge'
+import { ChevronDown, ChevronUp, Dice5, RotateCcw } from 'lucide-react'
 
 export default function MatchdayView() {
   const { appData } = useAppState()
@@ -75,18 +79,26 @@ export default function MatchdayView() {
 
   return (
     <div>
-      <div className="page-title">Spieltage</div>
+      <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <div className="page-title">Spieltage</div>
+          <p className="text-sm text-[var(--text2)]">Ergebnisse direkt auf dem Handy anpassen und die Tabelle sofort neu berechnen.</p>
+        </div>
+      </div>
       {focusRow && (
-        <div style={{ background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 8, padding: '8px 12px', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 16, fontSize: 12, flexWrap: 'wrap' }}>
-          <span style={{ fontWeight: 700, color: 'var(--text)' }}>📍 {focusRow.team}</span>
-          <span>Platz <strong style={{ color: 'var(--accent)' }}>#{focusRow.position}</strong></span>
-          <span style={{ color: 'var(--text2)' }}>{focusRow.points} Pkt</span>
+        <Card className="mb-4 bg-[linear-gradient(180deg,rgba(15,52,96,0.95),rgba(12,39,73,0.95))]">
+          <CardContent className="flex flex-wrap items-center gap-2 p-4 text-sm">
+            <Badge variant="secondary">Fokus</Badge>
+            <span className="font-semibold text-[var(--text)]">{focusRow.team}</span>
+            <span className="text-[var(--text2)]">Platz <strong className="text-[var(--accent)]">#{focusRow.position}</strong></span>
+            <span className="text-[var(--text2)]">{focusRow.points} Pkt</span>
           {baselinePos !== null && baselinePos !== focusRow.position && (
-            <span style={{ color: baselinePos > focusRow.position ? 'var(--green)' : 'var(--red)' }}>
+            <span className={baselinePos > focusRow.position ? 'text-[var(--green)]' : 'text-[var(--red)]'}>
               {baselinePos > focusRow.position ? '▲' : '▼'}{Math.abs(baselinePos - focusRow.position)} vs. Baseline
             </span>
           )}
-        </div>
+          </CardContent>
+        </Card>
       )}
       {matchdays.map(({ num, fixtures }) => {
         const isOpen = openMatchday === num
@@ -94,53 +106,54 @@ export default function MatchdayView() {
         const allPlayed = fixtures.every(f => f.status === 'played')
 
         return (
-          <div key={num} className="card" style={{ padding: 0, overflow: 'hidden' }}>
+          <Card key={num} className="mb-4 overflow-hidden p-0">
             <div
-              className="matchday-header"
+              className="flex flex-col gap-3 bg-[linear-gradient(180deg,rgba(15,52,96,0.96),rgba(12,39,73,0.96))] p-4 sm:flex-row sm:items-center sm:justify-between"
               onClick={() => setOpenMatchday(isOpen ? -1 : num)}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <span style={{ fontWeight: 700 }}>Spieltag {num}</span>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-base font-semibold">Spieltag {num}</span>
                 {allPlayed && (
-                  <span style={{ fontSize: 10, color: 'var(--text2)' }}>✓ gespielt</span>
+                  <Badge variant="secondary">gespielt</Badge>
                 )}
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                {edits > 0 && <span className="badge">{edits} Änderung{edits !== 1 ? 'en' : ''}</span>}
+              <div className="flex flex-wrap items-center gap-2">
+                {edits > 0 && <Badge>{edits} Änderung{edits !== 1 ? 'en' : ''}</Badge>}
                 {!allPlayed && (
                   <button
-                    className="reset-btn"
+                    className="rounded-xl border border-white/12 px-3 py-2 text-xs text-[var(--text2)] transition-colors hover:bg-white/6 hover:text-[var(--text)]"
                     onClick={e => {
                       e.stopPropagation()
                       dispatch({ type: 'RESET_MATCHDAY', matchday: num })
                     }}
                   >
-                    ↺
+                    Gesamt zurücksetzen
                   </button>
                 )}
-                <span style={{ color: 'var(--text2)', fontSize: 12 }}>{isOpen ? '▲' : '▼'}</span>
+                <span className="text-[var(--text2)]">{isOpen ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}</span>
               </div>
             </div>
 
             {isOpen && (
-              <div style={{ padding: '0 12px 12px' }}>
-                <div style={{ display: 'flex', gap: 8, padding: '8px 0 4px', flexWrap: 'wrap' }}>
-                  <button
-                    style={{ background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 16, fontSize: 12, padding: '6px 14px', color: 'var(--text)', cursor: 'pointer', minHeight: 36 }}
+              <CardContent className="space-y-4 p-4">
+                <div className="flex flex-wrap gap-2">
+                  <Button
+                    variant="secondary"
+                    size="sm"
                     onClick={() => {
-                      // Apply baseline for this matchday: dispatch SET_SCORE_OVERRIDE for each unplayed fixture using prediction
                       fixtures.filter(f => f.status !== 'played').forEach(f => {
                         const pred = appData.predictions[f.match_id]
                         if (pred) dispatch({ type: 'SET_SCORE_OVERRIDE', match_id: f.match_id, home_score: pred.home_score, away_score: pred.away_score })
                       })
                     }}
                   >
-                    ↺ Baseline
-                  </button>
-                  <button
-                    style={{ background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 16, fontSize: 12, padding: '6px 14px', color: 'var(--text)', cursor: 'pointer', minHeight: 36 }}
+                    <RotateCcw className="size-4" />
+                    Baseline
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    size="sm"
                     onClick={() => {
-                      // Randomize: for each unplayed fixture, take prediction and add random -1/0/+1 to each score
                       fixtures.filter(f => f.status !== 'played').forEach(f => {
                         const pred = appData.predictions[f.match_id]
                         const base_h = pred?.home_score ?? 1
@@ -151,8 +164,9 @@ export default function MatchdayView() {
                       })
                     }}
                   >
-                    🎲 Zufällig
-                  </button>
+                    <Dice5 className="size-4" />
+                    Zufällig
+                  </Button>
                 </div>
                 {fixtures.map(f => (
                   <FixtureCard
@@ -162,9 +176,9 @@ export default function MatchdayView() {
                     override={activeScenario.overrides[f.match_id]}
                   />
                 ))}
-              </div>
+              </CardContent>
             )}
-          </div>
+          </Card>
         )
       })}
     </div>

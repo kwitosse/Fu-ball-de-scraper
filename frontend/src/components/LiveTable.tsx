@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { useAppState, useActiveScenario } from '../store'
 import { computeTable } from '../tableEngine'
+import { Badge } from './ui/badge'
+import { Button } from './ui/button'
+import { Card, CardContent } from './ui/card'
+import { Download, Info, Pin, PinOff } from 'lucide-react'
 
 export default function LiveTable() {
   const { appData } = useAppState()
@@ -22,14 +26,14 @@ export default function LiveTable() {
 
   if (!appData || !activeScenario) {
     return (
-      <div>
+      <div className="space-y-3">
         <style>{`@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}`}</style>
         <div className="page-title">Tabelle</div>
-        <div style={{ overflow: 'hidden', borderRadius: 8 }}>
+        <div className="overflow-hidden rounded-3xl border border-white/8 bg-white/4">
           {Array.from({ length: 10 }, (_, i) => (
             <div key={i} style={{
-              display: 'flex', gap: 8, padding: '10px 8px',
-              borderBottom: '1px solid var(--border)',
+              display: 'flex', gap: 8, padding: '12px 14px',
+              borderBottom: '1px solid rgba(255,255,255,0.08)',
               animation: 'pulse 1.4s ease-in-out infinite',
               animationDelay: `${i * 0.08}s`
             }}>
@@ -50,19 +54,24 @@ export default function LiveTable() {
 
   function renderDelta(teamId: string, pos: number) {
     const base = baselineMap.get(teamId)
-    if (base === undefined) return <span className="delta-flat">—</span>
+    if (base === undefined) return <span className="text-[var(--text2)]">—</span>
     const diff = base - pos
-    if (diff > 0) return <span className="delta-up">▲{diff}</span>
-    if (diff < 0) return <span className="delta-down">▼{Math.abs(diff)}</span>
-    return <span className="delta-flat">=</span>
+    if (diff > 0) return <span className="text-[var(--green)]">▲{diff}</span>
+    if (diff < 0) return <span className="text-[var(--red)]">▼{Math.abs(diff)}</span>
+    return <span className="text-[var(--text2)]">=</span>
   }
 
   return (
-    <div>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-        <div style={{ fontSize: 18, fontWeight: 700 }}>Tabelle</div>
-        <button
-          style={{ background: 'var(--surface2)', border: '1px solid var(--border)', borderRadius: 6, color: 'var(--text2)', fontSize: 11, padding: '6px 10px', cursor: 'pointer' }}
+    <div className="space-y-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div className="space-y-2">
+          <div className="page-title mb-0">Tabelle</div>
+          <div className="text-sm text-[var(--text2)]">Optimiert für Mobilgeräte: volle Teamnamen, keine Pflicht zum horizontalen Scrollen.</div>
+        </div>
+        <Button
+          variant="secondary"
+          size="sm"
+          className="w-full sm:w-auto"
           onClick={() => {
             const header = '#,Team,Sp,S,U,N,Tore,Td,Pkt\n'
             const rows = table.map(r => `${r.position},"${r.team}",${r.played},${r.wins},${r.draws},${r.losses},${r.goals_for}:${r.goals_against},${r.goal_diff},${r.points}`).join('\n')
@@ -75,97 +84,158 @@ export default function LiveTable() {
             URL.revokeObjectURL(url)
           }}
         >
-          CSV ↓
-        </button>
+          <Download className="size-4" />
+          CSV exportieren
+        </Button>
       </div>
       {pinnedTeamId && (
-        <div style={{ marginBottom: 8, display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span style={{ fontSize: 12, color: 'var(--text2)' }}>
-            📍 {table.find(r => r.team_id === pinnedTeamId)?.team}
-          </span>
-          <button onClick={() => setPinnedTeamId(null)} style={{ background: 'none', border: '1px solid var(--border)', borderRadius: 6, color: 'var(--text2)', fontSize: 11, padding: '2px 8px', cursor: 'pointer' }}>
-            ✕
-          </button>
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge variant="secondary">
+            <Pin className="mr-1 size-3" />
+            {table.find(r => r.team_id === pinnedTeamId)?.team}
+          </Badge>
+          <Button onClick={() => setPinnedTeamId(null)} variant="outline" size="sm">
+            <PinOff className="size-3.5" />
+            Lösen
+          </Button>
         </div>
       )}
-      <div style={{ fontSize: 11, color: 'var(--text2)', marginBottom: 10 }}>
-        Szenario: <strong style={{ color: 'var(--text)' }}>{activeScenario.name}</strong>
+      <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--text2)]">
+        <Badge variant="secondary">Szenario</Badge>
+        <strong className="text-[var(--text)]">{activeScenario.name}</strong>
+        <Button variant="ghost" size="sm" className="h-auto px-2 py-1 text-[11px]" onClick={() => setShowTiebreak(v => !v)}>
+          <Info className="size-3.5" />
+          Wertung
+        </Button>
       </div>
       {showTiebreak && (
-        <div style={{ fontSize: 11, color: 'var(--text2)', padding: '8px 10px', background: 'var(--surface2)', borderRadius: 6, marginBottom: 8, lineHeight: 1.7 }}>
-          <strong style={{ color: 'var(--text)' }}>Wertungsreihenfolge:</strong><br />
+        <Card className="bg-[rgba(255,255,255,0.04)]">
+          <CardContent className="space-y-2 p-4 text-sm leading-6 text-[var(--text2)]">
+          <strong className="text-[var(--text)]">Wertungsreihenfolge:</strong><br />
           1. Punkte · 2. Tordifferenz · 3. Erzielte Tore · 4. Alphabetisch
-        </div>
+          </CardContent>
+        </Card>
       )}
-      <div style={{ overflowX: 'auto' }}>
-        <table className="league-table">
+      <div className="grid gap-3 md:hidden">
+        {table.map((row, i) => {
+          const isPromotion = i < promotionCount
+          const isRelegation = i >= total - relegationCount
+          const statItems = [
+            { key: 'played', label: 'Sp', value: row.played },
+            { key: 'record', label: 'S/U/N', value: `${row.wins}/${row.draws}/${row.losses}` },
+            { key: 'delta', label: 'Δ', value: renderDelta(row.team_id, row.position) },
+            { key: 'zone', label: 'Zone', value: isPromotion ? 'Auf' : isRelegation ? 'Ab' : '—' },
+          ]
+          return (
+            <Card
+              key={row.team_id}
+              className={[
+                pinnedTeamId === row.team_id ? 'ring-2 ring-[var(--accent)]' : '',
+                isPromotion ? 'bg-[rgba(76,175,80,0.12)]' : '',
+                isRelegation ? 'bg-[rgba(244,67,54,0.12)]' : '',
+              ].join(' ')}
+              onClick={() => setPinnedTeamId(id => id === row.team_id ? null : row.team_id)}
+            >
+              <CardContent className="space-y-3 p-4">
+                <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3">
+                  <div className="text-xl font-bold">{row.position}</div>
+                  <div className="min-w-0">
+                    <div className="break-words text-sm font-semibold leading-5">{row.team}</div>
+                    <div className="mt-1 text-xs text-[var(--text2)]">
+                      Tore {row.goals_for}:{row.goals_against} · Td {row.goal_diff > 0 ? '+' : ''}{row.goal_diff}
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-xl font-bold">{row.points}</div>
+                    <div className="text-[10px] uppercase tracking-[0.18em] text-[var(--text2)]">Punkte</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-4 gap-2">
+                  {statItems.map(item => (
+                    <div key={item.key} className="rounded-2xl bg-white/6 px-2 py-2 text-center">
+                      <div className="text-[10px] uppercase tracking-[0.12em] text-[var(--text2)]">{item.label}</div>
+                      <div className="mt-1 text-sm font-semibold">
+                        {item.value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )
+        })}
+      </div>
+      <div className="hidden overflow-x-auto md:block">
+        <table className="min-w-full border-separate border-spacing-0 overflow-hidden rounded-3xl text-sm">
           <thead>
-            <tr>
-              <th style={{ position: 'relative' }}>
+            <tr className="bg-white/6 text-[var(--text2)]">
+              <th className="px-3 py-3 text-left">
                 <span
                   onClick={() => setShowTiebreak(v => !v)}
-                  style={{ cursor: 'pointer', userSelect: 'none' }}
+                  className="cursor-pointer select-none"
                   title="Wertungsreihenfolge"
                 >
                   # ⓘ
                 </span>
               </th>
-              <th>Team</th>
-              <th>Sp</th>
-              <th>S</th>
-              <th>U</th>
-              <th>N</th>
-              <th>Tore</th>
-              <th>Td</th>
-              <th>Pkt</th>
-              <th>Δ</th>
+              <th className="px-3 py-3 text-left">Team</th>
+              <th className="px-3 py-3 text-right">Sp</th>
+              <th className="px-3 py-3 text-right">S</th>
+              <th className="px-3 py-3 text-right">U</th>
+              <th className="px-3 py-3 text-right">N</th>
+              <th className="px-3 py-3 text-right">Tore</th>
+              <th className="px-3 py-3 text-right">Td</th>
+              <th className="px-3 py-3 text-right">Pkt</th>
+              <th className="px-3 py-3 text-right">Δ</th>
             </tr>
           </thead>
           <tbody>
             {table.map((row, i) => {
               const isPromotion = i < promotionCount
               const isRelegation = i >= total - relegationCount
-              const rowClass = isPromotion ? 'promotion' : isRelegation ? 'relegation' : ''
               return (
                 <tr
                   key={row.team_id}
-                  className={rowClass}
                   onClick={() => setPinnedTeamId(id => id === row.team_id ? null : row.team_id)}
-                  style={{ cursor: 'pointer', ...(row.team_id === pinnedTeamId ? { background: 'rgba(233,69,96,0.18)', outline: '1px solid var(--accent)' } : {}) }}
+                  style={{
+                    cursor: 'pointer',
+                    background: row.team_id === pinnedTeamId
+                      ? 'rgba(233,69,96,0.18)'
+                      : isPromotion
+                        ? 'rgba(76,175,80,0.08)'
+                        : isRelegation
+                          ? 'rgba(244,67,54,0.08)'
+                          : undefined,
+                    outline: row.team_id === pinnedTeamId ? '1px solid var(--accent)' : undefined,
+                  }}
                 >
-                  <td style={{ fontWeight: 700 }}>{row.position}</td>
-                  <td style={{
-                    maxWidth: 120,
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                    fontWeight: isPromotion ? 600 : 400,
-                  }}>
+                  <td className="border-b border-white/8 px-3 py-3 font-bold">{row.position}</td>
+                  <td className="border-b border-white/8 px-3 py-3 text-left font-medium">
                     {row.team}
                   </td>
-                  <td>{row.played}</td>
-                  <td>{row.wins}</td>
-                  <td>{row.draws}</td>
-                  <td>{row.losses}</td>
-                  <td>{row.goals_for}:{row.goals_against}</td>
-                  <td style={{ color: row.goal_diff > 0 ? 'var(--green)' : row.goal_diff < 0 ? 'var(--red)' : 'var(--text2)' }}>
+                  <td className="border-b border-white/8 px-3 py-3 text-right">{row.played}</td>
+                  <td className="border-b border-white/8 px-3 py-3 text-right">{row.wins}</td>
+                  <td className="border-b border-white/8 px-3 py-3 text-right">{row.draws}</td>
+                  <td className="border-b border-white/8 px-3 py-3 text-right">{row.losses}</td>
+                  <td className="border-b border-white/8 px-3 py-3 text-right">{row.goals_for}:{row.goals_against}</td>
+                  <td className="border-b border-white/8 px-3 py-3 text-right" style={{ color: row.goal_diff > 0 ? 'var(--green)' : row.goal_diff < 0 ? 'var(--red)' : 'var(--text2)' }}>
                     {row.goal_diff > 0 ? '+' : ''}{row.goal_diff}
                   </td>
-                  <td style={{ fontWeight: 700 }}>{row.points}</td>
-                  <td>{renderDelta(row.team_id, row.position)}</td>
+                  <td className="border-b border-white/8 px-3 py-3 text-right font-bold">{row.points}</td>
+                  <td className="border-b border-white/8 px-3 py-3 text-right">{renderDelta(row.team_id, row.position)}</td>
                 </tr>
               )
             })}
           </tbody>
         </table>
       </div>
-      <div style={{ marginTop: 12, display: 'flex', gap: 16, fontSize: 11, color: 'var(--text2)' }}>
-        <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-          <span style={{ width: 10, height: 10, background: 'rgba(76,175,80,0.3)', borderRadius: 2, display: 'inline-block' }} />
+      <div className="flex flex-wrap gap-4 text-xs text-[var(--text2)]">
+        <span className="flex items-center gap-2">
+          <span className="inline-block size-3 rounded-sm bg-[rgba(76,175,80,0.3)]" />
           Aufstieg
         </span>
-        <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-          <span style={{ width: 10, height: 10, background: 'rgba(244,67,54,0.3)', borderRadius: 2, display: 'inline-block' }} />
+        <span className="flex items-center gap-2">
+          <span className="inline-block size-3 rounded-sm bg-[rgba(244,67,54,0.3)]" />
           Abstieg
         </span>
       </div>
