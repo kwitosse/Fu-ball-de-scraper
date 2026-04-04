@@ -64,6 +64,64 @@
   .subtle-divider {
     @apply border-b border-white/8 last:border-b-0;
   }
+
+  .analysis-prose {
+    @apply text-sm leading-7 text-[var(--text2)];
+  }
+
+  .analysis-prose h1,
+  .analysis-prose h2,
+  .analysis-prose h3 {
+    @apply mt-6 mb-3 text-[var(--text)] first:mt-0;
+  }
+
+  .analysis-prose h1 {
+    @apply text-xl font-semibold;
+  }
+
+  .analysis-prose h2 {
+    @apply text-lg font-semibold;
+  }
+
+  .analysis-prose h3 {
+    @apply text-base font-semibold;
+  }
+
+  .analysis-prose p,
+  .analysis-prose ul,
+  .analysis-prose ol {
+    @apply my-3;
+  }
+
+  .analysis-prose ul,
+  .analysis-prose ol {
+    @apply pl-5;
+  }
+
+  .analysis-prose li {
+    @apply my-1;
+  }
+
+  .analysis-prose strong {
+    @apply text-[var(--text)];
+  }
+
+  .analysis-prose code {
+    @apply rounded bg-white/8 px-1.5 py-0.5 text-[var(--text)];
+  }
+
+  .analysis-prose table {
+    @apply my-4 w-full border-collapse overflow-hidden rounded-2xl text-left text-xs sm:text-sm;
+  }
+
+  .analysis-prose thead tr {
+    @apply bg-white/8 text-[var(--text)];
+  }
+
+  .analysis-prose th,
+  .analysis-prose td {
+    @apply border border-white/8 px-3 py-2 align-top;
+  }
 }
 
 #root {

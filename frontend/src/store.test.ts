@@ -69,6 +69,9 @@ const makeAppData = (generatedAt = '2026-04-03T16:01:50Z', modelVersion = 'v1.1.
     model_version: modelVersion,
     source: 'output/',
   },
+  analysisReport: null,
+  analysisMarkdown: null,
+  matchPlan: null,
 })
 
 describe('store scenario persistence', () => {

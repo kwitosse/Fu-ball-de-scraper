@@ -1,12 +1,45 @@
-import { AppData } from './types'
+import { AnalysisReport, AppData, Fixture, MatchPlan, Prediction, TableRow, Team } from './types'
+
+async function fetchJson<T>(url: string): Promise<T> {
+  const response = await fetch(url)
+  if (!response.ok) {
+    throw new Error(`Failed to load ${url}: ${response.status}`)
+  }
+  return response.json() as Promise<T>
+}
+
+async function fetchOptionalJson<T>(url: string): Promise<T | null> {
+  const response = await fetch(url)
+  if (response.status === 404) {
+    return null
+  }
+  if (!response.ok) {
+    throw new Error(`Failed to load ${url}: ${response.status}`)
+  }
+  return response.json() as Promise<T>
+}
+
+async function fetchOptionalText(url: string): Promise<string | null> {
+  const response = await fetch(url)
+  if (response.status === 404) {
+    return null
+  }
+  if (!response.ok) {
+    throw new Error(`Failed to load ${url}: ${response.status}`)
+  }
+  return response.text()
+}
 
 export async function loadAppData(): Promise<AppData> {
-  const [teams, fixtures, predictions, baselineTable, dataVersion] = await Promise.all([
-    fetch('/data/teams.json').then(r => r.json()),
-    fetch('/data/fixtures.json').then(r => r.json()),
-    fetch('/data/prefill_predictions.json').then(r => r.json()),
-    fetch('/data/baseline_table.json').then(r => r.json()),
-    fetch('/data/data_version.json').then(r => r.json()),
+  const [teams, fixtures, predictions, baselineTable, dataVersion, analysisReport, analysisMarkdown, matchPlan] = await Promise.all([
+    fetchJson<Team[]>('/data/teams.json'),
+    fetchJson<Fixture[]>('/data/fixtures.json'),
+    fetchJson<Record<string, Prediction>>('/data/prefill_predictions.json'),
+    fetchJson<TableRow[]>('/data/baseline_table.json'),
+    fetchJson<AppData['dataVersion']>('/data/data_version.json'),
+    fetchOptionalJson<AnalysisReport>('/reports/rotation_promotion_analysis.json'),
+    fetchOptionalText('/reports/rotation_promotion_analysis.md'),
+    fetchOptionalJson<MatchPlan>('/reports/rotation_match_plan.json'),
   ])
-  return { teams, fixtures, predictions, baselineTable, dataVersion }
+  return { teams, fixtures, predictions, baselineTable, dataVersion, analysisReport, analysisMarkdown, matchPlan }
 }

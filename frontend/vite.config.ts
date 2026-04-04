@@ -26,11 +26,11 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,json}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,json,md}'],
         runtimeCaching: [{
-          urlPattern: /\/data\//,
+          urlPattern: /\/(data|reports)\//,
           handler: 'NetworkFirst',
-          options: { cacheName: 'app-data' }
+          options: { cacheName: 'app-static-data' }
         }]
       }
     })

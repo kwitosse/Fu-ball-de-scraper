@@ -1,0 +1,815 @@
+{
+  "context": {
+    "league": "Herren Stadtklasse, Kreis Leipzig, Kreisliga A",
+    "season": "2025/2026",
+    "focus_team": "SG Rotation Leipzig II",
+    "analysis_generated_at": "2026-04-02T23:43:40+00:00",
+    "known_data_limitations": [
+      "standings reflect MD16 (16 played), while match detail results currently contain fewer completed matches for some MDs",
+      "fixture-level trend metrics are computed only from available played match_detail files"
+    ]
+  },
+  "current_state": {
+    "position": 4,
+    "points": 27,
+    "record": {
+      "wins": 8,
+      "draws": 3,
+      "losses": 5
+    },
+    "goals": {
+      "for": 22,
+      "against": 23,
+      "diff": -1
+    },
+    "ppg": 1.688,
+    "gf_per_game": 1.375,
+    "ga_per_game": 1.438,
+    "remaining_matches": 10,
+    "max_possible_points": 57,
+    "gap_to_rank1": 13,
+    "gap_to_rank2": 4
+  },
+  "pace_projection": {
+    "rival_projection": [
+      {
+        "team": "SV Tapfer 06 Leipzig II",
+        "position": 1,
+        "current_points": 40,
+        "ppg": 2.5,
+        "projected_final_points": 65.0
+      },
+      {
+        "team": "SV Lipsia 93 Eutritzsch II",
+        "position": 2,
+        "current_points": 31,
+        "ppg": 1.938,
+        "projected_final_points": 50.4
+      },
+      {
+        "team": "SG Olympia 1896 Leipzig II",
+        "position": 3,
+        "current_points": 28,
+        "ppg": 1.75,
+        "projected_final_points": 45.5
+      },
+      {
+        "team": "SG Rotation Leipzig II",
+        "position": 4,
+        "current_points": 27,
+        "ppg": 1.688,
+        "projected_final_points": 43.9
+      }
+    ],
+    "rank2_bands": {
+      "hold_current_pace": 50.4,
+      "slight_slowdown": 46.5,
+      "strong_finish": 54.3,
+      "direct_duel_adjusted": 48.4
+    },
+    "required_points_from_last_10": {
+      "to_match_rank2_hold_pace": 24,
+      "to_beat_rank2_hold_pace_by_1": 25,
+      "to_match_rank2_direct_duel_adjusted": 22,
+      "conservative": 26,
+      "realistic": 24,
+      "aggressive": 28
+    },
+    "required_record_hint": {
+      "realistic_target": "at least 7W-1D-2L (22 points)",
+      "safer_target": "8W-1D-1L (25 points)"
+    }
+  },
+  "goal_difference": {
+    "top4_current_goal_diff": {
+      "SV Tapfer 06 Leipzig II": 39,
+      "SV Lipsia 93 Eutritzsch II": 8,
+      "SG Olympia 1896 Leipzig II": 18,
+      "SG Rotation Leipzig II": -1
+    },
+    "rotation_gap_vs_top4": {
+      "SV Tapfer 06 Leipzig II": -40,
+      "SV Lipsia 93 Eutritzsch II": -9,
+      "SG Olympia 1896 Leipzig II": -19
+    },
+    "target_ranges": {
+      "minimum_viable_end_gd": {
+        "net_gd_gain_needed": 6,
+        "avg_gd_per_game_needed": 0.6,
+        "example_path": {
+          "goals_for_last_10": 18,
+          "goals_against_last_10": 12
+        }
+      },
+      "realistic_end_gd": {
+        "net_gd_gain_needed": 11,
+        "avg_gd_per_game_needed": 1.1,
+        "example_path": {
+          "goals_for_last_10": 21,
+          "goals_against_last_10": 10
+        }
+      },
+      "strong_end_gd": {
+        "net_gd_gain_needed": 16,
+        "avg_gd_per_game_needed": 1.6,
+        "example_path": {
+          "goals_for_last_10": 24,
+          "goals_against_last_10": 8
+        }
+      }
+    }
+  },
+  "remaining_fixtures": {
+    "count": 10,
+    "average_opponent_ppg": 1.331,
+    "direct_rival_matches_count": 2,
+    "fixtures": [
+      {
+        "date": "2026-04-12",
+        "home_away": "A",
+        "opponent": "SG Leipzig-Bienitz I",
+        "opponent_pos": 8,
+        "opponent_points": 21,
+        "opponent_ppg": 1.312,
+        "bucket": "favorable but dangerous",
+        "first_leg_result": "L 0:3"
+      },
+      {
+        "date": "2026-04-19",
+        "home_away": "H",
+        "opponent": "FC Blau-Weiß Leipzig II",
+        "opponent_pos": 7,
+        "opponent_points": 24,
+        "opponent_ppg": 1.5,
+        "bucket": "favorable but dangerous",
+        "first_leg_result": "W 2:1"
+      },
+      {
+        "date": "2026-04-26",
+        "home_away": "A",
+        "opponent": "VfB Zwenkau 02 II",
+        "opponent_pos": 5,
+        "opponent_points": 26,
+        "opponent_ppg": 1.625,
+        "bucket": "difficult upset opportunity",
+        "first_leg_result": "W 6:1"
+      },
+      {
+        "date": "2026-05-02",
+        "home_away": "H",
+        "opponent": "FSV Großpösna I",
+        "opponent_pos": 11,
+        "opponent_points": 15,
+        "opponent_ppg": 0.938,
+        "bucket": "must-win",
+        "first_leg_result": "L 0:1"
+      },
+      {
+        "date": "2026-05-10",
+        "home_away": "H",
+        "opponent": "TSV Böhlitz-Ehrenberg 1990 I",
+        "opponent_pos": 10,
+        "opponent_points": 19,
+        "opponent_ppg": 1.188,
+        "bucket": "favorable but dangerous",
+        "first_leg_result": "L 0:3"
+      },
+      {
+        "date": "2026-05-16",
+        "home_away": "A",
+        "opponent": "Roter Stern Leipzig 99 II",
+        "opponent_pos": 13,
+        "opponent_points": 13,
+        "opponent_ppg": 0.812,
+        "bucket": "must-win",
+        "first_leg_result": "L 0:1"
+      },
+      {
+        "date": "2026-05-31",
+        "home_away": "H",
+        "opponent": "SV Panitzsch/​Borsdorf II",
+        "opponent_pos": 9,
+        "opponent_points": 20,
+        "opponent_ppg": 1.25,
+        "bucket": "favorable but dangerous",
+        "first_leg_result": "W 5:0"
+      },
+      {
+        "date": "2026-06-07",
+        "home_away": "A",
+        "opponent": "SV Tapfer 06 Leipzig II",
+        "opponent_pos": 1,
+        "opponent_points": 40,
+        "opponent_ppg": 2.5,
+        "bucket": "six-pointer / direct rival",
+        "first_leg_result": "W 3:1"
+      },
+      {
+        "date": "2026-06-14",
+        "home_away": "H",
+        "opponent": "SV Victoria 90 Leipzig I",
+        "opponent_pos": 14,
+        "opponent_points": 7,
+        "opponent_ppg": 0.438,
+        "bucket": "must-win",
+        "first_leg_result": "D 1:1"
+      },
+      {
+        "date": "2026-06-21",
+        "home_away": "A",
+        "opponent": "SG Olympia 1896 Leipzig II",
+        "opponent_pos": 3,
+        "opponent_points": 28,
+        "opponent_ppg": 1.75,
+        "bucket": "six-pointer / direct rival",
+        "first_leg_result": "L 1:2"
+      }
+    ]
+  },
+  "direct_rival_impact": {
+    "current_gap_to_rank2": 4,
+    "rotation_direct_rival_matches": [
+      "SV Tapfer 06 Leipzig II",
+      "SG Olympia 1896 Leipzig II"
+    ],
+    "leverage_note": "Winning direct-rival matches creates double impact: +3 for Rotation and 0 for rival (effective 6-point swing in the head-to-head race).",
+    "rank2_line_adjustment_points": {
+      "none": 0,
+      "moderate_direct_duel_drop": -2,
+      "high_direct_duel_drop": -4
+    }
+  },
+  "form_and_trends": {
+    "known_played_matches": 16,
+    "points_last_5": 5,
+    "points_last_8": 11,
+    "avg_gf_last_5": 0.6,
+    "avg_ga_last_5": 0.6,
+    "clean_sheet_rate": 0.188,
+    "games_2plus_goals_rate": 0.312,
+    "losses_after_conceding_first": 8
+  },
+  "scenario_matrix": [
+    {
+      "scenario": "6W 2D 2L",
+      "final_points": 47,
+      "final_ppg": 1.808,
+      "likely_top2_vs_rank2_pace": "borderline/no",
+      "top2_if_rank2_drops_2pts_in_direct_duels": "borderline/no",
+      "rank1_chance": "low",
+      "min_avg_gd_per_game_to_reach_plus10": 1.1
+    },
+    {
+      "scenario": "7W 1D 2L",
+      "final_points": 49,
+      "final_ppg": 1.885,
+      "likely_top2_vs_rank2_pace": "borderline/no",
+      "top2_if_rank2_drops_2pts_in_direct_duels": "yes",
+      "rank1_chance": "low",
+      "min_avg_gd_per_game_to_reach_plus10": 1.1
+    },
+    {
+      "scenario": "7W 2D 1L",
+      "final_points": 50,
+      "final_ppg": 1.923,
+      "likely_top2_vs_rank2_pace": "borderline/no",
+      "top2_if_rank2_drops_2pts_in_direct_duels": "yes",
+      "rank1_chance": "low",
+      "min_avg_gd_per_game_to_reach_plus10": 1.1
+    },
+    {
+      "scenario": "8W 0D 2L",
+      "final_points": 51,
+      "final_ppg": 1.962,
+      "likely_top2_vs_rank2_pace": "yes",
+      "top2_if_rank2_drops_2pts_in_direct_duels": "yes",
+      "rank1_chance": "low",
+      "min_avg_gd_per_game_to_reach_plus10": 1.1
+    },
+    {
+      "scenario": "8W 1D 1L",
+      "final_points": 52,
+      "final_ppg": 2.0,
+      "likely_top2_vs_rank2_pace": "yes",
+      "top2_if_rank2_drops_2pts_in_direct_duels": "yes",
+      "rank1_chance": "low",
+      "min_avg_gd_per_game_to_reach_plus10": 1.1
+    },
+    {
+      "scenario": "9W 0D 1L",
+      "final_points": 54,
+      "final_ppg": 2.077,
+      "likely_top2_vs_rank2_pace": "yes",
+      "top2_if_rank2_drops_2pts_in_direct_duels": "yes",
+      "rank1_chance": "low",
+      "min_avg_gd_per_game_to_reach_plus10": 1.1
+    }
+  ],
+  "match_plan": {
+    "target_points_from_run_in": 24,
+    "matches": [
+      {
+        "match_number": 1,
+        "date": "2026-04-12",
+        "home_away": "A",
+        "opponent": "SG Leipzig-Bienitz I",
+        "opponent_position": 8,
+        "tier": "acceptable_draw",
+        "minimum_acceptable_result": "draw",
+        "target_result": "win",
+        "stretch_result": "win_by_2+",
+        "minimum_points": 1,
+        "target_points": 3,
+        "stretch_points": 3,
+        "cumulative_minimum_points": 1,
+        "cumulative_target_points": 3,
+        "cumulative_stretch_points": 3
+      },
+      {
+        "match_number": 2,
+        "date": "2026-04-19",
+        "home_away": "H",
+        "opponent": "FC Blau-Weiß Leipzig II",
+        "opponent_position": 7,
+        "tier": "upset_bonus",
+        "minimum_acceptable_result": "draw",
+        "target_result": "win",
+        "stretch_result": "win_by_2+",
+        "minimum_points": 1,
+        "target_points": 3,
+        "stretch_points": 3,
+        "cumulative_minimum_points": 2,
+        "cumulative_target_points": 6,
+        "cumulative_stretch_points": 6
+      },
+      {
+        "match_number": 3,
+        "date": "2026-04-26",
+        "home_away": "A",
+        "opponent": "VfB Zwenkau 02 II",
+        "opponent_position": 5,
+        "tier": "acceptable_draw",
+        "minimum_acceptable_result": "draw",
+        "target_result": "win",
+        "stretch_result": "win_by_2+",
+        "minimum_points": 1,
+        "target_points": 3,
+        "stretch_points": 3,
+        "cumulative_minimum_points": 3,
+        "cumulative_target_points": 9,
+        "cumulative_stretch_points": 9
+      },
+      {
+        "match_number": 4,
+        "date": "2026-05-02",
+        "home_away": "H",
+        "opponent": "FSV Großpösna I",
+        "opponent_position": 11,
+        "tier": "must_win",
+        "minimum_acceptable_result": "win",
+        "target_result": "win",
+        "stretch_result": "win_by_2+",
+        "minimum_points": 3,
+        "target_points": 3,
+        "stretch_points": 3,
+        "cumulative_minimum_points": 6,
+        "cumulative_target_points": 12,
+        "cumulative_stretch_points": 12
+      },
+      {
+        "match_number": 5,
+        "date": "2026-05-10",
+        "home_away": "H",
+        "opponent": "TSV Böhlitz-Ehrenberg 1990 I",
+        "opponent_position": 10,
+        "tier": "must_win",
+        "minimum_acceptable_result": "win",
+        "target_result": "win",
+        "stretch_result": "win_by_2+",
+        "minimum_points": 3,
+        "target_points": 3,
+        "stretch_points": 3,
+        "cumulative_minimum_points": 9,
+        "cumulative_target_points": 15,
+        "cumulative_stretch_points": 15
+      },
+      {
+        "match_number": 6,
+        "date": "2026-05-16",
+        "home_away": "A",
+        "opponent": "Roter Stern Leipzig 99 II",
+        "opponent_position": 13,
+        "tier": "must_win",
+        "minimum_acceptable_result": "draw",
+        "target_result": "win",
+        "stretch_result": "win_by_2+",
+        "minimum_points": 1,
+        "target_points": 3,
+        "stretch_points": 3,
+        "cumulative_minimum_points": 10,
+        "cumulative_target_points": 18,
+        "cumulative_stretch_points": 18
+      },
+      {
+        "match_number": 7,
+        "date": "2026-05-31",
+        "home_away": "H",
+        "opponent": "SV Panitzsch/​Borsdorf II",
+        "opponent_position": 9,
+        "tier": "upset_bonus",
+        "minimum_acceptable_result": "draw",
+        "target_result": "win",
+        "stretch_result": "win_by_2+",
+        "minimum_points": 1,
+        "target_points": 3,
+        "stretch_points": 3,
+        "cumulative_minimum_points": 11,
+        "cumulative_target_points": 21,
+        "cumulative_stretch_points": 21
+      },
+      {
+        "match_number": 8,
+        "date": "2026-06-07",
+        "home_away": "A",
+        "opponent": "SV Tapfer 06 Leipzig II",
+        "opponent_position": 1,
+        "tier": "promotion_six_pointer",
+        "minimum_acceptable_result": "draw",
+        "target_result": "win",
+        "stretch_result": "win_by_2+",
+        "minimum_points": 1,
+        "target_points": 3,
+        "stretch_points": 3,
+        "cumulative_minimum_points": 12,
+        "cumulative_target_points": 24,
+        "cumulative_stretch_points": 24
+      },
+      {
+        "match_number": 9,
+        "date": "2026-06-14",
+        "home_away": "H",
+        "opponent": "SV Victoria 90 Leipzig I",
+        "opponent_position": 14,
+        "tier": "must_win",
+        "minimum_acceptable_result": "win",
+        "target_result": "win",
+        "stretch_result": "win_by_2+",
+        "minimum_points": 3,
+        "target_points": 3,
+        "stretch_points": 3,
+        "cumulative_minimum_points": 15,
+        "cumulative_target_points": 27,
+        "cumulative_stretch_points": 27
+      },
+      {
+        "match_number": 10,
+        "date": "2026-06-21",
+        "home_away": "A",
+        "opponent": "SG Olympia 1896 Leipzig II",
+        "opponent_position": 3,
+        "tier": "promotion_six_pointer",
+        "minimum_acceptable_result": "draw",
+        "target_result": "win",
+        "stretch_result": "win_by_2+",
+        "minimum_points": 1,
+        "target_points": 3,
+        "stretch_points": 3,
+        "cumulative_minimum_points": 16,
+        "cumulative_target_points": 30,
+        "cumulative_stretch_points": 30
+      }
+    ],
+    "checkpoints": [
+      {
+        "after_match": 3,
+        "cumulative_minimum_points": 3,
+        "cumulative_target_points": 9,
+        "cumulative_stretch_points": 9,
+        "remaining_games": 7,
+        "red_line": {
+          "trigger": "if points <= 2 after match 3",
+          "revised_required_points_in_remaining_games": 22,
+          "required_ppg_in_remaining_games": 3.14
+        }
+      },
+      {
+        "after_match": 5,
+        "cumulative_minimum_points": 9,
+        "cumulative_target_points": 15,
+        "cumulative_stretch_points": 15,
+        "remaining_games": 5,
+        "red_line": {
+          "trigger": "if points <= 8 after match 5",
+          "revised_required_points_in_remaining_games": 16,
+          "required_ppg_in_remaining_games": 3.2
+        }
+      },
+      {
+        "after_match": 7,
+        "cumulative_minimum_points": 11,
+        "cumulative_target_points": 21,
+        "cumulative_stretch_points": 21,
+        "remaining_games": 3,
+        "red_line": {
+          "trigger": "if points <= 10 after match 7",
+          "revised_required_points_in_remaining_games": 14,
+          "required_ppg_in_remaining_games": 4.67
+        }
+      },
+      {
+        "after_match": 10,
+        "cumulative_minimum_points": 16,
+        "cumulative_target_points": 30,
+        "cumulative_stretch_points": 30,
+        "remaining_games": 0,
+        "red_line": {
+          "trigger": "if points <= 15 after match 10",
+          "revised_required_points_in_remaining_games": 9,
+          "required_ppg_in_remaining_games": 0.0
+        }
+      }
+    ]
+  },
+  "simulation": {
+    "pace_calibrated": {
+      "iterations": 4000,
+      "top2_probability": 0.072,
+      "position_probability": {
+        "2": 0.072,
+        "3": 0.2,
+        "4": 0.244,
+        "5": 0.21,
+        "6": 0.161,
+        "7": 0.08,
+        "8": 0.022,
+        "9": 0.009,
+        "10": 0.002
+      }
+    },
+    "fixture_strength_poisson": {
+      "iterations": 8000,
+      "remaining_fixtures_modeled": 75,
+      "baseline_goal_rates": {
+        "league_home_gf": 1.776,
+        "league_away_gf": 2.215
+      },
+      "top2_probability": 0.188,
+      "position_probability": {
+        "1": 0.065,
+        "2": 0.123,
+        "3": 0.154,
+        "4": 0.151,
+        "5": 0.139,
+        "6": 0.112,
+        "7": 0.083,
+        "8": 0.07,
+        "9": 0.046,
+        "10": 0.029,
+        "11": 0.017,
+        "12": 0.008,
+        "13": 0.002,
+        "14": 0.0
+      },
+      "focus_points_distribution": {
+        "p10": 36,
+        "p50": 41,
+        "p90": 46
+      },
+      "focus_expected_points_from_remaining": 14.11,
+      "focus_expected_final_points": 41.11,
+      "focus_fixture_probabilities": [
+        {
+          "match_id": "02TP6B49P0000000VS5489BUVSPHI8RP",
+          "matchday": 17,
+          "date": "12.04.2026",
+          "home_team": "SG Leipzig-Bienitz I",
+          "away_team": "SG Rotation Leipzig II",
+          "home_win": 0.3478,
+          "draw": 0.221,
+          "away_win": 0.4312,
+          "expected_home_goals": 1.658,
+          "expected_away_goals": 1.863
+        },
+        {
+          "match_id": "02TP6B49DG000000VS5489BUVSPHI8RP",
+          "matchday": 18,
+          "date": "19.04.2026",
+          "home_team": "SG Rotation Leipzig II",
+          "away_team": "FC Blau-Weiß Leipzig II",
+          "home_win": 0.3824,
+          "draw": 0.2191,
+          "away_win": 0.3985,
+          "expected_home_goals": 1.783,
+          "expected_away_goals": 1.823
+        },
+        {
+          "match_id": "02TP6B48U0000000VS5489BUVSPHI8RP",
+          "matchday": 19,
+          "date": "26.04.2026",
+          "home_team": "VfB Zwenkau 02 II",
+          "away_team": "SG Rotation Leipzig II",
+          "home_win": 0.3239,
+          "draw": 0.2225,
+          "away_win": 0.4536,
+          "expected_home_goals": 1.56,
+          "expected_away_goals": 1.875
+        },
+        {
+          "match_id": "02TP6B48H4000000VS5489BUVSPHI8RP",
+          "matchday": 20,
+          "date": "02.05.2026",
+          "home_team": "SG Rotation Leipzig II",
+          "away_team": "FSV Großpösna I",
+          "home_win": 0.1718,
+          "draw": 0.1768,
+          "away_win": 0.6514,
+          "expected_home_goals": 1.25,
+          "expected_away_goals": 2.528
+        },
+        {
+          "match_id": "02TP6B4814000000VS5489BUVSPHI8RP",
+          "matchday": 21,
+          "date": "10.05.2026",
+          "home_team": "SG Rotation Leipzig II",
+          "away_team": "TSV Böhlitz-Ehrenberg 1990 I",
+          "home_win": 0.333,
+          "draw": 0.2123,
+          "away_win": 0.4546,
+          "expected_home_goals": 1.719,
+          "expected_away_goals": 2.026
+        },
+        {
+          "match_id": "02TP6B47OK000000VS5489BUVSPHI8RP",
+          "matchday": 22,
+          "date": "16.05.2026",
+          "home_team": "Roter Stern Leipzig 99 II",
+          "away_team": "SG Rotation Leipzig II",
+          "home_win": 0.4411,
+          "draw": 0.2279,
+          "away_win": 0.331,
+          "expected_home_goals": 1.786,
+          "expected_away_goals": 1.524
+        },
+        {
+          "match_id": "02TP6B47HS000000VS5489BUVSPHI8RP",
+          "matchday": 23,
+          "date": "31.05.2026",
+          "home_team": "SG Rotation Leipzig II",
+          "away_team": "SV Panitzsch/​Borsdorf II",
+          "home_win": 0.3621,
+          "draw": 0.2198,
+          "away_win": 0.4181,
+          "expected_home_goals": 1.717,
+          "expected_away_goals": 1.855
+        },
+        {
+          "match_id": "02TP6B471K000000VS5489BUVSPHI8RP",
+          "matchday": 24,
+          "date": "07.06.2026",
+          "home_team": "SV Tapfer 06 Leipzig II",
+          "away_team": "SG Rotation Leipzig II",
+          "home_win": 0.1243,
+          "draw": 0.1626,
+          "away_win": 0.7131,
+          "expected_home_goals": 0.991,
+          "expected_away_goals": 2.565
+        },
+        {
+          "match_id": "02TP6B46OG000000VS5489BUVSPHI8RP",
+          "matchday": 25,
+          "date": "14.06.2026",
+          "home_team": "SG Rotation Leipzig II",
+          "away_team": "SV Victoria 90 Leipzig I",
+          "home_win": 0.2237,
+          "draw": 0.2215,
+          "away_win": 0.5548,
+          "expected_home_goals": 1.141,
+          "expected_away_goals": 1.919
+        },
+        {
+          "match_id": "02TP6B46CG000000VS5489BUVSPHI8RP",
+          "matchday": 26,
+          "date": "21.06.2026",
+          "home_team": "SG Olympia 1896 Leipzig II",
+          "away_team": "SG Rotation Leipzig II",
+          "home_win": 0.2013,
+          "draw": 0.1872,
+          "away_win": 0.6115,
+          "expected_home_goals": 1.347,
+          "expected_away_goals": 2.422
+        }
+      ],
+      "team_strengths": {
+        "FC Blau-Weiß Leipzig II": {
+          "attack_home": 1.016,
+          "defense_home": 0.951,
+          "attack_away": 1.009,
+          "defense_away": 1.153,
+          "matches_used": 14
+        },
+        "FSV Großpösna I": {
+          "attack_home": 0.926,
+          "defense_home": 0.972,
+          "attack_away": 1.399,
+          "defense_away": 0.808,
+          "matches_used": 16
+        },
+        "Roter Stern Leipzig 99 II": {
+          "attack_home": 1.155,
+          "defense_home": 0.878,
+          "attack_away": 1.092,
+          "defense_away": 0.775,
+          "matches_used": 16
+        },
+        "SG LVB I": {
+          "attack_home": 0.938,
+          "defense_home": 1.052,
+          "attack_away": 0.821,
+          "defense_away": 1.038,
+          "matches_used": 16
+        },
+        "SG Leipzig-Bienitz I": {
+          "attack_home": 1.072,
+          "defense_home": 1.074,
+          "attack_away": 1.017,
+          "defense_away": 1.025,
+          "matches_used": 15
+        },
+        "SG Olympia 1896 Leipzig II": {
+          "attack_home": 0.871,
+          "defense_home": 1.396,
+          "attack_away": 1.041,
+          "defense_away": 0.911,
+          "matches_used": 16
+        },
+        "SG Rotation Leipzig II": {
+          "attack_home": 0.871,
+          "defense_home": 0.816,
+          "attack_away": 0.783,
+          "defense_away": 0.871,
+          "matches_used": 16
+        },
+        "SV Fortuna Leipzig 02 I": {
+          "attack_home": 1.233,
+          "defense_home": 0.816,
+          "attack_away": 1.295,
+          "defense_away": 0.895,
+          "matches_used": 15
+        },
+        "SV Lipsia 93 Eutritzsch II": {
+          "attack_home": 1.025,
+          "defense_home": 0.913,
+          "attack_away": 0.751,
+          "defense_away": 1.153,
+          "matches_used": 15
+        },
+        "SV Panitzsch/​Borsdorf II": {
+          "attack_home": 0.895,
+          "defense_home": 1.156,
+          "attack_away": 1.027,
+          "defense_away": 1.11,
+          "matches_used": 13
+        },
+        "SV Tapfer 06 Leipzig II": {
+          "attack_home": 0.641,
+          "defense_home": 1.478,
+          "attack_away": 0.622,
+          "defense_away": 1.314,
+          "matches_used": 14
+        },
+        "SV Victoria 90 Leipzig I": {
+          "attack_home": 1.415,
+          "defense_home": 0.635,
+          "attack_away": 1.062,
+          "defense_away": 0.738,
+          "matches_used": 16
+        },
+        "TSV Böhlitz-Ehrenberg 1990 I": {
+          "attack_home": 0.926,
+          "defense_home": 0.821,
+          "attack_away": 1.121,
+          "defense_away": 1.111,
+          "matches_used": 16
+        },
+        "VfB Zwenkau 02 II": {
+          "attack_home": 1.009,
+          "defense_home": 1.08,
+          "attack_away": 1.027,
+          "defense_away": 1.157,
+          "matches_used": 16
+        }
+      }
+    }
+  },
+  "conclusions": {
+    "realistic_top2_total_points": 51,
+    "minimum_acceptable_points_from_last_10": 24,
+    "promotion_like_profile": [
+      "Win at least 7 of the last 10 matches",
+      "Limit losses to maximum 2, ideally 1",
+      "Target +11 to +16 goal-difference swing over run-in",
+      "Prioritize direct-rival six-pointers and avoid slip-ups in must-win bucket"
+    ],
+    "title_path_assessment": "Near-miracle: requires Rotation near-perfect run and rank-1 pace collapse."
+  }
+}

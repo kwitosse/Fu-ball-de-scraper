@@ -117,11 +117,12 @@ frontend/
 output/standings.json  ─┐
 output/matchdays.json  ─┤─► scripts/build_app_data.py ─► output/app_data/*.json
 output/match_details/  ─┘                                        │
+reports/*.json / *.md ────────────────────────────────────────────┘
                                                                   ▼
                                                 scripts/copy_data.sh
                                                                   │
                                                                   ▼
-                                                frontend/public/data/*.json
+                                   frontend/public/data/*.json + public/reports/*
                                                                   │
                                                                   ▼
                                               App loads → store → tableEngine
@@ -200,6 +201,8 @@ When new match results are scraped, refresh the app data:
 python scripts/build_app_data.py
 bash scripts/copy_data.sh
 ```
+
+This also copies the promotion-analysis report assets from `reports/` into `frontend/public/reports/`.
 
 Then rebuild/redeploy the frontend.
 

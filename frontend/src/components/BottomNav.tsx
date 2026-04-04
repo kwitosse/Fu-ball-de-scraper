@@ -1,8 +1,8 @@
 import React from 'react'
-import { CalendarDays, ListOrdered, FolderKanban, Settings } from 'lucide-react'
+import { CalendarDays, FolderKanban, Goal, ListOrdered, Settings } from 'lucide-react'
 import { cn } from '../lib/utils'
 
-type Page = 'matchdays' | 'table' | 'scenarios' | 'settings'
+type Page = 'matchdays' | 'table' | 'analysis' | 'scenarios' | 'settings'
 
 interface BottomNavProps {
   activePage: Page
@@ -21,6 +21,11 @@ const tabs: { id: Page; label: string; icon: React.ReactNode }[] = [
     icon: <ListOrdered className="size-5" />,
   },
   {
+    id: 'analysis',
+    label: 'Analyse',
+    icon: <Goal className="size-5" />,
+  },
+  {
     id: 'scenarios',
     label: 'Szenarien',
     icon: <FolderKanban className="size-5" />,
@@ -35,7 +40,7 @@ const tabs: { id: Page; label: string; icon: React.ReactNode }[] = [
 export default function BottomNav({ activePage, onNavigate }: BottomNavProps) {
   return (
     <nav className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[rgba(22,33,62,0.95)] pb-[var(--safe-bottom)] backdrop-blur-xl">
-      <div className="mx-auto grid h-[var(--nav-h)] w-full max-w-6xl grid-cols-4">
+      <div className="mx-auto grid h-[var(--nav-h)] w-full max-w-6xl grid-cols-5">
       {tabs.map(tab => (
         <button
           key={tab.id}
