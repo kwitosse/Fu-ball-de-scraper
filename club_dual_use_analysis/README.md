@@ -2,6 +2,8 @@
 
 This subproject analyzes whether players appeared for both the first and second teams of selected clubs in season `2526`.
 
+Configured clubs live in `club_dual_use_analysis/clubs.json`.
+
 Current rules in the script:
 
 - only official matches are included (`ME`, `PO`)
@@ -30,4 +32,3 @@ Outputs are written to `club_dual_use_analysis/output/` by default:
 - `dual_appearance_cases.csv`
 - `shared_players.csv`
 - `cache/`
-

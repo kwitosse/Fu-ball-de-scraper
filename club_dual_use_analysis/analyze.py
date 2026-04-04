@@ -137,40 +137,24 @@ class ClubAnalysisResult:
     appearances: List[dict]
 
 
-CLUB_PAIRS: Dict[str, ClubPair] = {
-    "lipsia": ClubPair(
-        key="lipsia",
-        club_name="SV Lipsia 93 Eutritzsch",
-        first_team_name="SV Lipsia 93 Eutritzsch",
-        first_team_id="011MIA4A2O000000VTVG0001VTR8C1K7",
-        second_team_name="SV Lipsia 93 Eutritzsch II",
-        second_team_id="011MI9JD3G000000VTVG0001VTR8C1K7",
-    ),
-    "olympia": ClubPair(
-        key="olympia",
-        club_name="SG Olympia 1896 Leipzig",
-        first_team_name="SG Olympia 1896 Leipzig I",
-        first_team_id="011MIB6KMK000000VTVG0001VTR8C1K7",
-        second_team_name="SG Olympia 1896 Leipzig II",
-        second_team_id="011MIAA2CK000000VTVG0001VTR8C1K7",
-    ),
-    "zwenkau": ClubPair(
-        key="zwenkau",
-        club_name="VfB Zwenkau",
-        first_team_name="VfB Zwenkau",
-        first_team_id="011MIAOHIS000000VTVG0001VTR8C1K7",
-        second_team_name="VfB Zwenkau 02 II",
-        second_team_id="011MIB23FS000000VTVG0001VTR8C1K7",
-    ),
-    "blau_weiss": ClubPair(
-        key="blau_weiss",
-        club_name="FC Blau-Weiß Leipzig",
-        first_team_name="FC Blau-Weiß Leipzig",
-        first_team_id="011MI9P0AC000000VTVG0001VTR8C1K7",
-        second_team_name="FC Blau-Weiß Leipzig II",
-        second_team_id="011MIC4SUG000000VTVG0001VTR8C1K7",
-    ),
-}
+def load_club_pairs() -> Dict[str, ClubPair]:
+    config_path = Path(__file__).with_name("clubs.json")
+    with open(config_path, encoding="utf-8") as handle:
+        payload = json.load(handle)
+    return {
+        key: ClubPair(
+            key=key,
+            club_name=value["club_name"],
+            first_team_name=value["first_team_name"],
+            first_team_id=value["first_team_id"],
+            second_team_name=value["second_team_name"],
+            second_team_id=value["second_team_id"],
+        )
+        for key, value in payload.items()
+    }
+
+
+CLUB_PAIRS: Dict[str, ClubPair] = load_club_pairs()
 
 
 def normalize_profile_url(url: str) -> str:
