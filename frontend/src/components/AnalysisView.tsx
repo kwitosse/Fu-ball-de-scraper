@@ -257,7 +257,16 @@ export default function AnalysisView() {
           </CardHeader>
           <CardContent className="pt-0">
             <div className="analysis-prose">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  table: ({ node: _node, ...props }) => (
+                    <div className="overflow-x-auto">
+                      <table {...props} />
+                    </div>
+                  ),
+                }}
+              >
                 {markdown}
               </ReactMarkdown>
             </div>
