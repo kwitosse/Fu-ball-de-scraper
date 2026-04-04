@@ -60,9 +60,20 @@ export interface AppData {
   predictions: Record<string, Prediction>
   baselineTable: TableRow[]
   dataVersion: { generated_at: string; model_version: string; source: string }
+  qaReport?: QaReport | null
   analysisReport: AnalysisReport | null
   analysisMarkdown: string | null
   matchPlan: MatchPlan | null
+}
+
+export interface QaReport {
+  total_teams: number
+  total_fixtures: number
+  played_fixtures: number
+  unplayed_fixtures: number
+  matchdays: number
+  missing_scores: number
+  generated_at: string
 }
 
 export interface AnalysisReport {
@@ -76,7 +87,14 @@ export interface AnalysisReport {
   current_state: {
     position: number
     points: number
+    record?: {
+      wins: number
+      draws: number
+      losses: number
+    }
     ppg: number
+    gf_per_game?: number
+    ga_per_game?: number
     remaining_matches: number
     max_possible_points: number
     gap_to_rank1: number
@@ -88,6 +106,7 @@ export interface AnalysisReport {
     }
   }
   pace_projection: {
+    rival_projection?: RivalProjectionRow[]
     rank2_bands: {
       hold_current_pace: number
       slight_slowdown: number
@@ -127,7 +146,9 @@ export interface AnalysisReport {
     count: number
     average_opponent_ppg: number
     direct_rival_matches_count: number
+    fixtures?: RemainingFixture[]
   }
+  direct_rival_impact?: DirectRivalImpact
   form_and_trends: {
     known_played_matches: number
     points_last_5: number
@@ -136,6 +157,7 @@ export interface AnalysisReport {
     avg_ga_last_5: number
     clean_sheet_rate: number
     games_2plus_goals_rate: number
+    losses_after_conceding_first?: number
   }
   scenario_matrix: ScenarioMatrixRow[]
   simulation: {
@@ -162,6 +184,36 @@ export interface AnalysisReport {
     title_path_assessment: string
   }
   match_plan?: MatchPlan
+}
+
+export interface RivalProjectionRow {
+  team: string
+  position: number
+  current_points: number
+  ppg: number
+  projected_final_points: number
+}
+
+export interface RemainingFixture {
+  date: string
+  home_away: 'H' | 'A'
+  opponent: string
+  opponent_pos: number
+  opponent_points: number
+  opponent_ppg: number
+  bucket: string
+  first_leg_result: string
+}
+
+export interface DirectRivalImpact {
+  current_gap_to_rank2: number
+  rotation_direct_rival_matches: string[]
+  leverage_note: string
+  rank2_line_adjustment_points: {
+    none: number
+    moderate_direct_duel_drop: number
+    high_direct_duel_drop: number
+  }
 }
 
 export interface ScenarioMatrixRow {

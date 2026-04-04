@@ -1,8 +1,8 @@
 import React from 'react'
-import { CalendarDays, FolderKanban, Goal, ListOrdered, Settings } from 'lucide-react'
+import { BarChart3, CalendarDays, FolderKanban, Goal, ListOrdered, Settings } from 'lucide-react'
 import { cn } from '../lib/utils'
 
-type Page = 'matchdays' | 'table' | 'analysis' | 'scenarios' | 'settings'
+type Page = 'matchdays' | 'table' | 'insights' | 'analysis' | 'scenarios' | 'settings'
 
 interface BottomNavProps {
   activePage: Page
@@ -19,6 +19,11 @@ const tabs: { id: Page; label: string; icon: React.ReactNode }[] = [
     id: 'table',
     label: 'Tabelle',
     icon: <ListOrdered className="size-5" />,
+  },
+  {
+    id: 'insights',
+    label: 'Insights',
+    icon: <BarChart3 className="size-5" />,
   },
   {
     id: 'analysis',
@@ -40,12 +45,12 @@ const tabs: { id: Page; label: string; icon: React.ReactNode }[] = [
 export default function BottomNav({ activePage, onNavigate }: BottomNavProps) {
   return (
     <nav className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[rgba(22,33,62,0.95)] pb-[var(--safe-bottom)] backdrop-blur-xl">
-      <div className="mx-auto grid h-[var(--nav-h)] w-full max-w-6xl grid-cols-5">
+      <div className="mx-auto grid h-[var(--nav-h)] w-full max-w-6xl grid-cols-6">
       {tabs.map(tab => (
         <button
           key={tab.id}
           className={cn(
-            'flex min-h-11 flex-col items-center justify-center gap-1 px-1 text-[10px] text-[var(--text2)] transition-colors sm:text-[11px]',
+            'flex min-h-11 flex-col items-center justify-center gap-1 px-1 text-[9px] text-[var(--text2)] transition-colors sm:text-[11px]',
             activePage === tab.id && 'text-[var(--accent)]'
           )}
           onClick={() => onNavigate(tab.id)}

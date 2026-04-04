@@ -1,4 +1,4 @@
-import { AnalysisReport, AppData, Fixture, MatchPlan, Prediction, TableRow, Team } from './types'
+import { AnalysisReport, AppData, Fixture, MatchPlan, Prediction, QaReport, TableRow, Team } from './types'
 
 async function fetchJson<T>(url: string): Promise<T> {
   const response = await fetch(url)
@@ -31,15 +31,16 @@ async function fetchOptionalText(url: string): Promise<string | null> {
 }
 
 export async function loadAppData(): Promise<AppData> {
-  const [teams, fixtures, predictions, baselineTable, dataVersion, analysisReport, analysisMarkdown, matchPlan] = await Promise.all([
+  const [teams, fixtures, predictions, baselineTable, dataVersion, qaReport, analysisReport, analysisMarkdown, matchPlan] = await Promise.all([
     fetchJson<Team[]>('/data/teams.json'),
     fetchJson<Fixture[]>('/data/fixtures.json'),
     fetchJson<Record<string, Prediction>>('/data/prefill_predictions.json'),
     fetchJson<TableRow[]>('/data/baseline_table.json'),
     fetchJson<AppData['dataVersion']>('/data/data_version.json'),
+    fetchOptionalJson<QaReport>('/data/qa_report.json'),
     fetchOptionalJson<AnalysisReport>('/reports/rotation_promotion_analysis.json'),
     fetchOptionalText('/reports/rotation_promotion_analysis.md'),
     fetchOptionalJson<MatchPlan>('/reports/rotation_match_plan.json'),
   ])
-  return { teams, fixtures, predictions, baselineTable, dataVersion, analysisReport, analysisMarkdown, matchPlan }
+  return { teams, fixtures, predictions, baselineTable, dataVersion, qaReport, analysisReport, analysisMarkdown, matchPlan }
 }

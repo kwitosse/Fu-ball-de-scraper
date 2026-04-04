@@ -4,11 +4,12 @@ import { loadAppData } from './dataLoader'
 import BottomNav from './components/BottomNav'
 import MatchdayView from './components/MatchdayView'
 import LiveTable from './components/LiveTable'
+import InsightsView from './components/InsightsView'
 import AnalysisView from './components/AnalysisView'
 import ScenariosView from './components/ScenariosView'
 import SettingsView from './components/SettingsView'
 
-type Page = 'matchdays' | 'table' | 'analysis' | 'scenarios' | 'settings'
+type Page = 'matchdays' | 'table' | 'insights' | 'analysis' | 'scenarios' | 'settings'
 
 export default function App() {
   const [page, setPage] = useState<Page>('matchdays')
@@ -71,6 +72,7 @@ export default function App() {
       <main className="page-frame">
         {page === 'matchdays' && <MatchdayView />}
         {page === 'table' && <LiveTable />}
+        {page === 'insights' && <InsightsView />}
         {page === 'analysis' && <AnalysisView />}
         {page === 'scenarios' && <ScenariosView />}
         {page === 'settings' && <SettingsView />}
