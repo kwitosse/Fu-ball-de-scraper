@@ -2,14 +2,93 @@
   "match_id": "02TP6B48S8000000VS5489BUVSPHI8RP",
   "home_team": "FC Blau-Weiß Leipzig II",
   "away_team": "FSV Großpösna I",
-  "home_score": 31,
-  "away_score": 28,
+  "home_score": 1,
+  "away_score": 2,
   "date": "26.04.2026",
-  "kickoff": null,
+  "kickoff": "14:00",
   "venue": "Rasenplatz, Stadion der Freundschaft Feld 1, Kantatenweg 39, 04229 Leipzig",
-  "attendance": null,
+  "attendance": 27,
   "matchday": 19,
-  "goals": [],
-  "cards": [],
-  "substitutions": []
+  "goals": [
+    {
+      "minute": 19,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS6GGHK000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 24,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/028NCHDUCC000000VS541L4JVSB6BS8A"
+    },
+    {
+      "minute": 88,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS6GGHK000000VV0AG85VVVPI7ST7"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 90,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 57,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 69,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 69,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 75,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 75,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 75,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 82,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
 }

@@ -307,188 +307,6 @@
     "matchday_number": 3,
     "matches": [
       {
-        "match_id": "02TP6B42T4000000VS5489BUVSPHI8RP",
-        "matchday": 3,
-        "home_team": "Roter Stern Leipzig 99 II",
-        "home_team_id": "011MID51KG000000VTVG0001VTR8C1K7",
-        "away_team": "SV Panitzsch/​Borsdorf II",
-        "away_team_id": "011MIB2QKO000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/roter-stern-leipzig-99-ii-sv-panitzsch-borsdorf-ii/-/spiel/02TP6B42T4000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B4318000000VS5489BUVSPHI8RP",
-        "matchday": 3,
-        "home_team": "FC Blau-Weiß Leipzig II",
-        "home_team_id": "011MIC4SUG000000VTVG0001VTR8C1K7",
-        "away_team": "SV Lipsia 93 Eutritzsch II",
-        "away_team_id": "011MI9JD3G000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/fc-blau-weiss-leipzig-ii-sv-lipsia-93-eutritzsch-ii/-/spiel/02TP6B4318000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B432O000000VS5489BUVSPHI8RP",
-        "matchday": 3,
-        "home_team": "SV Fortuna Leipzig 02 I",
-        "home_team_id": "011MIBI40G000000VTVG0001VTR8C1K7",
-        "away_team": "VfB Zwenkau 02 II",
-        "away_team_id": "011MIB23FS000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sv-fortuna-leipzig-02-i-vfb-zwenkau-02-ii/-/spiel/02TP6B432O000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B42VK000000VS5489BUVSPHI8RP",
-        "matchday": 3,
-        "home_team": "FSV Großpösna I",
-        "home_team_id": "011MI9JC2S000000VTVG0001VTR8C1K7",
-        "away_team": "SV Victoria 90 Leipzig I",
-        "away_team_id": "011MI9A9JG000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/fsv-grosspoesna-sv-victoria-90-leipzig-i/-/spiel/02TP6B42VK000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B4320000000VS5489BUVSPHI8RP",
-        "matchday": 3,
-        "home_team": "SG Leipzig-Bienitz I",
-        "home_team_id": "011MIB43QS000000VTVG0001VTR8C1K7",
-        "away_team": "SG LVB I",
-        "away_team_id": "011MIEVLTC000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sg-leipzig-bienitz-i-sg-lvb-i/-/spiel/02TP6B4320000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B42US000000VS5489BUVSPHI8RP",
-        "matchday": 3,
-        "home_team": "TSV Böhlitz-Ehrenberg 1990 I",
-        "home_team_id": "011MIBI4H0000000VTVG0001VTR8C1K7",
-        "away_team": "SV Tapfer 06 Leipzig II",
-        "away_team_id": "011MIBOCFK000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/tsv-boehlitz-ehrenberg-1990-i-sv-tapfer-06-leipzig-ii/-/spiel/02TP6B42US000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B430G000000VS5489BUVSPHI8RP",
-        "matchday": 3,
-        "home_team": "SG Rotation Leipzig II",
-        "home_team_id": "01DNMVIUMC000000VV0AG80NVSQ3PCMQ",
-        "away_team": "SG Olympia 1896 Leipzig II",
-        "away_team_id": "011MIAA2CK000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sg-rotation-leipzig-ii-sg-olympia-1896-leipzig-ii/-/spiel/02TP6B430G000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B4348000000VS5489BUVSPHI8RP",
-        "matchday": 3,
-        "home_team": "SG LVB I",
-        "home_team_id": "011MIEVLTC000000VTVG0001VTR8C1K7",
-        "away_team": "SV Fortuna Leipzig 02 I",
-        "away_team_id": "011MIBI40G000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sg-lvb-i-sv-fortuna-leipzig-02-i/-/spiel/02TP6B4348000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B435K000000VS5489BUVSPHI8RP",
-        "matchday": 3,
-        "home_team": "SV Lipsia 93 Eutritzsch II",
-        "home_team_id": "011MI9JD3G000000VTVG0001VTR8C1K7",
-        "away_team": "SG Leipzig-Bienitz I",
-        "away_team_id": "011MIB43QS000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sv-lipsia-93-eutritzsch-ii-sg-leipzig-bienitz-i/-/spiel/02TP6B435K000000VS5489BUVSPHI8RP#!/section/course"
-      },
-      {
-        "match_id": "02TP6B436C000000VS5489BUVSPHI8RP",
-        "matchday": 3,
-        "home_team": "SG Olympia 1896 Leipzig II",
-        "home_team_id": "011MIAA2CK000000VTVG0001VTR8C1K7",
-        "away_team": "FC Blau-Weiß Leipzig II",
-        "away_team_id": "011MIC4SUG000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sg-olympia-1896-leipzig-ii-fc-blau-weiss-leipzig-ii/-/spiel/02TP6B436C000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B4374000000VS5489BUVSPHI8RP",
-        "matchday": 3,
-        "home_team": "SV Victoria 90 Leipzig I",
-        "home_team_id": "011MI9A9JG000000VTVG0001VTR8C1K7",
-        "away_team": "SG Rotation Leipzig II",
-        "away_team_id": "01DNMVIUMC000000VV0AG80NVSQ3PCMQ",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sv-victoria-90-leipzig-i-sg-rotation-leipzig-ii/-/spiel/02TP6B4374000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B437S000000VS5489BUVSPHI8RP",
-        "matchday": 3,
-        "home_team": "SV Tapfer 06 Leipzig II",
-        "home_team_id": "011MIBOCFK000000VTVG0001VTR8C1K7",
-        "away_team": "FSV Großpösna I",
-        "away_team_id": "011MI9JC2S000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sv-tapfer-06-leipzig-ii-fsv-grosspoesna/-/spiel/02TP6B437S000000VS5489BUVSPHI8RP#!/section/course"
-      },
-      {
-        "match_id": "02TP6B438O000000VS5489BUVSPHI8RP",
-        "matchday": 3,
-        "home_team": "SV Panitzsch/​Borsdorf II",
-        "home_team_id": "011MIB2QKO000000VTVG0001VTR8C1K7",
-        "away_team": "TSV Böhlitz-Ehrenberg 1990 I",
-        "away_team_id": "011MIBI4H0000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sv-panitzsch-borsdorf-ii-tsv-boehlitz-ehrenberg-1990-i/-/spiel/02TP6B438O000000VS5489BUVSPHI8RP"
-      },
-      {
         "match_id": "02TP6B45SO000000VS5489BUVSPHI8RP",
         "matchday": 3,
         "home_team": "SV Panitzsch/​Borsdorf II",
@@ -507,20 +325,6 @@
   {
     "matchday_number": 4,
     "matches": [
-      {
-        "match_id": "02TP6B45SO000000VS5489BUVSPHI8RP",
-        "matchday": 4,
-        "home_team": "SV Panitzsch/​Borsdorf II",
-        "home_team_id": "011MIB2QKO000000VTVG0001VTR8C1K7",
-        "away_team": "SV Tapfer 06 Leipzig II",
-        "away_team_id": "011MIBOCFK000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sv-panitzsch-borsdorf-ii-sv-tapfer-06-leipzig-ii/-/spiel/02TP6B45SO000000VS5489BUVSPHI8RP"
-      },
       {
         "match_id": "02TP6B45KO000000VS5489BUVSPHI8RP",
         "matchday": 4,
@@ -604,20 +408,6 @@
         "time": null,
         "status": "scheduled",
         "detail_url": "https://www.fussball.de/spiel/fc-blau-weiss-leipzig-ii-sv-fortuna-leipzig-02-i/-/spiel/02TP6B45Q4000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B433G000000VS5489BUVSPHI8RP",
-        "matchday": 4,
-        "home_team": "VfB Zwenkau 02 II",
-        "home_team_id": "011MIB23FS000000VTVG0001VTR8C1K7",
-        "away_team": "Roter Stern Leipzig 99 II",
-        "away_team_id": "011MID51KG000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/vfb-zwenkau-02-ii-roter-stern-leipzig-99-ii/-/spiel/02TP6B433G000000VS5489BUVSPHI8RP"
       }
     ]
   },
@@ -1442,34 +1232,6 @@
         "time": null,
         "status": "scheduled",
         "detail_url": "https://www.fussball.de/spiel/sv-tapfer-06-leipzig-ii-fc-blau-weiss-leipzig-ii/-/spiel/02TP6B43MO000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B44K8000000VS5489BUVSPHI8RP",
-        "matchday": 12,
-        "home_team": "SG Rotation Leipzig II",
-        "home_team_id": "01DNMVIUMC000000VV0AG80NVSQ3PCMQ",
-        "away_team": "VfB Zwenkau 02 II",
-        "away_team_id": "011MIB23FS000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sg-rotation-leipzig-ii-vfb-zwenkau-02-ii/-/spiel/02TP6B44K8000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B4450000000VS5489BUVSPHI8RP",
-        "matchday": 12,
-        "home_team": "SV Victoria 90 Leipzig I",
-        "home_team_id": "011MI9A9JG000000VTVG0001VTR8C1K7",
-        "away_team": "SG LVB I",
-        "away_team_id": "011MIEVLTC000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sv-victoria-90-leipzig-i-sg-lvb-i/-/spiel/02TP6B4450000000VS5489BUVSPHI8RP"
       }
     ]
   },
@@ -1573,34 +1335,6 @@
         "time": null,
         "status": "scheduled",
         "detail_url": "https://www.fussball.de/spiel/tsv-boehlitz-ehrenberg-1990-i-roter-stern-leipzig-99-ii/-/spiel/02TP6B43AG000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B44BK000000VS5489BUVSPHI8RP",
-        "matchday": 13,
-        "home_team": "FSV Großpösna I",
-        "home_team_id": "011MI9JC2S000000VTVG0001VTR8C1K7",
-        "away_team": "SG Rotation Leipzig II",
-        "away_team_id": "01DNMVIUMC000000VV0AG80NVSQ3PCMQ",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/fsv-grosspoesna-sg-rotation-leipzig-ii/-/spiel/02TP6B44BK000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B45A8000000VS5489BUVSPHI8RP",
-        "matchday": 13,
-        "home_team": "SG Olympia 1896 Leipzig II",
-        "home_team_id": "011MIAA2CK000000VTVG0001VTR8C1K7",
-        "away_team": "SV Panitzsch/​Borsdorf II",
-        "away_team_id": "011MIB2QKO000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sg-olympia-1896-leipzig-ii-sv-panitzsch-borsdorf-ii/-/spiel/02TP6B45A8000000VS5489BUVSPHI8RP"
       }
     ]
   },
@@ -1942,7 +1676,7 @@
         "date": null,
         "time": null,
         "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sv-lipsia-93-eutritzsch-ii-roter-stern-leipzig-99-ii/-/spiel/02TP6B49J8000000VS5489BUVSPHI8RP"
+        "detail_url": "https://www.fussball.de/spiel/sv-lipsia-93-eutritzsch-ii-roter-stern-leipzig-99-ii/-/spiel/02TP6B49J8000000VS5489BUVSPHI8RP#!/section/course"
       },
       {
         "match_id": "02TP6B49L8000000VS5489BUVSPHI8RP",
@@ -2012,7 +1746,7 @@
         "date": null,
         "time": null,
         "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sv-victoria-90-leipzig-i-sv-tapfer-06-leipzig-ii/-/spiel/02TP6B49T0000000VS5489BUVSPHI8RP"
+        "detail_url": "https://www.fussball.de/spiel/sv-victoria-90-leipzig-i-sv-tapfer-06-leipzig-ii/-/spiel/02TP6B49T0000000VS5489BUVSPHI8RP#!/section/course"
       }
     ]
   },
@@ -2048,20 +1782,6 @@
         "detail_url": "https://www.fussball.de/spiel/roter-stern-leipzig-99-ii-sg-lvb-i/-/spiel/02TP6B497S000000VS5489BUVSPHI8RP"
       },
       {
-        "match_id": "02TP6B49BK000000VS5489BUVSPHI8RP",
-        "matchday": 18,
-        "home_team": "SV Tapfer 06 Leipzig II",
-        "home_team_id": "011MIBOCFK000000VTVG0001VTR8C1K7",
-        "away_team": "SG Olympia 1896 Leipzig II",
-        "away_team_id": "011MIAA2CK000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sv-tapfer-06-leipzig-ii-sg-olympia-1896-leipzig-ii/-/spiel/02TP6B49BK000000VS5489BUVSPHI8RP"
-      },
-      {
         "match_id": "02TP6B495C000000VS5489BUVSPHI8RP",
         "matchday": 18,
         "home_team": "SV Victoria 90 Leipzig I",
@@ -2076,18 +1796,18 @@
         "detail_url": "https://www.fussball.de/spiel/sv-victoria-90-leipzig-i-vfb-zwenkau-02-ii/-/spiel/02TP6B495C000000VS5489BUVSPHI8RP"
       },
       {
-        "match_id": "02TP6B49FC000000VS5489BUVSPHI8RP",
+        "match_id": "02TP6B49BK000000VS5489BUVSPHI8RP",
         "matchday": 18,
-        "home_team": "FSV Großpösna I",
-        "home_team_id": "011MI9JC2S000000VTVG0001VTR8C1K7",
-        "away_team": "SG Leipzig-Bienitz I",
-        "away_team_id": "011MIB43QS000000VTVG0001VTR8C1K7",
+        "home_team": "SV Tapfer 06 Leipzig II",
+        "home_team_id": "011MIBOCFK000000VTVG0001VTR8C1K7",
+        "away_team": "SG Olympia 1896 Leipzig II",
+        "away_team_id": "011MIAA2CK000000VTVG0001VTR8C1K7",
         "home_score": null,
         "away_score": null,
         "date": null,
         "time": null,
         "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/fsv-grosspoesna-sg-leipzig-bienitz-i/-/spiel/02TP6B49FC000000VS5489BUVSPHI8RP"
+        "detail_url": "https://www.fussball.de/spiel/sv-tapfer-06-leipzig-ii-sg-olympia-1896-leipzig-ii/-/spiel/02TP6B49BK000000VS5489BUVSPHI8RP"
       },
       {
         "match_id": "02TP6B49DG000000VS5489BUVSPHI8RP",
@@ -2102,6 +1822,20 @@
         "time": null,
         "status": "scheduled",
         "detail_url": "https://www.fussball.de/spiel/sg-rotation-leipzig-ii-fc-blau-weiss-leipzig-ii/-/spiel/02TP6B49DG000000VS5489BUVSPHI8RP"
+      },
+      {
+        "match_id": "02TP6B49FC000000VS5489BUVSPHI8RP",
+        "matchday": 18,
+        "home_team": "FSV Großpösna I",
+        "home_team_id": "011MI9JC2S000000VTVG0001VTR8C1K7",
+        "away_team": "SG Leipzig-Bienitz I",
+        "away_team_id": "011MIB43QS000000VTVG0001VTR8C1K7",
+        "home_score": null,
+        "away_score": null,
+        "date": null,
+        "time": null,
+        "status": "scheduled",
+        "detail_url": "https://www.fussball.de/spiel/fsv-grosspoesna-sg-leipzig-bienitz-i/-/spiel/02TP6B49FC000000VS5489BUVSPHI8RP"
       },
       {
         "match_id": "02TP6B49HC000000VS5489BUVSPHI8RP",
@@ -2162,7 +1896,7 @@
         "date": null,
         "time": null,
         "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sv-lipsia-93-eutritzsch-ii-sv-tapfer-06-leipzig-ii/-/spiel/02TP6B491O000000VS5489BUVSPHI8RP"
+        "detail_url": "https://www.fussball.de/spiel/sv-lipsia-93-eutritzsch-ii-sv-tapfer-06-leipzig-ii/-/spiel/02TP6B491O000000VS5489BUVSPHI8RP#!/section/course"
       },
       {
         "match_id": "02TP6B493K000000VS5489BUVSPHI8RP",
@@ -2226,20 +1960,6 @@
     "matchday_number": 20,
     "matches": [
       {
-        "match_id": "02TP6B48MS000000VS5489BUVSPHI8RP",
-        "matchday": 20,
-        "home_team": "SV Panitzsch/​Borsdorf II",
-        "home_team_id": "011MIB2QKO000000VTVG0001VTR8C1K7",
-        "away_team": "SV Fortuna Leipzig 02 I",
-        "away_team_id": "011MIBI40G000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sv-panitzsch-borsdorf-ii-sv-fortuna-leipzig-02-i/-/spiel/02TP6B48MS000000VS5489BUVSPHI8RP"
-      },
-      {
         "match_id": "02TP6B48BS000000VS5489BUVSPHI8RP",
         "matchday": 20,
         "home_team": "SG Olympia 1896 Leipzig II",
@@ -2252,34 +1972,6 @@
         "time": null,
         "status": "scheduled",
         "detail_url": "https://www.fussball.de/spiel/sg-olympia-1896-leipzig-ii-vfb-zwenkau-02-ii/-/spiel/02TP6B48BS000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B48H4000000VS5489BUVSPHI8RP",
-        "matchday": 20,
-        "home_team": "SG Rotation Leipzig II",
-        "home_team_id": "01DNMVIUMC000000VV0AG80NVSQ3PCMQ",
-        "away_team": "FSV Großpösna I",
-        "away_team_id": "011MI9JC2S000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/sg-rotation-leipzig-ii-fsv-grosspoesna/-/spiel/02TP6B48H4000000VS5489BUVSPHI8RP"
-      },
-      {
-        "match_id": "02TP6B48J4000000VS5489BUVSPHI8RP",
-        "matchday": 20,
-        "home_team": "TSV Böhlitz-Ehrenberg 1990 I",
-        "home_team_id": "011MIBI4H0000000VTVG0001VTR8C1K7",
-        "away_team": "FC Blau-Weiß Leipzig II",
-        "away_team_id": "011MIC4SUG000000VTVG0001VTR8C1K7",
-        "home_score": null,
-        "away_score": null,
-        "date": null,
-        "time": null,
-        "status": "scheduled",
-        "detail_url": "https://www.fussball.de/spiel/tsv-boehlitz-ehrenberg-1990-i-fc-blau-weiss-leipzig-ii/-/spiel/02TP6B48J4000000VS5489BUVSPHI8RP"
       },
       {
         "match_id": "02TP6B48L0000000VS5489BUVSPHI8RP",
@@ -2322,6 +2014,48 @@
         "time": null,
         "status": "scheduled",
         "detail_url": "https://www.fussball.de/spiel/sv-victoria-90-leipzig-i-sv-lipsia-93-eutritzsch-ii/-/spiel/02TP6B48FC000000VS5489BUVSPHI8RP"
+      },
+      {
+        "match_id": "02TP6B48H4000000VS5489BUVSPHI8RP",
+        "matchday": 20,
+        "home_team": "SG Rotation Leipzig II",
+        "home_team_id": "01DNMVIUMC000000VV0AG80NVSQ3PCMQ",
+        "away_team": "FSV Großpösna I",
+        "away_team_id": "011MI9JC2S000000VTVG0001VTR8C1K7",
+        "home_score": null,
+        "away_score": null,
+        "date": null,
+        "time": null,
+        "status": "scheduled",
+        "detail_url": "https://www.fussball.de/spiel/sg-rotation-leipzig-ii-fsv-grosspoesna/-/spiel/02TP6B48H4000000VS5489BUVSPHI8RP"
+      },
+      {
+        "match_id": "02TP6B48J4000000VS5489BUVSPHI8RP",
+        "matchday": 20,
+        "home_team": "TSV Böhlitz-Ehrenberg 1990 I",
+        "home_team_id": "011MIBI4H0000000VTVG0001VTR8C1K7",
+        "away_team": "FC Blau-Weiß Leipzig II",
+        "away_team_id": "011MIC4SUG000000VTVG0001VTR8C1K7",
+        "home_score": null,
+        "away_score": null,
+        "date": null,
+        "time": null,
+        "status": "scheduled",
+        "detail_url": "https://www.fussball.de/spiel/tsv-boehlitz-ehrenberg-1990-i-fc-blau-weiss-leipzig-ii/-/spiel/02TP6B48J4000000VS5489BUVSPHI8RP"
+      },
+      {
+        "match_id": "02TP6B48MS000000VS5489BUVSPHI8RP",
+        "matchday": 20,
+        "home_team": "SV Panitzsch/​Borsdorf II",
+        "home_team_id": "011MIB2QKO000000VTVG0001VTR8C1K7",
+        "away_team": "SV Fortuna Leipzig 02 I",
+        "away_team_id": "011MIBI40G000000VTVG0001VTR8C1K7",
+        "home_score": null,
+        "away_score": null,
+        "date": null,
+        "time": null,
+        "status": "scheduled",
+        "detail_url": "https://www.fussball.de/spiel/sv-panitzsch-borsdorf-ii-sv-fortuna-leipzig-02-i/-/spiel/02TP6B48MS000000VS5489BUVSPHI8RP"
       }
     ]
   },

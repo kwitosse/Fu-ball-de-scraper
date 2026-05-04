@@ -1,562 +1,458 @@
 {
-  "02TP6B49V0000000VS5489BUVSPHI8RP": {
-    "home_score": 3,
-    "away_score": 1,
-    "xg_home": 3.119,
-    "xg_away": 1.25,
-    "confidence": "high",
-    "rationale": "Strong home attack (1.3x avg); Home team struggling to score recently"
-  },
-  "02TP6B49J8000000VS5489BUVSPHI8RP": {
+  "02TP6B44MG000000VS5489BUVSPHI8RP": {
     "home_score": 2,
-    "away_score": 1,
-    "xg_home": 2.243,
-    "xg_away": 1.166,
+    "away_score": 0,
+    "xg_home": 2.883,
+    "xg_away": 0.627,
     "confidence": "high",
-    "rationale": "Weak away attack (0.7x avg)"
+    "rationale": "Strong home attack (1.9x avg); Strong away defense (0.7x avg); Strong away attack (1.4x avg)"
   },
-  "02TP6B49L8000000VS5489BUVSPHI8RP": {
-    "home_score": 2,
-    "away_score": 1,
-    "xg_home": 2.747,
-    "xg_away": 1.789,
-    "confidence": "high",
-    "rationale": "Home team struggling to score recently"
-  },
-  "02TP6B49N4000000VS5489BUVSPHI8RP": {
-    "home_score": 2,
-    "away_score": 1,
-    "xg_home": 2.121,
-    "xg_away": 1.715,
-    "confidence": "medium",
-    "rationale": "Weak home attack (0.6x avg); Weak away defense (1.8x avg); Weak away attack (0.7x avg)"
-  },
-  "02TP6B49R4000000VS5489BUVSPHI8RP": {
+  "02TP6B44FK000000VS5489BUVSPHI8RP": {
     "home_score": 1,
-    "away_score": 1,
-    "xg_home": 1.716,
-    "xg_away": 1.677,
-    "confidence": "low",
-    "rationale": "Weak home attack (0.7x avg); Strong away attack (1.4x avg); Home team in good scoring form"
-  },
-  "02TP6B49P0000000VS5489BUVSPHI8RP": {
-    "home_score": 1,
-    "away_score": 1,
-    "xg_home": 1.791,
-    "xg_away": 1.617,
-    "confidence": "medium",
-    "rationale": "Strong away defense (0.6x avg); Home team in good scoring form"
-  },
-  "02TP6B49T0000000VS5489BUVSPHI8RP": {
-    "home_score": 0,
     "away_score": 3,
-    "xg_home": 0.35,
-    "xg_away": 3.8,
+    "xg_home": 1.347,
+    "xg_away": 3.127,
     "confidence": "high",
-    "rationale": "Weak home attack (0.4x avg); Strong away defense (0.4x avg); Strong away attack (1.6x avg)"
+    "rationale": "Weak home attack (0.7x avg); Strong away attack (1.4x avg); Home team struggling to score recently"
   },
-  "02TP6B499O000000VS5489BUVSPHI8RP": {
-    "home_score": 1,
-    "away_score": 1,
-    "xg_home": 1.32,
-    "xg_away": 1.638,
-    "confidence": "medium",
-    "rationale": "Strong home attack (1.3x avg); Strong away defense (0.5x avg); Home team struggling to score recently"
-  },
-  "02TP6B497S000000VS5489BUVSPHI8RP": {
+  "02TP6B43T8000000VS5489BUVSPHI8RP": {
     "home_score": 1,
     "away_score": 2,
-    "xg_home": 1.24,
-    "xg_away": 2.282,
+    "xg_home": 1.717,
+    "xg_away": 2.287,
     "confidence": "high",
-    "rationale": "Strong away defense (0.7x avg); Leaky home defense (1.3x avg); Home team in good scoring form"
+    "rationale": "Strong away attack (1.4x avg)"
   },
-  "02TP6B49BK000000VS5489BUVSPHI8RP": {
+  "02TP6B4ANK000000VS5489BUVSPHI8RP": {
+    "home_score": 1,
+    "away_score": 2,
+    "xg_home": 1.309,
+    "xg_away": 2.029,
+    "confidence": "high",
+    "rationale": "Strong away defense (0.6x avg); Leaky home defense (1.3x avg); Home team struggling to score recently"
+  },
+  "02TP6B4AUC000000VS5489BUVSPHI8RP": {
     "home_score": 3,
     "away_score": 0,
-    "xg_home": 3.639,
-    "xg_away": 0.366,
+    "xg_home": 3.8,
+    "xg_away": 0.612,
     "confidence": "high",
-    "rationale": "Strong home attack (1.5x avg); Solid home defense (0.2x avg); Home team struggling to score recently"
+    "rationale": "Strong home attack (1.9x avg); Strong away attack (1.4x avg); Solid home defense (0.2x avg)"
+  },
+  "02TP6B4AD4000000VS5489BUVSPHI8RP": {
+    "home_score": 1,
+    "away_score": 1,
+    "xg_home": 1.998,
+    "xg_away": 1.785,
+    "confidence": "medium",
+    "rationale": "Evenly matched sides"
+  },
+  "02TP6B4B5S000000VS5489BUVSPHI8RP": {
+    "home_score": 1,
+    "away_score": 2,
+    "xg_home": 1.162,
+    "xg_away": 2.343,
+    "confidence": "high",
+    "rationale": "Strong away defense (0.7x avg); Strong away attack (1.4x avg); Home team struggling to score recently"
   },
   "02TP6B495C000000VS5489BUVSPHI8RP": {
     "home_score": 0,
     "away_score": 3,
-    "xg_home": 0.772,
-    "xg_away": 3.8,
+    "xg_home": 0.642,
+    "xg_away": 3.57,
     "confidence": "high",
-    "rationale": "Weak home attack (0.4x avg); Strong away attack (1.4x avg); Leaky home defense (1.8x avg)"
+    "rationale": "Weak home attack (0.3x avg); Leaky home defense (1.8x avg); Home team struggling to score recently"
+  },
+  "02TP6B49BK000000VS5489BUVSPHI8RP": {
+    "home_score": 3,
+    "away_score": 0,
+    "xg_home": 3.8,
+    "xg_away": 0.35,
+    "confidence": "high",
+    "rationale": "Strong home attack (1.9x avg); Solid home defense (0.2x avg); Home team in good scoring form"
+  },
+  "02TP6B49DG000000VS5489BUVSPHI8RP": {
+    "home_score": 1,
+    "away_score": 1,
+    "xg_home": 1.636,
+    "xg_away": 1.889,
+    "confidence": "medium",
+    "rationale": "Home team struggling to score recently"
   },
   "02TP6B49FC000000VS5489BUVSPHI8RP": {
     "home_score": 2,
     "away_score": 1,
-    "xg_home": 2.2,
-    "xg_away": 1.486,
+    "xg_home": 2.531,
+    "xg_away": 1.709,
     "confidence": "high",
     "rationale": "Home team in good scoring form"
   },
-  "02TP6B49DG000000VS5489BUVSPHI8RP": {
-    "home_score": 1,
-    "away_score": 2,
-    "xg_home": 1.439,
-    "xg_away": 2.011,
-    "confidence": "high",
-    "rationale": "Weak home attack (0.7x avg); Strong away attack (1.3x avg); Home team struggling to score recently"
-  },
   "02TP6B49HC000000VS5489BUVSPHI8RP": {
     "home_score": 2,
-    "away_score": 1,
-    "xg_home": 2.592,
-    "xg_away": 1.161,
+    "away_score": 0,
+    "xg_home": 2.312,
+    "xg_away": 0.994,
     "confidence": "high",
-    "rationale": "Weak home attack (0.7x avg); Weak away defense (1.6x avg)"
-  },
-  "02TP6B48OK000000VS5489BUVSPHI8RP": {
-    "home_score": 2,
-    "away_score": 1,
-    "xg_home": 2.979,
-    "xg_away": 1.695,
-    "confidence": "high",
-    "rationale": "Weak away defense (1.6x avg); Leaky home defense (1.3x avg); Home team in good scoring form"
+    "rationale": "Weak home attack (0.7x avg); Weak away defense (1.5x avg); Weak away attack (0.7x avg)"
   },
   "02TP6B48VS000000VS5489BUVSPHI8RP": {
     "home_score": 3,
     "away_score": 0,
     "xg_home": 3.8,
-    "xg_away": 0.808,
+    "xg_away": 0.793,
     "confidence": "high",
-    "rationale": "Strong home attack (1.8x avg); Weak away attack (0.6x avg); Home team in good scoring form"
-  },
-  "02TP6B491O000000VS5489BUVSPHI8RP": {
-    "home_score": 0,
-    "away_score": 2,
-    "xg_home": 0.728,
-    "xg_away": 2.611,
-    "confidence": "high",
-    "rationale": "Strong away defense (0.4x avg); Strong away attack (1.6x avg)"
-  },
-  "02TP6B493K000000VS5489BUVSPHI8RP": {
-    "home_score": 1,
-    "away_score": 1,
-    "xg_home": 1.605,
-    "xg_away": 1.19,
-    "confidence": "medium",
-    "rationale": "Strong away defense (0.7x avg); Home team struggling to score recently"
-  },
-  "02TP6B48S8000000VS5489BUVSPHI8RP": {
-    "home_score": 2,
-    "away_score": 0,
-    "xg_home": 2.638,
-    "xg_away": 0.96,
-    "confidence": "high",
-    "rationale": "Weak home attack (0.7x avg); Weak away defense (1.8x avg); Weak away attack (0.7x avg)"
-  },
-  "02TP6B48QG000000VS5489BUVSPHI8RP": {
-    "home_score": 3,
-    "away_score": 2,
-    "xg_home": 3.136,
-    "xg_away": 2.553,
-    "confidence": "high",
-    "rationale": "Home team in good scoring form"
-  },
-  "02TP6B48U0000000VS5489BUVSPHI8RP": {
-    "home_score": 1,
-    "away_score": 1,
-    "xg_home": 1.62,
-    "xg_away": 1.386,
-    "confidence": "medium",
-    "rationale": "Strong away defense (0.6x avg); Home team struggling to score recently"
-  },
-  "02TP6B48MS000000VS5489BUVSPHI8RP": {
-    "home_score": 3,
-    "away_score": 1,
-    "xg_home": 3.8,
-    "xg_away": 1.058,
-    "confidence": "high",
-    "rationale": "Strong home attack (1.3x avg); Weak away defense (1.6x avg); Home team struggling to score recently"
-  },
-  "02TP6B48BS000000VS5489BUVSPHI8RP": {
-    "home_score": 3,
-    "away_score": 1,
-    "xg_home": 3.8,
-    "xg_away": 1.853,
-    "confidence": "high",
-    "rationale": "Strong home attack (1.8x avg); Strong away attack (1.4x avg); Home team in good scoring form"
-  },
-  "02TP6B48H4000000VS5489BUVSPHI8RP": {
-    "home_score": 2,
-    "away_score": 1,
-    "xg_home": 2.387,
-    "xg_away": 1.061,
-    "confidence": "high",
-    "rationale": "Weak home attack (0.7x avg); Weak away defense (1.8x avg); Weak away attack (0.7x avg)"
-  },
-  "02TP6B48J4000000VS5489BUVSPHI8RP": {
-    "home_score": 1,
-    "away_score": 2,
-    "xg_home": 1.56,
-    "xg_away": 2.058,
-    "confidence": "medium",
-    "rationale": "Weak home attack (0.7x avg); Strong away attack (1.3x avg)"
-  },
-  "02TP6B48L0000000VS5489BUVSPHI8RP": {
-    "home_score": 1,
-    "away_score": 2,
-    "xg_home": 1.762,
-    "xg_away": 2.17,
-    "confidence": "medium",
-    "rationale": "Leaky home defense (1.3x avg); Home team in good scoring form"
-  },
-  "02TP6B48DK000000VS5489BUVSPHI8RP": {
-    "home_score": 2,
-    "away_score": 0,
-    "xg_home": 2.156,
-    "xg_away": 0.416,
-    "confidence": "high",
-    "rationale": "Strong home attack (1.5x avg); Strong away defense (0.7x avg); Solid home defense (0.2x avg)"
+    "rationale": "Strong home attack (1.7x avg); Weak away attack (0.6x avg); Home team struggling to score recently"
   },
   "02TP6B48FC000000VS5489BUVSPHI8RP": {
     "home_score": 0,
     "away_score": 3,
-    "xg_home": 0.354,
-    "xg_away": 3.787,
+    "xg_home": 0.387,
+    "xg_away": 3.8,
     "confidence": "high",
-    "rationale": "Weak home attack (0.4x avg); Strong away defense (0.5x avg); Leaky home defense (1.8x avg)"
+    "rationale": "Weak home attack (0.3x avg); Strong away defense (0.7x avg); Strong away attack (1.4x avg)"
+  },
+  "02TP6B48MS000000VS5489BUVSPHI8RP": {
+    "home_score": 3,
+    "away_score": 0,
+    "xg_home": 3.8,
+    "xg_away": 0.966,
+    "confidence": "high",
+    "rationale": "Strong home attack (1.3x avg); Weak away defense (1.5x avg); Weak away attack (0.7x avg)"
   },
   "02TP6B484S000000VS5489BUVSPHI8RP": {
     "home_score": 2,
     "away_score": 1,
-    "xg_home": 2.304,
-    "xg_away": 1.574,
+    "xg_home": 2.293,
+    "xg_away": 1.117,
     "confidence": "high",
-    "rationale": "Home advantage"
+    "rationale": "Home team in good scoring form"
   },
   "02TP6B486G000000VS5489BUVSPHI8RP": {
     "home_score": 2,
-    "away_score": 0,
-    "xg_home": 2.704,
-    "xg_away": 0.824,
+    "away_score": 1,
+    "xg_home": 2.652,
+    "xg_away": 1.305,
     "confidence": "high",
-    "rationale": "Weak away attack (0.6x avg); Home team struggling to score recently"
+    "rationale": "Weak away attack (0.6x avg); Leaky home defense (1.3x avg); Home team struggling to score recently"
   },
   "02TP6B47VC000000VS5489BUVSPHI8RP": {
-    "home_score": 1,
+    "home_score": 2,
     "away_score": 0,
-    "xg_home": 1.807,
-    "xg_away": 0.898,
+    "xg_home": 2.188,
+    "xg_away": 0.821,
     "confidence": "high",
-    "rationale": "Weak home attack (0.7x avg); Weak away attack (0.7x avg); Home team in good scoring form"
+    "rationale": "Weak away attack (0.6x avg)"
   },
   "02TP6B4888000000VS5489BUVSPHI8RP": {
     "home_score": 0,
     "away_score": 3,
-    "xg_home": 0.471,
-    "xg_away": 3.593,
+    "xg_home": 0.358,
+    "xg_away": 3.296,
     "confidence": "high",
-    "rationale": "Weak home attack (0.6x avg); Strong away defense (0.4x avg); Strong away attack (1.6x avg)"
+    "rationale": "Weak home attack (0.7x avg); Strong away defense (0.3x avg); Strong away attack (1.5x avg)"
   },
   "02TP6B482S000000VS5489BUVSPHI8RP": {
     "home_score": 2,
     "away_score": 1,
-    "xg_home": 2.415,
-    "xg_away": 1.897,
-    "confidence": "medium",
-    "rationale": "Strong away attack (1.4x avg); Home team in good scoring form"
+    "xg_home": 2.398,
+    "xg_away": 1.546,
+    "confidence": "high",
+    "rationale": "Home team in good scoring form"
   },
   "02TP6B48A0000000VS5489BUVSPHI8RP": {
-    "home_score": 1,
-    "away_score": 1,
-    "xg_home": 1.833,
-    "xg_away": 1.699,
-    "confidence": "medium",
-    "rationale": "Strong away defense (0.7x avg); Home team in good scoring form"
+    "home_score": 2,
+    "away_score": 3,
+    "xg_home": 2.473,
+    "xg_away": 3.422,
+    "confidence": "high",
+    "rationale": "Strong away attack (1.4x avg); Home team in good scoring form"
   },
   "02TP6B4814000000VS5489BUVSPHI8RP": {
     "home_score": 1,
-    "away_score": 1,
-    "xg_home": 1.702,
-    "xg_away": 1.755,
-    "confidence": "low",
-    "rationale": "Weak home attack (0.7x avg); Home team struggling to score recently"
+    "away_score": 2,
+    "xg_home": 1.894,
+    "xg_away": 2.182,
+    "confidence": "medium",
+    "rationale": "Strong away attack (1.3x avg); Home team struggling to score recently"
   },
   "02TP6B47QC000000VS5489BUVSPHI8RP": {
     "home_score": 2,
     "away_score": 1,
-    "xg_home": 2.674,
-    "xg_away": 1.875,
+    "xg_home": 2.785,
+    "xg_away": 1.808,
     "confidence": "high",
-    "rationale": "Strong home attack (1.3x avg); Strong away attack (1.3x avg); Home team struggling to score recently"
+    "rationale": "Strong home attack (1.3x avg); Home team in good scoring form"
   },
   "02TP6B47JG000000VS5489BUVSPHI8RP": {
     "home_score": 2,
-    "away_score": 2,
-    "xg_home": 2.13,
-    "xg_away": 2.177,
+    "away_score": 1,
+    "xg_home": 2.019,
+    "xg_away": 1.546,
     "confidence": "medium",
-    "rationale": "Strong away attack (1.4x avg)"
+    "rationale": "Home team in good scoring form"
   },
   "02TP6B47L4000000VS5489BUVSPHI8RP": {
     "home_score": 2,
     "away_score": 1,
-    "xg_home": 2.75,
-    "xg_away": 1.527,
+    "xg_home": 2.893,
+    "xg_away": 1.37,
     "confidence": "high",
-    "rationale": "Strong home attack (1.8x avg); Strong away defense (0.7x avg); Home team in good scoring form"
+    "rationale": "Strong home attack (1.7x avg); Home team struggling to score recently"
   },
   "02TP6B47OK000000VS5489BUVSPHI8RP": {
     "home_score": 1,
     "away_score": 1,
-    "xg_home": 1.211,
-    "xg_away": 1.661,
-    "confidence": "medium",
-    "rationale": "Strong away defense (0.6x avg); Leaky home defense (1.3x avg); Home team in good scoring form"
+    "xg_home": 1.064,
+    "xg_away": 1.794,
+    "confidence": "high",
+    "rationale": "Strong away defense (0.6x avg)"
   },
   "02TP6B47S0000000VS5489BUVSPHI8RP": {
     "home_score": 3,
     "away_score": 0,
-    "xg_home": 3.064,
-    "xg_away": 0.396,
+    "xg_home": 3.8,
+    "xg_away": 0.478,
     "confidence": "high",
-    "rationale": "Strong home attack (1.5x avg); Solid home defense (0.2x avg); Home team struggling to score recently"
+    "rationale": "Strong home attack (1.9x avg); Solid home defense (0.2x avg); Home team in good scoring form"
   },
   "02TP6B47TO000000VS5489BUVSPHI8RP": {
-    "home_score": 1,
+    "home_score": 0,
     "away_score": 2,
-    "xg_home": 1.19,
-    "xg_away": 2.445,
+    "xg_home": 0.872,
+    "xg_away": 2.231,
     "confidence": "high",
-    "rationale": "Weak home attack (0.4x avg); Weak away defense (1.6x avg); Leaky home defense (1.8x avg)"
+    "rationale": "Weak home attack (0.3x avg); Weak away defense (1.5x avg); Weak away attack (0.7x avg)"
   },
   "02TP6B47MS000000VS5489BUVSPHI8RP": {
     "home_score": 2,
     "away_score": 1,
-    "xg_home": 2.587,
-    "xg_away": 1.086,
+    "xg_home": 2.192,
+    "xg_away": 1.055,
     "confidence": "high",
-    "rationale": "Weak home attack (0.7x avg); Weak away defense (1.8x avg); Weak away attack (0.7x avg)"
+    "rationale": "Weak home attack (0.7x avg); Weak away defense (1.5x avg); Weak away attack (0.7x avg)"
   },
   "02TP6B47B8000000VS5489BUVSPHI8RP": {
     "home_score": 1,
-    "away_score": 1,
-    "xg_home": 1.147,
-    "xg_away": 1.791,
+    "away_score": 3,
+    "xg_home": 1.472,
+    "xg_away": 3.785,
     "confidence": "high",
-    "rationale": "Strong away defense (0.5x avg); Home team struggling to score recently"
+    "rationale": "Strong away defense (0.7x avg); Strong away attack (1.4x avg); Leaky home defense (1.3x avg)"
   },
   "02TP6B47CO000000VS5489BUVSPHI8RP": {
     "home_score": 1,
-    "away_score": 2,
-    "xg_home": 1.493,
-    "xg_away": 2.166,
-    "confidence": "high",
-    "rationale": "Weak home attack (0.6x avg); Leaky home defense (1.3x avg); Home team struggling to score recently"
+    "away_score": 1,
+    "xg_home": 1.686,
+    "xg_away": 1.595,
+    "confidence": "medium",
+    "rationale": "Weak home attack (0.7x avg); Home team struggling to score recently"
   },
   "02TP6B47G8000000VS5489BUVSPHI8RP": {
     "home_score": 0,
     "away_score": 2,
-    "xg_home": 0.586,
-    "xg_away": 2.012,
+    "xg_home": 0.457,
+    "xg_away": 2.41,
     "confidence": "high",
-    "rationale": "Weak home attack (0.7x avg); Strong away defense (0.4x avg); Strong away attack (1.6x avg)"
+    "rationale": "Strong away defense (0.3x avg); Strong away attack (1.5x avg)"
   },
   "02TP6B4784000000VS5489BUVSPHI8RP": {
     "home_score": 2,
-    "away_score": 1,
-    "xg_home": 2.543,
-    "xg_away": 1.016,
+    "away_score": 0,
+    "xg_home": 2.771,
+    "xg_away": 0.786,
     "confidence": "high",
-    "rationale": "Weak away attack (0.7x avg); Home team in good scoring form"
+    "rationale": "Weak away attack (0.6x avg); Home team in good scoring form"
   },
   "02TP6B47EK000000VS5489BUVSPHI8RP": {
-    "home_score": 3,
+    "home_score": 2,
     "away_score": 1,
-    "xg_home": 3.087,
-    "xg_away": 1.176,
+    "xg_home": 2.962,
+    "xg_away": 1.208,
     "confidence": "high",
     "rationale": "Weak away attack (0.6x avg); Home team in good scoring form"
   },
   "02TP6B479K000000VS5489BUVSPHI8RP": {
     "home_score": 2,
     "away_score": 2,
-    "xg_home": 2.837,
-    "xg_away": 2.188,
-    "confidence": "high",
-    "rationale": "Home team struggling to score recently"
+    "xg_home": 2.296,
+    "xg_away": 2.563,
+    "confidence": "medium",
+    "rationale": "Strong away attack (1.3x avg); Home team struggling to score recently"
   },
   "02TP6B47HS000000VS5489BUVSPHI8RP": {
-    "home_score": 0,
-    "away_score": 1,
-    "xg_home": 0.995,
-    "xg_away": 1.168,
-    "confidence": "low",
-    "rationale": "Weak home attack (0.7x avg); Strong away defense (0.7x avg); Home team struggling to score recently"
-  },
-  "02TP6B4700000000VS5489BUVSPHI8RP": {
-    "home_score": 3,
-    "away_score": 0,
-    "xg_home": 3.8,
-    "xg_away": 0.99,
-    "confidence": "high",
-    "rationale": "Strong home attack (1.3x avg); Weak away defense (1.8x avg); Weak away attack (0.7x avg)"
-  },
-  "02TP6B46T0000000VS5489BUVSPHI8RP": {
-    "home_score": 2,
-    "away_score": 1,
-    "xg_home": 2.504,
-    "xg_away": 1.889,
+    "home_score": 1,
+    "away_score": 2,
+    "xg_home": 1.748,
+    "xg_away": 2.287,
     "confidence": "high",
     "rationale": "Strong away attack (1.4x avg); Home team struggling to score recently"
   },
-  "02TP6B46UG000000VS5489BUVSPHI8RP": {
+  "02TP6B4700000000VS5489BUVSPHI8RP": {
+    "home_score": 3,
+    "away_score": 1,
+    "xg_home": 3.8,
+    "xg_away": 1.025,
+    "confidence": "high",
+    "rationale": "Strong home attack (1.3x avg); Weak away defense (1.5x avg); Weak away attack (0.7x avg)"
+  },
+  "02TP6B46T0000000VS5489BUVSPHI8RP": {
     "home_score": 2,
     "away_score": 2,
-    "xg_home": 2.121,
-    "xg_away": 2.623,
+    "xg_home": 2.441,
+    "xg_away": 2.609,
     "confidence": "medium",
-    "rationale": "Leaky home defense (1.3x avg); Home team in good scoring form"
+    "rationale": "Leaky home defense (1.3x avg); Home team struggling to score recently"
+  },
+  "02TP6B46UG000000VS5489BUVSPHI8RP": {
+    "home_score": 1,
+    "away_score": 3,
+    "xg_home": 1.951,
+    "xg_away": 3.116,
+    "confidence": "high",
+    "rationale": "Strong away attack (1.3x avg)"
   },
   "02TP6B474O000000VS5489BUVSPHI8RP": {
     "home_score": 3,
     "away_score": 1,
     "xg_home": 3.8,
-    "xg_away": 1.452,
+    "xg_away": 1.754,
     "confidence": "high",
-    "rationale": "Strong home attack (1.8x avg); Home team in good scoring form"
+    "rationale": "Strong home attack (1.7x avg); Home team struggling to score recently"
   },
   "02TP6B476G000000VS5489BUVSPHI8RP": {
-    "home_score": 3,
-    "away_score": 1,
-    "xg_home": 3.28,
-    "xg_away": 1.332,
+    "home_score": 2,
+    "away_score": 0,
+    "xg_home": 2.74,
+    "xg_away": 0.966,
     "confidence": "high",
-    "rationale": "Weak away defense (1.6x avg)"
+    "rationale": "Weak away defense (1.5x avg); Weak away attack (0.7x avg); Home team in good scoring form"
   },
   "02TP6B471K000000VS5489BUVSPHI8RP": {
     "home_score": 2,
     "away_score": 0,
-    "xg_home": 2.107,
+    "xg_home": 2.562,
     "xg_away": 0.35,
     "confidence": "high",
-    "rationale": "Strong home attack (1.5x avg); Strong away defense (0.6x avg); Solid home defense (0.2x avg)"
+    "rationale": "Strong home attack (1.9x avg); Strong away defense (0.6x avg); Solid home defense (0.2x avg)"
   },
   "02TP6B4738000000VS5489BUVSPHI8RP": {
     "home_score": 0,
     "away_score": 3,
-    "xg_home": 0.716,
+    "xg_home": 0.545,
     "xg_away": 3.8,
     "confidence": "high",
-    "rationale": "Weak home attack (0.4x avg); Strong away attack (1.3x avg); Leaky home defense (1.8x avg)"
+    "rationale": "Weak home attack (0.3x avg); Leaky home defense (1.8x avg); Home team struggling to score recently"
   },
   "02TP6B46IG000000VS5489BUVSPHI8RP": {
     "home_score": 1,
     "away_score": 2,
-    "xg_home": 1.934,
-    "xg_away": 2.77,
-    "confidence": "high",
-    "rationale": "Strong away attack (1.4x avg); Leaky home defense (1.3x avg); Home team in good scoring form"
+    "xg_home": 1.984,
+    "xg_away": 2.307,
+    "confidence": "medium",
+    "rationale": "Evenly matched sides"
   },
   "02TP6B46K0000000VS5489BUVSPHI8RP": {
-    "home_score": 0,
-    "away_score": 2,
-    "xg_home": 0.885,
-    "xg_away": 2.468,
-    "confidence": "high",
-    "rationale": "Weak home attack (0.6x avg); Strong away defense (0.7x avg); Leaky home defense (1.3x avg)"
-  },
-  "02TP6B46N0000000VS5489BUVSPHI8RP": {
     "home_score": 1,
     "away_score": 1,
-    "xg_home": 1.856,
-    "xg_away": 1.213,
+    "xg_home": 1.14,
+    "xg_away": 1.908,
     "confidence": "high",
-    "rationale": "Weak home attack (0.7x avg); Home team in good scoring form"
+    "rationale": "Weak home attack (0.7x avg); Home team struggling to score recently"
+  },
+  "02TP6B46N0000000VS5489BUVSPHI8RP": {
+    "home_score": 2,
+    "away_score": 1,
+    "xg_home": 2.15,
+    "xg_away": 1.167,
+    "confidence": "high",
+    "rationale": "Home advantage"
   },
   "02TP6B46LG000000VS5489BUVSPHI8RP": {
     "home_score": 1,
-    "away_score": 2,
-    "xg_home": 1.309,
-    "xg_away": 2.556,
+    "away_score": 3,
+    "xg_home": 1.644,
+    "xg_away": 3.506,
     "confidence": "high",
-    "rationale": "Strong away defense (0.5x avg); Home team in good scoring form"
+    "rationale": "Strong away defense (0.7x avg); Strong away attack (1.4x avg); Home team in good scoring form"
   },
   "02TP6B46Q0000000VS5489BUVSPHI8RP": {
     "home_score": 0,
     "away_score": 2,
-    "xg_home": 0.825,
-    "xg_away": 2.276,
+    "xg_home": 0.579,
+    "xg_away": 2.307,
     "confidence": "high",
-    "rationale": "Strong away defense (0.4x avg); Strong away attack (1.6x avg); Home team in good scoring form"
+    "rationale": "Strong away defense (0.3x avg); Strong away attack (1.5x avg); Home team in good scoring form"
   },
   "02TP6B46OG000000VS5489BUVSPHI8RP": {
-    "home_score": 1,
+    "home_score": 2,
     "away_score": 0,
-    "xg_home": 1.676,
+    "xg_home": 2.093,
     "xg_away": 0.808,
     "confidence": "high",
-    "rationale": "Weak home attack (0.7x avg); Weak away attack (0.6x avg); Home team struggling to score recently"
+    "rationale": "Weak away attack (0.6x avg); Home team struggling to score recently"
   },
   "02TP6B46RG000000VS5489BUVSPHI8RP": {
     "home_score": 1,
-    "away_score": 1,
-    "xg_home": 1.079,
-    "xg_away": 1.195,
-    "confidence": "low",
-    "rationale": "Weak home attack (0.7x avg); Strong away defense (0.7x avg)"
+    "away_score": 2,
+    "xg_home": 1.546,
+    "xg_away": 2.252,
+    "confidence": "high",
+    "rationale": "Weak home attack (0.7x avg); Strong away attack (1.4x avg); Home team in good scoring form"
   },
   "02TP6B4684000000VS5489BUVSPHI8RP": {
     "home_score": 3,
     "away_score": 0,
-    "xg_home": 3.037,
-    "xg_away": 0.926,
+    "xg_home": 3.792,
+    "xg_away": 0.786,
     "confidence": "high",
-    "rationale": "Strong home attack (1.3x avg); Weak away attack (0.7x avg); Home team struggling to score recently"
+    "rationale": "Strong home attack (1.3x avg); Weak away attack (0.6x avg); Home team in good scoring form"
   },
   "02TP6B469G000000VS5489BUVSPHI8RP": {
     "home_score": 3,
     "away_score": 0,
-    "xg_home": 3.689,
-    "xg_away": 0.479,
+    "xg_home": 3.8,
+    "xg_away": 0.584,
     "confidence": "high",
-    "rationale": "Strong home attack (1.5x avg); Solid home defense (0.2x avg); Home team struggling to score recently"
+    "rationale": "Strong home attack (1.9x avg); Strong away attack (1.3x avg); Solid home defense (0.2x avg)"
   },
   "02TP6B46B0000000VS5489BUVSPHI8RP": {
-    "home_score": 1,
+    "home_score": 0,
     "away_score": 2,
-    "xg_home": 1.188,
-    "xg_away": 2.287,
+    "xg_home": 0.826,
+    "xg_away": 2.368,
     "confidence": "high",
-    "rationale": "Weak home attack (0.4x avg); Weak away defense (1.8x avg); Weak away attack (0.7x avg)"
+    "rationale": "Weak home attack (0.3x avg); Weak away defense (1.5x avg); Weak away attack (0.7x avg)"
   },
   "02TP6B46CG000000VS5489BUVSPHI8RP": {
     "home_score": 2,
     "away_score": 1,
-    "xg_home": 2.686,
-    "xg_away": 1.112,
+    "xg_home": 2.02,
+    "xg_away": 1.234,
     "confidence": "high",
-    "rationale": "Strong home attack (1.8x avg); Strong away defense (0.6x avg); Home team in good scoring form"
+    "rationale": "Strong home attack (1.7x avg); Strong away defense (0.6x avg); Home team struggling to score recently"
   },
   "02TP6B46E0000000VS5489BUVSPHI8RP": {
     "home_score": 1,
-    "away_score": 2,
-    "xg_home": 1.975,
-    "xg_away": 2.361,
+    "away_score": 1,
+    "xg_home": 1.714,
+    "xg_away": 1.808,
     "confidence": "medium",
-    "rationale": "Strong away attack (1.3x avg)"
+    "rationale": "Home team in good scoring form"
   },
   "02TP6B46FG000000VS5489BUVSPHI8RP": {
     "home_score": 2,
-    "away_score": 1,
-    "xg_home": 2.281,
-    "xg_away": 1.48,
-    "confidence": "high",
-    "rationale": "Home team struggling to score recently"
+    "away_score": 2,
+    "xg_home": 2.576,
+    "xg_away": 2.884,
+    "confidence": "medium",
+    "rationale": "Leaky home defense (1.3x avg); Home team struggling to score recently"
   },
   "02TP6B46H0000000VS5489BUVSPHI8RP": {
     "home_score": 3,
     "away_score": 1,
-    "xg_home": 3.8,
-    "xg_away": 1.414,
+    "xg_home": 3.17,
+    "xg_away": 1.186,
     "confidence": "high",
-    "rationale": "Weak away defense (1.6x avg); Home team struggling to score recently"
+    "rationale": "Weak away defense (1.5x avg); Weak away attack (0.7x avg); Home team struggling to score recently"
   }
 }

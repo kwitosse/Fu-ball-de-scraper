@@ -40,11 +40,26 @@ class MatchdaysScraper:
 
     def scrape_all(self) -> List[Matchday]:
         all_matchdays: List[Matchday] = []
+        seen_ids: set = set()
+        duplicate_count = 0
         for n in range(1, self.base.TOTAL_MATCHDAYS + 1):
             print(f"  Fetching matchday {n}/{self.base.TOTAL_MATCHDAYS}...", end="\r", flush=True)
             md = self.scrape_matchday(n)
+            unique_matches = []
+            for match in md.matches:
+                if match.match_id in seen_ids:
+                    duplicate_count += 1
+                    continue
+                seen_ids.add(match.match_id)
+                unique_matches.append(match)
+            md.matches = unique_matches
             all_matchdays.append(md)
         print()
+        if duplicate_count:
+            logger.info(
+                "Skipped %s duplicate fixture rows repeated across matchdays",
+                duplicate_count,
+            )
         return all_matchdays
 
     def _parse_matches(self, soup: BeautifulSoup, matchday: int) -> List[Match]:

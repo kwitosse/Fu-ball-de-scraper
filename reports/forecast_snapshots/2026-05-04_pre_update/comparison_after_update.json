@@ -1,0 +1,518 @@
+{
+  "summary": {
+    "snapshot_dir": "reports/forecast_snapshots/2026-05-04_pre_update",
+    "current_fixtures": "output/app_data/fixtures.json",
+    "generated_at": "2026-05-04T14:28:43+00:00",
+    "evaluated_matches": 20,
+    "outcome_correct": 11,
+    "exact_score_correct": 2,
+    "avg_goal_diff_error": 1.35,
+    "avg_total_goals_error": 1.35,
+    "avg_home_goal_error": 0.75,
+    "avg_away_goal_error": 1.1,
+    "outcome_accuracy": 0.55,
+    "exact_score_accuracy": 0.1
+  },
+  "matches": [
+    {
+      "match_id": "02TP6B49V0000000VS5489BUVSPHI8RP",
+      "matchday": 17,
+      "date": "11.04.2026",
+      "home_team": "SV Panitzsch/​Borsdorf II",
+      "away_team": "SG Olympia 1896 Leipzig II",
+      "prediction": {
+        "home_score": 3,
+        "away_score": 1
+      },
+      "actual": {
+        "home_score": 4,
+        "away_score": 1
+      },
+      "predicted_outcome": "home",
+      "actual_outcome": "home",
+      "outcome_correct": true,
+      "exact_score_correct": false,
+      "goal_diff_error": 1,
+      "total_goals_error": 1,
+      "home_goal_error": 1,
+      "away_goal_error": 0,
+      "confidence": "high",
+      "rationale": "Strong home attack (1.3x avg); Home team struggling to score recently"
+    },
+    {
+      "match_id": "02TP6B49J8000000VS5489BUVSPHI8RP",
+      "matchday": 17,
+      "date": "11.04.2026",
+      "home_team": "SV Lipsia 93 Eutritzsch II",
+      "away_team": "Roter Stern Leipzig 99 II",
+      "prediction": {
+        "home_score": 2,
+        "away_score": 1
+      },
+      "actual": {
+        "home_score": 3,
+        "away_score": 0
+      },
+      "predicted_outcome": "home",
+      "actual_outcome": "home",
+      "outcome_correct": true,
+      "exact_score_correct": false,
+      "goal_diff_error": 2,
+      "total_goals_error": 0,
+      "home_goal_error": 1,
+      "away_goal_error": 1,
+      "confidence": "high",
+      "rationale": "Weak away attack (0.7x avg)"
+    },
+    {
+      "match_id": "02TP6B49L8000000VS5489BUVSPHI8RP",
+      "matchday": 17,
+      "date": "11.04.2026",
+      "home_team": "SG LVB I",
+      "away_team": "TSV Böhlitz-Ehrenberg 1990 I",
+      "prediction": {
+        "home_score": 2,
+        "away_score": 1
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 3
+      },
+      "predicted_outcome": "home",
+      "actual_outcome": "away",
+      "outcome_correct": false,
+      "exact_score_correct": false,
+      "goal_diff_error": 4,
+      "total_goals_error": 0,
+      "home_goal_error": 2,
+      "away_goal_error": 2,
+      "confidence": "high",
+      "rationale": "Home team struggling to score recently"
+    },
+    {
+      "match_id": "02TP6B49N4000000VS5489BUVSPHI8RP",
+      "matchday": 17,
+      "date": "12.04.2026",
+      "home_team": "SV Fortuna Leipzig 02 I",
+      "away_team": "FSV Großpösna I",
+      "prediction": {
+        "home_score": 2,
+        "away_score": 1
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 0
+      },
+      "predicted_outcome": "home",
+      "actual_outcome": "home",
+      "outcome_correct": true,
+      "exact_score_correct": false,
+      "goal_diff_error": 0,
+      "total_goals_error": 2,
+      "home_goal_error": 1,
+      "away_goal_error": 1,
+      "confidence": "medium",
+      "rationale": "Weak home attack (0.6x avg); Weak away defense (1.8x avg); Weak away attack (0.7x avg)"
+    },
+    {
+      "match_id": "02TP6B49R4000000VS5489BUVSPHI8RP",
+      "matchday": 17,
+      "date": "12.04.2026",
+      "home_team": "FC Blau-Weiß Leipzig II",
+      "away_team": "VfB Zwenkau 02 II",
+      "prediction": {
+        "home_score": 1,
+        "away_score": 1
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 0
+      },
+      "predicted_outcome": "draw",
+      "actual_outcome": "home",
+      "outcome_correct": false,
+      "exact_score_correct": false,
+      "goal_diff_error": 1,
+      "total_goals_error": 1,
+      "home_goal_error": 0,
+      "away_goal_error": 1,
+      "confidence": "low",
+      "rationale": "Weak home attack (0.7x avg); Strong away attack (1.4x avg); Home team in good scoring form"
+    },
+    {
+      "match_id": "02TP6B49P0000000VS5489BUVSPHI8RP",
+      "matchday": 17,
+      "date": "12.04.2026",
+      "home_team": "SG Leipzig-Bienitz I",
+      "away_team": "SG Rotation Leipzig II",
+      "prediction": {
+        "home_score": 1,
+        "away_score": 1
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 2
+      },
+      "predicted_outcome": "draw",
+      "actual_outcome": "away",
+      "outcome_correct": false,
+      "exact_score_correct": false,
+      "goal_diff_error": 1,
+      "total_goals_error": 1,
+      "home_goal_error": 0,
+      "away_goal_error": 1,
+      "confidence": "medium",
+      "rationale": "Strong away defense (0.6x avg); Home team in good scoring form"
+    },
+    {
+      "match_id": "02TP6B49T0000000VS5489BUVSPHI8RP",
+      "matchday": 17,
+      "date": "12.04.2026",
+      "home_team": "SV Victoria 90 Leipzig I",
+      "away_team": "SV Tapfer 06 Leipzig II",
+      "prediction": {
+        "home_score": 0,
+        "away_score": 3
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 4
+      },
+      "predicted_outcome": "away",
+      "actual_outcome": "away",
+      "outcome_correct": true,
+      "exact_score_correct": false,
+      "goal_diff_error": 1,
+      "total_goals_error": 1,
+      "home_goal_error": 0,
+      "away_goal_error": 1,
+      "confidence": "high",
+      "rationale": "Weak home attack (0.4x avg); Strong away defense (0.4x avg); Strong away attack (1.6x avg)"
+    },
+    {
+      "match_id": "02TP6B499O000000VS5489BUVSPHI8RP",
+      "matchday": 18,
+      "date": "18.04.2026",
+      "home_team": "SV Panitzsch/​Borsdorf II",
+      "away_team": "SV Lipsia 93 Eutritzsch II",
+      "prediction": {
+        "home_score": 1,
+        "away_score": 1
+      },
+      "actual": {
+        "home_score": 2,
+        "away_score": 3
+      },
+      "predicted_outcome": "draw",
+      "actual_outcome": "away",
+      "outcome_correct": false,
+      "exact_score_correct": false,
+      "goal_diff_error": 1,
+      "total_goals_error": 3,
+      "home_goal_error": 1,
+      "away_goal_error": 2,
+      "confidence": "medium",
+      "rationale": "Strong home attack (1.3x avg); Strong away defense (0.5x avg); Home team struggling to score recently"
+    },
+    {
+      "match_id": "02TP6B497S000000VS5489BUVSPHI8RP",
+      "matchday": 18,
+      "date": "18.04.2026",
+      "home_team": "Roter Stern Leipzig 99 II",
+      "away_team": "SG LVB I",
+      "prediction": {
+        "home_score": 1,
+        "away_score": 2
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 2
+      },
+      "predicted_outcome": "away",
+      "actual_outcome": "away",
+      "outcome_correct": true,
+      "exact_score_correct": true,
+      "goal_diff_error": 0,
+      "total_goals_error": 0,
+      "home_goal_error": 0,
+      "away_goal_error": 0,
+      "confidence": "high",
+      "rationale": "Strong away defense (0.7x avg); Leaky home defense (1.3x avg); Home team in good scoring form"
+    },
+    {
+      "match_id": "02TP6B48OK000000VS5489BUVSPHI8RP",
+      "matchday": 19,
+      "date": "25.04.2026",
+      "home_team": "Roter Stern Leipzig 99 II",
+      "away_team": "SV Fortuna Leipzig 02 I",
+      "prediction": {
+        "home_score": 2,
+        "away_score": 1
+      },
+      "actual": {
+        "home_score": 3,
+        "away_score": 0
+      },
+      "predicted_outcome": "home",
+      "actual_outcome": "home",
+      "outcome_correct": true,
+      "exact_score_correct": false,
+      "goal_diff_error": 2,
+      "total_goals_error": 0,
+      "home_goal_error": 1,
+      "away_goal_error": 1,
+      "confidence": "high",
+      "rationale": "Weak away defense (1.6x avg); Leaky home defense (1.3x avg); Home team in good scoring form"
+    },
+    {
+      "match_id": "02TP6B491O000000VS5489BUVSPHI8RP",
+      "matchday": 19,
+      "date": "25.04.2026",
+      "home_team": "SV Lipsia 93 Eutritzsch II",
+      "away_team": "SV Tapfer 06 Leipzig II",
+      "prediction": {
+        "home_score": 0,
+        "away_score": 2
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 1
+      },
+      "predicted_outcome": "away",
+      "actual_outcome": "away",
+      "outcome_correct": true,
+      "exact_score_correct": false,
+      "goal_diff_error": 1,
+      "total_goals_error": 1,
+      "home_goal_error": 0,
+      "away_goal_error": 1,
+      "confidence": "high",
+      "rationale": "Strong away defense (0.4x avg); Strong away attack (1.6x avg)"
+    },
+    {
+      "match_id": "02TP6B493K000000VS5489BUVSPHI8RP",
+      "matchday": 19,
+      "date": "25.04.2026",
+      "home_team": "SG LVB I",
+      "away_team": "SV Panitzsch/​Borsdorf II",
+      "prediction": {
+        "home_score": 1,
+        "away_score": 1
+      },
+      "actual": {
+        "home_score": 2,
+        "away_score": 5
+      },
+      "predicted_outcome": "draw",
+      "actual_outcome": "away",
+      "outcome_correct": false,
+      "exact_score_correct": false,
+      "goal_diff_error": 3,
+      "total_goals_error": 5,
+      "home_goal_error": 1,
+      "away_goal_error": 4,
+      "confidence": "medium",
+      "rationale": "Strong away defense (0.7x avg); Home team struggling to score recently"
+    },
+    {
+      "match_id": "02TP6B48S8000000VS5489BUVSPHI8RP",
+      "matchday": 19,
+      "date": "26.04.2026",
+      "home_team": "FC Blau-Weiß Leipzig II",
+      "away_team": "FSV Großpösna I",
+      "prediction": {
+        "home_score": 2,
+        "away_score": 0
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 2
+      },
+      "predicted_outcome": "home",
+      "actual_outcome": "away",
+      "outcome_correct": false,
+      "exact_score_correct": false,
+      "goal_diff_error": 3,
+      "total_goals_error": 1,
+      "home_goal_error": 1,
+      "away_goal_error": 2,
+      "confidence": "high",
+      "rationale": "Weak home attack (0.7x avg); Weak away defense (1.8x avg); Weak away attack (0.7x avg)"
+    },
+    {
+      "match_id": "02TP6B48QG000000VS5489BUVSPHI8RP",
+      "matchday": 19,
+      "date": "26.04.2026",
+      "home_team": "SG Leipzig-Bienitz I",
+      "away_team": "TSV Böhlitz-Ehrenberg 1990 I",
+      "prediction": {
+        "home_score": 3,
+        "away_score": 2
+      },
+      "actual": {
+        "home_score": 3,
+        "away_score": 4
+      },
+      "predicted_outcome": "home",
+      "actual_outcome": "away",
+      "outcome_correct": false,
+      "exact_score_correct": false,
+      "goal_diff_error": 2,
+      "total_goals_error": 2,
+      "home_goal_error": 0,
+      "away_goal_error": 2,
+      "confidence": "high",
+      "rationale": "Home team in good scoring form"
+    },
+    {
+      "match_id": "02TP6B48U0000000VS5489BUVSPHI8RP",
+      "matchday": 19,
+      "date": "26.04.2026",
+      "home_team": "VfB Zwenkau 02 II",
+      "away_team": "SG Rotation Leipzig II",
+      "prediction": {
+        "home_score": 1,
+        "away_score": 1
+      },
+      "actual": {
+        "home_score": 0,
+        "away_score": 1
+      },
+      "predicted_outcome": "draw",
+      "actual_outcome": "away",
+      "outcome_correct": false,
+      "exact_score_correct": false,
+      "goal_diff_error": 1,
+      "total_goals_error": 1,
+      "home_goal_error": 1,
+      "away_goal_error": 0,
+      "confidence": "medium",
+      "rationale": "Strong away defense (0.6x avg); Home team struggling to score recently"
+    },
+    {
+      "match_id": "02TP6B48BS000000VS5489BUVSPHI8RP",
+      "matchday": 20,
+      "date": "02.05.2026",
+      "home_team": "SG Olympia 1896 Leipzig II",
+      "away_team": "VfB Zwenkau 02 II",
+      "prediction": {
+        "home_score": 3,
+        "away_score": 1
+      },
+      "actual": {
+        "home_score": 3,
+        "away_score": 2
+      },
+      "predicted_outcome": "home",
+      "actual_outcome": "home",
+      "outcome_correct": true,
+      "exact_score_correct": false,
+      "goal_diff_error": 1,
+      "total_goals_error": 1,
+      "home_goal_error": 0,
+      "away_goal_error": 1,
+      "confidence": "high",
+      "rationale": "Strong home attack (1.8x avg); Strong away attack (1.4x avg); Home team in good scoring form"
+    },
+    {
+      "match_id": "02TP6B48H4000000VS5489BUVSPHI8RP",
+      "matchday": 20,
+      "date": "03.05.2026",
+      "home_team": "SG Rotation Leipzig II",
+      "away_team": "FSV Großpösna I",
+      "prediction": {
+        "home_score": 2,
+        "away_score": 1
+      },
+      "actual": {
+        "home_score": 3,
+        "away_score": 2
+      },
+      "predicted_outcome": "home",
+      "actual_outcome": "home",
+      "outcome_correct": true,
+      "exact_score_correct": false,
+      "goal_diff_error": 0,
+      "total_goals_error": 2,
+      "home_goal_error": 1,
+      "away_goal_error": 1,
+      "confidence": "high",
+      "rationale": "Weak home attack (0.7x avg); Weak away defense (1.8x avg); Weak away attack (0.7x avg)"
+    },
+    {
+      "match_id": "02TP6B48J4000000VS5489BUVSPHI8RP",
+      "matchday": 20,
+      "date": "03.05.2026",
+      "home_team": "TSV Böhlitz-Ehrenberg 1990 I",
+      "away_team": "FC Blau-Weiß Leipzig II",
+      "prediction": {
+        "home_score": 1,
+        "away_score": 2
+      },
+      "actual": {
+        "home_score": 1,
+        "away_score": 2
+      },
+      "predicted_outcome": "away",
+      "actual_outcome": "away",
+      "outcome_correct": true,
+      "exact_score_correct": true,
+      "goal_diff_error": 0,
+      "total_goals_error": 0,
+      "home_goal_error": 0,
+      "away_goal_error": 0,
+      "confidence": "medium",
+      "rationale": "Weak home attack (0.7x avg); Strong away attack (1.3x avg)"
+    },
+    {
+      "match_id": "02TP6B48L0000000VS5489BUVSPHI8RP",
+      "matchday": 20,
+      "date": "02.05.2026",
+      "home_team": "Roter Stern Leipzig 99 II",
+      "away_team": "SG Leipzig-Bienitz I",
+      "prediction": {
+        "home_score": 1,
+        "away_score": 2
+      },
+      "actual": {
+        "home_score": 3,
+        "away_score": 3
+      },
+      "predicted_outcome": "away",
+      "actual_outcome": "draw",
+      "outcome_correct": false,
+      "exact_score_correct": false,
+      "goal_diff_error": 1,
+      "total_goals_error": 3,
+      "home_goal_error": 2,
+      "away_goal_error": 1,
+      "confidence": "medium",
+      "rationale": "Leaky home defense (1.3x avg); Home team in good scoring form"
+    },
+    {
+      "match_id": "02TP6B48DK000000VS5489BUVSPHI8RP",
+      "matchday": 20,
+      "date": "03.05.2026",
+      "home_team": "SV Tapfer 06 Leipzig II",
+      "away_team": "SG LVB I",
+      "prediction": {
+        "home_score": 2,
+        "away_score": 0
+      },
+      "actual": {
+        "home_score": 4,
+        "away_score": 0
+      },
+      "predicted_outcome": "home",
+      "actual_outcome": "home",
+      "outcome_correct": true,
+      "exact_score_correct": false,
+      "goal_diff_error": 2,
+      "total_goals_error": 2,
+      "home_goal_error": 2,
+      "away_goal_error": 0,
+      "confidence": "high",
+      "rationale": "Strong home attack (1.5x avg); Strong away defense (0.7x avg); Solid home defense (0.2x avg)"
+    }
+  ]
+}

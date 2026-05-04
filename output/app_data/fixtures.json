@@ -671,9 +671,9 @@
     "away_team": "SV Lipsia 93 Eutritzsch II",
     "date": "19.10.2025",
     "time": "14:00",
-    "status": "played",
-    "home_score": 0,
-    "away_score": 0
+    "status": "unplayed",
+    "home_score": null,
+    "away_score": null
   },
   {
     "match_id": "02TP6B44J0000000VS5489BUVSPHI8RP",
@@ -788,9 +788,9 @@
     "away_team": "SV Panitzsch/​Borsdorf II",
     "date": "26.10.2025",
     "time": "14:00",
-    "status": "played",
-    "home_score": 0,
-    "away_score": 0
+    "status": "unplayed",
+    "home_score": null,
+    "away_score": null
   },
   {
     "match_id": "02TP6B44EG000000VS5489BUVSPHI8RP",
@@ -970,9 +970,9 @@
     "away_team": "SV Panitzsch/​Borsdorf II",
     "date": "09.11.2025",
     "time": "14:00",
-    "status": "played",
-    "home_score": 0,
-    "away_score": 0
+    "status": "unplayed",
+    "home_score": null,
+    "away_score": null
   },
   {
     "match_id": "02TP6B43U8000000VS5489BUVSPHI8RP",
@@ -1217,9 +1217,9 @@
     "away_team": "SG Rotation Leipzig II",
     "date": "14.03.2026",
     "time": "15:00",
-    "status": "played",
-    "home_score": 0,
-    "away_score": 0
+    "status": "unplayed",
+    "home_score": null,
+    "away_score": null
   },
   {
     "match_id": "02TP6B4APO000000VS5489BUVSPHI8RP",
@@ -1243,9 +1243,9 @@
     "away_team": "SV Panitzsch/​Borsdorf II",
     "date": "15.03.2026",
     "time": "14:00",
-    "status": "played",
-    "home_score": 0,
-    "away_score": 0
+    "status": "unplayed",
+    "home_score": null,
+    "away_score": null
   },
   {
     "match_id": "02TP6B4AH4000000VS5489BUVSPHI8RP",
@@ -1321,9 +1321,9 @@
     "away_team": "SG Leipzig-Bienitz I",
     "date": "22.03.2026",
     "time": "14:00",
-    "status": "played",
-    "home_score": 0,
-    "away_score": 0
+    "status": "unplayed",
+    "home_score": null,
+    "away_score": null
   },
   {
     "match_id": "02TP6B4A2S000000VS5489BUVSPHI8RP",
@@ -1438,9 +1438,9 @@
     "away_team": "SV Lipsia 93 Eutritzsch II",
     "date": "29.03.2026",
     "time": "15:00",
-    "status": "played",
-    "home_score": 0,
-    "away_score": 0
+    "status": "unplayed",
+    "home_score": null,
+    "away_score": null
   },
   {
     "match_id": "02TP6B4BAC000000VS5489BUVSPHI8RP",
@@ -1463,10 +1463,10 @@
     "home_team": "SV Panitzsch/​Borsdorf II",
     "away_team": "SG Olympia 1896 Leipzig II",
     "date": "11.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "12:30",
+    "status": "played",
+    "home_score": 4,
+    "away_score": 1
   },
   {
     "match_id": "02TP6B49J8000000VS5489BUVSPHI8RP",
@@ -1476,10 +1476,10 @@
     "home_team": "SV Lipsia 93 Eutritzsch II",
     "away_team": "Roter Stern Leipzig 99 II",
     "date": "11.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "15:00",
+    "status": "played",
+    "home_score": 3,
+    "away_score": 0
   },
   {
     "match_id": "02TP6B49L8000000VS5489BUVSPHI8RP",
@@ -1489,10 +1489,10 @@
     "home_team": "SG LVB I",
     "away_team": "TSV Böhlitz-Ehrenberg 1990 I",
     "date": "11.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "15:00",
+    "status": "played",
+    "home_score": 0,
+    "away_score": 3
   },
   {
     "match_id": "02TP6B49N4000000VS5489BUVSPHI8RP",
@@ -1502,10 +1502,10 @@
     "home_team": "SV Fortuna Leipzig 02 I",
     "away_team": "FSV Großpösna I",
     "date": "12.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "14:00",
+    "status": "played",
+    "home_score": 1,
+    "away_score": 0
   },
   {
     "match_id": "02TP6B49R4000000VS5489BUVSPHI8RP",
@@ -1515,10 +1515,10 @@
     "home_team": "FC Blau-Weiß Leipzig II",
     "away_team": "VfB Zwenkau 02 II",
     "date": "12.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "14:00",
+    "status": "played",
+    "home_score": 1,
+    "away_score": 0
   },
   {
     "match_id": "02TP6B49P0000000VS5489BUVSPHI8RP",
@@ -1528,10 +1528,10 @@
     "home_team": "SG Leipzig-Bienitz I",
     "away_team": "SG Rotation Leipzig II",
     "date": "12.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "14:30",
+    "status": "played",
+    "home_score": 1,
+    "away_score": 2
   },
   {
     "match_id": "02TP6B49T0000000VS5489BUVSPHI8RP",
@@ -1541,10 +1541,10 @@
     "home_team": "SV Victoria 90 Leipzig I",
     "away_team": "SV Tapfer 06 Leipzig II",
     "date": "12.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "14:30",
+    "status": "played",
+    "home_score": 0,
+    "away_score": 4
   },
   {
     "match_id": "02TP6B499O000000VS5489BUVSPHI8RP",
@@ -1554,10 +1554,10 @@
     "home_team": "SV Panitzsch/​Borsdorf II",
     "away_team": "SV Lipsia 93 Eutritzsch II",
     "date": "18.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "12:30",
+    "status": "played",
+    "home_score": 2,
+    "away_score": 3
   },
   {
     "match_id": "02TP6B497S000000VS5489BUVSPHI8RP",
@@ -1567,7 +1567,20 @@
     "home_team": "Roter Stern Leipzig 99 II",
     "away_team": "SG LVB I",
     "date": "18.04.2026",
-    "time": "",
+    "time": "15:00",
+    "status": "played",
+    "home_score": 1,
+    "away_score": 2
+  },
+  {
+    "match_id": "02TP6B495C000000VS5489BUVSPHI8RP",
+    "matchday": 18,
+    "home_team_id": "011MI9A9JG000000VTVG0001VTR8C1K7",
+    "away_team_id": "011MIB23FS000000VTVG0001VTR8C1K7",
+    "home_team": "SV Victoria 90 Leipzig I",
+    "away_team": "VfB Zwenkau 02 II",
+    "date": "19.04.2026",
+    "time": "14:30",
     "status": "unplayed",
     "home_score": null,
     "away_score": null
@@ -1579,33 +1592,7 @@
     "away_team_id": "011MIAA2CK000000VTVG0001VTR8C1K7",
     "home_team": "SV Tapfer 06 Leipzig II",
     "away_team": "SG Olympia 1896 Leipzig II",
-    "date": "19.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
-  },
-  {
-    "match_id": "02TP6B495C000000VS5489BUVSPHI8RP",
-    "matchday": 18,
-    "home_team_id": "011MI9A9JG000000VTVG0001VTR8C1K7",
-    "away_team_id": "011MIB23FS000000VTVG0001VTR8C1K7",
-    "home_team": "SV Victoria 90 Leipzig I",
-    "away_team": "VfB Zwenkau 02 II",
-    "date": "19.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
-  },
-  {
-    "match_id": "02TP6B49FC000000VS5489BUVSPHI8RP",
-    "matchday": 18,
-    "home_team_id": "011MI9JC2S000000VTVG0001VTR8C1K7",
-    "away_team_id": "011MIB43QS000000VTVG0001VTR8C1K7",
-    "home_team": "FSV Großpösna I",
-    "away_team": "SG Leipzig-Bienitz I",
-    "date": "19.04.2026",
+    "date": "13.05.2026",
     "time": "",
     "status": "unplayed",
     "home_score": null,
@@ -1618,7 +1605,20 @@
     "away_team_id": "011MIC4SUG000000VTVG0001VTR8C1K7",
     "home_team": "SG Rotation Leipzig II",
     "away_team": "FC Blau-Weiß Leipzig II",
-    "date": "19.04.2026",
+    "date": "13.05.2026",
+    "time": "",
+    "status": "unplayed",
+    "home_score": null,
+    "away_score": null
+  },
+  {
+    "match_id": "02TP6B49FC000000VS5489BUVSPHI8RP",
+    "matchday": 18,
+    "home_team_id": "011MI9JC2S000000VTVG0001VTR8C1K7",
+    "away_team_id": "011MIB43QS000000VTVG0001VTR8C1K7",
+    "home_team": "FSV Großpösna I",
+    "away_team": "SG Leipzig-Bienitz I",
+    "date": "13.05.2026",
     "time": "",
     "status": "unplayed",
     "home_score": null,
@@ -1631,7 +1631,7 @@
     "away_team_id": "011MIBI40G000000VTVG0001VTR8C1K7",
     "home_team": "TSV Böhlitz-Ehrenberg 1990 I",
     "away_team": "SV Fortuna Leipzig 02 I",
-    "date": "19.04.2026",
+    "date": "13.05.2026",
     "time": "",
     "status": "unplayed",
     "home_score": null,
@@ -1645,10 +1645,10 @@
     "home_team": "Roter Stern Leipzig 99 II",
     "away_team": "SV Fortuna Leipzig 02 I",
     "date": "25.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "15:00",
+    "status": "played",
+    "home_score": 3,
+    "away_score": 0
   },
   {
     "match_id": "02TP6B48VS000000VS5489BUVSPHI8RP",
@@ -1671,10 +1671,10 @@
     "home_team": "SV Lipsia 93 Eutritzsch II",
     "away_team": "SV Tapfer 06 Leipzig II",
     "date": "25.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "15:00",
+    "status": "played",
+    "home_score": 0,
+    "away_score": 1
   },
   {
     "match_id": "02TP6B493K000000VS5489BUVSPHI8RP",
@@ -1684,10 +1684,10 @@
     "home_team": "SG LVB I",
     "away_team": "SV Panitzsch/​Borsdorf II",
     "date": "25.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "15:00",
+    "status": "played",
+    "home_score": 2,
+    "away_score": 5
   },
   {
     "match_id": "02TP6B48S8000000VS5489BUVSPHI8RP",
@@ -1697,10 +1697,10 @@
     "home_team": "FC Blau-Weiß Leipzig II",
     "away_team": "FSV Großpösna I",
     "date": "26.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "14:00",
+    "status": "played",
+    "home_score": 1,
+    "away_score": 2
   },
   {
     "match_id": "02TP6B48QG000000VS5489BUVSPHI8RP",
@@ -1710,10 +1710,10 @@
     "home_team": "SG Leipzig-Bienitz I",
     "away_team": "TSV Böhlitz-Ehrenberg 1990 I",
     "date": "26.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "14:30",
+    "status": "played",
+    "home_score": 3,
+    "away_score": 4
   },
   {
     "match_id": "02TP6B48U0000000VS5489BUVSPHI8RP",
@@ -1723,23 +1723,10 @@
     "home_team": "VfB Zwenkau 02 II",
     "away_team": "SG Rotation Leipzig II",
     "date": "26.04.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
-  },
-  {
-    "match_id": "02TP6B48MS000000VS5489BUVSPHI8RP",
-    "matchday": 20,
-    "home_team_id": "011MIB2QKO000000VTVG0001VTR8C1K7",
-    "away_team_id": "011MIBI40G000000VTVG0001VTR8C1K7",
-    "home_team": "SV Panitzsch/​Borsdorf II",
-    "away_team": "SV Fortuna Leipzig 02 I",
-    "date": "02.05.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "15:00",
+    "status": "played",
+    "home_score": 0,
+    "away_score": 1
   },
   {
     "match_id": "02TP6B48BS000000VS5489BUVSPHI8RP",
@@ -1749,7 +1736,46 @@
     "home_team": "SG Olympia 1896 Leipzig II",
     "away_team": "VfB Zwenkau 02 II",
     "date": "02.05.2026",
-    "time": "",
+    "time": "15:03",
+    "status": "played",
+    "home_score": 3,
+    "away_score": 2
+  },
+  {
+    "match_id": "02TP6B48L0000000VS5489BUVSPHI8RP",
+    "matchday": 20,
+    "home_team_id": "011MID51KG000000VTVG0001VTR8C1K7",
+    "away_team_id": "011MIB43QS000000VTVG0001VTR8C1K7",
+    "home_team": "Roter Stern Leipzig 99 II",
+    "away_team": "SG Leipzig-Bienitz I",
+    "date": "02.05.2026",
+    "time": "15:00",
+    "status": "played",
+    "home_score": 3,
+    "away_score": 3
+  },
+  {
+    "match_id": "02TP6B48DK000000VS5489BUVSPHI8RP",
+    "matchday": 20,
+    "home_team_id": "011MIBOCFK000000VTVG0001VTR8C1K7",
+    "away_team_id": "011MIEVLTC000000VTVG0001VTR8C1K7",
+    "home_team": "SV Tapfer 06 Leipzig II",
+    "away_team": "SG LVB I",
+    "date": "03.05.2026",
+    "time": "14:00",
+    "status": "played",
+    "home_score": 4,
+    "away_score": 0
+  },
+  {
+    "match_id": "02TP6B48FC000000VS5489BUVSPHI8RP",
+    "matchday": 20,
+    "home_team_id": "011MI9A9JG000000VTVG0001VTR8C1K7",
+    "away_team_id": "011MI9JD3G000000VTVG0001VTR8C1K7",
+    "home_team": "SV Victoria 90 Leipzig I",
+    "away_team": "SV Lipsia 93 Eutritzsch II",
+    "date": "03.05.2026",
+    "time": "14:30",
     "status": "unplayed",
     "home_score": null,
     "away_score": null
@@ -1761,11 +1787,11 @@
     "away_team_id": "011MI9JC2S000000VTVG0001VTR8C1K7",
     "home_team": "SG Rotation Leipzig II",
     "away_team": "FSV Großpösna I",
-    "date": "02.05.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "date": "03.05.2026",
+    "time": "15:00",
+    "status": "played",
+    "home_score": 3,
+    "away_score": 2
   },
   {
     "match_id": "02TP6B48J4000000VS5489BUVSPHI8RP",
@@ -1774,46 +1800,20 @@
     "away_team_id": "011MIC4SUG000000VTVG0001VTR8C1K7",
     "home_team": "TSV Böhlitz-Ehrenberg 1990 I",
     "away_team": "FC Blau-Weiß Leipzig II",
-    "date": "02.05.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
-  },
-  {
-    "match_id": "02TP6B48L0000000VS5489BUVSPHI8RP",
-    "matchday": 20,
-    "home_team_id": "011MID51KG000000VTVG0001VTR8C1K7",
-    "away_team_id": "011MIB43QS000000VTVG0001VTR8C1K7",
-    "home_team": "Roter Stern Leipzig 99 II",
-    "away_team": "SG Leipzig-Bienitz I",
-    "date": "02.05.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
-  },
-  {
-    "match_id": "02TP6B48DK000000VS5489BUVSPHI8RP",
-    "matchday": 20,
-    "home_team_id": "011MIBOCFK000000VTVG0001VTR8C1K7",
-    "away_team_id": "011MIEVLTC000000VTVG0001VTR8C1K7",
-    "home_team": "SV Tapfer 06 Leipzig II",
-    "away_team": "SG LVB I",
     "date": "03.05.2026",
-    "time": "",
-    "status": "unplayed",
-    "home_score": null,
-    "away_score": null
+    "time": "15:00",
+    "status": "played",
+    "home_score": 1,
+    "away_score": 2
   },
   {
-    "match_id": "02TP6B48FC000000VS5489BUVSPHI8RP",
+    "match_id": "02TP6B48MS000000VS5489BUVSPHI8RP",
     "matchday": 20,
-    "home_team_id": "011MI9A9JG000000VTVG0001VTR8C1K7",
-    "away_team_id": "011MI9JD3G000000VTVG0001VTR8C1K7",
-    "home_team": "SV Victoria 90 Leipzig I",
-    "away_team": "SV Lipsia 93 Eutritzsch II",
-    "date": "03.05.2026",
+    "home_team_id": "011MIB2QKO000000VTVG0001VTR8C1K7",
+    "away_team_id": "011MIBI40G000000VTVG0001VTR8C1K7",
+    "home_team": "SV Panitzsch/​Borsdorf II",
+    "away_team": "SV Fortuna Leipzig 02 I",
+    "date": "07.05.2026",
     "time": "",
     "status": "unplayed",
     "home_score": null,

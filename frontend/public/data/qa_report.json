@@ -1,9 +1,9 @@
 {
   "total_teams": 14,
   "total_fixtures": 182,
-  "played_fixtures": 112,
-  "unplayed_fixtures": 70,
+  "played_fixtures": 125,
+  "unplayed_fixtures": 57,
   "matchdays": 26,
-  "missing_scores": 70,
-  "generated_at": "2026-04-04T12:27:05Z"
+  "missing_scores": 57,
+  "generated_at": "2026-05-04T14:24:05Z"
 }

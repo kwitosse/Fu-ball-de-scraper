@@ -189,6 +189,7 @@ def remaining_fixtures(
         upcoming.append(
             {
                 "matchday": m.get("matchday"),
+                "date": m.get("date"),
                 "home_away": "H" if is_home else "A",
                 "opponent": opp,
                 "opponent_pos": opp_snap.position,
@@ -336,7 +337,7 @@ def build_match_plan(fixtures: list[dict[str, Any]], required_points_target: int
         plan_matches.append(
             {
                 "match_number": idx,
-                "date": fixture["date"],
+                "date": fixture.get("date") or f"MD{fixture.get('matchday', '?')}",
                 "home_away": fixture["home_away"],
                 "opponent": fixture["opponent"],
                 "opponent_position": pos,

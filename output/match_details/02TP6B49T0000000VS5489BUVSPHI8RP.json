@@ -2,14 +2,101 @@
   "match_id": "02TP6B49T0000000VS5489BUVSPHI8RP",
   "home_team": "SV Victoria 90 Leipzig I",
   "away_team": "SV Tapfer 06 Leipzig II",
-  "home_score": 14,
-  "away_score": 44,
+  "home_score": 0,
+  "away_score": 4,
   "date": "12.04.2026",
-  "kickoff": null,
+  "kickoff": "14:30",
   "venue": "Rasenplatz, Victoria Großfeld 1, Am Luppedeich 3, 04159 Leipzig",
-  "attendance": null,
+  "attendance": 34,
   "matchday": 17,
-  "goals": [],
-  "cards": [],
-  "substitutions": []
+  "goals": [
+    {
+      "minute": 5,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02BJUET62S000000VUM1DNPMVS4GDAB0"
+    },
+    {
+      "minute": 51,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4THJ4000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 55,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02EU5T07RG000000VUM1DNP3VSU597FK"
+    },
+    {
+      "minute": 70,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4THJ4000000VV0AG85VVVPI7ST7"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 24,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 45,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 54,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 54,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 62,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 62,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 71,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 83,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
 }

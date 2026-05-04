@@ -2,14 +2,119 @@
   "match_id": "02TP6B49L8000000VS5489BUVSPHI8RP",
   "home_team": "SG LVB I",
   "away_team": "TSV Böhlitz-Ehrenberg 1990 I",
-  "home_score": 34,
-  "away_score": 25,
+  "home_score": 0,
+  "away_score": 3,
   "date": "11.04.2026",
-  "kickoff": null,
+  "kickoff": "15:00",
   "venue": "Rasenplatz, LVB Großfeld 1, Neue Linie 1, 04277 Leipzig",
-  "attendance": null,
+  "attendance": 85,
   "matchday": 17,
-  "goals": [],
-  "cards": [],
-  "substitutions": []
+  "goals": [
+    {
+      "minute": 22,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02J9KH93SS000000VUM1DNQ3VTMSNQRK"
+    },
+    {
+      "minute": 39,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02FHGQ0I5K000000VUM1DNP5VU5PVP3B"
+    },
+    {
+      "minute": 72,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/02FN26RM7C000000VUM1DNR0VSFG24TL"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 50,
+      "player": null,
+      "team": "home",
+      "card_type": "red",
+      "player_profile_url": null
+    },
+    {
+      "minute": 68,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 81,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 61,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 61,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 65,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 74,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 76,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 76,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 77,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 77,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 85,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 85,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
 }

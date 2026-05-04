@@ -2,14 +2,123 @@
   "match_id": "02TP6B49V0000000VS5489BUVSPHI8RP",
   "home_team": "SV Panitzsch/​Borsdorf II",
   "away_team": "SG Olympia 1896 Leipzig II",
-  "home_score": 32,
-  "away_score": 25,
+  "home_score": 4,
+  "away_score": 1,
   "date": "11.04.2026",
-  "kickoff": null,
+  "kickoff": "12:30",
   "venue": "Rasenplatz, Panitzsch Großfeld, Sommerfelder Str., 04451 Borsdorf",
-  "attendance": null,
+  "attendance": 25,
   "matchday": 17,
-  "goals": [],
-  "cards": [],
-  "substitutions": []
+  "goals": [
+    {
+      "minute": 8,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4FPBK000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 45,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS4EJ7S000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 66,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "own_goal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00S41K3T08000000VV0AG811VV3LNNFJ"
+    },
+    {
+      "minute": 90,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/userid/01TQNUP1R0000000VS541L4GVT36QHDR"
+    },
+    {
+      "minute": 90,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00NP4U59FC000000VV0AG85VVT3JO22H"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 13,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 35,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 49,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 54,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 90,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 62,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 71,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 74,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 74,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 76,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 81,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
 }

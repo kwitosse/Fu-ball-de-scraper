@@ -2,14 +2,147 @@
   "match_id": "02TP6B48OK000000VS5489BUVSPHI8RP",
   "home_team": "Roter Stern Leipzig 99 II",
   "away_team": "SV Fortuna Leipzig 02 I",
-  "home_score": 20,
-  "away_score": 41,
+  "home_score": 3,
+  "away_score": 0,
   "date": "25.04.2026",
-  "kickoff": null,
-  "venue": "Rasenplatz, Sportpark Dölitz, Bornaische Str. 179, 04279 Leipzig",
-  "attendance": null,
+  "kickoff": "15:00",
+  "venue": "Kunstrasenplatz, Teichstraße Allwetterplatz GF, Teichstr. 12, 04277 Leipzig",
+  "attendance": 67,
   "matchday": 19,
-  "goals": [],
-  "cards": [],
-  "substitutions": []
+  "goals": [
+    {
+      "minute": 8,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00GQ57661S000000VTVG0001VS1O0TGP"
+    },
+    {
+      "minute": 31,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/016HQUID98000000VV0AG811VUL9HF0C"
+    },
+    {
+      "minute": 41,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00GQ57661S000000VTVG0001VS1O0TGP"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 9,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 42,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 62,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 63,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow_red",
+      "player_profile_url": null
+    },
+    {
+      "minute": 68,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 87,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow_red",
+      "player_profile_url": null
+    },
+    {
+      "minute": 89,
+      "player": null,
+      "team": "away",
+      "card_type": "red",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 33,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 60,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 64,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 68,
+      "player_out": "#15",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 68,
+      "player_out": "#13",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 72,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 75,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 79,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 84,
+      "player_out": "#77",
+      "player_in": "k.A.",
+      "team": "home"
+    }
+  ]
 }

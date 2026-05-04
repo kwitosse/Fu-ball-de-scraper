@@ -2,14 +2,128 @@
   "match_id": "02TP6B48H4000000VS5489BUVSPHI8RP",
   "home_team": "SG Rotation Leipzig II",
   "away_team": "FSV Großpösna I",
-  "home_score": 22,
-  "away_score": 23,
-  "date": "02.05.2026",
-  "kickoff": null,
+  "home_score": 3,
+  "away_score": 2,
+  "date": "03.05.2026",
+  "kickoff": "15:00",
   "venue": "Rasenplatz, Rotation 1950 Großfeld 1, Delitzscher Str. 131, 04129 Leipzig",
-  "attendance": null,
+  "attendance": 25,
   "matchday": 20,
-  "goals": [],
-  "cards": [],
-  "substitutions": []
+  "goals": [
+    {
+      "minute": 2,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS6GGHK000000VV0AG85VVVPI7ST7"
+    },
+    {
+      "minute": 34,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00UIT4FUHO000000VV0AG811VTN498IG"
+    },
+    {
+      "minute": 57,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00UIT4FUHO000000VV0AG811VTN498IG"
+    },
+    {
+      "minute": 59,
+      "scorer": null,
+      "team": "home",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00UIT4FUHO000000VV0AG811VTN498IG"
+    },
+    {
+      "minute": 83,
+      "scorer": null,
+      "team": "away",
+      "goal_type": "normal",
+      "player_profile_url": "https://www.fussball.de/spielerprofil/-/player-id/00LNS442L4000000VV0AG85VVVPI7ST7"
+    }
+  ],
+  "cards": [
+    {
+      "minute": 44,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 56,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 75,
+      "player": null,
+      "team": "home",
+      "card_type": "yellow",
+      "player_profile_url": null
+    },
+    {
+      "minute": 76,
+      "player": null,
+      "team": "away",
+      "card_type": "yellow",
+      "player_profile_url": null
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 46,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 60,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 64,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 64,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 64,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "home"
+    },
+    {
+      "minute": 67,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    },
+    {
+      "minute": 83,
+      "player_out": "k.A.",
+      "player_in": "k.A.",
+      "team": "away"
+    }
+  ]
 }
